@@ -1,0 +1,5 @@
+# lo
+curl -u admin:password -X PUT -F 'uploadAnalysis=@osha_older_workers_schema.xml' -F 'catalogName=Osha_OlderWorkers' -F 'Datasource=jdbcEuOshaAllAges' -F 'overwrite=true' -F 'xmlaEnabledFlag=true' -F 'parameters=Datasource=jdbcEuOshaAllAges' http://localhost:8080/pentaho/plugin/data-access/api/mondrian/putSchema
+
+# osha-bi
+curl -u admin:password -X PUT -F 'uploadAnalysis=@osha_older_workers_schema.xml' -F 'catalogName=Osha_OlderWorkers' -F 'Datasource=jdbcEuOshaAllAges' -F 'overwrite=true' -F 'xmlaEnabledFlag=true' -F 'parameters=Datasource=jdbcEuOshaAllAges' http://osha-bi.zylk.net:8080/pentaho/plugin/data-access/api/mondrian/putSchema

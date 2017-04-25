@@ -1,0 +1,5 @@
+# withouth facts_figures
+$ mysqldump -p osha_dvt_allages -uroot -proot --ignore-table=osha_dvt_allages.FactsFigures,osha_dvt_allages.FactsFigures_Denorm > osha_dvt_allages.sql
+
+# all
+$ mysqldump osha_dvt_allages -uroot -proot > osha_dvt_allages.sql  
