@@ -1,14 +1,9 @@
 <?xml version="1.0"?>
 <!--
-    * deploy?
-        1. download git (through jenkins)
-        2. backup (solution?, db?) disabled
-        3. deploy (solution, db?)
-        4. upload schema?   // TODO
-        5. refresh?         //TODO
-
-    * release?
-        1. release and publish
+    * release
+        1. release
+        2. release-publish
+        3. release-publish-snapshots
 -->
 
 <project name="osha-dvt" basedir="." default="remote-copy">
@@ -18,20 +13,13 @@
     <!--
         release vars
     -->
-    <property name="release_solution_name"      value="euosha-dvt-allages"/>
-    <property name="release-dir"                value="/var/www/releases/eu-osha/dvt/dashboard-allages/${jenkins-environment}"/>
+    <property name="release_solution_name"      value="osha-dvt-ilo"/>
+    <property name="release-dir"                value="/opt/pentaho/biserver-ce/pentaho-solutions/system/"/>
 
     <!--
             jenkins vars
-            - deployment;   jenkins-remote*, jenkins-do_database, jenkins-environment
             - release;      jenkins-environment
-
     -->
-    <property name="jenkins-remote_host"        value=""/>
-    <property name="jenkins-remote_user"        value="" />
-    <property name="jenkins-remote_password"    value="" />
-    <property name="jenkins-do_database"        value=""/>
-    <property name="jenkins-do_cleanup "        value="true"/>  <!-- TODO test -->
     <property name="jenkins-environment"        value="local"/>
     <property name="do_track"                   value="false"/>
     <property name="packed"                     value="false"/>
@@ -51,25 +39,12 @@
             - bower
     -->
 
-
     <!--
-        remote and local environment constants
-        host directories to be created
-        - ${dvt_home}
-        - ${backup_home}
-            /db_backup
-            /backup_home/solution_backup
+        environment constants
     -->
-    <property name="dvt_home"           value="/home/zylk/data"/>
-    <property name="backup_home"        value="/home/zylk/backups"/>
 
-    <property name="solution_name"      value="dvt-framework"/>
-    <property name="db_name"            value="osha_dvt_allages"/>
-
-    <property name="dvt_db"             value="${dvt_home}/${solution_name}/resources-ext/dbdump/${db_name}.sql"/>
-
-    <property name="db_backup"          value="${backup_home}/db_backup"/>
-    <property name="solution_backup"    value="${backup_home}/solution_backup"/>
+    <property name="solution_name"      value="osha-dvt-ilo"/>
+    <property name="db_name"            value="osha_dvt_ilo"/>
 
     <tstamp>
         <format property="ts" pattern="yyyyMMdd-HHmmss"/>
@@ -155,20 +130,12 @@
             <arg value="${cache}"/>
         </exec>
 
-        <!-- disabled, does not wait for process to end -->
-        <!--
-        <exec executable="gulp" spawn="false">
-            <arg value="seo"/>
-            <arg value="- -seo"/>
-            <arg value="${seo}"/>
-        </exec>
-        -->
     </target>
 
     <target name="prepare-dist">
         <mkdir dir="jenkins_dist"/>
         <copy todir="jenkins_dist/${solution_name}">
-            <fileset dir="../${solution_name}/">
+            <fileset dir=".">
                 <exclude name="**/**build**/**"/>
                 <exclude name="**/jenkins_dist/**"/>
                 <exclude name="**/resources-ext/**"/>
@@ -176,70 +143,17 @@
             </fileset>
         </copy>
         <!-- add resources-ext content -->
-        <copy file="../${solution_name}/resources-ext/dbdump/${db_name}.sql" todir="jenkins_dist/${solution_name}/resources-ext/dbdump/"/>
+        <copy file="resources-ext/dbdump/${db_name}.sql" todir="jenkins_dist/${solution_name}/resources-ext/dbdump/"/>
         <copy todir="jenkins_dist/${solution_name}/resources-ext/pentaho-610-extension">
-            <fileset dir="../${solution_name}/resources-ext/pentaho-610-extension"/>
+            <fileset dir="resources-ext/pentaho-610-extension"/>
         </copy>
         <copy todir="jenkins_dist/${solution_name}/resources-ext/pentaho-610-extension-original">
-            <fileset dir="../${solution_name}/resources-ext/pentaho-610-extension-original"/>
+            <fileset dir="resources-ext/pentaho-610-extension-original"/>
         </copy>
         <copy todir="jenkins_dist/${solution_name}/resources-ext/apache">
-            <fileset dir="../${solution_name}/resources-ext/apache"/>
+            <fileset dir="resources-ext/apache"/>
         </copy>
-        <!--<copy todir="jenkins_dist/${solution_name}/resources-ext/documentation">-->
-        <!--<fileset dir="../${solution_name}/resources-ext/documentation"/>-->
-        <!--</copy>-->
     </target>
-
-
-    <!--
-        =========================
-            remote-deploy: database + solution
-        =========================
-    -->
-    <target name="deploy-solution" depends="prepare, prepare-dist">
-
-        <echo message="-- scp deploy; solution" />
-        <echo message="${jenkins-remote_user}:${jenkins-remote_password}@${jenkins-remote_host}:${dvt_home}/${solution_name}"/>
-        <!-- TODO DROP CIRCULAR & LABYRINTH DEPENDENCIES -->
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="rm -fr ${dvt_home}/${solution_name}" failonerror="false"/>
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="mkdir ${dvt_home}/${solution_name}"/>
-
-        <zip destfile="jenkins_dist/${solution_name}.zip" basedir="jenkins_dist"/>
-        <scp trust="true" todir="${jenkins-remote_user}:${jenkins-remote_password}@${jenkins-remote_host}:${dvt_home}/" file="jenkins_dist/${solution_name}.zip"/>
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="unzip ${dvt_home}/${solution_name}.zip -d ${dvt_home}"/>
-    </target>
-
-    <target name="deploy-database" if="${jenkins-do_database}">
-        <echo message="-- scp deploy; database" />
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="mysql -uroot osha_dvt_allages &lt; ${dvt_db}"/>
-    </target>
-
-    <target name="remote-copy" depends="deploy-solution, deploy-database">
-        <echo message="--remote-copy done"/>
-    </target>
-
-
-    <!--
-        =========================
-            remote-backup
-        =========================
-    -->
-    <target name="backup-solution">
-        <echo message="-- sshexec backup; solution" />
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="tar -czf ${solution_backup}/${ts}_${solution_name}.tar.gz ${dvt_home}/${solution_name}" failonerror="false"/>
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="rm -fr ${dvt_home}/${solution_name}" failonerror="false"/>
-    </target>
-
-    <target name="backup-database" if="${jenkins-do_database}">
-        <echo message="-- sshexec backup; database" />
-        <sshexec trust="true" host="${jenkins-remote_host}" username="${jenkins-remote_user}" password="${jenkins-remote_password}" command="mysqldump -uroot ${db_name} &gt; ${db_backup}/${ts}_${db_name}.sql" failonerror="false"/>
-    </target>
-
-    <target name="backup" depends="backup-solution, backup-database">
-        <echo message="--backup done"/>
-    </target>
-
 
     <!--
         =========================
@@ -251,13 +165,11 @@
     </target>
 
     <target name="release-publish" depends="release">
-        <!-- TODO remove overwrite; testing -->
-        <copy file="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" 	todir="${release-dir}" overwrite="false" verbose="true"/>
-        <echo message="--releases done"/>
+        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>
     </target>
 
     <target name="release-publish-snapshots">
-        <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="../${solution_name}/static/custom/seo/snapshots"/>
+        <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
         <copy file="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" 	todir="${release-dir}" overwrite="false" verbose="true"/>
     </target>
 </project>
