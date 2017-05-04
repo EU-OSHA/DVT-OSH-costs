@@ -166,6 +166,7 @@
 
     <target name="release-publish" depends="release">
         <delete dir="${release-dir}/${release_solution_name}"/>
+        <mkdir dir="${release-dir}/${release_solution_name}"/>
         <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>
     </target>
 
