@@ -237,8 +237,86 @@
         <repeat>N</repeat>
       </field>
       <field>
+        <name>VISUALISED</name>
+        <attribut>VISUALISED</attribut>
+        <type>Boolean</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
         <name>RELATED_MESSAGE</name>
         <attribut>RELATED_MESSAGE</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>RELATED_MESSAGE_&#x20ac;</name>
+        <attribut>RELATED_MESSAGE_&#x20ac;</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>X_AXIS</name>
+        <attribut>X_AXIS</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Y_AXIS</name>
+        <attribut>Y_AXIS</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>X_AXIS_&#x20ac;</name>
+        <attribut>X_AXIS_&#x20ac;</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Y_AXIS_&#x20ac;</name>
+        <attribut>Y_AXIS_&#x20ac;</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -285,7 +363,7 @@
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
+    <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -296,6 +374,62 @@
     <return_keys>N</return_keys>
     <return_field/>
     <fields>
+        <field>
+          <column_name>CHART_ID</column_name>
+          <stream_name>CHART_ID</stream_name>
+        </field>
+        <field>
+          <column_name>TYPE</column_name>
+          <stream_name>TYPE</stream_name>
+        </field>
+        <field>
+          <column_name>RELATED_CHARTS</column_name>
+          <stream_name>RELATED_CHARTS</stream_name>
+        </field>
+        <field>
+          <column_name>INDICATOR_ID</column_name>
+          <stream_name>INDICATOR_ID</stream_name>
+        </field>
+        <field>
+          <column_name>CHART_SHORT_TITLE</column_name>
+          <stream_name>CHART_SHORT_TITLE</stream_name>
+        </field>
+        <field>
+          <column_name>CHART_LONG_TITLE</column_name>
+          <stream_name>CHART_LONG_TITLE</stream_name>
+        </field>
+        <field>
+          <column_name>CARROUSEL_TITLE</column_name>
+          <stream_name>CARROUSEL_TITLE</stream_name>
+        </field>
+        <field>
+          <column_name>VISUALISED</column_name>
+          <stream_name>VISUALISED</stream_name>
+        </field>
+        <field>
+          <column_name>RELATED_MESSAGE</column_name>
+          <stream_name>RELATED_MESSAGE</stream_name>
+        </field>
+        <field>
+          <column_name>RELATED_MESSAGE_EURO</column_name>
+          <stream_name>RELATED_MESSAGE_&#x20ac;</stream_name>
+        </field>
+        <field>
+          <column_name>X_AXIS</column_name>
+          <stream_name>X_AXIS</stream_name>
+        </field>
+        <field>
+          <column_name>Y_AXIS</column_name>
+          <stream_name>Y_AXIS</stream_name>
+        </field>
+        <field>
+          <column_name>X_AXIS_EURO</column_name>
+          <stream_name>X_AXIS_&#x20ac;</stream_name>
+        </field>
+        <field>
+          <column_name>Y_AXIS_EURO</column_name>
+          <stream_name>Y_AXIS_&#x20ac;</stream_name>
+        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -596,19 +730,6 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>Norway</name>
-        <attribut>Norway</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
         <name>Lithuania</name>
         <attribut>Lithuania</attribut>
         <type>Number</type>
@@ -897,6 +1018,19 @@
       <field>
         <name>Iceland</name>
         <attribut>Iceland</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Norway</name>
+        <attribut>Norway</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
