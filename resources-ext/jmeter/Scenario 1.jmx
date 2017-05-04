@@ -681,7 +681,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/home/sergio2/workspace/OSHA/dvt/dvt-framework/resources-ext/jmeter/results.jtl</stringProp>
+          <stringProp name="filename">/home/sergio2/workspace/OSHA/dvt/osha-dvt-ilo/resources-ext/jmeter/results.jtl</stringProp>
           <boolProp name="useGroupName">true</boolProp>
         </ResultCollector>
         <hashTree/>

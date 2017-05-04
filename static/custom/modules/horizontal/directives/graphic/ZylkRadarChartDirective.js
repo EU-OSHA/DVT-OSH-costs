@@ -37,12 +37,12 @@ define(function (require) {
              + '<i class="fa fa-history fa-2x" alt="Show historical evolution" data-ng-click="open(items[1].action)" ng-controller="IssueController" title="Show historical evolution" aria-hidden="true"></i>'
              + '</div>'
              + '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">'
-             + '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>'
+             + '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>'
              + '</div>'
              + '</div>'
              +'<div class="col-xs-12">'
              + '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
              + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
              +'</div>'
              +'</div>';
@@ -59,7 +59,7 @@ define(function (require) {
                 + '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">';
 
            // if(!configService.isMobile()) {
-                template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
+                template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
           //  }
             
             template+='</div>'
@@ -79,7 +79,7 @@ define(function (require) {
                 + '</div>'
                 +'<div class="col-xs-12">'
                 + '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-                + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+                + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
                 + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
                 +'</div>'
                 +'</div>';

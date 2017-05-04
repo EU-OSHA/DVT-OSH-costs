@@ -1,8 +1,7 @@
 Authors
 ========
-Data Visualisation Tool (DVT) for EU-OSHA
-2016 by Zylk.net + Bilbomatica
-
+Data Visualisation Tool - ILO for EU-OSHA
+2017
 
 Setup
 ========
@@ -13,21 +12,17 @@ Setup
 add all resources in /resources-ext/pentaho-610-extension within the pentaho 6 installation, as an extension or override
 
 3. solution link to filesystem
-link source folder to pentaho solution as 'dvt-framework' (case-sensitive)
-ln -s ${src}/dvt-framework/ ${biserver}/pentaho-solutions/system/dvt-framework
+link source folder to pentaho solution as 'osha-dvt-ilo' (case-sensitive)
+ln -s ${src}/osha-dvt-ilo/ ${biserver}/pentaho-solutions/system/osha-dvt-ilo
 
 4. database
 
-database creation 'osha_dvt_allages', import and association in the server with the name 'jdbcEuOshaAllAges'
-> create database osha_dvt_allages character set utf8;
-> source /dvt-framework/resources-ext/dbdump/osha_dvt_allages.sql
-
-OR
-
-link to osha.zylk.net environment (intranet only)
+database creation 'osha_dvt_ilo', import and association in the server with the name 'jdbcEuOshaILO'
+> create database osha_dvt_ilo character set utf8;
+> source /osha-dvt-ilo/resources-ext/dbdump/osha_dvt_ilo.sql
 
 5. change env to localhost
-${src}dvt-framework/static/custom/modules/horizontal/config/environment.json
+${src}osha-dvt-ilo/static/custom/modules/horizontal/config/environment.json
 
 5.
 Check the gulp tasks:

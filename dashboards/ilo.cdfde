@@ -1,6 +1,6 @@
 {
  "layout": {
-  "title": "allagesdash",
+  "title": "ilo",
   "rows": []
  },
  "components": {
@@ -43,7 +43,7 @@
      },
      {
       "name": "jndi",
-      "value": "jdbcEuOshaAllAges",
+      "value": "jdbcEuOshaILO",
       "type": "Jndi"
      },
      {
@@ -95,5 +95,5 @@
    }
   ]
  },
- "filename": "/system/dvt-framework/dashboards/allagesdash.cdfde"
+ "filename": "/system/osha-dvt-ilo/dashboards/ilo.cdfde"
 }

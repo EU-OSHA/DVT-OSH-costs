@@ -54,7 +54,7 @@ gulp.task('default', ['bower', 'bootstrap-sass', 'dvt-sass', 'setup-environment'
 //});
 
 gulp.task('dvt-sass', function () {
-    return gulp.src('static/custom/scss/allages.scss')
+    return gulp.src('static/custom/scss/ilo.scss')
         .pipe(sass().on('error', sass.logError))
         //.pipe(cleanCSS({compatibility: ''}))
         .pipe(concat('app.css'))
@@ -121,7 +121,7 @@ gulp.task('setup-environment', function () {
 
 gulp.task('html-horizontal-templates', function () {
     var options = {
-        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/horizontal/',
+        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/horizontal/',
         module: 'horizontalTemplatesModule',
         filename: "templates.js",
         standalone: true,
@@ -139,13 +139,13 @@ gulp.task('html-horizontal-templates', function () {
 
 gulp.task('html-vertical-templates', function () {
     var options = {
-        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/vertical/',
+        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/vertical/',
         module: '',
         filename: "templates.js",
         htmlmin: true,
         templateHeader: "define(function (require) { 'use strict'; var angular = require('common-ui/angular');",
         templateBody: "angular.module('"
-        + "<%= url.replace('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/vertical/','').replace(/\\/(.*?).html/g, '') %>'"
+        + "<%= url.replace('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/vertical/','').replace(/\\/(.*?).html/g, '') %>'"
         + ").run(['$templateCache', function($templateCache) { $templateCache.put('<%= url %>','<%= contents %>'); }]);",
         templateFooter: "});"
     };
@@ -164,7 +164,7 @@ gulp.task('documentation', [], function () {
         styles: ["./build-res/dvt-documentation-styles.css"],
         html5Mode: true,
         startPage: '/api/dvt',
-        title: "DVT-Framework",
+        title: "osha-dvt-ilo",
         image: "./static/custom/img/EU-OSHA-en.png",
         imageLink: "/resources-ext/documentation/api",
         titleLink: "/resources-ext/documentation/api"

@@ -18,7 +18,7 @@ define(function (require) {
 
     /**
      * @ngdoc overview
-     * @name dvt-framework
+     * @name osha-dvt-ilo
      * @requires ui.bootstrap
      * @requires ui.router
      * @requires ngSanitize

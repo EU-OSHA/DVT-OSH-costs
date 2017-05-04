@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="test" basedir="." name="jsdoc3-ant-task">
     <description>
-        This build file is used to create the dvt-framework project
+        This build file is used to create the osha-dvt-ilo project
         and works with the common_build.xml file.
     </description>
     <property file="more_tasks.properties" />

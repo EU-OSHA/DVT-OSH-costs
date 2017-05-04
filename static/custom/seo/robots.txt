@@ -1,2 +1,2 @@
-Sitemap: https://visualisation.osha.europa.eu/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/seo/sitemap.xml
+Sitemap: https://visualisation.osha.europa.eu/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/seo/sitemap.xml
 User-agent: *

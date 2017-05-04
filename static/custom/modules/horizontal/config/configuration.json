@@ -94,12 +94,12 @@
             }
         },
         "pentaho-instance": "/pentaho",
-        "partials": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom",
-        "directive-route": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom",
-        "system-components": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/system/components",
-        "images": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/",
+        "partials": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom",
+        "directive-route": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom",
+        "system-components": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/system/components",
+        "images": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/",
         "data": {
-            "pentaho-path": "/plugin/cda/api/doQuery?&path=dvt-framework/dashboards/",
+            "pentaho-path": "/plugin/cda/api/doQuery?&path=osha-dvt-ilo/dashboards/",
             "cda": {
                 "datapilot": "datapilot.cda",
                 "approach": "approachdata.cda",

@@ -1,6 +1,6 @@
 {
-  "name": "dvt-framework",
-  "description": "DVT Framework",
+  "name": "osha-dvt-ilo",
+  "description": "DVT ILO",
   "main": [
     "static/custom/app.js"
   ],
@@ -37,10 +37,7 @@
     "dvt"
   ],
   "authors": [
-    "Zylk.net",
-    "Irune Prado <iprado@zylk.net>",
-    "Iñigo Sanchez <isanchez@zylk.net>",
-    "Sergio Argerey <sargerey@zylk.net>"
+    ""
   ],
   "license": "???",
   "ignore": [

@@ -175,13 +175,13 @@ define(function (require) {
             setCDAIn: function (vertical) {
                 switch (vertical) {
                     case 'CA':
-                        return "dvt-framework/dashboards/approachdata.cda";
+                        return "osha-dvt-ilo/dashboards/approachdata.cda";
                         break;
                     case 'IS':
-                        return "dvt-framework/dashboards/issuedata.cda";
+                        return "osha-dvt-ilo/dashboards/issuedata.cda";
                         break;
                     default:
-                        return "dvt-framework/dashboards/datapilot.cda";
+                        return "osha-dvt-ilo/dashboards/datapilot.cda";
                 }
             },
 

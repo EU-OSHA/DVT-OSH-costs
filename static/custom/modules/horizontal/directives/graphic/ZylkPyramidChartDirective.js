@@ -31,7 +31,7 @@ define(function (require) {
             + '<div data-ng-if="!isMaximized">'
             + '<div  class="contextual-menu cursor-pointer maximizeImage" data-ng-class="showContextuals?\'\':\'hidden\'">';
        // if(!configService.isMobile()) {
-            _template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
+            _template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
        // }
 
         _template+= '</div>'
@@ -43,7 +43,7 @@ define(function (require) {
             +'Solid Colour <span class="mr">2014 </span>'
             +'Bordered <span>2060 </span>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
             + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>'
             + '</div>'
@@ -76,7 +76,7 @@ define(function (require) {
             +'Bordered <span>2060 </span>'
             + '</div>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
             + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>'
 

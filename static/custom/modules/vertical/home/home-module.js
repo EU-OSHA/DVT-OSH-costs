@@ -8,7 +8,7 @@ define(function (require) {
 
     /**
      * @ngdoc overview
-     * @name dvt-framework.home
+     * @name osha-dvt-ilo.home
      * @requires ui.router
      * @requires configModule
      */

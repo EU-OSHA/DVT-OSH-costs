@@ -19,10 +19,10 @@
     var amdShim = requireConfig['amd']['shim'];
     var shim = requireCfg['shim'];
     var systemPath = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system';
-    var staticCustom = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom';
-    var componentsPath = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/system/components';
-    var horizontalModules = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/horizontal';
-    var verticalModules = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/vertical';
+    var staticCustom = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom';
+    var componentsPath = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/system/components';
+    var horizontalModules = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/horizontal';
+    var verticalModules = CONTEXT_PATH + 'plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/vertical';
 
 
     /*

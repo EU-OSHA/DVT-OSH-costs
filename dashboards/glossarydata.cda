@@ -2,7 +2,7 @@
 <CDADescriptor>
     <DataSources>
         <Connection id="connection" type="sql.jndi">
-            <Jndi>jdbcEuOshaAllAges</Jndi>
+            <Jndi>jdbcEuOshaILO</Jndi>
         </Connection>
     </DataSources>
     <DataAccess access="public" connection="connection" id="getIndicators" type="sql">

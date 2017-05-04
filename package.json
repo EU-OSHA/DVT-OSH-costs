@@ -1,14 +1,10 @@
 {
-  "name": "dvt-framework",
+  "name": "osha-dvt-ilo",
   "version": "1.0.0",
-  "description": "Gulp: All ages dashboard",
+  "description": "Gulp: ILO dashboard",
   "main": "gulpfile.js",
   "scripts": {
 
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://gitlab.zylk.net/osha/dvt.git"
   },
   "keywords": [
     "EU-OSHA",
@@ -16,7 +12,7 @@
     "pentaho",
     "dashboard"
   ],
-  "author": "Zylk",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "bower": "~1.7.7",

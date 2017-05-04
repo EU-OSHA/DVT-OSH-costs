@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name dvt-framework.home.controller:homeController
+ * @name osha-dvt-ilo.home.controller:homeController
  * @requires $scope
  * @requires $stateParams
  * @requires $state

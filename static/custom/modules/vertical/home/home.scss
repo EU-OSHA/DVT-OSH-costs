@@ -14,7 +14,7 @@
   position:relative;
 }
 #home-cover {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home-header-bg.png') #529FA2 no-repeat center top;
+  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.png') #529FA2 no-repeat center top;
   height: 192px;
   clear:both;
 
@@ -99,13 +99,13 @@
     }
   }
   article:nth-child(1){
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckAbout.png") no-repeat bottom left;
+    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeBckAbout.png") no-repeat bottom left;
   }
   article:nth-child(2){
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckPolicy.png")  no-repeat bottom left;
+    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeBckPolicy.png")  no-repeat bottom left;
   }
   article:nth-child(3) {
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckCountry.png")  no-repeat bottom left;
+    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeBckCountry.png")  no-repeat bottom left;
     margin:0;
   }
 }

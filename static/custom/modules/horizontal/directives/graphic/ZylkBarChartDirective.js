@@ -19,7 +19,7 @@
  * @param {Numeric} [height=250] Chart height.
  * @param {String} [orientation=vertical] Chart orientation.
  * @param {String} [query=null] Id identify sql sentence in CDA.
- * @param {String} [cda="dvt-framework/dashboards/allagesdash.cda"]   CDA file path.
+ * @param {String} [cda="osha-dvt-ilo/dashboards/ilo.cda"]   CDA file path.
  * @param {Array[Array]}  params Dashboard parameters that will be sent to CDA as key value arrays in array
  * @param {Array} listen-to  Component is rendered again when those parameters change
  * (bar and lines) or donuts charts.
@@ -190,12 +190,12 @@ define(function (require) {
             + '</div>'
             + '<div data-ng-if="!isMaximized && !haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">'
        // if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic"  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
+            _template+='<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic"  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
       //  }
         _template+= '</div>'
             + '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
       //  if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>'
+            _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>'
      //   }
         _template+='</div>'
             + '<div data-ng-if="isMaximized && isEnlarged==undefined" class="pull-right contextual-menu">';
@@ -215,7 +215,7 @@ define(function (require) {
             + '<div class="backGraps">'
             + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
             + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>';
 
@@ -283,7 +283,7 @@ define(function (require) {
                     parameters: [],
                     chartDefinition: {
                         dataAccessId: attributes.query || null,
-                        path: attributes.cda || "dvt-framework/dashboards/datapilot.cda",
+                        path: attributes.cda || "osha-dvt-ilo/dashboards/datapilot.cda",
                         title: attributes.title || "",
                         width: attributes.width || 300,
                         height: attributes.height || 250,
