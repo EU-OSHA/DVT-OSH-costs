@@ -154,11 +154,6 @@
     requirePaths['vertical/home/range'] = verticalModules + '/home/directives/ZylkRangeDirective' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
-    /* NEW PAGE */
-    requirePaths['vertical/newpage/newpage-module'] = verticalModules + '/newpage/newpage-module' + suffix;
-    requirePaths['vertical/newpage/NewPageController'] = verticalModules + '/newpage/NewPageController' + suffix;
-    requirePaths['vertical/newpage/npj1'] = verticalModules + '/newpage/NP-npj1' + suffix + '.json';
-
     /* ISSUE */
     requirePaths['vertical/issue/issue-module'] = verticalModules + '/issue/issue-module' + suffix;
     requirePaths['vertical/issue/IssueController'] = verticalModules + '/issue/IssueController' + suffix;

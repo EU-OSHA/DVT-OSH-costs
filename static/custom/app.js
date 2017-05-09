@@ -4,7 +4,6 @@ define(function (require) {
     var angular = require('common-ui/angular'),
         configModule = require('horizontal/config/config-module'),
         homeModule = require('vertical/home/home-module'),
-        newpageModule = require('vertical/newpage/newpage-module'),
         directivesModule = require('horizontal/directives/directives-module'),
         chartingModule =  require('horizontal/directives/charting-module'),
         footerPagesModule = require('vertical/footer-pages/footer-pages-module');
@@ -32,7 +31,6 @@ define(function (require) {
                                      'ui.router',
                                      'ngSanitize',
                                      homeModule.name,
-                                     newpageModule.name,
                                      configModule.name,
                                      directivesModule.name,
                                      chartingModule.name,

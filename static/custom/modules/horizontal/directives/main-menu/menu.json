@@ -104,12 +104,5 @@
         "breadcrumb": "Glossary",
         "sref": "glossary",
         "accesskey": "O"
-    },
-    {
-        "id": "newpage",
-        "name":"This is my New Page",
-        "breadcrumb": "NewPage",
-        "sref": "newpage",
-        "accesskey": "Q"
     }
 ]
