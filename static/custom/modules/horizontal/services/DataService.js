@@ -13,10 +13,6 @@ define(function () {
                 return $http.get(url);
             }
 
-            /*Get all Countries in all dashboard*/
-            var url = configService.getPilotDataPath() + "&dataAccessId=getCountries";
-            var dataset = promise(url);
-
         return {
 
             /**
@@ -31,14 +27,6 @@ define(function () {
                 $log.debug('getAllCountries url:' + url);
                 return promise(url);
             },
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            structureCountries: dataset,
 
             /**
              * @ngdoc method
