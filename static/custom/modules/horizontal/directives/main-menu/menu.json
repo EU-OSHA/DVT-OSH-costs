@@ -2,107 +2,57 @@
     {
         "id": "home",
         "name":"<i class='fa fa-home' aria-hidden='true'></i>",
-        "breadcrumb": "Home",
         "sref": "home",
         "accesskey": "H"
     },
     {
-        "id": "key-issue",
-        "name":"Key issues",
+        "id": "global-estimates",
+        "name":"Global estimates",
         "target": "_self",
         "levels":[
             {
-                "id": "key-issue-1",
-                "name": "Early exit from labour market",
-                "breadcrumb": "About the topic >> Key issues >> Early exit from labour market",
-                "sref": "issue-retirementAge",
-                "accesskey": "1"
+                "id": "who-regions-comparison",
+                "name":"WHO Regions comparison",
+                "sref": "who-regions-comparison",
+                "accesskey": "W"
             },
             {
-                "id": "key-issue-2",
-                "name": "Labour market participation",
-                "breadcrumb": "About the topic >> Key issues >> Labour market participation",
-                "sref": "issue-olderWorkersEmployment",
-                "accesskey": "2"
-            },
-            {
-                "id": "key-issue-3",
-                "name": "Impact of work on health",
-                "breadcrumb": "About the topic >> Key issues >> Impact of work on health",
-                "sref": "issue-challenges",
-                "accesskey": "3"
-            },
-            {
-                "id": "key-issue-4",
-                "name": "Health inequalities",
-                "breadcrumb": "About the topic >> Key issues >> Health inequalities",
-                "sref": "issue-HLYvsLE",
-                "accesskey": "4"
-            },
-            {
-                "id": "key-issue-5",
-                "name": "Working conditions",
-                "breadcrumb": "About the topic >> Key issues >> Working conditions",
-                "sref": "issue-dissatisfaction",
-                "accesskey": "5"
-            }
-        ]
-
-    },
-    {
-        "id": "policy",
-        "name":"Policy development",
-        "target": "_self",
-        "levels":[
-            {
-                "id": "approaches",
-                "name":"Country groups",
-                "breadcrumb": "Policy development >> Country groups",
-                "sref": "approaches-indicators",
-                "accesskey": "C"
-            },
-            {
-                "id": "strategies-programmers",
-                "name": "Policies, Strategies, and Programmes",
-                "breadcrumb": "Policy development >> Policies, Strategies, and Programmes",
-                "sref": "policy",
-                "accesskey": "S"
+                "id": "global-analysis-illness",
+                "name": "Analysis by illness",
+                "sref": "global-analysis-illness",
+                "accesskey": "G"
             }
         ]
     },
     {
-        "id": "countries",
-        "name":"Country insights",
+        "id": "eu-estimates",
+        "name":"EU estimates",
         "target":"_self",
         "levels":[
             {
-                "id": "country-insight",
-                "name":"Country profiles",
-                "breadcrumb": "Country insights >> Country profiles",
-                "sref": "country-profiles",
-                "accesskey": "X"
+                "id": "countries-comparison",
+                "name":"EU countries comparison",
+                "sref": "countries-comparison",
+                "accesskey": "C"
             },
             {
-                "id": "additional-resources",
-                "name":"Infographics",
-                "breadcrumb": "Country insights >> Infographics",
-                "sref": "infographics",
-                "accesskey": "I"
+                "id": "eu-analysis-illness",
+                "name":"Analysis by illness",
+                "sref": "eu-analysis-illness",
+                "accesskey": "E"
             }
         ]
-    },
-    {
-        "id": "about-tool",
-        "name":"About the visualisation tool",
-        "breadcrumb": "About the visualisation tool",
-        "sref": "methodology",
-        "accesskey": "T"
     },
     {
         "id": "glossary",
         "name":"Glossary",
-        "breadcrumb": "Glossary",
         "sref": "glossary",
         "accesskey": "O"
+    },
+    {
+        "id": "about-estimates",
+        "name":"About the estimates",
+        "sref": "about",
+        "accesskey": "T"
     }
 ]

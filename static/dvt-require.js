@@ -154,58 +154,16 @@
     requirePaths['vertical/home/range'] = verticalModules + '/home/directives/ZylkRangeDirective' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
-    /* ISSUE */
-    requirePaths['vertical/issue/issue-module'] = verticalModules + '/issue/issue-module' + suffix;
-    requirePaths['vertical/issue/IssueController'] = verticalModules + '/issue/IssueController' + suffix;
+    /* EU ESTIMATES */
+    requirePaths['vertical/eu-estimates/eu-estimates-module'] = verticalModules + '/eu-estimates/eu-estimates-module' + suffix;
 
-    requirePaths['vertical/issue/i18n'] = verticalModules + '/issue/IS-i18n' + suffix + '.json';
-    requirePaths['vertical/issue/service'] = verticalModules + '/issue/services/IssueService' + suffix;
-    requirePaths['vertical/issue/ZylkMenuIssueDirective'] = verticalModules + '/issue/directives/menu-issue/ZylkMenuIssueDirective' + suffix;
-    requirePaths['vertical/issue/menu/menu-items'] = verticalModules + '/issue/directives/menu-issue/menu' + suffix + '.json';
+    /* COUNTRIES COMPARISON */
+    requirePaths['vertical/countries-comparison/CountriesComparisonController'] = verticalModules + '/eu-estimates/countries-comparison/CountriesComparisonController' + suffix;
+    requirePaths['vertical/countries-comparison/i18n'] = verticalModules + '/eu-estimates/countries-comparison/countries-comparison-i18n' + suffix + '.json';
 
-    /* APPROACHES */
-    requirePaths['vertical/approaches/policies-module'] = verticalModules + '/policies/policies-module' + suffix;
-
-    /* APPROACHES */
-    requirePaths['vertical/approaches/ApproachesController'] = verticalModules + '/policies/approaches/ApproachesController' + suffix;
-    requirePaths['vertical/services/approachService'] = verticalModules + '/policies/approaches/services/ApproachService' + suffix;
-    requirePaths['vertical/approaches/ZkMainIndicatorDirective'] = verticalModules + '/policies/approaches/ZylkEnlargeIndicatorDirective' + suffix;
-    requirePaths['vertical/approaches/i18n'] = verticalModules + '/policies/approaches/CA-i18n' + suffix + '.json';
-
-    /* POLICY  */
-    requirePaths['vertical/policy/policy-module'] = verticalModules + '/policy/policy-module' + suffix;
-    requirePaths['vertical/policy/PolicyController'] = verticalModules + '/policies/policy/PolicyController' + suffix;
-    requirePaths['vertical/policy/i18n'] = verticalModules + '/policies/policy/PL-i18n' + suffix + '.json';
-
-    /* COUNTRIES */
-    requirePaths['vertical/countries/countries-module'] = verticalModules + '/countries/countries-module' + suffix;
-    requirePaths['vertical/countries/CSPController'] = verticalModules + '/countries/csp/CSPController' + suffix;
-    requirePaths['vertical/countries/CountriesController'] = verticalModules + '/countries/CountriesController' + suffix;
-    requirePaths['vertical/services/countriesService'] = verticalModules + '/countries/country-insight/services/CountriesService' + suffix;
-    requirePaths['vertical/countries/directives/menu'] = verticalModules + '/countries/country-insight/ZylkCountryMenuDirective' + suffix;
-    requirePaths['vertical/countries/directives/anchor'] = verticalModules + '/countries/country-insight/ZylkCountryAnchorDirective' + suffix;
-    requirePaths['vertical/country-card/anchor-items'] = verticalModules + '/countries/country-insight/country-card/anchor' + suffix + '.json';
-    requirePaths['vertical/country-comparison/anchor-items'] = verticalModules + '/countries/country-insight/country-comparison/anchor' + suffix + '.json';
-    requirePaths['vertical/countries/directives/select-redirect'] = verticalModules + '/countries/country-insight/country-card/ZylkCountryCardSelectRedirectDirective' + suffix;
-    requirePaths['vertical/countries/directives/section'] = verticalModules + '/countries/country-insight/ZylkCountrySectionDirective' + suffix;
-    requirePaths['vertical/countries/i18n'] = verticalModules + '/countries/country-insight/C-i18n' + suffix + '.json';
-
-    /* ADDITIONAL RESOURCES */
-    requirePaths['vertical/countries/AdditionalResourcesController'] = verticalModules + '/countries/additional-resources/AdditionalResourcesController' + suffix;
-    requirePaths['vertical/additional-resources/AR-i18n'] = verticalModules + '/countries/additional-resources/AR-i18n' + suffix + '.json';
-
-    /* CSP Country panel */
-    requirePaths['vertical/countries/directives/panel'] = verticalModules + '/countries/csp/ZylkCountryCSPPanelDirective' + suffix;
-    requirePaths['vertical/csp/i18n'] = verticalModules + '/countries/csp/CSP-i18n' + suffix + '.json';
-
-    /* METHODOLOGY */
-    requirePaths['vertical/methodology/methodology-module'] = verticalModules + '/methodology/methodology-module' + suffix;
-    requirePaths['vertical/methodology/MethodologyController'] = verticalModules + '/methodology/MethodologyController' + suffix;
-    requirePaths['vertical/methodology/i18n'] = verticalModules + '/methodology/M-i18n' + suffix + '.json';
-
-    /* GLOSSARY */
-    requirePaths['vertical/glossary/glossary-module'] = verticalModules + '/glossary/glossary-module' + suffix;
-    requirePaths['vertical/glossary/GlossaryController'] = verticalModules + '/glossary/GlossaryController' + suffix;
+    /* EU ANALYSIS ILLNESS */
+    requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;
+    requirePaths['vertical/eu-analysis-illness/i18n'] = verticalModules + '/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n' + suffix + '.json';
 
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;

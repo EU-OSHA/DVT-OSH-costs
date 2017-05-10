@@ -113,29 +113,8 @@ define(function (require) {
                                     $scope.titleHeader = cadena + titleStructure['pages-title'];
                                 };
 
-                                dataService.structureCountries.then(function(dataset){
-                                    var country = dataService.dataMapper(dataset).filter(function(item) {
-                                        return item.Id == pathURL[2]
-                                    })[0];
-
-                                    if($state.current.name=='country-card') {
-                                        $scope.breadCrumb+="<span>"+ country.Description + "</span>";
-                                        $scope.title= country.Description;
-                                        setTitleHeaderHTML();
-                                    } else if ($state.current.name=='country-comparison') {
-                                        var country2 = dataService.dataMapper(dataset).filter(function(item) {
-                                            return item.Id == pathURL[3]
-                                        })[0];
-
-                                        $scope.breadCrumb+="<span>" + country.Description + " - " + country2.Description + "</span>";
-                                        $scope.title= country.Description + " - " + country2.Description;
-                                        setTitleHeaderHTML();
-                                    } else {
-                                        setBreadCrumbs();
-                                        setTitleHeaderHTML();
-                                    }
-                                });
-
+                                 setBreadCrumbs();
+                                 setTitleHeaderHTML();
                             }
 
                             if(collapse.hasClass( "indvt" ) == true) {
