@@ -1,1 +1,15 @@
 <!-- countries-comparison.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" style="overflow:auto">
+    <zylk-bar-chart
+            data-ng-cloak
+            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+            angle="1" width="100" height="330"
+            axis-fixed-min="0" axis-fixed-max="4000" step="1000"
+            ortho-axis-title="Measure"
+            params="[['pIndicator','16']]"
+            color-role="series"
+            title="TEST BAR CHART" id="1,57"
+            long-title="YLL per 100.000 workers in EU28 by country"
+            plots="stories[0].plots"
+    ></zylk-bar-chart>
+</zylk-dashboard>

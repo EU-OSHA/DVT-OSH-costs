@@ -157,13 +157,10 @@
     /* EU ESTIMATES */
     requirePaths['vertical/eu-estimates/eu-estimates-module'] = verticalModules + '/eu-estimates/eu-estimates-module' + suffix;
 
-    /* GRAPH TEST */
-    requirePaths['vertical/graphtest/graphtest-module'] = verticalModules + '/graphtest/graphtest-module' + suffix;
-    requirePaths['vertical/graphtest/graphtestController'] = verticalModules + '/graphtest/GraphtestController' + suffix;
-
     /* COUNTRIES COMPARISON */
     requirePaths['vertical/countries-comparison/CountriesComparisonController'] = verticalModules + '/eu-estimates/countries-comparison/CountriesComparisonController' + suffix;
     requirePaths['vertical/countries-comparison/i18n'] = verticalModules + '/eu-estimates/countries-comparison/countries-comparison-i18n' + suffix + '.json';
+    requirePaths['vertical/countries-comparison/services/CountriesComparisonService'] = verticalModules + '/eu-estimates/countries-comparison/services/CountriesComparisonService' + suffix;
 
     /* EU ANALYSIS ILLNESS */
     requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;

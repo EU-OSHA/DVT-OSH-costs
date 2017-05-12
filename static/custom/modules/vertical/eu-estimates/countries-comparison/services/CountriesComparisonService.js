@@ -1,7 +1,7 @@
 define (function (require) {
 
     var configService = require('horizontal/config/configService');
-    var GraphTestService = function (dvtUtils) {
+    var CountriesComparisonService = function (dvtUtils) {
         return {
             getStoryMainPlots: function() {
 
@@ -14,9 +14,9 @@ define (function (require) {
                         bar_fillStyle: function (scene) {
                             var countryKey = scene.firstAtoms.category;
                             if (countryKey == 'EU28') {
-                                return dvtUtils.getColorCountry()
+                                return dvtUtils.getColorCountry();
                             }
-                            return dvtUtils.getColorCountry(-1)
+                            return dvtUtils.getColorCountry(-1);
                         },
                         bar_strokeStyle: dvtUtils.getColorCountry(0),
                         visualRoles:{
@@ -29,8 +29,8 @@ define (function (require) {
         };
     };
 
-    GraphTestService.$inject = ['dvtUtils'];
+    CountriesComparisonService.$inject = ['dvtUtils'];
 
-    return GraphTestService;
+    return CountriesComparisonService;
 
 });

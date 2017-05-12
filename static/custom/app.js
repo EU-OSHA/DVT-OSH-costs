@@ -6,7 +6,6 @@ define(function (require) {
         homeModule = require('vertical/home/home-module'),
         euEstimatesModule = require('vertical/eu-estimates/eu-estimates-module'),
         directivesModule = require('horizontal/directives/directives-module'),
-        graphtestModule = require('vertical/graphtest/graphtest-module'),
         chartingModule =  require('horizontal/directives/charting-module'),
         footerPagesModule = require('vertical/footer-pages/footer-pages-module');
 
@@ -35,7 +34,6 @@ define(function (require) {
                                      homeModule.name,
                                      euEstimatesModule.name,
                                      configModule.name,
-                                     graphtestModule.name,
                                      directivesModule.name,
                                      chartingModule.name,
                                      footerPagesModule.name,

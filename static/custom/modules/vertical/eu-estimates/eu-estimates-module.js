@@ -43,5 +43,7 @@ define(function (require) {
 
     });
 
+    module.factory('countriesComparisonService', require('vertical/countries-comparison/services/CountriesComparisonService'));
+
     return module;
 });
