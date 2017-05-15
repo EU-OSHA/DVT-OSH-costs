@@ -1,67 +1,95 @@
-<div class="col-xs-12 nopadding container-header">
+<header class="ilo-header col-xs-12 nopadding container-header">
     <div id="containerMenu" bs-affix data-offset-top="100">
-        <div class="logoOSHA">
-            <a href="https://osha.europa.eu" role="button">
-                <img  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" alt="European Agency for Safety and Health at Work">
+        <div class="eu-osha-logo  col-sm-3 col-md-4">
+            <a href="https://osha.europa.eu" role="link" title="European Agency for Safety and Health at Work webpage" tabindex="0">
+                <picture>
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" media="(max-width: 768px)">
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" alt="European Agency for Safety and Health at Work">
+                </picture>
             </a>
-
-            <img id="EUico" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/europeLogo.png" alt="Europe logo">
         </div>
 
-        <div class="mainMenu">
-            <nav id="main-menu" class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#osha-menu-collapse" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
+        <!-- nav tools top -->
+        <nav class="menu-tools-top col-sm-8 col-md-8">
+            <ul class="social-network list-inline navbar-right">
+                <li>
+                    <a class="facebook" href="javascript:" title="Facebook" socialshare="" socialshare-provider="facebook" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="twitter" href="javascript:" title="Twitter" socialshare="" socialshare-provider="twitter" socialshare-text="Europe's workforce is ageing and shrinking. How do European countries deal with the challenges for safety and health at work?" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only">Share on Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="google_plus" href="javascript:"  title="Google plus" socialshare="" socialshare-provider="google" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                        <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google +</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="print" href="javascript:"  title="Print page" onclick="window.print()">
+                        <i class="fa fa-lg fa-print" aria-hidden="true"></i><span class="sr-only">Print</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /. nav tools top -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-right" id="osha-menu-collapse">
-                        <ul class="nav navbar-nav">
-                            <!--<li>-->
-                            <!--<a ui-sref="home" role="button">-->
-                            <!--<span>Home</span>-->
-                            <!--</a>-->
-                            <!--</li>-->
-                            <li ng-repeat="level0 in structure">
-                                <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" target="_self" aria-expanded="false">
-                                    <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                                    <span class="caret"></span>
-                                </a>
-                                <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
-                                   class="dropdown-toggle {{level0.class}}"
-                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                                    <span class="caret"></span>
-                                </a>
-                                <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}">
-                                    <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                                </a>
-                                <ul class="dropdown-menu" ng-if="level0.levels">
-                                    <li>
-                                        <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}"
-                                           ng-repeat="level1 in level0.levels">
-                                            <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
-                                        </a>
-                                        <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}'
-                                           ng-repeat="level1 in level0.levels" accesskey="{{level1.accesskey}}">
-                                            <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
-                                        </a>
-                                    </li>
-                                    <!--<li role="separator" class="divider"></li>-->
-                                    <!--<li><a class="disabled" id="evolution" target="_self">Evolution</a></li>-->
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-            </nav>
-        </div>
+        <nav id="main-menu" class="ilo-main-menu col-sm-8 col-md-8 navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#osha-menu-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-right" id="osha-menu-collapse">
+                    <ul class="nav navbar-nav">
+                        <!--<li>-->
+                        <!--<a ui-sref="home" role="button">-->
+                        <!--<span>Home</span>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                        <li ng-repeat="level0 in structure">
+                            <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
+                               class="dropdown-toggle {{level0.class}}"
+                               data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
+                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                            </a>
+                            <ul class="dropdown-menu" ng-if="level0.levels">
+                                <li>
+                                    <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}"
+                                       ng-repeat="level1 in level0.levels">
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
+                                    </a>
+                                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}'
+                                       ng-repeat="level1 in level0.levels" accesskey="{{level1.accesskey}}">
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
+                                    </a>
+                                </li>
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a class="disabled" id="evolution" target="_self">Evolution</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+
 
         <pre ng-show="false">{{  structure | json }}</pre>
 
@@ -86,10 +114,11 @@
     <!--
         social media widget
      -->
-    <div class="col-xs-12 col-md-12  titleAndWidget">
-            <p class="path col-xs-12 col-sm-8 col-md-8 col-lg-9" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
-            <div class="socialWidget col-xs-12 col-sm-4 col-md-4 col-lg-3">
 
+    <div class="col-xs-12 col-md-12  titleAndWidget">
+            <p class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
+        <!--
+            <div class="socialWidget col-xs-12 col-sm-4 col-md-4 col-lg-3">
                 <div class="a2a_kit a2a_default_style">
                     <span class="labelShare" data-ng-bind="titleS.shareThis"></span>
 
@@ -120,11 +149,11 @@
 
                     <a class="a2a_button_print" onclick="window.print()"></a>
                 </div>
-
-
             </div>
-            <h1 class="page-header text-center">
-                <span data-ng-bind-html="title"></span>&nbsp;
-            </h1>
+            -->
+        <div class="page-header-wrapper container">
+        <h1 class="page-header text-center" data-ng-bind-html="title"></h1>
+        <p class="subject-section">Work-related injures and illnesses result in the loss of 4.3% of all work-years globally and 3.2% of those in the EU, equivalent to a cost of approximately 3.092 billon and 504 billon, respectively.</p>
+        </div>
     </div>
-</div>
+</header>

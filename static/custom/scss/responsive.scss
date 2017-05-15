@@ -373,9 +373,11 @@
     width: auto !important;
   }
   #main-menu {
+   /*
     margin-top: 1.6rem;
     float: left;
     width: 100%;
+    */
   }
   .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a span {
     font-size: 16.5px;
@@ -415,9 +417,11 @@
     margin-top: 20px;
   }
   #main-menu {
-      margin-top: 1.6rem;
+     /*
+    margin-top: 1.6rem;
       width: 100%;
       float:left;
+      */
       .container-fluid{
         padding: 0;
       }

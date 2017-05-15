@@ -28,7 +28,9 @@ $corporativo : #003399;
 /* Font color */
 $font-black: #000000;
 $font-grey: #57575a;
-
+$header:#f6a400;
+$subheader:#00A0A4;
+$link-menu:#b1b3b4;
 
 /* Palete */
 $plt-eu01: #363d90; /*dark blue*/
@@ -53,6 +55,7 @@ $color07: #359f4b;
 $color08: #e1d643;
 $color09: #fbdb99;
 $lightgrey: #F0F0F0; /* light grey*/
+$darkgrey : #222;
 
 /* color groups country clusters*/
 $colorGroup01:#FBDB99;
@@ -80,7 +83,11 @@ $backgroundCookies:#cbe4e5;
 $backgroundGlossary1:#cfd8dc;
 $backgroundGlossary2:#eceff1;
 
-
+.outleft{
+  position: absolute;
+  top: -9999px;
+  left:-9999px;
+}
 .nopadding {
   padding:0!important;
   margin:0!important;
@@ -100,6 +107,8 @@ $backgroundGlossary2:#eceff1;
 }
 body {
   font-family: $font-body;
+  font-size: 18px;
+  color: #898989;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -537,9 +546,9 @@ div.blockUIDefaultImg:before {
   }
   button {
     color:$colorWhite;
-    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png') no-repeat 95% 53% $colorB;
+    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png') no-repeat 90% 56% $colorB;
     font-family: "Oswald", sans-serif;
-    padding:.7em 1.5em;
+    padding: 7px 25px 7px 15px;
     border:0;
     float:right;
     margin:0 .5em;

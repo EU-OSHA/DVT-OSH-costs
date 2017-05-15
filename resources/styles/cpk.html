@@ -13,21 +13,22 @@
     <link rel="shortcut icon" type="image/png" href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/favicon.ico"/>
     <link rel="stylesheet" href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/css/bootstrap-dvt.css">
     <link rel="stylesheet" href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/css/app.css">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body id="cpk-content"  data-status="{{ status }}">
 <div consent ng-include src="'/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/horizontal/includes/general/cookiesDisclaimer.html'"></div>
 <!-- container -->
-<div id="google_translate_element_wrapper"><div id="google_translate_element"></div><span class="google_translate_span">(machine translation)</span></div>
+<div id="google_translate_element_wrapper"><div id="google_translate_element"  title="Google translate"></div><!--<span class="google_translate_span">(machine translation)</span>--></div>
 <script type="text/javascript">
     window.environment = {_description:"Nochangetheorderoftheitems",pentaho:"local",piwik:"local",do_track:false,packed:false};
     function googleTranslateElementInit () { new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <zylk-main-menu ng-cloak></zylk-main-menu>
 <div ui-view="content-main" layout="row" class="mainBody"></div>
-
 <zylk-footer></zylk-footer>
+
 <script async="true" defer="true" type="text/javascript" id="pathPiwik" src="https://piwik.osha.europa.eu:443/piwik/piwik.js"></script>
 <script language="javascript" type="text/javascript" src="/pentaho/plugin/pentaho-cdf-dd/api/renderer/cde-embed.js"></script>
 <script language="javascript" type="text/javascript" src="/pentaho/content/common-ui/resources/web/require.js"></script>

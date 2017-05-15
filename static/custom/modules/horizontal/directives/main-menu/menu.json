@@ -1,14 +1,16 @@
 [
     {
         "id": "home",
-        "name":"<i class='fa fa-home' aria-hidden='true'></i>",
+        "name":"<i class='fa fa-home' aria-hidden='true'></i> <span class='sr-only'>Home</span>",
         "sref": "home",
-        "accesskey": "H"
+        "accesskey": "H",
+        "tabindex":"1"
     },
     {
         "id": "global-estimates",
         "name":"Global estimates",
         "target": "_self",
+        "tabindex":"2",
         "levels":[
             {
                 "id": "who-regions-comparison",
@@ -28,6 +30,7 @@
         "id": "eu-estimates",
         "name":"EU estimates",
         "target":"_self",
+        "tabindex":"3",
         "levels":[
             {
                 "id": "countries-comparison",
@@ -47,12 +50,14 @@
         "id": "glossary",
         "name":"Glossary",
         "sref": "glossary",
-        "accesskey": "O"
+        "accesskey": "O",
+        "tabindex":"4"
     },
     {
         "id": "about-estimates",
         "name":"About the estimates",
         "sref": "about",
-        "accesskey": "T"
+        "accesskey": "T",
+        "tabindex":"5"
     }
 ]

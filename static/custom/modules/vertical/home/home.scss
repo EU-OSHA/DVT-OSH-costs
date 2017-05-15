@@ -1,32 +1,3 @@
-.navbar-collapse.indvt {
-    overflow-y: auto;
-    width: 100%;
-    background:$colorWhite;
-    height: auto!important;
-    margin-top: 2em;
-    padding: 0;
-}
-.collapse.indvt {
-    display: block !important;
-}
-.container-header{
-  overflow:hidden;
-  position:relative;
-}
-#home-cover {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.png') #529FA2 no-repeat center top;
-  height: 192px;
-  clear:both;
-
-  h1 {
-    color: $colorA;
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 36px;
-    width: 275px;
-    margin-top: 40px;
-  }
-}
 
 .homepage.page-content{
   width:auto;
@@ -36,6 +7,150 @@
   padding-right: 15px;
   clear:both;
 }
+.section-carrousel{
+  background: #f9f9f9;
+  padding: 15px 0 15px;
+  .ilo-container-carrousel{
+    h2.title-section{
+      text-align: center;
+      color: $header;
+      font-size:4rem;
+    }
+    .subject-section{
+      text-align: center;
+    }
+  }
+  #carouselHome{
+    min-height: 400px;
+    margin: 30px 0 0;
+    .carousel-indicators{
+      bottom: 0;
+      li {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin: 0 12px;
+        background-color: #D9D9D9;
+        border: 0px solid #fff;
+        border-radius: 20px;
+        &.active{
+          background-color:#333333;
+        }
+      }
+    }
+    .carousel-inner{
+      li.item{
+        text-align: center;
+        .carousel-chart{
+          width: 75%;
+          margin: 10px auto;
+          background: #FFF;
+          padding: 15px 30px;
+          border-radius: 8px;
+          -webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+          -moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+          box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+        }
+        p.carousel-note{
+          text-align: center;
+          font-size: 14px;
+          padding: 5px;
+        }
+      }
+    }
+    .carousel-control {
+      background-image: none !important;
+      width: 40px;
+      .icon-prev, .icon-next, .prev, .next {
+        top: 36%;
+        position: relative;
+        color: #666;
+      }
+    }
+  }
+}
+.section-first-home{
+  background: #FFF;
+  padding: 40px 0;
+  h3{
+    color: $subheader;
+    text-align: center;
+  }
+  .chart-section-first{
+    text-align: center;
+  }
+}
+.section-second-home{
+  background: #F9F9F9;
+  padding: 40px 0;
+  h3{
+    color: $subheader;
+    text-align: center;
+  }
+  .chart-section-second{
+    text-align: center;
+  }
+}
+.compare-buttons{
+  background: #FFF;
+  padding: 40px 0;
+  .compare-buttons-list{
+    text-align: center;
+    li{
+      margin-right: 30px;
+      a{
+        display: block;
+        border-radius: 4px;
+        border: 2px solid #ababab;
+        padding: 20px 20px;
+        &:hover{
+          background:$lightgrey;
+          text-decoration: none;
+        }
+      }
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+.see-more{
+  text-align: center;
+  margin: 40px 0 5px;
+  font-family: "Opensans-bold";
+  text-decoration: none;
+  a{
+    display: inline-block;
+    background: #00A0A4;
+    color: #FFF;
+    padding: 10px 40px;
+    border-radius: 4px;
+    margin: auto;
+    &:hover{
+      background:$darkgrey;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .spotlight-carousel{
   background:#dbeced;
   padding:0.5em 0;
@@ -117,8 +232,10 @@
     display:inline-block !important;
   }
 }
+*/
 
 // TODO FIX temporal buscar workaround div[id^=zylk_pyramid_]
+/*
 .homepage {
     #zylk_pyramid_1, #zylk_pyramid_2, #zylk_pyramid_3, #zylk_pyramid_4  {
       min-height: 365px;
@@ -131,6 +248,7 @@
   padding: 0;
   color: inherit;
 }
+
 
 #osha-carousel .item:nth-child(1) .carousel-caption p{
   color:$plt-eu03;
@@ -146,8 +264,6 @@
 }
 #osha-carousel .item:nth-child(5) .carousel-caption p{
   color:$plt-eu01;
-
-
 }
 #osha-carousel .item .carousel-caption p.carousel.link {
   text-align: center;
@@ -165,7 +281,6 @@
   position: absolute !important;
   top: 4em;
   width: 100%;
-
   a,span {
     color: #3ea1a0 !important;
     text-decoration: underline;
@@ -177,19 +292,19 @@
     text-decoration: none;
   }
 }
-
-
 .carousel-control {
   display:none !important;
 }
+
+
 .pyramidSlider {
   min-height: 500px;
 }
-
+*/
 //#zylk_pyramid_1 {
 //  min-height: 365px;
 //}
-
+/*
 .slider {
   margin-left: 16px !important;
   height: 3em;
@@ -210,12 +325,12 @@
 .range-container {
 
 }
+*/
 
 
 
 
-
-
+/*
 .itemsSlider {
   width: 100%;
   margin: .6em 0 1em 0em;
@@ -226,15 +341,14 @@
     font-size: .9em;
     color:$colorB;
     cursor: pointer;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   td:hover {
-    //background-color: $colorA;
     background-color: lighten( $color03, 15% );
   }
 }
@@ -260,6 +374,7 @@
   background-color: $color03 !important;
   margin:0 5px;
 }
+
 .homepage {
   .range-container {
     margin-left:0em!important;
@@ -272,7 +387,7 @@
     }
   }
   .pyramid{
-    min-height: 15em; /* require dto avoid slider glitch*/
+    min-height: 15em;
     background: transparent !important;
   }
   article a:hover {
@@ -289,3 +404,4 @@
   font-weight: 500;
   line-height: 1.1;
 }
+*/
