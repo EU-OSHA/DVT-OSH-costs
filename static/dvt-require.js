@@ -160,6 +160,7 @@
     /* COUNTRIES COMPARISON */
     requirePaths['vertical/countries-comparison/CountriesComparisonController'] = verticalModules + '/eu-estimates/countries-comparison/CountriesComparisonController' + suffix;
     requirePaths['vertical/countries-comparison/i18n'] = verticalModules + '/eu-estimates/countries-comparison/countries-comparison-i18n' + suffix + '.json';
+    requirePaths['vertical/countries-comparison/services/CountriesComparisonService'] = verticalModules + '/eu-estimates/countries-comparison/services/CountriesComparisonService' + suffix;
 
     /* EU ANALYSIS ILLNESS */
     requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;

@@ -116,12 +116,6 @@ define(function (require) {
                             if (!!$scope.parameters.chartDefinition.plots[0].max_label_left) {
                                 $scope.parameters.chartDefinition.plots[0].label_left = $scope.parameters.chartDefinition.plots[0].max_label_left
                             }
-                            if (!!$scope.parameters.chartDefinition.plots[1].max_label_top) {
-                                $scope.parameters.chartDefinition.plots[1].label_top = $scope.parameters.chartDefinition.plots[1].max_label_top
-                            }
-                            if (!!$scope.parameters.chartDefinition.plots[1].max_label_left) {
-                                $scope.parameters.chartDefinition.plots[1].label_left = $scope.parameters.chartDefinition.plots[1].max_label_left
-                            }
                         }
 
                         $scope.parameters.chartDefinition.baseAxisLabel_text = $scope.parameters.baseAxisLabelLongText;
