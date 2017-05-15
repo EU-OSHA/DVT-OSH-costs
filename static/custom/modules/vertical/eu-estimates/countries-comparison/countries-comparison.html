@@ -1,15 +1,128 @@
 <!-- countries-comparison.html -->
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" style="overflow:auto">
-    <zylk-bar-chart
-            data-ng-cloak
-            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
-            angle="1" width="100" height="330"
-            axis-fixed-min="0" axis-fixed-max="4000" step="1000"
-            ortho-axis-title="Measure"
-            params="[['pIndicator','16']]"
-            color-role="series"
-            title="TEST BAR CHART" id="1,57"
-            long-title="YLL per 100.000 workers in EU28 by country"
-            plots="stories[0].plots"
-    ></zylk-bar-chart>
+
+    <!--<form>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-16" data-ng-checked="true"><span>Years of life lost</span>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-17"><span>Years lived with disability</span>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-18"><span>Total years lost</span>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-19"><span>Total workforce loss (%)</span>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-20"><span>Work-related illnesses</span>
+        <input type="radio" name="checked" data-ng-model="checked" value="checked-21"><span>Occupational injuries</span>
+    </form>-->
+
+    <div class="container">
+        <div id="carouselCountries" class="carousel-home carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carouselCountries" data-slide-to="0" class="active">
+                    <span>Years of life lost</span>
+                </li>
+                <li data-target="#carouselCountries" data-slide-to="1">
+                    <span>Years lived with disability</span>
+                </li>
+                <li data-target="#carouselCountries" data-slide-to="2">
+                    <span>Total year lost</span>
+                </li>
+                <li data-target="#carouselCountries" data-slide-to="3">
+                    <span>Total workforce lost(%)</span>
+                </li>
+                <li data-target="#carouselCountries" data-slide-to="4">
+                    <span>Work-related illnesses</span>
+                </li>
+                <li data-target="#carouselCountries" data-slide-to="5">
+                    <span>Occupational injuries</span>
+                </li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <ul class="carousel-inner">
+                <li class="item active">
+                    <zylk-bar-chart
+                            data-ng-cloak
+                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            angle="1" width="1400" height="330"
+                            ortho-axis-title="Measure"
+                            params="[['pIndicator','16']]"
+                            color-role="series"
+                            title="TEST BAR CHART" id="16"
+                            long-title="YLL per 100.000 workers in EU28 by country"
+                            plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+                <li class="item">
+                    <zylk-bar-chart
+                            data-ng-cloak
+                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            angle="1" width="1400" height="330"
+                            ortho-axis-title="Measure"
+                            params="[['pIndicator','17']]"
+                            color-role="series"
+                            title="TEST BAR CHART" id="17"
+                            long-title="YLL per 100.000 workers in EU28 by country"
+                            plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+                <li class="item">
+                    <zylk-bar-chart
+                            data-ng-cloak
+                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            angle="1" width="1400" height="330"
+                            ortho-axis-title="Measure"
+                            params="[['pIndicator','18']]"
+                            color-role="series"
+                            title="TEST BAR CHART" id="18"
+                            long-title="YLL per 100.000 workers in EU28 by country"
+                            plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+                <li class="item">
+                    <zylk-bar-chart
+                            data-ng-cloak
+                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            angle="1" width="1400" height="330"
+                            ortho-axis-title="Measure"
+                            params="[['pIndicator','19']]"
+                            color-role="series"
+                            title="TEST BAR CHART" id="19"
+                            long-title="YLL per 100.000 workers in EU28 by country"
+                            plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+                <li class="item">
+                    <zylk-bar-chart
+                        data-ng-cloak
+                        query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                        angle="1" width="1400" height="330"
+                        ortho-axis-title="Measure"
+                        params="[['pIndicator','20']]"
+                        color-role="series"
+                        title="TEST BAR CHART" id="20"
+                        long-title="YLL per 100.000 workers in EU28 by country"
+                        plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+                <li class="item">
+                    <zylk-bar-chart
+                        data-ng-cloak
+                        query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                        angle="1" width="1400" height="330"
+                        ortho-axis-title="Measure"
+                        params="[['pIndicator','21']]"
+                        color-role="series"
+                        title="TEST BAR CHART" id="21"
+                        long-title="YLL per 100.000 workers in EU28 by country"
+                        plots="stories[0].plots"
+                    ></zylk-bar-chart>
+                </li>
+            </ul>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#carouselHome" data-slide="prev">
+                <i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carouselHome" data-slide="next">
+                <i class="fa fa-chevron-right next" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 </zylk-dashboard>
