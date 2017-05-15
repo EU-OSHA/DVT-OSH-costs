@@ -35,8 +35,8 @@
         }
     }
     #home-cover {
-        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.png') #529FA2 no-repeat center top;
-        height: 192px;
+        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.png') #529FA2 no-repeat right top;
+        height: 65px;
         clear:both;
         h1 {
             color: $colorA;
@@ -51,20 +51,38 @@
             font-size: 2em;
             font-weight: 500;
             line-height: 36px;
-            margin-top: 20px;
+            margin-top: 15px;
             font-family: "Oswald", sans-serif;
         }
         a:link, a:visited, a:hover, a:active{
             text-decoration: none;
         }
     }
-    #not-home-cover{
+    #not-home-cover {
+        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png') $colorB no-repeat right top;
+        height: 31px;
+        clear:both;
+        h1 {
+            color: $colorA;
+            font-size: 2em;
+            font-weight: 500;
+            line-height: 36px;
+            margin-top: 5px;
+        }
         a:link, a:visited, a:hover, a:active{
             text-decoration: none;
+        }
+        #breadCrumbs{
+            color: #FFF;
         }
     }
     p.title-banner {
         margin-top: 10px;
+        color:  $colorWhite;
+        font-size: 2em;
+        font-weight: 500;
+        line-height: 36px;
+        font-family: "Oswald", sans-serif;
     }
     .titleAndWidget{
         background: #f9f9f9;
@@ -162,7 +180,7 @@ ul.navbar-nav {
         font-size: 4rem;
         line-height: 44px;
         width: 100%;
-        margin: auto;
+        margin: 2rem auto 0;
         text-align: center;
         .fa-question-circle {
             position: relative;
@@ -289,3 +307,77 @@ a.a2a_button_print:before {
 }
 /* FIN MENU.SCSS */
 
+@media (max-width: 991px) {
+    .eu-osha-logo{
+      margin-left: 60px;
+    }
+    #main-menu {
+        float: none;
+        position: relative;
+        z-index: -1;
+    }
+    .navbar-header {
+        float: none;
+        position: absolute;
+        top: 24px;
+    }
+    .navbar-toggle {
+        display: block;
+        background-color: transparent !important;
+        border: none;
+        .icon-bar {
+            display: block;
+            width: 22px;
+            height: 4px;
+            border-radius: 1px;
+        }
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        &.collapse {
+            display: none;
+            height: auto!important;
+            padding-bottom: 0;
+            overflow: visible!important;
+        }
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+        &>li {
+            float: none;
+        }
+        &>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .open .dropdown-menu {
+            position: relative;
+            width: 100%;
+            display: block;
+            min-width: 160px;
+            padding: 0 !important;
+            margin: 15px 0 !important;
+            font-size: 14px;
+            border: none;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background-clip: padding-box;
+            &>li>a {
+                display: block;
+                padding: 10px 20px !important;
+                border-bottom: 1px solid #ccc;
+                line-height: 1.42857;
+                white-space: nowrap;
+            }
+        }
+    }
+
+}

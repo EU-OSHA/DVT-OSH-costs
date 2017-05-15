@@ -1,0 +1,85 @@
+.osha-eu-estimates-wrapper{
+  background: #f9f9f9;
+  .carousel-indicators {
+    position: relative !important;
+    bottom: 0 !important;
+    left: 0;
+    z-index: 15;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0;
+    list-style: none;
+    text-align: center;
+    background: #FFF;
+    border: 1px solid #EAEAEA;
+    li {
+      width: 30%;
+      height: 40px;
+      cursor: pointer;
+      margin: 10px 12px;
+      background-color: transparent;
+      border: 0px solid #fff;
+      border-radius: 0px;
+      text-indent: 0;
+      text-align: left;
+      .fa {
+        margin: 0 15px;
+        font-size: 22px;
+      }
+      &.active {
+        background-color: transparent;
+        font-family: "Open Sans Semibold";
+        .fa-circle-o:before {
+          content: "\f05d";
+        }
+      }
+    }
+  }
+  .carousel-inner {
+    background: #EAEAEA;
+    padding: 0 20px 0;
+    li {
+      float: left;
+      width: 100% !important;
+      .dvt-chart {
+        width: 100% !important;
+        .backGraps {
+          background: transparent !important;
+        }
+        div[id^='zylk_bar_chart'] {
+
+        }
+      }
+    }
+  }
+  .carousel-control{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    font-size: 20px;
+    background-color: transparent;
+    z-index: 100;
+    &.right{
+      background-image: none;
+      left: 100%;
+      i{
+        top:50%;
+        position: relative;
+
+      }
+    }
+    &.left{
+      background-image: none;
+      left: -3%;
+      i{
+        top:50%;
+        position: relative;
+      }
+    }
+  }
+}
+

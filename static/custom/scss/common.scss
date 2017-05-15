@@ -124,19 +124,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: auto;
     width: 100%;
 }
-#not-home-cover {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png') $colorB no-repeat center top;
-  height: 61px;
-  clear:both;
-  h1 {
-    color: $colorA;
-    font-size: 2em;
-    font-weight: 500;
-    line-height: 36px;
-    margin-top: 10px;
-  }
 
-}
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -186,7 +174,7 @@ div.contextual-menu > div.dropdown {
 .zylk-bar-chart,
 .dvt-chart{
   padding:.5em .7em !important;
-  background: $backGraps !important;
+  background: transparent !important;
   height:auto;
 
   h3 {
@@ -588,7 +576,7 @@ p {
 .zylk-bar-chart > div.row > .header,
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
-  background-color: $backGraps;
+  background-color: transparent;
 }
 
 .cursor-pointer {
