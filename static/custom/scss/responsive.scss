@@ -235,20 +235,7 @@
   zylk-dashboard zylk-country-csp-panel {
     width: 100%;
   }
-  .boxEurope .scpPart1 .col-xs-4:nth-child(4),
-  .boxEurope .scpPart1 .col-xs-4:nth-child(5),
-  .boxEurope .scpPart1 .col-xs-4:nth-child(6) {
-      padding-top: 1em;
-      border-top: 1px solid #529fa2;
-      min-height: 6em;
-  }
 
-  #approaches-map-content div.grey.clearfix zylk-map{
-    overflow:hidden;
-  }
-  #approaches-map-content div.grey.clearfix zylk-map svg {
-    width: 145% !important;
-  }
   .modal-body {
     .logoGraphics{
       float: left;

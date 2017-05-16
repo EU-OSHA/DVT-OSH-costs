@@ -109,6 +109,7 @@ body {
   font-family: $font-body;
   font-size: 18px;
   color: #898989;
+  padding-top: 112px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -564,11 +565,6 @@ div.blockUIDefaultImg:before {
   }
 }
 
-
-#containerMenu.affix {
-  top:0;
-  border-bottom:1px solid $menu-item;
-}
 p {
   clear: both;
 }
