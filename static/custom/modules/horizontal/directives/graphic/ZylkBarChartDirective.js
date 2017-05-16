@@ -176,7 +176,7 @@ define(function (require) {
 
     function ZylkBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies) {
 
-            var _template= ''
+        var _template= ''
             + '<div class="col-md-12 dvt-chart zylk-bar-chart">'
             + '<div class="row">'
             + '<div class="header col-md-12 nopadding">'
@@ -270,6 +270,7 @@ define(function (require) {
                     scope.haveEnlarge = "true";
                 }
                 scope.isMaximized = !!attributes.isMaximized;
+                scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
 
