@@ -1,65 +1,19 @@
 /** fluid 100% to 1650 px **/
 @media only screen and (min-width : $ful1650)  {
-  .container.centered,
-  zylk-dashboard.container,
-  div#country-card-structure.container,
-  .additional-resources.container {
-      width: $ful1650;
-  }
-  zylk-dashboard zylk-country-csp-panel {
-    width:25%;
-    float: left;
-    -webkit-transition: width 1s; /* Safari */
-    transition: width 1s;
-  }
-  .radar > div[id^="zylk_radarChart"]{
-      width: 86%;
-      text-align: center;
-      margin-left:7%;
-  }
 
 }
 @media only screen and (max-width : $ful1650)  {
 
-  .container.centered,
-  zylk-dashboard.container,
-  div#country-card-structure.container,
-  .additional-resources.container {
-    padding: 0 !important;
-    width: 100%;
-    margin: 0;
-  }
-  zylk-dashboard zylk-country-csp-panel[country="Europe"] .main-country-card {
-      padding:10px 0 !important;
-  }
-  .country-card-bg .mapEU{
-    text-align:center;
-  }
 }
 
 @media only screen  and (min-width : 1280px) and (max-width : $ful1650)  {
-  zylk-dashboard zylk-country-csp-panel {
-    width:25%;
-    float: left;
-    -webkit-transition: width 1s; /* Safari */
-    transition: width 1s;
-  }
 
 }
 /** end fluid 100% to 1650 px **/
 
 
 @media screen and (min-width: 1200px) {
-  .main-indicator {
-    float: left;
-    position: relative;
-    min-height: 1px;
-  }
-  .dvt-modal .radar>div[id^=zylk_radarChart] {
-      width: 60%;
-      margin-left: 20%;
-      text-align: center;
-  }
+
 }
 
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
@@ -71,220 +25,47 @@
       left: 10%;
   }
 }
-@media only screen  and (min-width : 1200px) and (max-width : $ful1650)  {
-  .radar > div[id^="zylk_radarChart"]{
-    width: 110%;
-    text-align: center;
-    margin-left: -3%;
-  }
-}
-@media only screen  and (min-width : 1024px) and (max-width : 1200px)  {
-  .radar > div[id^="zylk_radarChart"]{
-      width: 70%;
-      text-align: center;
-      margin-left: 15%;
-  }
-  #osha-carousel {
-    margin-top:0;
-  }
-}
-
-@media only screen  and (min-width : 1024px) and (max-width : 1280px)  {
-
-}
-
-@media only screen  and (max-width : 1240px)  {
-
-}
-@media screen and (max-width: 1143px) {
-
-}
-@media screen and (max-width: 1024px) {
 
 
-  #referral-iniciatives {
-      padding: 2em 2em!important;
-  }
-  .blockPolicy {
-      border-bottom: 12px solid #f0f0f0;
-      border-left: 12px solid #f0f0f0;
-  }
-  .imagenPolicy {
-      padding: 0;
-      margin: 0;
-  }
-  .containerMini{
-    margin-left: 0em;
-  }
-  .grey {
-    border: 9px solid #FFF;
-    float: left;
-    width: 100%;
-  }
-
-  input[type=range] {
-      width: 90%;
-  }
-  .itemsSlider {
-      width: 100%;
-      margin: .6em 0 1em 0;
-  }
-  .labelShare{
-    display:none !important;
-  }
-
-  .story-combo-compared {
-    position: absolute;
-    padding: 0;
-    margin-top: -12px;
-  }
-  .main-indicator {
-      margin-top: 5em;
-  }
-
-  /**** COUNTRY SELECTION PANEL ******/
-
-  .boxEurope .country-card-bg{
-    height: auto;
-  }
-  .firstCompared{
-    label{
-      text-align: center;
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
+  #carouselHome {
+    .carousel-inner {
+      li.item {
+        width: 96% !important;
+        .carousel-chart{
+          width: 95% !important;
+        }
+      }
     }
   }
-
-  .dvt-chart.pyramid {
-      float: left;
-      width: 100%;
-      margin-bottom: 2.2em;
-      background: transparent !important;
-  }
-  .container.centered .mini-bloq {
-    width: 32.9%;
-    margin: 2px;
-    float: left;
-  }
 }
-
-
-/*responsive ipad*/
-@media only screen and (min-width : 800px) and (max-width : 1024px)  {
-
-
-}
-
-@media only screen and (min-width : 991px) and  (max-width:1074px){
-
-}
-
-/********** BREAK POINT BOOTSTRAP FOR COL-MD ********/
-@media (max-width: 991px){
-
-}
-
-@media only screen and (min-width : 768px) and  (max-width:990px){
-
-}
-
-
-@media only screen and (max-width : 800px){
-
-
-}
-
-@media only screen and (min-width : 768px) and (max-width :1023px){
-
-}
-
-
-
-
-@media only screen and (max-width : 768px){
-
-}
-
-@media only screen and (max-width : 767px) {
-
-}
-
-
-@media only screen and (min-width : 480px) and (max-width : 767px) {
-
-
-}
-
-
-
-@media only screen and (max-width : 667px) {
-
-
-  svg:not(:root) {
-    overflow: visible;
-    width: 100% !important;
-  }
-
-  .affix{
-    position: initial !important;
-  }
-  #csp-eu-panel.affix {
-    top: 0;
-    padding: 0!important;
-    border-bottom: none;
-    position: initial !important;
-  }
-  zylk-dashboard zylk-country-csp-panel {
-    width: 100%;
-  }
-
-  .modal-body {
-    .logoGraphics{
-      float: left;
-      margin-left: 25px;
-      margin-top: -71px;
-      display: block;
-      width: 120px;
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #carouselHome {
+    .carousel-inner {
+      li.item {
+        width: 100% !important;
+        .carousel-chart{
+          width: 95% !important;
+          margin: 0 !important;
+          padding: 15px !important;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+        }
+      }
     }
   }
-
-  .bloque {
-      margin: 0 0 1em;
-      padding: 0;
-  }
-  #section-challenges-content .bg-white,
-  #section-context-content .bg-white,
-  #section-stakeholders-content .bg-white {
-      -webkit-column-count: 1;
-      -moz-column-count: 1;
-      column-count: 1;
-  }
-  #section-grouping-content .grouping-bloq-countries {
-    margin: 3rem 0 2.5rem 0;
-    overflow: auto;
-  }
-  .containerMiniMaps .next, .containerMiniMaps .prev {
-    display: none;
-  }
-  .methodology div {
-      padding: 1em 1em;
-      width: 99%;
-      margin: 1em auto;
-  }
-  .glossary-term {
-    text-align: left;
-    width: 100%;
-    display: block;
-    border-radius: 5px 5px 0 0;
-  }
-  .glossary-def {
-    width: 100%;
-    display: block;
-  }
-
 }
 
 
 
-/* only for IE11 */
+
+
+
+
+
+/* only for IE11
 @media screen and (min-width :1440px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :1440px){
  #approaches-map-content div.grey.clearfix zylk-map svg{
   width:80% !important;
@@ -294,12 +75,12 @@
  }
 }
 @media screen and (min-width :1281px) and (max-width :1439px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :1281px) and (max-width :1439px){
- #approaches-map-content div.grey.clearfix zylk-map svg{
-  width:100% !important;
-  left:0 !important;
-  margin-left: 0 !important;
-  height:690px !important;
- }
+   #approaches-map-content div.grey.clearfix zylk-map svg{
+    width:100% !important;
+    left:0 !important;
+    margin-left: 0 !important;
+    height:690px !important;
+   }
 }
 @media screen and (min-width :1121px) and (max-width :1280px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :1121px) and (max-width :1280px){
  #approaches-map-content div.grey.clearfix zylk-map svg{
@@ -334,7 +115,7 @@
     height:550px !important;
   }
 }
- @media screen and (min-width :801px) and (max-width :1024px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :801px) and (max-width :1024px){
+@media screen and (min-width :801px) and (max-width :1024px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :801px) and (max-width :1024px){
   #approaches-map-content div.grey.clearfix zylk-map svg{
     width:100% !important;
     left:0 !important;
@@ -346,11 +127,7 @@
     height:800px !important;
 
   }
-  .modal-body .dvt-chart.radar svg{
-    padding-left:8%;
-    height:550px !important;
-  }
- }
+
  @media screen and (min-width :768px) and (max-width :800px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :768px) and (max-width :800px){
     #approaches-map-content div.grey.clearfix zylk-map svg{
     width:80% !important;
@@ -400,15 +177,16 @@
     height:450px !important;
   }
  }
-
+*/
 /* ONLY FOR TABLETS */
+/*
 @media only screen and (max-device-width : 1024px) {
   .a2a_button_print{
     display: none;
   }
   .open>.dropdown-menu li:nth-child(2) {
-      /*display: none !important;*/
+
   }
 
 }
-
+*/
