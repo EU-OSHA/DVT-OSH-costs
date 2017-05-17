@@ -136,6 +136,30 @@
   }
 }
 
+.cdfNotification{
+  background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/error_processing.png) no-repeat scroll 5% 12px;
+  min-height: 11em !important;
+  .cdfNotificationBody{
+    .cdfNotificationTitle{
+      color: #FF8000;
+      font-family: Open Sans !important;
+      font-size: 16px !important;
+      /*
+      &:before{
+        content: "\f071";
+        display: inline-block;
+        font: normal normal normal 24px/1 FontAwesome !important;
+        margin-right: 10px;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscal
+      }
+      */
+    }
+  }
+
+}
 
 
 
