@@ -94,10 +94,10 @@ define(function (require) {
                             };
                             $scope.parameters.chartDefinition.plots[0].valuesFont = '20px "sans-serif"';
 
-                            $scope.parameters.chartDefinition.plots[1].label_left = function () {
+                            /*$scope.parameters.chartDefinition.plots[1].label_left = function () {
                                 return this.delegate() * 0.90;
                             };
-                            $scope.parameters.chartDefinition.plots[1].valuesFont = '20px "sans-serif"';
+                            $scope.parameters.chartDefinition.plots[1].valuesFont = '20px "sans-serif"';*/
                         }
 
                         $log.debug("Is staked:.................................." + $scope.parameters.chartDefinition.stacked);

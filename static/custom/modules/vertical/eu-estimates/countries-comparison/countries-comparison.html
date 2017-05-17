@@ -1,14 +1,6 @@
 <!-- countries-comparison.html -->
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison" style="overflow:auto">
 
-    <!--<form>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-16" data-ng-checked="true"><span>Years of life lost</span>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-17"><span>Years lived with disability</span>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-18"><span>Total years lost</span>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-19"><span>Total workforce loss (%)</span>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-20"><span>Work-related illnesses</span>
-        <input type="radio" name="checked" data-ng-model="checked" value="checked-21"><span>Occupational injuries</span>
-    </form>-->
     <div class="container-full osha-eu-estimates-wrapper ">
         <div class="osha-eu-estimates container">
             <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
@@ -35,16 +27,15 @@
                 </ol>
                 <!-- Wrapper for slides -->
                 <ul class="carousel-inner">
-                    <li class="item active">
+                    <li class="item active" data-name="years-life-lost">
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
-                                ortho-axis-title="Measure"
                                 params="[['pIndicator','16']]"
                                 color-role="series"
-                                title="TEST BAR CHART" id="16"
+                                title="Years of Life Lost" id="16"
                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 plots="stories[0].plots"
                         ></zylk-bar-chart>
@@ -54,16 +45,15 @@
                             </p>
                         </div>
                     </li>
-                    <li class="item">
+                    <li class="item"  data-name="years-lived-disability">
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
-                                ortho-axis-title="Measure"
                                 params="[['pIndicator','17']]"
                                 color-role="series"
-                                title="TEST BAR CHART" id="17"
+                                title="Years Lived with Disability" id="17"
                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 plots="stories[0].plots"
                         ></zylk-bar-chart>
@@ -73,16 +63,15 @@
                             </p>
                         </div>
                     </li>
-                    <li class="item">
+                    <li class="item" data-name="total-year-lost">
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
-                                ortho-axis-title="Measure"
                                 params="[['pIndicator','18']]"
                                 color-role="series"
-                                title="TEST BAR CHART" id="18"
+                                title="Total Year Lost" id="18"
                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 plots="stories[0].plots"
                         ></zylk-bar-chart>
@@ -92,16 +81,15 @@
                             </p>
                         </div>
                     </li>
-                    <li class="item">
+                    <li class="item" data-name="total-workforce-lost">
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
-                                ortho-axis-title="Measure"
                                 params="[['pIndicator','19']]"
                                 color-role="series"
-                                title="TEST BAR CHART" id="19"
+                                title="Total Workforce Lost" id="19"
                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 plots="stories[0].plots"
                         ></zylk-bar-chart>
@@ -111,16 +99,15 @@
                             </p>
                         </div>
                     </li>
-                    <li class="item">
+                    <li class="item" data-name="work-related-illnesses">
                         <zylk-bar-chart
                             data-ng-cloak
                             query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
-                            ortho-axis-title="Measure"
                             params="[['pIndicator','20']]"
                             color-role="series"
-                            title="TEST BAR CHART" id="20"
+                            title="Work Related Illnesses" id="20"
                             long-title="YLL per 100.000 workers in EU28 by country"
                             plots="stories[0].plots"
                         ></zylk-bar-chart>
@@ -130,16 +117,15 @@
                             </p>
                         </div>
                     </li>
-                    <li class="item">
+                    <li class="item" data-name="occupational-injuries">
                         <zylk-bar-chart
                             data-ng-cloak
                             query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
-                            ortho-axis-title="Measure"
                             params="[['pIndicator','21']]"
                             color-role="series"
-                            title="TEST BAR CHART" id="21"
+                            title="Occupational Injuries" id="21"
                             long-title="YLL per 100.000 workers in EU28 by country"
                             plots="stories[0].plots"
                         ></zylk-bar-chart>

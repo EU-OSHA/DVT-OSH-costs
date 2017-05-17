@@ -24,6 +24,24 @@ define(function (require) {
 
         // Literals / i18n
         $scope.i18n = require('json!horizontal/model/literals');
+        var href = window.location.href;
+
+        // Some graphic is set
+        if (href.indexOf('countries-comparison#') > -1) {
+            var selected = href.substr(href.indexOf('countries-comparison#'));
+            selected = selected.replace('countries-comparison#', '');
+
+            href = href.replace(href.substr(href.indexOf('countries-comparison#')),'countries-comparison');
+
+            var items = jQuery('#carouselCountries ul.carousel-inner li.item');
+
+            for (var i = 0; i < items.length; i++) {
+                if (jQuery(items[i]).attr("data-name") == selected) {
+                    jQuery('#carouselCountries').carousel(i).carousel('pause');
+                    break;
+                }
+            }
+        }
 
         $scope.dashboard = {};
         $scope.dashboard = {
@@ -38,12 +56,9 @@ define(function (require) {
         $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
 
         angular.element($window).bind('resize', function() {
-            $scope.graphWidth = jQuery('li.item.active').width();
-
-            $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
-
-            $scope.$apply();
             $state.reload();
+
+            $scope.number = 1;
         });
 
         $scope.stories = [
@@ -53,7 +68,11 @@ define(function (require) {
             }
         ];
 
-        $scope.checked = "checked-16";
+        jQuery('#carouselCountries').on('slid.bs.carousel', function () {
+            // Update location based on slide
+            var item = jQuery(this).find('.item.active').data('name');
+            if (item) window.location.href = href + '#' + item;
+        })
 
         $scope.status = 'ready';
     }
