@@ -220,181 +220,6 @@
     </step>
 
   <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt_ilo</connection>
-    <sql>SELECT&#xd;&#xa;  INDICATOR_ID&#xd;&#xa;, SPLIT_1&#xd;&#xa;, SPLIT_2&#xd;&#xa;, SPLIT_3&#xd;&#xa;, STATUS&#xd;&#xa;, Bulgaria&#xd;&#xa;, Croatia&#xd;&#xa;, &#x60;Czech Republic&#x60;&#xd;&#xa;, Estonia&#xd;&#xa;, Hungary&#xd;&#xa;, Latvia&#xd;&#xa;, Lithuania&#xd;&#xa;, Poland&#xd;&#xa;, Romania&#xd;&#xa;, Slovakia&#xd;&#xa;, Austria&#xd;&#xa;, Belgium&#xd;&#xa;, Cyprus&#xd;&#xa;, Denmark&#xd;&#xa;, Finland&#xd;&#xa;, France&#xd;&#xa;, Germany&#xd;&#xa;, Greece&#xd;&#xa;, Ireland&#xd;&#xa;, Italy&#xd;&#xa;, Luxembourg&#xd;&#xa;, Malta&#xd;&#xa;, Netherlands&#xd;&#xa;, Portugal&#xd;&#xa;, Slovenia&#xd;&#xa;, Spain&#xd;&#xa;, Sweden&#xd;&#xa;, &#x60;United Kingdom&#x60;&#xd;&#xa;, Iceland&#xd;&#xa;, Norway&#xd;&#xa;FROM facts_figures&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt_ilo</connection>
-    <schema/>
-    <table>facts_figures_norm</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Region Normalizer</name>
-    <type>Normaliser</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-   <typefield>REGION</typefield>
-    <fields>      <field>        <name>HIGH</name>
-        <value>HIGH</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>AFRO</name>
-        <value>AFRO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>AMRO</name>
-        <value>AMRO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>EMRO</name>
-        <value>EMRO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>EURO</name>
-        <value>EURO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>SEARO</name>
-        <value>SEARO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>WPRO</name>
-        <value>WPRO</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>EU28</name>
-        <value>EU28</value>
-        <norm>MEASURE</norm>
-        </field>      <field>        <name>GLOBAL_ESTIMATE</name>
-        <value>GLOBAL_ESTIMATE</value>
-        <norm>MEASURE</norm>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table input 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt_ilo</connection>
-    <sql>SELECT&#xd;&#xa;  INDICATOR_ID&#xd;&#xa;, SPLIT_1&#xd;&#xa;, SPLIT_2&#xd;&#xa;, SPLIT_3&#xd;&#xa;, STATUS&#xd;&#xa;, HIGH&#xd;&#xa;, AFRO&#xd;&#xa;, AMRO&#xd;&#xa;, EMRO&#xd;&#xa;, EURO&#xd;&#xa;, SEARO&#xd;&#xa;, WPRO&#xd;&#xa;, EU28&#xd;&#xa;, GLOBAL_ESTIMATE&#xd;&#xa;FROM facts_figures&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table output 2</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt_ilo</connection>
-    <schema/>
-    <table>facts_figures_norm</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Filter1&#x3a; Measure not null</name>
     <type>FilterRows</type>
     <description/>
@@ -447,6 +272,181 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>480</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Region Normalizer</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <typefield>REGION</typefield>
+    <fields>      <field>        <name>HIGH</name>
+        <value>HIGH</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>AFRO</name>
+        <value>AFRO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>AMRO</name>
+        <value>AMRO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>EMRO</name>
+        <value>EMRO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>EURO</name>
+        <value>EURO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>SEARO</name>
+        <value>SEARO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>WPRO</name>
+        <value>WPRO</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>EU28</name>
+        <value>EU28</value>
+        <norm>MEASURE</norm>
+        </field>      <field>        <name>GLOBAL_ESTIMATE</name>
+        <value>GLOBAL_ESTIMATE</value>
+        <norm>MEASURE</norm>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>336</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt_ilo</connection>
+    <sql>SELECT&#xd;&#xa;  INDICATOR_ID&#xd;&#xa;, SPLIT_1&#xd;&#xa;, SPLIT_2&#xd;&#xa;, SPLIT_3&#xd;&#xa;, STATUS&#xd;&#xa;, Bulgaria&#xd;&#xa;, Croatia&#xd;&#xa;, &#x60;Czech Republic&#x60;&#xd;&#xa;, Estonia&#xd;&#xa;, Hungary&#xd;&#xa;, Latvia&#xd;&#xa;, Lithuania&#xd;&#xa;, Poland&#xd;&#xa;, Romania&#xd;&#xa;, Slovakia&#xd;&#xa;, Austria&#xd;&#xa;, Belgium&#xd;&#xa;, Cyprus&#xd;&#xa;, Denmark&#xd;&#xa;, Finland&#xd;&#xa;, France&#xd;&#xa;, Germany&#xd;&#xa;, Greece&#xd;&#xa;, Ireland&#xd;&#xa;, Italy&#xd;&#xa;, Luxembourg&#xd;&#xa;, Malta&#xd;&#xa;, Netherlands&#xd;&#xa;, Portugal&#xd;&#xa;, Slovenia&#xd;&#xa;, Spain&#xd;&#xa;, Sweden&#xd;&#xa;, &#x60;United Kingdom&#x60;&#xd;&#xa;, Iceland&#xd;&#xa;, Norway&#xd;&#xa;FROM fact_figures&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>192</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt_ilo</connection>
+    <sql>SELECT&#xd;&#xa;  INDICATOR_ID&#xd;&#xa;, SPLIT_1&#xd;&#xa;, SPLIT_2&#xd;&#xa;, SPLIT_3&#xd;&#xa;, STATUS&#xd;&#xa;, HIGH&#xd;&#xa;, AFRO&#xd;&#xa;, AMRO&#xd;&#xa;, EMRO&#xd;&#xa;, EURO&#xd;&#xa;, SEARO&#xd;&#xa;, WPRO&#xd;&#xa;, EU28&#xd;&#xa;, GLOBAL_ESTIMATE&#xd;&#xa;FROM fact_figures&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>192</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt_ilo</connection>
+    <schema/>
+    <table>fact_figures_norm</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>624</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt_ilo</connection>
+    <schema/>
+    <table>fact_figures_norm</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>624</xloc>
       <yloc>416</yloc>
       <draw>Y</draw>
       </GUI>

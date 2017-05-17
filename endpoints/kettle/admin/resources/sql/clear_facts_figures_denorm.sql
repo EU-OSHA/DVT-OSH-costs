@@ -1,2 +1,2 @@
-ALTER TABLE facts_figures RENAME TO facts_figures_denorm;
-ALTER TABLE facts_figures_norm RENAME TO facts_figures;
+ALTER TABLE fact_figures RENAME TO fact_figures_denorm;
+ALTER TABLE fact_figures_norm RENAME TO fact_figures;

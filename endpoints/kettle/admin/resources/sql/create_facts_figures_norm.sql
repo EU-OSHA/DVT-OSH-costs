@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `facts_figures_norm`;
-CREATE TABLE IF NOT EXISTS `facts_figures_norm` (
+DROP TABLE IF EXISTS `fact_figures_norm`;
+CREATE TABLE IF NOT EXISTS `fact_figures_norm` (
   `INDICATOR_ID` smallint(6) DEFAULT NULL,
   `SPLIT_1` varchar(255) DEFAULT NULL,
   `SPLIT_2` varchar(255) DEFAULT NULL,

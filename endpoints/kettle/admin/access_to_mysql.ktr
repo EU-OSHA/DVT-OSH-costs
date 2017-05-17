@@ -111,9 +111,8 @@
   <hop> <from>glossary_in</from><to>glossary_out</to><enabled>Y</enabled> </hop>
   <hop> <from>charts_in</from><to>charts_out</to><enabled>Y</enabled> </hop>
   <hop> <from>indicators_in</from><to>indicators_out</to><enabled>Y</enabled> </hop>
-  <hop> <from>literals_in</from><to>literals_out</to><enabled>Y</enabled> </hop>
   <hop> <from>regions_countries_in</from><to>regions_countries_out</to><enabled>Y</enabled> </hop>
-  <hop> <from>facts_figures_in</from><to>facts_figures_out</to><enabled>Y</enabled> </hop>
+  <hop> <from>fact_figures_in</from><to>fact_figures_out</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>charts_in</name>
@@ -174,7 +173,7 @@
       <field>
         <name>RELATED_CHARTS</name>
         <attribut>RELATED_CHARTS</attribut>
-        <type>String</type>
+        <type>Number</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -188,6 +187,19 @@
         <name>INDICATOR_ID</name>
         <attribut>INDICATOR_ID</attribut>
         <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>VISUALISED</name>
+        <attribut>VISUALISED</attribut>
+        <type>Boolean</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -227,19 +239,6 @@
         <name>CARROUSEL_TITLE</name>
         <attribut>CARROUSEL_TITLE</attribut>
         <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>VISUALISED</name>
-        <attribut>VISUALISED</attribut>
-        <type>Boolean</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -291,19 +290,6 @@
       <field>
         <name>Y_AXIS</name>
         <attribut>Y_AXIS</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>X_AXIS_&#x20ac;</name>
-        <attribut>X_AXIS_&#x20ac;</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -423,10 +409,6 @@
           <stream_name>Y_AXIS</stream_name>
         </field>
         <field>
-          <column_name>X_AXIS_EURO</column_name>
-          <stream_name>X_AXIS_&#x20ac;</stream_name>
-        </field>
-        <field>
           <column_name>Y_AXIS_EURO</column_name>
           <stream_name>Y_AXIS_&#x20ac;</stream_name>
         </field>
@@ -440,7 +422,7 @@
     </step>
 
   <step>
-    <name>facts_figures_in</name>
+    <name>fact_figures_in</name>
     <type>AccessInput</type>
     <description/>
     <distribute>N</distribute>
@@ -460,7 +442,7 @@
     <filefield>N</filefield>
     <rownum_field/>
     <resetrownumber>N</resetrownumber>
-    <table_name>FACTS_FIGURES</table_name>
+    <table_name>FACT_FIGURES</table_name>
     <file>
       <name>&#x24;&#x7b;access_file&#x7d;</name>
       <filemask/>
@@ -537,6 +519,19 @@
       <field>
         <name>GLOBAL_ESTIMATE</name>
         <attribut>GLOBAL_ESTIMATE</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EU28</name>
+        <attribut>EU28</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -628,19 +623,6 @@
       <field>
         <name>WPRO</name>
         <attribut>WPRO</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>EU28</name>
-        <attribut>EU28</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -1060,7 +1042,7 @@
     </step>
 
   <step>
-    <name>facts_figures_out</name>
+    <name>fact_figures_out</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1072,7 +1054,7 @@
            </partitioning>
     <connection>osha_dvt_ilo</connection>
     <schema/>
-    <table>facts_figures</table>
+    <table>fact_figures</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1361,222 +1343,6 @@
     </step>
 
   <step>
-    <name>literals_in</name>
-    <type>AccessInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <include>N</include>
-    <include_field/>
-    <tablename>N</tablename>
-    <filename_Field/>
-    <tablename_field/>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <resetrownumber>N</resetrownumber>
-    <table_name>LITERALS</table_name>
-    <file>
-      <name>&#x24;&#x7b;access_file&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>LITERALS_ID</name>
-        <attribut>LITERALS_ID</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>LITERAL</name>
-        <attribut>LITERAL</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>TITLES</name>
-        <attribut>TITLES</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>HOMEPAGE</name>
-        <attribut>HOMEPAGE</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>WHO REGIONS COMPARISON</name>
-        <attribut>WHO REGIONS COMPARISON</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>EU28 COMPARISON</name>
-        <attribut>EU28 COMPARISON</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>WHO REGIONS ILLNESSES</name>
-        <attribut>WHO REGIONS ILLNESSES</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>EU28 ILLNESSES</name>
-        <attribut>EU28 ILLNESSES</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>GLOSSARY</name>
-        <attribut>GLOSSARY</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>FOOTER</name>
-        <attribut>FOOTER</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>literals_out</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt_ilo</connection>
-    <schema/>
-    <table>literals</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>regions_countries_in</name>
     <type>AccessInput</type>
     <description/>
@@ -1597,7 +1363,7 @@
     <filefield>N</filefield>
     <rownum_field/>
     <resetrownumber>N</resetrownumber>
-    <table_name>WHO REGIONS-COUNTRIES</table_name>
+    <table_name>WHO_REGIONS_COUNTRIES</table_name>
     <file>
       <name>&#x24;&#x7b;access_file&#x7d;</name>
       <filemask/>
@@ -1607,9 +1373,9 @@
     </file>
     <fields>
       <field>
-        <name>Id</name>
-        <attribut>Id</attribut>
-        <type>Integer</type>
+        <name>ID</name>
+        <attribut>ID</attribut>
+        <type>Number</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -1658,7 +1424,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>64</xloc>
-      <yloc>432</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1696,7 +1462,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>224</xloc>
-      <yloc>432</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
