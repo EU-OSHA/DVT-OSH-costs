@@ -258,6 +258,28 @@ define(function (require) {
 
         /**
          * @ngdoc method
+         * @name dvt.configModule.configService#getIloDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getIloDataPath:function() {
+            return dataPath + configuration.paths.data.cda.ilo;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getIloDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getIloCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.ilo;
+        },
+
+        /**
+         * @ngdoc method
          * @name dvt.configModule.configService#getDataPilotPath
          * @param {string} carl is awesome
          * @methodOf dvt.configModule.configService

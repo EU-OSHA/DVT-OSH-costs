@@ -168,7 +168,7 @@
     <name>Modified Java Script Value</name>
     <type>ScriptValueMod</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -179,7 +179,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var json &#x3d; &#x7b;&#x7d;&#x3b;&#xd;&#xa;&#xd;&#xa;json&#x5b;LITERAL_ID&#x5d; &#x3d; LITERAL&#x3b;&#xd;&#xa;&#xd;&#xa;var jsonString &#x3d; JSON.stringify&#x28;json&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var fileStart &#x3d; &#x27;&#x7b;&#x27;&#x3b;&#xd;&#xa;var fileEnd &#x3d; &#x27;&#x7d;&#x27;&#x3b;</jsScript_script>
+        <jsScript_script>var json &#x3d; &#x7b;&#x7d;&#x3b;&#xd;&#xa;&#xd;&#xa;var key &#x3d; &#x27;L&#x27; &#x2b; LITERAL_ID&#xd;&#xa;&#xd;&#xa;json&#x5b;key&#x5d; &#x3d; LITERAL&#x3b;&#xd;&#xa;&#xd;&#xa;var jsonString &#x3d; JSON.stringify&#x28;json&#x29;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>jsonString</name>
         <rename>jsonString</rename>
         <type>String</type>

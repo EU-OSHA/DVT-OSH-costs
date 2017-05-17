@@ -100,7 +100,9 @@
         "images": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/",
         "data": {
             "pentaho-path": "/plugin/cda/api/doQuery?&path=osha-dvt-ilo/dashboards/",
+            "cda-path": "osha-dvt-ilo/dashboards/",
             "cda": {
+                "ilo": "ilodash.cda",
                 "datapilot": "datapilot.cda",
                 "approach": "approachdata.cda",
                 "policies": "policiesdata.cda",

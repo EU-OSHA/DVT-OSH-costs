@@ -15,22 +15,22 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators container eu-estimates-indicators">
                     <li data-target="#carouselCountries" data-slide-to="0" class="active">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Years of life lost</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L62"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="1">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Years lived with disability</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L63"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="2">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Total year lost</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L64"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="3">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Total workforce lost(%)</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L65"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="4">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Work-related illnesses</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L66"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="5">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span>Occupational injuries</span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L67"></span>
                     </li>
                 </ol>
                 <!-- Wrapper for slides -->
@@ -38,7 +38,7 @@
                     <li class="item active">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                                query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
                                 ortho-axis-title="Measure"
@@ -57,7 +57,7 @@
                     <li class="item">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                                query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
                                 ortho-axis-title="Measure"
@@ -76,7 +76,7 @@
                     <li class="item">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                                query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
                                 ortho-axis-title="Measure"
@@ -95,7 +95,7 @@
                     <li class="item">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                                query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
                                 ortho-axis-title="Measure"
@@ -114,7 +114,7 @@
                     <li class="item">
                         <zylk-bar-chart
                             data-ng-cloak
-                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
                             ortho-axis-title="Measure"
@@ -133,7 +133,7 @@
                     <li class="item">
                         <zylk-bar-chart
                             data-ng-cloak
-                            query="getIndicatorData" cda="osha-dvt-ilo/dashboards/ilodash.cda"
+                            query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
                             ortho-axis-title="Measure"

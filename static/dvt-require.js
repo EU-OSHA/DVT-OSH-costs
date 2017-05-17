@@ -114,6 +114,9 @@
     requirePaths['horizontal/graphic/services/maximizeService'] = horizontalModules + '/directives/graphic/services/MaximizeService' + suffix;
 
     /* MODEL */
+    /* LITERALS */
+    requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
+
     /* COLORS */
     requirePaths['horizontal/model/colors'] = horizontalModules + '/model/Colors' + suffix + '.json';
 
@@ -159,12 +162,10 @@
 
     /* COUNTRIES COMPARISON */
     requirePaths['vertical/countries-comparison/CountriesComparisonController'] = verticalModules + '/eu-estimates/countries-comparison/CountriesComparisonController' + suffix;
-    requirePaths['vertical/countries-comparison/i18n'] = verticalModules + '/eu-estimates/countries-comparison/countries-comparison-i18n' + suffix + '.json';
     requirePaths['vertical/countries-comparison/services/CountriesComparisonService'] = verticalModules + '/eu-estimates/countries-comparison/services/CountriesComparisonService' + suffix;
 
     /* EU ANALYSIS ILLNESS */
     requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;
-    requirePaths['vertical/eu-analysis-illness/i18n'] = verticalModules + '/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n' + suffix + '.json';
 
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;

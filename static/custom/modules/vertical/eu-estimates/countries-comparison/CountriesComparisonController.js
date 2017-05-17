@@ -19,6 +19,12 @@ define(function (require) {
     function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, dvtUtils, dataService, plotsProvider, $document, configService) {
         $scope.title ="Countries Comparison";
 
+        // CDA
+        $scope.cda =  configService.getIloCda();
+
+        // Literals / i18n
+        $scope.i18n = require('json!horizontal/model/literals');
+
         $scope.dashboard = {};
         $scope.dashboard = {
             parameters: {
