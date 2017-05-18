@@ -1,0 +1,141 @@
+.osha-analysis-illnesses{
+  .chart-analysis-illnesses{
+    position: relative;
+    background: #FFF!important;
+    padding: 20px !important;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    margin: 40px auto;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
+    -moz-box-shadow: 0px 1px 2px 1px #cccccc;
+    box-shadow: 0px 1px 2px 1px #cccccc;
+    h2{
+      text-align: center;
+      width: 100%;
+      font-size: 26px;
+      color:#00A0A4 ;
+    }
+    .chart-wrapper{
+      .zylk-chart{
+
+      }
+      ul.legend-list {
+        list-style-type: none;
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        position: relative;
+        transform: translateY(80%);
+        -webkit-transform: translateY(80%);
+        -ms-transform: translateY(80%);
+        li{
+          margin: 0px 0 10px;
+          .legend-data{
+            width: 40px;
+            height: 25px;
+            margin-right: 4px;
+            display: inline-block;
+            text-align: center;
+            color: #FFF;
+            font-family: "OpenSans-Bold";
+            font-size: 14px;
+            padding-top: 2px;
+          }
+          &:nth-child(1) .legend-data{
+            background:#0FA9A9;
+          }
+          &:nth-child(2) .legend-data{
+            background:#F2C466;
+          }
+          &:nth-child(3) .legend-data{
+            background:#DB3081;
+          }
+          &:nth-child(4) .legend-data{
+            background:#575759;
+          }
+          &:nth-child(5) .legend-data{
+            background:#C9E3E3;
+          }
+          .legend-name{
+
+          }
+        }
+      }
+      .chart-description{
+        > p{
+          position: relative;
+          transform: translateY(10%);
+          -webkit-transform: translateY(10%);
+          -ms-transform: translateY(10%);
+        }
+      }
+    }
+  }
+
+
+  .countries-analysis-by-illnesses{
+    margin: 40px auto;
+    .country-analysis-by-illnesses{
+      .country-wrapper{
+        position: relative;
+        background: #FFF!important;
+        padding: 20px !important;
+        border: 1px solid #EAEAEA;
+        border-radius: 8px;
+        margin: 15px auto;
+        overflow: hidden;
+        -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
+        -moz-box-shadow: 0px 1px 2px 1px #cccccc;
+        box-shadow: 0px 1px 2px 1px #cccccc;
+        h3{
+          margin: 0px;
+          font-size: 20px;
+          text-align: center;
+        }
+        ul.legend-list {
+          list-style-type: none;
+          position: relative;
+          padding:0;
+          li{
+            margin: 0px 0 10px;
+            .legend-data{
+              width: 40px;
+              height: 25px;
+              margin-right: 4px;
+              display: inline-block;
+              text-align: center;
+              color: #FFF;
+              font-family: "OpenSans-Bold";
+              font-size: 14px;
+              padding-top: 2px;
+            }
+            &:nth-child(1) .legend-data{
+              background:#0FA9A9;
+            }
+            &:nth-child(2) .legend-data{
+              background:#F2C466;
+            }
+            &:nth-child(3) .legend-data{
+              background:#DB3081;
+            }
+            &:nth-child(4) .legend-data{
+              background:#575759;
+            }
+            &:nth-child(5) .legend-data{
+              background:#C9E3E3;
+            }
+            .legend-name{
+
+            }
+          }
+        }
+      }
+    }
+    .see-more {
+      clear: both;
+      float: left;
+      width: 100%;
+    }
+  }
+}

@@ -1,7 +1,9 @@
 .ilo-container-footer{
   .logos{
-    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-logos.png') #F0F0F0 no-repeat center top;
+    //background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-logos.png') #F0F0F0 no-repeat center top;
     height: 138px;
+    text-align: center;
+    background:#F0F0F0;
   }
   .footer-logotypes{
     display: none;
