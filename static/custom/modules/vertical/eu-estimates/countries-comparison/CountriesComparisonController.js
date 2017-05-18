@@ -52,7 +52,7 @@ define(function (require) {
             }
         };
 
-        $scope.graphWidth = jQuery('li.item.active').width();
+        $scope.graphWidth = jQuery('li.item.active').width() - 30;
 
         $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
 
