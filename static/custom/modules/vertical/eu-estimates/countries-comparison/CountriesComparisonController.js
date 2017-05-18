@@ -23,7 +23,8 @@ define(function (require) {
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
-        $scope.i18n = require('json!horizontal/model/literals');
+        $scope.i18n = configService.getLiterals();
+
         var href = window.location.href;
 
         // Some graphic is set

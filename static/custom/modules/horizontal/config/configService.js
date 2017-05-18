@@ -21,6 +21,7 @@ define(function (require) {
     var horizontalPath = pentahoInstance + configuration.paths['directive-route'] + "/modules/horizontal/";
     var horizontalPathDiretive = horizontalPath + "directives/";
 
+    var i18n = require('json!horizontal/model/literals');
 
     /**
      HTMLElement.prototype.click Click event firefox override to map correct click event.
@@ -388,6 +389,21 @@ define(function (require) {
             return dataPath + configuration.paths.data.cda.glossary;
         },
 
+        // ----------------------------------
+        //  literals - i18n
+        // ----------------------------------
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getLiterals
+         * @param {string} carl is awesome
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getLiterals: function () {
+            return i18n;
+        },
 
         // ----------------------------------
         //  piwik
