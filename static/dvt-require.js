@@ -154,7 +154,6 @@
     /* HOME */
     requirePaths['vertical/home/home-module'] = verticalModules + '/home/home-module' + suffix;
     requirePaths['vertical/home/HomeController'] = verticalModules + '/home/HomeController' + suffix;
-    requirePaths['vertical/home/range'] = verticalModules + '/home/directives/ZylkRangeDirective' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
     /* EU ESTIMATES */

@@ -28,9 +28,7 @@ define(function (require) {
                 }
             }
         });
-    });
-
-    module.directive('zylkRange', require('vertical/home/range'));
+    });    
     
     return module;
 });

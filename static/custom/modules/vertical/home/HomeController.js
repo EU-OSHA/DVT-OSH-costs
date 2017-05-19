@@ -13,40 +13,28 @@ define(function (require) {
     
     function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log) {
 
-        $scope.dashboard = {
-            parameters: {
-                pYears: "2015"
-            }
-        };
     
-        var i18n = require('json!vertical/home/i18n');
+        // Literals / i18n
+        var i18n = configService.getLiterals();
         $scope.i18n = i18n;
+        var i18n_home = require('json!vertical/home/i18n');
         
         $scope.goto = function (estado) {
             $state.go(estado, {});
         };
     
+        // Carrousel slides
         $scope.slides = [
-            {text: i18n.slider1.text, linkText: 'Source: '+i18n.slider1.linkText, link: i18n.slider1.link, alt: i18n.slider1.alt, image: configService.getImagesPath()+ '/slider/slider1.png'},
-            {text: i18n.slider2.text, linkText: 'Source: '+i18n.slider2.linkText , link: i18n.slider2.link, alt: i18n.slider2.alt, image: configService.getImagesPath()+ '/slider/slider2.png'},
-            {text: i18n.slider3.text, linkText: 'Source: '+i18n.slider3.linkText, link: i18n.slider3.link, alt: i18n.slider3.alt, image: configService.getImagesPath()+ '/slider/slider3.png'},
-            {text: i18n.slider4.text, linkText: 'Source: '+i18n.slider4.linkText, link: i18n.slider4.link, alt: i18n.slider4.alt, image: configService.getImagesPath()+ '/slider/slider8.png'},
-            {text: i18n.slider5.text, linkText: 'Source: '+i18n.slider5.linkText, link: i18n.slider5.link, alt: i18n.slider5.alt, image: configService.getImagesPath()+ '/slider/slider9.png'}
+            {text: i18n[i18n_home.slider1.text], image: configService.getImagesPath()+ i18n_home.slider1.image},
+            {text: i18n[i18n_home.slider2.text], image: configService.getImagesPath()+ i18n_home.slider2.image},
+            {text: i18n[i18n_home.slider3.text], image: configService.getImagesPath()+ i18n_home.slider3.image}
         ];
+
+        // Charts
+        $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
+        $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], message: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
     
-        $scope.pyramid = {
-            colors : [ dvtUtils.getColorCountry(22), dvtUtils.getColorCountry(12)],
-            calculations: undefined,
-            plots: undefined,
-            dimensions: {
-                series:{
-                    format:{
-                        mask: '#.0'
-                    }
-                }
-            }
-        };
-        $scope.status = 'ready';
+       $scope.status = 'ready';
     }
     
     controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log'];

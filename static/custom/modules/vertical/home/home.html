@@ -2,41 +2,31 @@
 <zylk-dashboard promises="promises" parameters="dashboard.parameters">
 <div class="page-content">
 
-
-		<!--IN CONSTRUCTION HOME-->
+		<!--HOME-->
 		<section class="section-carrousel">
 			<div class="ilo-container-carrousel container">
 				<div id="carouselHome" class="carousel-home carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
-						<li data-target="#carouselHome" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselHome" data-slide-to="1"></li>
-						<li data-target="#carouselHome" data-slide-to="2"></li>
+						<li ng-repeat="slide in slides" data-target="#carouselHome" data-slide-to="{{$index}}" ng-class="{'active': $index == 0 }"></li>
 					</ol>
 					<!-- Wrapper for slides -->
 					<ul class="carousel-inner">
-						<li class="item active">
-							<div class="carousel-chart"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-carrousel.png" alt="Chart"></div>
-							<p class="carousel-note">* This cost is calculated on the Years of life lost (YLL) and Years Live with disability (YLD)</p>
+
+						<li ng-repeat="slide in slides" class="item" ng-class="{'active': $index == 0 }">
+							<div class="carousel-chart"><img src="{{slide.image}}" alt="{{slide.alt}}"></div>
+							<p class="carousel-note" data-ng-bind-html="::slide.text"></p>
 						</li>
 
-						<li class="item">
-							<div class="carousel-chart"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chicago.jpg" alt="Chicago"></div>
-							<p class="carousel-note">* This cost is calculated on the Years of life lost (YLL) and Years Live with disability (YLD)</p>
-						</li>
-						<li class="item">
-							<div class="carousel-chart"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/ny.jpg" alt="New york"></div>
-							<p class="carousel-note">* This cost is calculated on the Years of life lost (YLL) and Years Live with disability (YLD)</p>
-						</li>
 					</ul>
 					<!-- Left and right controls -->
 					<a class="left carousel-control" ng-non-bindable  href="#carouselHome" data-slide="prev">
 						<i class="fa fa-chevron-left prev " aria-hidden="true"></i>
-						<span class="sr-only">Previous</span>
+						<span class="sr-only"></span>
 					</a>
 					<a class="right carousel-control" ng-non-bindable  href="#carouselHome" data-slide="next">
 						<i class="fa fa-chevron-right next" aria-hidden="true"></i>
-						<span class="sr-only">Next</span>
+						<span class="sr-only"></span>
 					</a>
 				</div>
 			</div>
@@ -44,109 +34,29 @@
 
 		<section class="section-first-home">
 			<div class="container">
-				<h3>Wich work - related illness is the biggesr killer?</h3>
-				<div class="chart-section-first"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart01.png" alt="Chart1"></div>
+				<h3 data-ng-bind="chartDeath.title"></h3>
+				<div class="chart-section-first"><img src="{{chartDeath.image}}" alt="{{chartDeath.title}}"></div>
 				<div class="content-section-first"></div>
 			</div>
 		</section>
 
 		<section class="section-second-home">
 			<div class="container">
-				<h3>Which illness leads tothe highest number of "Year os Live Lost ot Lived with Disability"</h3>
-				<div class="chart-section-second"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart02.png" alt="Chart2"></div>
+				<h3 data-ng-bind="chartDaly.title"></h3>
+				<div class="chart-section-second"><img src="{{chartDaly.image}}" alt="{{chartDaly.title}}"></div>
 				<div class="content-section-second">
-					<p>Circulatory illnesses are the biggest killer with XXXXXX fatal cases per year in the world, followed by the malignant neoplasms with XXXX cases. However, XXXXX lead to a higher number of years of life lost or years lived with disability (due ti non-fatal cases). In the EU28, the biggest killer ar XXX but XXX due also to the highest DALY </p>
+					<p data-ng-bind="chartDaly.message"></p>
 				</div>
-				<p class="see-more"><a href="#" title="See more">See more about work - related illnesses groups</a></p>
+				<!--<p class="see-more"><a ui-sref='#' data-ng-bind="i18n.L34"></a></p>-->
 			</div>
 		</section>
 
 		<div class="compare-buttons">
 			<ul class="compare-buttons-list  list-inline container">
-				<li><a href="" >Compare the situation in WHO regions</a></li>
-				<li><a href="" >Compare the situation in EU countries</a></li>
+				<!--<li><a ui-sref='#' data-ng-bind="i18n.L35"></a></li>-->
+				<li><a ui-sref='countries-comparison({})' data-ng-bind="i18n.L36"></a></li>
 			</ul>
 		</div>
 
-
-
-<!--
-		<section class="container-fluid spotlight-carousel">
-			<div class="col-xs-12 col-md-12 col-lg-6">
-					<zylk-range ng-model="dashboard.parameters.pYears" values="1990, 2000, 2010, 2015, 2020, 2030, 2040, 2050, 2060" default="2015"></zylk-range>
-					<zylk-pyramid-chart data-ng-cloack
-										query="getPyramidDataWhitYear" cda="{{ dashboard.cda }}"
-										width=600 height=370 orientation="horizontal"
-										listen-to="['pYears']" params="[['pYears','pYears']]"
-										css-class="pyramid" color-role="series" stacked=1
-										id="61" p-x-labels=1 p-y-labels=1 colors="pyramid.colors"
-										title="{{i18n.graphics_multiindicator.pyramid_title}}"
-										contextuals="[]"
-										main-bar-size="15"
-										home="true"
-										female-colour="3"
-										male-colour="2" type="pyramid"
-										max-functional-legend="{{i18n.graphics_multiindicator.pyramid_functional_legend}}"
-										dimensions="pyramid.dimensions"
-					>
-					</zylk-pyramid-chart>
--->
-
-					<!--<div class="col-xs-12 range-container text-center">-->
-						<!--<input id="pyramid-range" type="range" ng-model="pyramid.value" data-ng-input="updatePyramid(pyramid.value)" data-ng-change="updatePyramid(pyramid.value)"  min="0" max="5" value="0">-->
-					<!--</div>-->
-<!--
-			</div>
-
-			<div class="col-xs-12 col-md-12 col-lg-6">
-				<div carousel interval="10000" id="osha-carousel">
-					<div slide ng-repeat="slide in slides" active="slide.active">
-						<img ng-src="{{slide.image}}" alt="{{slide.alt}}" style="margin: auto;">
-						<div class="carousel-caption">
-							<p data-ng-bind-html="::slide.text"></p>
-							<p class="carousel link">
-								<a class="know-more external" data-ng-href="{{slide.link}}" target="_blank" data-ng-bind-html="slide.linkText"></a>
-								<span ng-bind-html="::slide.linkText"></span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="seeMoreProject"><a class="know-more external" href="https://osha.europa.eu/en/themes/osh-management-context-ageing-workforce/ep-osh-project" target="_blank" data-ng-bind="i18n['more-information-project']"></a></section>
-		<section class="container-fluid home-spotlight">
-			<article data-ng-click="goto('issue-retirementAge')" role="button" class="col-xs-12 col-md-12 col-lg-4">
-				<a ui-sref='issue-retirementAge({})'>
-					<div class="article-background col-md-11 col-md-offset-1">
-						<h2 data-ng-bind="i18n.article1.subtitle"></h2>
-						<p data-ng-bind="i18n.article1.content"></p>
-						<p data-ng-bind="i18n.article1.link"></p>
-						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeArrow.png" title="More info"></p>
-					</div>
-				</a>
-			</article>
-			<article role="button" class="col-xs-12 col-md-12 col-lg-4">
-				<a ui-sref='approaches-indicators({})'>
-					<div class="article-background col-md-11 col-md-offset-1">
-						<h2 data-ng-bind="i18n.article2.subtitle"></h2>
-						<p data-ng-bind="i18n.article2.content"></p>
-						<p data-ng-bind="i18n.article2.link"></p>
-						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeArrow.png" title="More info"></p>
-					</div>
-				</a>
-			</article>
-			<article role="button" class="col-xs-12 col-md-12 col-lg-4">
-				<a ui-sref='country-profiles({})'>
-					<div class="article-background col-md-11 col-md-offset-1">
-						<h2 data-ng-bind="i18n.article3.subtitle"></h2>
-						<p data-ng-bind="i18n.article3.content"></p>
-						<p data-ng-bind="i18n.article3.link"></p>
-						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home/homeArrow.png" title="More info"></p>
-					</div>
-				</a>
-			</article>
-		</section>
-	-->
 </div>
 </zylk-dashboard>
