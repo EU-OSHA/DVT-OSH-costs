@@ -25,7 +25,10 @@ define(function (require) {
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
 
-        var href = window.location.href;
+        var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
+
+        console.log("DAVID DEV");
+        console.log(href);
 
         // Some graphic is set
         if (href.indexOf('countries-comparison#') > -1) {
