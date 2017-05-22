@@ -15,11 +15,16 @@
 								In eu libero at dolor aliquet vestibulum nec eu odio. Integer suscipit dolor sed mauris sodales, nec posuere libero eleifend.
 								Proin vehicula aliquam cursus. Pellentesque ex felis, bibendum nec elit in, ultricies consequat mauris. </p>
 
-							<div class="carousel-chart"><img ng-src="{{slide.image}}" alt="{{slide.alt}}">
-								<select class="currency-chart"">
-								<option>&euro; (euro) </option>
-								<option>&dollar; (dollar)</option>
+							<div class="carousel-chart">
+								<select class="currency-chart">
+									<option>&euro; (euro) </option>
+									<option>&dollar; (dollar)</option>
 								</select>
+								<picture>
+									<source ng-srcset="{{slide.image2}}" alt="{{slide.alt}}" media="(max-width: 767px)">
+									<source ng-srcset="{{slide.image}}" alt="{{slide.alt}}">
+									<img ng-src="{{slide.image}}" alt="{{slide.alt}}">
+								</picture>
 							</div>
 							<p class="carousel-note" data-ng-bind-html="::slide.text"></p>
 						</li>

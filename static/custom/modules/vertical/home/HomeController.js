@@ -25,9 +25,9 @@ define(function (require) {
     
         // Carrousel slides
         $scope.slides = [
-            {text: i18n[i18n_home.slider1.text], image: configService.getImagesPath()+ i18n_home.slider1.image},
-            {text: i18n[i18n_home.slider2.text], image: configService.getImagesPath()+ i18n_home.slider2.image},
-            {text: i18n[i18n_home.slider3.text], image: configService.getImagesPath()+ i18n_home.slider3.image}
+            {text: i18n[i18n_home.slider1.text], image: configService.getImagesPath()+ i18n_home.slider1.image, image2: configService.getImagesPath()+ i18n_home.slider1.image2},
+            {text: i18n[i18n_home.slider2.text], image: configService.getImagesPath()+ i18n_home.slider2.image, image2: configService.getImagesPath()+ i18n_home.slider2.image2},
+            {text: i18n[i18n_home.slider3.text], image: configService.getImagesPath()+ i18n_home.slider3.image, image2: configService.getImagesPath()+ i18n_home.slider3.image2}
         ];
 
         // Charts

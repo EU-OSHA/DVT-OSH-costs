@@ -2,17 +2,20 @@
   "slider1": {
     "text": "L14",
     "textMax": "L15",
-    "image": "carrousel-illnesses-injuries-cost.png"
+    "image": "carrousel-illnesses-injuries-cost-euros.svg",
+    "image2": "carrousel-illnesses-injuries-cost-euros-x2.svg"
   },
   "slider2": {
     "text": "L18",
     "textMax": "L19",
-    "image": "carrousel-illnesses-injuries-death.png"
+    "image": "carrousel-illnesses-injuries-death.svg",
+    "image2": "carrousel-illnesses-injuries-death-x2.svg"
   },
   "slider3": {
     "text": "L21",
     "textMax": "L22",
-    "image": "carrousel-illnesses-injuries-daly.png"
+    "image": "carrousel-illnesses-injuries-daly.svg",
+    "image2": "carrousel-illnesses-injuries-daly-x2.svg"
   },
     "chartDeath": {
     "title": "L28",

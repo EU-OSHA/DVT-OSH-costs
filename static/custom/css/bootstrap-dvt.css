@@ -2893,7 +2893,7 @@ tbody.collapse.in {
       border-top: 0;
       box-shadow: none; }
       .navbar-collapse.collapse {
-        display: block;
+        display: block !important;
         height: auto !important;
         padding-bottom: 0;
         overflow: visible !important; }
@@ -3143,9 +3143,7 @@ tbody.collapse.in {
     color: #777; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
       color: #333;
-      background-color: transparent;
-      outline: none;
-    }
+      background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #555;
     background-color: #e7e7e7; }
