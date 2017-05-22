@@ -417,12 +417,12 @@ define(function (require) {
                 //  title, functional legend
                 // TODO separar título de leyenda ya que la primera puede venir de la directiva y no de db (multi-indicador)
                 // =========================
-                if (!!attributes.id) {definition.chartDefinition.title = null;
+                /*if (!!attributes.id) {definition.chartDefinition.title = null;
                     dataService.getIndicatorMetadata(attributes.id).then(function (dataset) {
                         $log.debug(dataset);
                         plotsProvider.showContextualData(dataset, definition, scope, attributes);
                     });
-                };
+                };*/
 
                 // New parameters to maximize mode
                 definition ['maxType'] = attributes.type;

@@ -678,7 +678,7 @@ define(function (require) {
                 //  title, functional legend
                 // TODO separar título de leyenda ya que la primera puede venir de la directiva y no de db (multi-indicador)
                 // =========================
-                if (!!attributes.id) {
+                /*if (!!attributes.id) {
                     var indicators = JSON.parse("["+attributes.id+ "]");
                     indicators.forEach(function (id,index,array) {
                         $log.debug("METADATA INDICATORS FOREACH---------------------------------->");
@@ -688,7 +688,7 @@ define(function (require) {
                             plotsProvider.showContextualData(dataset, definition, scope, attributes);
                         });
                     });
-                }
+                }*/
             var setMaximizeModeParameters = function() {
                 // New parameters to maximize mode
                 definition ['maxType'] = 'radar';
