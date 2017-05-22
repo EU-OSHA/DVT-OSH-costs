@@ -6,15 +6,21 @@
 		<section class="section-carrousel">
 			<div class="ilo-container-carrousel container">
 				<div id="carouselHome" class="carousel-home carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li ng-repeat="slide in slides" data-target="#carouselHome" data-slide-to="{{$index}}" ng-class="{'active': $index == 0 }"></li>
-					</ol>
 					<!-- Wrapper for slides -->
 					<ul class="carousel-inner">
 
 						<li ng-repeat="slide in slides" class="item" ng-class="{'active': $index == 0 }">
-							<div class="carousel-chart"><img ng-src="{{slide.image}}" alt="{{slide.alt}}"></div>
+							<h2>Cost to society of work-related injury and illness</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui lorem, pharetra eu erat eu, porta consequat enim.
+								In eu libero at dolor aliquet vestibulum nec eu odio. Integer suscipit dolor sed mauris sodales, nec posuere libero eleifend.
+								Proin vehicula aliquam cursus. Pellentesque ex felis, bibendum nec elit in, ultricies consequat mauris. </p>
+
+							<div class="carousel-chart"><img ng-src="{{slide.image}}" alt="{{slide.alt}}">
+								<select class="currency-chart"">
+								<option>&euro; (euro) </option>
+								<option>&dollar; (dollar)</option>
+								</select>
+							</div>
 							<p class="carousel-note" data-ng-bind-html="::slide.text"></p>
 						</li>
 
@@ -28,6 +34,10 @@
 						<i class="fa fa-chevron-right next" aria-hidden="true"></i>
 						<span class="sr-only">Next</span>
 					</a>
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li ng-repeat="slide in slides" data-target="#carouselHome" data-slide-to="{{$index}}" ng-class="{'active': $index == 0 }"></li>
+					</ol>
 				</div>
 			</div>
 		</section>

@@ -9,7 +9,7 @@
 }
 .section-carrousel{
   background: #f9f9f9;
-  padding: 15px 0 15px;
+  padding: 0px 0 15px;
   .ilo-container-carrousel{
     h2.title-section{
       text-align: center;
@@ -21,8 +21,8 @@
     }
   }
   #carouselHome{
-    min-height: 400px;
-    margin: 30px 0 0;
+    min-height:auto;
+    margin: 0px 0 0;
     .carousel-indicators{
       bottom: 0;
       li {
@@ -41,15 +41,34 @@
     .carousel-inner{
       li.item{
         text-align: center;
+        cursor: default;
+        h2{
+          color:  $header;
+        }
         .carousel-chart{
+          position: relative;
           width: 75%;
-          margin: 10px auto;
+          margin: 40px auto 20px;
           background: #FFF;
           padding: 15px 30px;
           border-radius: 8px;
           -webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
           -moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
           box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+          select{
+            border: none;
+            padding: 5px;
+            font-weight: bold;
+            background: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            &:focus{
+              outline: none;
+              color: $subheader;
+            }
+          }
         }
         p.carousel-note{
           text-align: center;
@@ -62,10 +81,20 @@
       background-image: none !important;
       width: 40px;
       .icon-prev, .icon-next, .prev, .next {
-        top: 36%;
+        top:50%;
         position: relative;
         color: #666;
       }
+    }
+    .carousel-indicators {
+      position: static;
+      bottom: 0px;
+      margin: 15px auto;
+      z-index: 15;
+      width: 60%;
+      padding-left: 0;
+      list-style: none;
+      text-align: center;
     }
   }
 }
