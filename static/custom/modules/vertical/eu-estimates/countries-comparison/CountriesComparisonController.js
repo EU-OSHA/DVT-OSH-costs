@@ -27,8 +27,9 @@ define(function (require) {
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
-        console.log("DAVID DEV");
-        console.log(href);
+        if ($window.location.href.indexOf('countries-comparison') > -1){
+            href = $window.location.href;
+        }        
 
         // Some graphic is set
         if (href.indexOf('countries-comparison#') > -1) {
@@ -76,6 +77,8 @@ define(function (require) {
             // Update location based on slide
             var item = jQuery(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
+            // Prevent carousel from sliding automatically
+            jQuery('#carouselCountries').carousel('pause');
         })
 
         $scope.status = 'ready';

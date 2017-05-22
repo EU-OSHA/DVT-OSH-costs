@@ -1,6 +1,8 @@
 <!-- countries-comparison.html -->
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
 
+    <p><a sref="" data-ng-bind="i18n.L61"></a></p>
+
     <div class="container-full osha-eu-estimates-wrapper ">
         <div class="osha-eu-estimates container">
             <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
@@ -90,10 +92,12 @@
                                 query="getIndicatorData" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="{{orientation}}"
+                                axis-fixed-max="1"
                                 params="[['pIndicator','19']]"
                                 color-role="series"
                                 ortho-axis-title="{{i18n.L122}}"
                                 ortho-axis-title-visible="true"
+                                axis-percent="1"
                                 title="{{i18n.L79}}" id="19"
                                 long-title="{{i18n.L80}}"
                                 plots="stories[0].plots"
@@ -108,10 +112,12 @@
                             query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
+                            axis-fixed-max="1"
                             params="[['pIndicator','20']]"
                             color-role="series"
                             ortho-axis-title="{{i18n.L123}}"
                             ortho-axis-title-visible="true"
+                            axis-percent="1"
                             title="{{i18n.L82}}" id="20"
                             long-title="{{i18n.L83}}"
                             plots="stories[0].plots"
@@ -126,10 +132,12 @@
                             query="getIndicatorData" cda="{{::cda }}"
                             angle="1" width="{{graphWidth}}" height="330"
                             orientation="{{orientation}}"
+                            axis-fixed-max="1"
                             params="[['pIndicator','21']]"
                             color-role="series"
                             ortho-axis-title="{{i18n.L124}}"
                             ortho-axis-title-visible="true"
+                            axis-percent="1"
                             title="{{i18n.L85}}" id="21"
                             long-title="{{i18n.L86}}"
                             plots="stories[0].plots"
