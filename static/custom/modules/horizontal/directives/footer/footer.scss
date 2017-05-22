@@ -4,6 +4,12 @@
     height: 138px;
     text-align: center;
     background:#F0F0F0;
+    img{
+      width:100%;
+      @media only screen  and (min-width : 1280px){
+        width:auto;
+      }
+    }
   }
   .footer-logotypes{
     display: none;

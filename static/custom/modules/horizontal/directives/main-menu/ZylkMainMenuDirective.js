@@ -170,6 +170,7 @@ define(function (require) {
                         }
                     });
 
+
                     // Trigger drop-up menu when you click on the burger buttton
                     angular.element( "#osha-menu-collapse .dropdown-menu a" ).click(function() {
                         collapse.removeClass("indvt");

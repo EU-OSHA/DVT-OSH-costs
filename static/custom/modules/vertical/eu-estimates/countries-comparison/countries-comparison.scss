@@ -31,7 +31,7 @@
         margin: 0 15px;
         font-size: 22px;
       }
-      &.active {
+      &.active, &:hover, &:focus, &:active {
         background-color: transparent;
         font-family: "OpenSans-Bold";
         color: #00A0A4 !important;
@@ -105,21 +105,27 @@
     z-index: 100;
     &.right{
       background-image: none;
-      left: 100%;
+      left: 98.5%;
       i{
         top: 310px;
         position: relative;
-        color: #666;
+        color: #FFF;
       }
+    }
+    &.right:hover i{
+      color: #666;
     }
     &.left{
       background-image: none;
-      left: -3%;
+      left: -1.5%;
       i{
         top: 310px;
         position: relative;
-        color: #666;
+        color: #FFF;
       }
+    }
+    &.left:hover i{
+      color: #666;
     }
   }
 }

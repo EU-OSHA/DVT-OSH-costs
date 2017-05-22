@@ -1,15 +1,18 @@
 .osha-analysis-illnesses{
   .chart-analysis-illnesses{
-    position: relative;
-    background: #FFF!important;
-    padding: 20px !important;
-    border: 1px solid #EAEAEA;
-    border-radius: 8px;
-    margin: 40px auto;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
-    -moz-box-shadow: 0px 1px 2px 1px #cccccc;
-    box-shadow: 0px 1px 2px 1px #cccccc;
+    background:#F9F9F9;
+    padding:0px 0 20px;
+    .chart-analysis-illnesses-box{
+      position: relative;
+      background: #FFF!important;
+      padding: 20px !important;
+      border: 1px solid #EAEAEA;
+      border-radius: 8px;
+      margin:auto;
+      overflow: hidden;
+      -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
+      -moz-box-shadow: 0px 1px 2px 1px #cccccc;
+      box-shadow: 0px 1px 2px 1px #cccccc;
     h2{
       text-align: center;
       width: 100%;
@@ -71,11 +74,60 @@
         }
       }
     }
+    }
+    &.affix{
+      top: 90px;
+      width: 100%;
+      height: 125px;
+      z-index: 900;
+      overflow: hidden;
+      background: #FFF;
+      .chart-analysis-illnesses-box{
+        top:0;
+        width:100%;
+        border-radius: 0;
+        -webkit-box-shadow: 0px 0px 2px 0px #cccccc;
+        -moz-box-shadow: 0px 0px 2px 0px #cccccc;
+        box-shadow: 0px 0px 2px 0px #cccccc;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        .zylk-chart{
+          width: 20%;
+          zoom: 0.5;
+          float: left;
+          text-align: right;
+        }
+        h2{
+          width: 80%;
+          float: right;
+          text-align: left;
+          padding-left: 15px;
+        }
+        ul.legend-list{
+          column-count: 1;
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          position: relative;
+          transform: none;
+          -webkit-transform: none;
+          -ms-transform: none;
+          margin-top: 2rem;
+          li{
+            display: inline-block;
+            margin-right: 1rem;
+          }
+        }
+        .chart-description{
+          display: none;
+        }
+      }
+    }
   }
-
-
+  .compare-buttons{
+    padding: 20px 0;
+  }
   .countries-analysis-by-illnesses{
-    margin: 40px auto;
+    margin:0px auto 40px;
     .country-analysis-by-illnesses{
       .country-wrapper{
         position: relative;
@@ -83,7 +135,7 @@
         padding: 20px !important;
         border: 1px solid #EAEAEA;
         border-radius: 8px;
-        margin: 15px auto;
+        margin: 0px auto 30px;
         overflow: hidden;
         -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
         -moz-box-shadow: 0px 1px 2px 1px #cccccc;

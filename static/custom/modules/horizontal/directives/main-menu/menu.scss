@@ -26,7 +26,7 @@
             }
             .social-network {
                 margin: 0 15px 0 0;
-                padding-right: 45px;
+                padding-right: 160px;
                 li{
                     padding-right: 7px;
                     a{
@@ -247,7 +247,7 @@ ul.navbar-nav {
                 color:$menu-item !important;
             }
             .goog-te-menu-value > span {
-                display: none;
+                //display: none;
             }
         }
     }
@@ -259,7 +259,8 @@ ul.navbar-nav {
 
 @media (max-width: 991px) {
     .eu-osha-logo{
-      margin-left: 60px;
+        margin-left: 60px;
+        padding-top: 9px;
     }
     #main-menu {
         float: none;
@@ -280,6 +281,28 @@ ul.navbar-nav {
             width: 22px;
             height: 4px;
             border-radius: 1px;
+        }
+        &.menu-close{
+            span.icon-bar{
+                display: block;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                top: 10px;
+                position: absolute;
+                background: #000;
+            }
+            span.icon-bar:nth-child(3){
+                -ms-transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                display: block;
+            }
+            span.icon-bar:nth-child(2) {
+               display: none;
+            }
         }
     }
     .navbar-collapse {

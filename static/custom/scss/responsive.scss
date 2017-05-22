@@ -26,7 +26,6 @@
   }
 }
 
-
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
   #carouselHome {
     .carousel-inner {
@@ -39,6 +38,42 @@
     }
   }
 }
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  /** EU-ESTIMATES **/
+  .countries-comparison{
+    .osha-eu-estimates-wrapper{
+      .carousel-indicators{
+        li {
+          width: 45%;
+        }
+      }
+      .carousel-control{
+        &.left {
+          left: -2.5%;
+          i{
+            top: 370px;
+          }
+        }
+        &.right {
+          left: 97.5%;
+          i{
+            top: 370px;
+          }
+        }
+      }
+    }
+    .compare-buttons{
+      .compare-buttons-list{
+        li {
+          margin-right: 2%;
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   #carouselHome {
     .carousel-inner {
@@ -57,7 +92,96 @@
     }
   }
 }
+@media only screen and (max-width: 991px) {
+  #google_translate_element_wrapper {
+    top: 24px;
+  }
+  .ilo-header {
+    #containerMenu {
+      .menu-tools-top {
+        padding: 40px 15px 0;
+      }
+    }
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+  body{
+    padding-top: 90px;
+  }
+  .ilo-header{
+    #not-home-cover {
+      margin-top: 12px !important;
+    }
+    .path {
+      margin-top: 6px;
+    }
+  }
 
+  /** HOME **/
+  .section-carrousel {
+    #carouselHome {
+      min-height: 330px;
+     }
+  }
+
+
+  /** EU-ESTIMATES **/
+
+  .countries-comparison{
+    .osha-eu-estimates-wrapper{
+      .carousel-indicators{
+        li {
+          width: 45%;
+        }
+      }
+      .carousel-control{
+        &.left {
+          left: -2.5%;
+          i{
+            top: 370px;
+          }
+        }
+        &.right {
+          left: 97.5%;
+          i{
+            top: 370px;
+          }
+        }
+      }
+    }
+    .compare-buttons{
+      .compare-buttons-list{
+        li {
+          margin-right: 2%;
+          width: 48%;
+        }
+      }
+    }
+  }
+  .ilo-container-footer{
+    .logos{
+      height:auto;
+    }
+    .footer-elements{
+      text-align: center;
+      ul{
+        margin:20px 0 !important;
+      }
+    }
+  }
+
+  /** ANALYSIS ILNESSES **/
+  .eu-analysis-illness-wrapper{
+    .compare-buttons{
+      .compare-buttons-list li {
+        margin-right: 1%;
+        width: 48%;
+      }
+    }
+  }
+
+
+} /** end media query 768 - 1024 portrait **/
 
 
 
