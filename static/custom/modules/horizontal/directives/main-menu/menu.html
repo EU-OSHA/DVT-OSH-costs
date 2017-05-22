@@ -15,27 +15,28 @@
             <div class="submenu-icon"><a href="javascript:" title="Submenu social networks and print">...</a> </div>
             <ul class="social-network list-inline navbar-right">
                 <li>
-                    <a class="facebook" href="javascript:"
-                    title="Facebook" socialshare="" 
-                    socialshare-provider="facebook" 
-                    socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span>
+                    <a target="_blank" href="https://www.facebook.com/EuropeanAgencyforSafetyandHealthatWork" title="EU OSHA Facebook Page">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only">EU OSHA Facebook Page</span>
                     </a>
                 </li>
                 <li>
-                    <a class="twitter" href="javascript:"
-                    title="Twitter" socialshare="" 
-                    socialshare-provider="twitter" socialshare-text="{{title}}" 
-                    socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only">Share on Twitter</span>
+                    <a target="_blank" href="https://twitter.com/eu_osha" title="EU OSHA in Twitter">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only">EU OSHA in Twitter</span>
                     </a>
                 </li>
                 <li>
-                    <a class="google_plus" href="javascript:"
-                    title="Google plus" socialshare="" 
-                    socialshare-provider="google" 
-                    socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google +</span>
+                    <a target="_blank" href="http://www.linkedin.com/company/european-agency-for-safety-and-health-at-work" title="Follow EU OSHA in LinkedIn">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only">Follow EU OSHA in LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/user/EUOSHA" title="EU OSHA channel in Youtube">
+                        <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i><span class="sr-only">EU OSHA channel in Youtube</span>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://osha.europa.eu/es/tools-and-publications/blog" title="EU OSHA Blog">
+                        <i class="fa fa-lg fa-newspaper-o" aria-hidden="true"></i><span class="sr-only">EU OSHA Blog</span>
                     </a>
                 </li>
                 <li>
@@ -109,59 +110,18 @@
     <div data-ng-if="isHome" id="home-cover" class="nopadding">
         <a ui-sref="home" role="button" title="Access to Home page">
             <div class="container">
-                <p class="title-banner">Safer and healthier work at any age</p>
+                <p class="title-banner" data-ng-bind-html="titleHeader"></p>
             </div>
         </a>
     </div>
 
     <div data-ng-if="!isHome" id="not-home-cover" class="nopadding">
         <p class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
-        <!--
-        <a ui-sref="home" role="button" title="Access to Home page">
-            <div class="container">
-                <p class="title-banner">Safer and healthier work at any age</p>
-            </div>
-        </a>
-        -->
     </div>
 
-    <!-- social media widget -->
     <div class="col-xs-12 col-md-12  titleAndWidget">
-            <p data-ng-if="isHome" class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
-        <!--
-            <div class="socialWidget col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                <div class="a2a_kit a2a_default_style">
-                    <span class="labelShare" data-ng-bind="titleS.shareThis"></span>
+        <p data-ng-if="isHome" class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
 
-                    <a
-                       class="a2a_button_twitter"
-                       socialshare
-                       socialshare-provider="twitter"
-                       socialshare-text="{{title}}"
-                       socialshare-url="{{pathURLDVT}}"></a>
-
-                    <a
-                       class="a2a_button_facebook"
-                       socialshare
-                       socialshare-provider="facebook"
-                       socialshare-url="{{pathURLDVT}}"></a>
-
-                    <a
-                       class="a2a_button_linkedin"
-                       socialshare
-                       socialshare-provider="linkedin"
-                       socialshare-url="{{pathURLDVT}}"></a>
-
-                    <a
-                       class="a2a_button_google_plus"
-                       socialshare
-                       socialshare-provider="google"
-                       socialshare-url="{{pathURLDVT}}"></a>
-
-                    <a class="a2a_button_print" onclick="window.print()"></a>
-                </div>
-            </div>
-            -->
         <div class="page-header-wrapper container">
         <h1 class="page-header text-center" data-ng-bind-html="i18n_literals[title]"></h1>
         <p class="subject-section" data-ng-bind-html="i18n_literals[subtitle]"></p>
