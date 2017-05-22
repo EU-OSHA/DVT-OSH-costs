@@ -15,17 +15,26 @@
             <div class="submenu-icon"><a href="javascript:" title="Submenu social networks and print">...</a> </div>
             <ul class="social-network list-inline navbar-right">
                 <li>
-                    <a class="facebook" href="javascript:" title="Facebook" socialshare="" socialshare-provider="facebook" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                    <a class="facebook" href="javascript:"
+                    title="Facebook" socialshare="" 
+                    socialshare-provider="facebook" 
+                    socialshare-url="{{pathURLDVT}}">
                         <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span>
                     </a>
                 </li>
                 <li>
-                    <a class="twitter" href="javascript:" title="Twitter" socialshare="" socialshare-provider="twitter" socialshare-text="Europe's workforce is ageing and shrinking. How do European countries deal with the challenges for safety and health at work?" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                    <a class="twitter" href="javascript:"
+                    title="Twitter" socialshare="" 
+                    socialshare-provider="twitter" socialshare-text="{{title}}" 
+                    socialshare-url="{{pathURLDVT}}">
                         <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only">Share on Twitter</span>
                     </a>
                 </li>
                 <li>
-                    <a class="google_plus" href="javascript:"  title="Google plus" socialshare="" socialshare-provider="google" socialshare-url="http://localhost:8080/pentaho/plugin/dvt-framework/api/allagesdash#!/">
+                    <a class="google_plus" href="javascript:"
+                    title="Google plus" socialshare="" 
+                    socialshare-provider="google" 
+                    socialshare-url="{{pathURLDVT}}">
                         <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only">Share on Google +</span>
                     </a>
                 </li>
@@ -60,27 +69,28 @@
                         <li ng-repeat="level0 in structure">
                             <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                                <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                                 <span class="caret"></span>
                             </a>
                             <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
                                class="dropdown-toggle {{level0.class}}"
                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                                 <span class="caret"></span>
                             </a>
                             <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
-                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                             </a>
                             <ul class="dropdown-menu" ng-if="level0.levels">
                                 <li>
                                     <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}"
                                        ng-repeat="level1 in level0.levels">
-                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
                                     </a>
                                     <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}'
                                        ng-repeat="level1 in level0.levels" accesskey="{{level1.accesskey}}">
-                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="level1.name"></span>
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
                                     </a>
                                 </li>
                                 <!--<li role="separator" class="divider"></li>-->
@@ -153,8 +163,8 @@
             </div>
             -->
         <div class="page-header-wrapper container">
-        <h1 class="page-header text-center" data-ng-bind-html="title"></h1>
-        <p class="subject-section">Work-related injures and illnesses result in the loss of 4.3% of all work-years globally and 3.2% of those in the EU, equivalent to a cost of approximately 3.092 billon and 504 billon, respectively.</p>
+        <h1 class="page-header text-center" data-ng-bind-html="i18n_literals[title]"></h1>
+        <p class="subject-section" data-ng-bind-html="i18n_literals[subtitle]"></p>
         </div>
     </div>
 </header>

@@ -8,39 +8,26 @@
     },
     {
         "id": "global-estimates",
-        "name":"Global estimates",
-        "target": "_self",
+        "name":"L1",
+        "sref": "global-estimates",
         "tabindex":"2",
-        "levels":[
-            {
-                "id": "who-regions-comparison",
-                "name":"WHO Regions comparison",
-                "sref": "who-regions-comparison",
-                "accesskey": "W"
-            },
-            {
-                "id": "global-analysis-illness",
-                "name": "Analysis by illness",
-                "sref": "global-analysis-illness",
-                "accesskey": "G"
-            }
-        ]
+        "accesskey": "G"
     },
     {
         "id": "eu-estimates",
-        "name":"EU estimates",
+        "name":"L2",
         "target":"_self",
         "tabindex":"3",
         "levels":[
             {
                 "id": "countries-comparison",
-                "name":"EU countries comparison",
+                "name":"L3",
                 "sref": "countries-comparison",
                 "accesskey": "C"
             },
             {
                 "id": "eu-analysis-illness",
-                "name":"Analysis by illness",
+                "name":"L4",
                 "sref": "eu-analysis-illness",
                 "accesskey": "E"
             }
@@ -48,14 +35,14 @@
     },
     {
         "id": "glossary",
-        "name":"Glossary",
+        "name":"L5",
         "sref": "glossary",
         "accesskey": "O",
         "tabindex":"4"
     },
     {
         "id": "about-estimates",
-        "name":"About the estimates",
+        "name":"L6",
         "sref": "about",
         "accesskey": "T",
         "tabindex":"5"

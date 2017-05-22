@@ -36,6 +36,10 @@ define(function (require) {
                         angular.element(".a2a_button_print").remove();
                     }
 
+                    // Literals / i18n
+                    var i18n_literals = configService.getLiterals();
+                    $scope.i18n_literals = i18n_literals;
+
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
                     var titleStructure = require('json!dvt/directives/title-items');
 

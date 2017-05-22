@@ -1,27 +1,25 @@
 {
-  "home": "Cost to society of work-related injury and illness",
+  "home": "L14",
 
   "_SECCTION-GLOBAL-ESTIMATES": null,
-  "global-estimates": "Global estimates",
-  "who-regions-comparison": "WHO Regions comparison",
-  "global-analysis-illness": "Analysis by illness",
+  "global-estimates": "L1",
 
   "_SECCTION-EU-ESTIMATES": null,
-  "eu-estimates": "EU estimates",
-  "countries-comparison": "EU countries comparison",
-  "eu-analysis-illness": "Analysis by illness",
+  "eu-estimates": "L2",
+  "countries-comparison": "L3",
+  "eu-analysis-illness": "L4",
 
   "_SECCTION-GLOSSARY": null,
-  "glossary": "Glossary",
+  "glossary": "L5",
 
   "_SECCTION-ABOUT-TOOL": null,
-  "about-estimates": "About the estimates",
+  "about-estimates": "L6",
 
   "_SECCTION-FOOTER-PAGES": null,
-  "site-map": "Site Map",
-  "accessibility": "Accessibility info",
-  "privacy-policy":"Privacy notice",
-  "legal-notice":"Legal notice",
+  "site-map": "L7",
+  "accessibility": "L10",
+  "privacy-policy":"L8",
+  "legal-notice":"L9",
 
   "shareThis": "Share this on: ",
   "default-title":"ILO - Data Visualisation Tool - European Agency for Safety & Health at Work",
