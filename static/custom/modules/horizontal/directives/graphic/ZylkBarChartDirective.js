@@ -285,7 +285,7 @@ define(function (require) {
                     chartDefinition: {
                         dataAccessId: attributes.query || null,
                         path: attributes.cda || "osha-dvt-ilo/dashboards/datapilot.cda",
-                        title: attributes.title || "",
+                        //title: attributes.title || "",
                         width: attributes.width || 300,
                         height: attributes.height || 250,
                         orientation: attributes.orientation || "vertical",
