@@ -21,6 +21,10 @@
     }
     .chart-wrapper{
       .zylk-chart{
+        .zylk-bar-chart, .dvt-chart {
+          padding: 0 !important;
+          background: transparent !important;
+        }
         h2{
           text-align: center;
           width: 100%;
@@ -108,12 +112,13 @@
         padding-bottom: 0 !important;
         border-width: 0 0 1px 0;
         border-bottom: 1px solid #CCC;
-        .zylk-chart{
+        .zylk-chart {
           width: 20%;
           float: left;
           text-align: right;
           .zylk-bar-chart, .dvt-chart {
             padding: 0 !important;
+            background: transparent !important;
           }
           .backGraps{
             zoom: 0.5;
