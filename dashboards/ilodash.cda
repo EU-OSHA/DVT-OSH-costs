@@ -65,7 +65,7 @@
       <Parameters>
           <Parameter default="1" name="pIndicator" type="Numeric" />
       </Parameters>
-      <Query>SELECT ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+      <Query>SELECT ff.SPLIT_1 as Illness,  Round(ff.MEASURE) AS Value
           FROM fact_figures ff
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.REGION = 'EU28'
@@ -80,7 +80,7 @@
       <Parameters>
           <Parameter default="1" name="pCountry" type="String" />
       </Parameters>
-      <Query>SELECT ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+      <Query>SELECT ff.SPLIT_1 as Illness,  Round(ff.MEASURE) AS Value
                        FROM fact_figures ff
                        WHERE ff.INDICATOR_ID = 25
                        AND ff.COUNTRY = ${pCountry}
@@ -88,12 +88,12 @@
       </Query>
    </DataAccess>
 
-    <!-- GET SPLIT_1 DATA BY COUNTRY -->
+    <!-- GET LEGEND VALUES -->
       <DataAccess access="public" connection="ilo_conn" id="getLegendByCounty" type="sql">
          <Cache duration="3600" enabled="true"/>
          <Columns/>
          <Parameters/>
-         <Query>SELECT IFNULL(ff.COUNTRY,ff.REGION) as country,  ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+         <Query>SELECT IFNULL(ff.COUNTRY,ff.REGION) as country,  ff.SPLIT_1 as SPLIT,  Round(ff.MEASURE) AS Value
                           FROM fact_figures ff
                           WHERE ff.INDICATOR_ID = 25
                           ORDER BY country ASC
