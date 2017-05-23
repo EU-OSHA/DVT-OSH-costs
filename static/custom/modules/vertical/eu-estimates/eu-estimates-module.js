@@ -44,6 +44,7 @@ define(function (require) {
     });
 
     module.factory('countriesComparisonService', require('vertical/countries-comparison/services/CountriesComparisonService'));
+    module.factory('pieChartLegendService', require('vertical/eu-analysis-illness/services/PieChartLegendService'));
 
     return module;
 });

@@ -57,4 +57,47 @@
             ORDER BY Measure ASC
         </Query>
     </DataAccess>
+
+    <!-- GET SPLIT_1 DATA BY ALL COUNTRY (EU28) -->
+  <DataAccess access="public" connection="ilo_conn" id="getSplitAllCountryDataByIndicator" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default="1" name="pIndicator" type="Numeric" />
+      </Parameters>
+      <Query>SELECT ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+          FROM fact_figures ff
+          WHERE ff.INDICATOR_ID = ${pIndicator}
+          AND ff.REGION = 'EU28'
+          ORDER BY Measure ASC
+      </Query>
+   </DataAccess>
+
+    <!-- GET SPLIT_1 DATA BY COUNTRY -->
+   <DataAccess access="public" connection="ilo_conn" id="getSplitDataByCountry" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default="1" name="pCountry" type="String" />
+      </Parameters>
+      <Query>SELECT ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+                       FROM fact_figures ff
+                       WHERE ff.INDICATOR_ID = 25
+                       AND ff.COUNTRY = ${pCountry}
+                       ORDER BY Measure ASC
+      </Query>
+   </DataAccess>
+
+    <!-- GET SPLIT_1 DATA BY COUNTRY -->
+      <DataAccess access="public" connection="ilo_conn" id="getLegendByCounty" type="sql">
+         <Cache duration="3600" enabled="true"/>
+         <Columns/>
+         <Parameters/>
+         <Query>SELECT IFNULL(ff.COUNTRY,ff.REGION) as country,  ff.SPLIT_1 as SPLIT,  ff.MEASURE AS Value
+                          FROM fact_figures ff
+                          WHERE ff.INDICATOR_ID = 25
+                          ORDER BY country ASC
+         </Query>
+      </DataAccess>
+
 </CDADescriptor>

@@ -300,7 +300,7 @@ define(function (require) {
          * My Description rules
          */
         getPilotDataPath:function() {
-            return dataPath + configuration.paths.data.cda.datapilot;
+            return dataPath + configuration.paths.data.cda.ilo;
         },
 
         /**

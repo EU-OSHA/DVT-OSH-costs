@@ -1,19 +1,35 @@
 <!-- eu-analysis-illness.html -->
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" class="osha-analysis-illnesses">
     <div class="container-full eu-analysis-illness-wrapper">
+
         <section class="chart-analysis-illnesses affix-top" bs-affix  data-offset-top="180">
             <div class="chart-analysis-illnesses-box container" >
                 <h2>Main work-related illnesses and DALY (Years of life lost and lived with disability) per 100.000 workers</h2>
                 <div class="chart-wrapper">
                     <div class="zylk-chart col-sm-5 col-md-3">
-                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-by-illnesses.png">
+                        <zylk-bar-chart data-ng-cloak class="text-center"
+                                        query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                        orientation="horizontal"
+                                        params="[['pIndicator','25']]"
+                                        p-x-labels="1"
+                                        p-y-labels="0"
+                                        colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                        id="3"
+                                        color2-axis-colors="['#eda308','lightgray']"
+                                        color-role="category,series"
+                                        plots="stories[0].plots"
+                                        type="pie"
+                                        values-visible="false"
+                                        title="EU28"
+                                        long-title="YLL per 100.000 workers in EU28 by country"
+                        ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data">50</span><span class="legend-name">Cancer</span></li>
-                        <li class="legend-item"><span class="legend-data">60</span><span class="legend-name">MSD</span></li>
-                        <li class="legend-item"><span class="legend-data">365</span><span class="legend-name">Accidents</span></li>
-                        <li class="legend-item"><span class="legend-data">80</span><span class="legend-name">Circulatory</span></li>
-                        <li class="legend-item"><span class="legend-data">250</span><span class="legend-name">Others</span></li>
+                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Cancer"]}}</span><span class="legend-name">Cancer</span></li>
+                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["MSD"]}}</span><span class="legend-name">MSD</span></li>
+                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Injuries"]}}</span><span class="legend-name">Accidents</span></li>
+                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Circulatory"]}}</span><span class="legend-name">Circulatory</span></li>
+                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Others"]}}</span><span class="legend-name">Others</span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
                         <p>During the last two decades, pension reforms have been carried out all over Europe. However, raising the official pension age does not mean that all people actually work up to these higher ages. Although the gap between official and effective retirement ages is gradually shrinking, many workers still leave the labour market well before reaching the official pension age. Health is not the only reason for leaving the labour market, but it is an important factor for the retirement decision.
@@ -21,107 +37,1119 @@
                     </div>
                 </div>
             </div>
-         </section>
+        </section>
         <section class="compare-buttons">
             <ul class="compare-buttons-list  list-inline container">
                 <li><a href="" >See more about the main work-related illnesses groups in the EU countries</a></li>
                 <li><a href="" >See more about the situation at world level, in the WHO regions</a></li>
             </ul>
         </section>
+
         <section class="countries-analysis-by-illnesses container">
             <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
                 <div class="country-wrapper">
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
-                        <h3>Belgium</h3>
-                        <div class="zylk-chart">
-                            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-by-illnesses.png">
+
+
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Austria']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="4"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Austria"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Others"]}}</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                        <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Belgium']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="5"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Belgium"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                        <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Bulgaria']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="6"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Bulgaria"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Croatia']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="7"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Croatia"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p>DALY</p>
-                        <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data">50</span></li>
-                            <li class="legend-item"><span class="legend-data">60</span></li>
-                            <li class="legend-item"><span class="legend-data">365</span></li>
-                            <li class="legend-item"><span class="legend-data">80</span></li>
-                            <li class="legend-item"><span class="legend-data">250</span></li>
-                        </ul>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Cyprus']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="8"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Cyprus"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Czech Republic']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="9"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Czech Republic"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Denmark']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="10"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Denmark"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Estonia']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="11"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Estonia"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <<div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Finland']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="12"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Finland"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','France']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="13"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="France"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["France"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Germany']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="14"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Germany"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Greece']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="15"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Greece"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Hungary']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="16"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Hungary"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Iceland']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="17"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Iceland"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Ireland']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="18"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Ireland"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Italy']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="19"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Italy"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Latvia']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="20"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Latvia"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Lithuania']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="21"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Lithuania"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Luxembourg']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="22"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Luxembourg"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Malta']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="23"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Malta"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Netherlands']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="24"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Netherlands"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Norway']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="25"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Norway"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Poland']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="26"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Poland"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Portugal']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="27"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Portugal"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Romania']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="28"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Poland"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
 
-            </div>
-            <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
-                <div class="country-wrapper">
-                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
-                        <h3>Belgium</h3>
-                        <div class="zylk-chart">
-                            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-by-illnesses.png">
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Slovakia']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="29"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Slovakia"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Others"]}}</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p>DALY</p>
-                        <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data">50</span></li>
-                            <li class="legend-item"><span class="legend-data">60</span></li>
-                            <li class="legend-item"><span class="legend-data">365</span></li>
-                            <li class="legend-item"><span class="legend-data">80</span></li>
-                            <li class="legend-item"><span class="legend-data">250</span></li>
-                        </ul>
-                    </div>
                 </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
 
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Slovenia']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="30"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
 
-            </div>
-            <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
-                <div class="country-wrapper">
-                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
-                        <h3>Belgium</h3>
-                        <div class="zylk-chart">
-                            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-by-illnesses.png">
+                                                title="Slovenia"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Others"]}}</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p>DALY</p>
-                        <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data">50</span></li>
-                            <li class="legend-item"><span class="legend-data">60</span></li>
-                            <li class="legend-item"><span class="legend-data">365</span></li>
-                            <li class="legend-item"><span class="legend-data">80</span></li>
-                            <li class="legend-item"><span class="legend-data">250</span></li>
-                        </ul>
-                    </div>
                 </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
 
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Spain']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="31"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
 
-            </div>
-            <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
-                <div class="country-wrapper">
-                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
-                        <h3>Belgium</h3>
-                        <div class="zylk-chart">
-                            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/chart-by-illnesses.png">
+                                                title="Spain"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Others"]}}</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p>DALY</p>
-                        <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data">50</span></li>
-                            <li class="legend-item"><span class="legend-data">60</span></li>
-                            <li class="legend-item"><span class="legend-data">365</span></li>
-                            <li class="legend-item"><span class="legend-data">80</span></li>
-                            <li class="legend-item"><span class="legend-data">250</span></li>
-                        </ul>
+                </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','Sweden']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="32"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
+
+                                                title="Sweden"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-6">
+                    <div class="country-wrapper">
+                        <div class="country-chart col-xs-8 col-sm-9 col-md-9">
 
+                            <div class="zylk-chart">
+                                <zylk-bar-chart data-ng-cloak class="text-center"
+                                                query="getSplitDataByCountry" cda="{{::cda }}"
+                                                orientation="horizontal"
+                                                params="[['pCountry','United Kingdom']]"
+                                                p-x-labels="1"
+                                                p-y-labels="0"
+                                                colors="['#DB3081','#575759', '#F2C466', '#0FA9A9', '#C9E3E3']"
+                                                id="33"
+                                                color2-axis-colors="['#eda308','lightgray']"
+                                                color-role="category,series"
+                                                plots="stories[0].plots"
+                                                type="pie"
+                                                values-visible="false"
 
-            </div>
-
-
-
-            <p class="see-more"><a href="#" title="See more">See more about estimates</a></p>
+                                                title="United Kingdom"
+                                                long-title="YLL per 100.000 workers in EU28 by country"
+                                ></zylk-bar-chart>
+                            </div>
+                        </div>
+                        <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                            <p>DALY</p>
+                            <ul class="legend-list">
+                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Cancer"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["MSD"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Injuries"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Circulatory"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Others"]}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="see-more"><a href="#" title="See more">See more about estimates</a></p>
         </section>
-    </div>
 
+
+    </div>
 </zylk-dashboard>
