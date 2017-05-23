@@ -4,7 +4,7 @@
 
         <section class="chart-analysis-illnesses affix-top" bs-affix  data-offset-top="180">
             <div class="chart-analysis-illnesses-box container" >
-                <h2>Main work-related illnesses and DALY (Years of life lost and lived with disability) per 100.000 workers</h2>
+                <h2 data-ng-bind="i18n.L91"></h2>
                 <div class="chart-wrapper">
                     <div class="zylk-chart col-sm-5 col-md-3">
                         <zylk-bar-chart data-ng-cloak class="text-center"
@@ -19,28 +19,27 @@
                                         plots="stories[0].plots"
                                         type="pie"
                                         values-visible="false"
-                                        title="EU28"
+                                        title="{{regions.EU}}"
                                         long-title="YLL per 100.000 workers in EU28 by country"
                         ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Cancer"]}}</span><span class="legend-name">Cancer</span></li>
-                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["MSD"]}}</span><span class="legend-name">MSD</span></li>
-                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Injuries"]}}</span><span class="legend-name">Accidents</span></li>
-                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Circulatory"]}}</span><span class="legend-name">Circulatory</span></li>
-                        <li class="legend-item"><span class="legend-data">{{countries["EU28"]["Others"]}}</span><span class="legend-name">Others</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.EU]["Cancer"]></span><span class="legend-name">Cancer</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.EU]["MSD"]></span><span class="legend-name">MSD</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.EU]["Injuries"]></span><span class="legend-name">Accidents</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.EU]["Circulatory"]></span><span class="legend-name">Circulatory</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.EU]["Others"]></span><span class="legend-name">Others</span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
-                        <p>During the last two decades, pension reforms have been carried out all over Europe. However, raising the official pension age does not mean that all people actually work up to these higher ages. Although the gap between official and effective retirement ages is gradually shrinking, many workers still leave the labour market well before reaching the official pension age. Health is not the only reason for leaving the labour market, but it is an important factor for the retirement decision.
-                        </p>
+                        <p data-ng-bind="i18n.L92"></p>
                     </div>
                 </div>
             </div>
         </section>
         <section class="compare-buttons">
             <ul class="compare-buttons-list  list-inline container">
-                <li><a href="" >See more about the main work-related illnesses groups in the EU countries</a></li>
-                <li><a href="" >See more about the situation at world level, in the WHO regions</a></li>
+                <li><a href="" data-ng-bind="i18n.L46"></a></li>
+                <li><a href="" data-ng-bind="i18n.L69"></a></li>
             </ul>
         </section>
 
@@ -48,8 +47,6 @@
             <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-4">
                 <div class="country-wrapper">
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
-
-
 
                             <div class="zylk-chart">
                                 <zylk-bar-chart data-ng-cloak class="text-center"
@@ -64,8 +61,7 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-
-                                                title="Austria"
+                                                title="{{regions.AT}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -73,11 +69,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Austria"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Austria"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Austria"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Austria"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Austria"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Austria"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -103,7 +99,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Belgium"
+                                                title="{{regions.BE}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -111,11 +107,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Belgium"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Belgium"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Belgium"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Belgium"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Belgium"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Belgium"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -140,7 +136,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Bulgaria"
+                                                title="{{regions.BG}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -148,11 +144,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Bulgaria"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Bulgaria"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Bulgaria"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Bulgaria"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Bulgaria"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Bulgaria"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -177,7 +173,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Croatia"
+                                                title="{{regions.HR}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -185,11 +181,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Croatia"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Croatia"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Croatia"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Croatia"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Croatia"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Croatia"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -214,7 +210,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Cyprus"
+                                                title="{{regions.CY}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -222,11 +218,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Cyprus"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Cyprus"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Cyprus"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Cyprus"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Cyprus"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Cyprus"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -249,7 +245,7 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="Czech Republic"
+                                                title="{{regions.CZ}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -257,11 +253,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Czech Republic"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.CZ]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.CZ]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.CZ]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.CZ]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.CZ]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -285,7 +281,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Denmark"
+                                                title="{{regions.DK}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -293,11 +289,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Denmark"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Denmark"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Denmark"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Denmark"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Denmark"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Denmark"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -320,7 +316,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Estonia"
+                                                title="{{regions.EE}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -328,11 +324,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Estonia"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Estonia"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Estonia"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Estonia"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Estonia"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Estonia"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -355,7 +351,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Finland"
+                                                title="{{regions.FI}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -363,11 +359,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Finland"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Finland"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Finland"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Finland"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Finland"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Finland"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -389,7 +385,7 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="France"
+                                                title="{{regions.FR}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -397,11 +393,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["France"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["France"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["France"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["France"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["France"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["France"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["France"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -422,7 +418,7 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="Germany"
+                                                title="{{regions.DE}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -430,11 +426,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Germany"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Germany"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Germany"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Germany"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Germany"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Germany"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -456,7 +452,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Greece"
+                                                title="{{regions.EL}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -464,11 +460,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Greece"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Greece"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Greece"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Greece"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Greece"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Greece"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -490,7 +486,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Hungary"
+                                                title="{{regions.HU}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -498,11 +494,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Hungary"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Hungary"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Hungary"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Hungary"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Hungary"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Hungary"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -523,7 +519,7 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="Iceland"
+                                                title="{{regions.IS}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -531,11 +527,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Iceland"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Iceland"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Iceland"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Iceland"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Iceland"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Iceland"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -558,7 +554,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Ireland"
+                                                title="{{regions.IE}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -566,11 +562,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Ireland"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Ireland"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Ireland"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Ireland"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Ireland"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Ireland"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -594,7 +590,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Italy"
+                                                title="{{regions.IT}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -602,11 +598,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Italy"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Italy"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Italy"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Italy"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Italy"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Italy"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -629,7 +625,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Latvia"
+                                                title="{{regions.LV}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -637,11 +633,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Latvia"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Latvia"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Latvia"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Latvia"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Latvia"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Latvia"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -664,7 +660,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Lithuania"
+                                                title="{{regions.LT}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -672,11 +668,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Lithuania"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Lithuania"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Lithuania"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Lithuania"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Lithuania"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Lithuania"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -699,7 +695,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Luxembourg"
+                                                title="{{regions.LU}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -707,11 +703,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Luxembourg"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Luxembourg"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Luxembourg"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Luxembourg"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Luxembourg"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Luxembourg"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -735,7 +731,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Malta"
+                                                title="{{regions.MT}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -743,11 +739,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Malta"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Malta"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Malta"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Malta"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Malta"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Malta"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -770,7 +766,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Netherlands"
+                                                title="{{regions.NL}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -778,11 +774,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Netherlands"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Netherlands"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Netherlands"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Netherlands"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Netherlands"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Netherlands"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -806,7 +802,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Norway"
+                                                title="{{regions.NO}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -814,11 +810,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Norway"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Norway"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Norway"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Norway"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Norway"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Norway"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -841,7 +837,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Poland"
+                                                title="{{regions.PL}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -849,11 +845,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Poland"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -878,7 +874,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Portugal"
+                                                title="{{regions.PT}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -886,11 +882,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Portugal"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Portugal"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Portugal"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Portugal"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Portugal"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Portugal"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -913,7 +909,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Poland"
+                                                title="{{regions.PL}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -921,11 +917,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Romania"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Poland"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -948,7 +944,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Slovakia"
+                                                title="{{regions.SK}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -956,11 +952,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovakia"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovakia"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovakia"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovakia"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovakia"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovakia"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -983,7 +979,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Slovenia"
+                                                title="{{regions.SI}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -991,11 +987,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Slovenia"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovenia"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovenia"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovenia"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovenia"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Slovenia"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1018,7 +1014,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Spain"
+                                                title="{{regions.ES}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -1026,11 +1022,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Spain"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Spain"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Spain"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Spain"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Spain"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Spain"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1053,7 +1049,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="Sweden"
+                                                title="{{regions.SE}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -1061,11 +1057,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["Sweden"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Sweden"]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Sweden"]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Sweden"]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Sweden"]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries["Sweden"]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1088,7 +1084,7 @@
                                                 type="pie"
                                                 values-visible="false"
 
-                                                title="United Kingdom"
+                                                title="{{regions.UK}}"
                                                 long-title="YLL per 100.000 workers in EU28 by country"
                                 ></zylk-bar-chart>
                             </div>
@@ -1096,11 +1092,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p>DALY</p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Cancer"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["MSD"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Injuries"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Circulatory"]}}</span></li>
-                                <li class="legend-item"><span class="legend-data">{{countries["United Kingdom"]["Others"]}}</span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.UK]["Cancer"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.UK]["MSD"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.UK]["Injuries"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.UK]["Circulatory"]></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind=countries[regions.UK]["Others"]></span></li>
                             </ul>
                         </div>
                     </div>

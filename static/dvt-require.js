@@ -166,6 +166,7 @@
     /* EU ANALYSIS ILLNESS */
     requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;
     requirePaths['vertical/eu-analysis-illness/services/PieChartLegendService'] = verticalModules + '/eu-estimates/eu-analysis-illness/services/PieChartLegendService' + suffix;
+    requirePaths['vertical/eu-estimates/eu-analysis-illness/i18n'] = verticalModules + '/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n' + suffix + '.json';
 
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;
