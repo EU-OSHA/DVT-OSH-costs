@@ -19,11 +19,11 @@
   },
     "chartDeath": {
     "title": "L28",
-    "image": "illnesses-injuries-death.png"
+    "image": "illnesses-injuries-death.svg"
   },
     "chartDaly": {
     "title": "L32",
     "message": "L33",
-    "image": "illnesses-injuries-daly.png"
+    "image": "illnesses-injuries-daly.svg"
   }
 }
