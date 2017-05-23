@@ -83,7 +83,7 @@ gulp.task('ci-environment', function () {
         .pipe(replace(/\"pentaho\":(.*?),/g, '"pentaho": "' + pentaho + '",'))
         .pipe(replace(/\"piwik\":(.*?),/g, '"piwik": "' + piwik + '",'))
         .pipe(replace(/\"do_track\":(.*?),/g, '"do_track": ' + do_track + ','))
-        .pipe(replace(/\"packed\":(.*?)\n/g, '"packed": ' + packed ))
+        .pipe(replace(/\"packed\":(.*?)\n/g, '"packed": ' + packed + '\n'))
         .pipe(gulp.dest(function(file) {
             return file.base;
         }));
