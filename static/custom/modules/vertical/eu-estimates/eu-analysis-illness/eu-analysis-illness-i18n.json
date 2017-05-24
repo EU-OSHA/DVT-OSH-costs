@@ -24,12 +24,10 @@
   "PL":"Poland",
   "PT":"Portugal",
   "RO":"Romania",
-  "SI":"Slovakia",
-  "SK":"Slovenia",
+  "SK":"Slovakia",
+  "SI":"Slovenia",
   "ES":"Spain",
   "SE":"Sweden",
   "UK":"United Kingdom",
-  "EU":"EU28",
-  "IJ":"Injuries",
-  "OT":"Others"
+  "EU":"EU28"
 }
