@@ -59,6 +59,22 @@ define(function (require) {
             $scope.slides[0].image = $scope.currency.image;
             $scope.slides[0].image2 = $scope.currency.image2;
         }
+
+        $scope.modal = function(type, index) {
+            switch (type){
+                case 'chart':
+                    debugger;
+                    if (index == 1){
+                        $scope.modalData = $scope.chartDeath;
+                    }else if (index == 2) { 
+                        $scope.modalData = $scope.chartDaly;
+                    }
+                    break;
+                case 'slide':
+                    $scope.modalData = $scope.slides[index];
+                    break;
+            }
+        }
     
        $scope.status = 'ready';
     }
