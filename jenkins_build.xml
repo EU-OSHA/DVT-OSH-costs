@@ -18,9 +18,9 @@
 
     <!--
             jenkins vars
-            - release;      jenkins-environment
     -->
     <property name="jenkins-environment"        value="local"/>
+    <property name="db_pass"                    value=""/>
     <property name="do_track"                   value="false"/>
     <property name="packed"                     value="false"/>
     <property name="cache"                      value="false"/>
@@ -32,6 +32,7 @@
     <echo>packed: ${packed}</echo>
     <echo>cache: ${cache}</echo>
     <echo>seo: ${seo}</echo>
+    <echo>wipeLibraries: ${wipeLibraries}</echo>
 
     <!--
             jenkins commands to have installed
@@ -168,10 +169,17 @@
         <delete dir="${release-dir}/${release_solution_name}"/>
         <mkdir dir="${release-dir}/${release_solution_name}"/>
         <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>
+        <target name="deploy-database">
+        <echo message="Import database dump" />
+        <exec executable="/bin/bash">
+            <arg value="-c"/>
+            <arg value="mysql -uroot -p${db_pass} ${db_name} &lt; resources-ext/dbdump/${db_name}.sql"/>
+        </exec>
     </target>
 
-    <target name="release-publish-snapshots">
+    </target>
+
+    <target name="release-publish-snapshots" depends="release-publish">
         <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
-        <copy file="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" 	todir="${release-dir}" overwrite="false" verbose="true"/>
     </target>
 </project>
