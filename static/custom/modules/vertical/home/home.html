@@ -9,20 +9,16 @@
 					<ul class="carousel-inner">
 
 						<li ng-repeat="slide in slides" class="item" ng-class="{'active': $index == 0 }">
-							<h2>Cost to society of work-related injury and illness</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui lorem, pharetra eu erat eu, porta consequat enim.
-								In eu libero at dolor aliquet vestibulum nec eu odio. Integer suscipit dolor sed mauris sodales, nec posuere libero eleifend.
-								Proin vehicula aliquam cursus. Pellentesque ex felis, bibendum nec elit in, ultricies consequat mauris. </p>
+							<h2 data-ng-bind="slide.title"></h2>
+							<p data-ng-bind="slide.text"></p>
 
 							<div class="carousel-chart">
-								<select class="currency-chart">
-									<option>&euro; (euro) </option>
-									<option>&dollar; (dollar)</option>
+								<select class="currency-chart" data-ng-if="$first" data-ng-options="option as option.label for option in select track by option.id" data-ng-model="currency" data-ng-change="update()">
 								</select>
 								<picture>
-									<source ng-srcset="{{slide.image2}}" alt="{{slide.alt}}" media="(max-width: 767px)">
-									<source ng-srcset="{{slide.image}}" alt="{{slide.alt}}">
-									<img ng-src="{{slide.image}}" alt="{{slide.alt}}"  data-toggle="modal" data-target="#modalChart">
+									<source data-ng-srcset="{{slide.image2}}" alt="{{slide.title}}" media="(max-width: 767px)">
+									<source data-ng-srcset="{{slide.image}}" alt="{{slide.title}}">
+									<img data-ng-src="{{slide.image}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart">
 								</picture>
 							</div>
 							<p class="carousel-note" data-ng-bind-html="::slide.text"></p>

@@ -22,17 +22,43 @@ define(function (require) {
         $scope.goto = function (estado) {
             $state.go(estado, {});
         };
+
+        // Select Options
+        $scope.select = [
+            {
+                id: '1',
+                label: i18n.L113,
+                text: i18n[i18n_home.slider1.related],
+                image: configService.getImagesPath()+ i18n_home.slider1.image,
+                image2: configService.getImagesPath()+ i18n_home.slider1.image2
+            },{
+                id: '2',
+                label: i18n.L114,
+                text: i18n[i18n_home.slider1.relatedEuro],
+                image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
+                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2
+            }
+        ];
+
+        $scope.currency = $scope.select[0];
     
         // Carrousel slides
         $scope.slides = [
-            {text: i18n[i18n_home.slider1.text], image: configService.getImagesPath()+ i18n_home.slider1.image, image2: configService.getImagesPath()+ i18n_home.slider1.image2},
-            {text: i18n[i18n_home.slider2.text], image: configService.getImagesPath()+ i18n_home.slider2.image, image2: configService.getImagesPath()+ i18n_home.slider2.image2},
-            {text: i18n[i18n_home.slider3.text], image: configService.getImagesPath()+ i18n_home.slider3.image, image2: configService.getImagesPath()+ i18n_home.slider3.image2}
+            {title: i18n[i18n_home.slider1.title], text: $scope.currency.text, image: $scope.currency.image, image2: $scope.currency.image2},
+            {title: i18n[i18n_home.slider2.title], text: i18n[i18n_home.slider2.related], image: configService.getImagesPath()+ i18n_home.slider2.image, image2: configService.getImagesPath()+ i18n_home.slider2.image2},
+            {title: i18n[i18n_home.slider3.title], text: i18n[i18n_home.slider3.related], image: configService.getImagesPath()+ i18n_home.slider3.image, image2: configService.getImagesPath()+ i18n_home.slider3.image2}
         ];
 
         // Charts
         $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
         $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], message: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
+
+        $scope.update = function() {
+            $scope.currency = $scope.currency == $scope.select[0] ? $scope.select[1] : $scope.select[0];
+            $scope.slides[0].text = $scope.currency.text;
+            $scope.slides[0].image = $scope.currency.image;
+            $scope.slides[0].image2 = $scope.currency.image2;
+        }
     
        $scope.status = 'ready';
     }
