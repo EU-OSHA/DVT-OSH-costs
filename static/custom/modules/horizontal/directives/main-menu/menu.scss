@@ -34,9 +34,20 @@
                         &:hover{
                             color: $color03;
                         }
-                        img{
-                            width: 18px;
+                        .blogger-icon{
+                            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/blog.svg) no-repeat;
+                            background-size: 20px 20px;
+                            width: 20px;
+                            height: 21px;
+                            display: inline-block;
                             opacity: 0.35;
+                            position: relative;
+                            top: 6px;
+                        }
+                        &:hover .blogger-icon{
+                            background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/blog-hover.svg') no-repeat;
+                            background-size: 20px 20px;
+                            opacity:1;
                         }
                     }
                 }

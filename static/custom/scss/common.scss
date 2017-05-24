@@ -155,16 +155,15 @@ div.contextual-menu > div.dropdown {
   }
 }
 
-.modal-backdrop {
-  z-index: 9999998 !important;
-}
+
+
 
 
 /****** GRÃƒÂFICAS GENERALES *****/
 
 /* tooltip size */
 .tipsy{
-  z-index: 99999999999999999999999999999999999!important;
+  z-index: 99999999999999999!important;
 }
 .tipsy-inner{
   font-size:12px;
