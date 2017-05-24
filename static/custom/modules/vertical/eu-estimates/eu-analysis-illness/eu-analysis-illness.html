@@ -9,6 +9,7 @@
                     <div class="zylk-chart col-sm-5 col-md-3">
                         <zylk-bar-chart data-ng-cloak class="text-center"
                                         query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                        width="250"
                                         orientation="horizontal"
                                         params="[['pIndicator','25']]"
                                         p-x-labels="1"
@@ -186,7 +187,6 @@
                                 <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Injuries']"></span></li>
                                 <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Circulatory']"></span></li>
                                 <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Others']"></span></li>
-                            </ul>
                         </div>
                     </div>
 

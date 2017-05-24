@@ -63,7 +63,6 @@ define(function (require) {
         $scope.modal = function(type, index) {
             switch (type){
                 case 'chart':
-                    debugger;
                     if (index == 1){
                         $scope.modalData = $scope.chartDeath;
                     }else if (index == 2) { 
