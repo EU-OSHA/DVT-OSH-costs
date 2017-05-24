@@ -176,8 +176,6 @@
         </exec>
     </target>
 
-    </target>
-
     <target name="release-publish-snapshots" depends="release-publish">
         <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
     </target>
