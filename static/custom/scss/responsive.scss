@@ -76,7 +76,7 @@
 }
 
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
   #carouselHome {
     .carousel-inner {
       li.item {
@@ -93,6 +93,32 @@
       }
     }
   }
+  /** HOME **/
+  .section-carrousel {
+    #carouselHome {
+      min-height: 330px;
+    }
+  }
+  .modal-dialog {
+    width: 98%;
+    .modal-content{
+      .modal-header{
+        .modal-title{
+        }
+      }
+      .modal-body{
+        img{
+          width: 100%;
+          padding: 1%;
+        }
+      }
+      .modal-footer {
+      }
+    }
+  }
+
+
+
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
@@ -106,6 +132,8 @@
     }
   }
 }
+
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
   body{
     padding-top: 90px;
@@ -120,12 +148,40 @@
   }
 
   /** HOME **/
-  .section-carrousel {
-    #carouselHome {
-      min-height: 330px;
-     }
+  #carouselHome {
+    min-height: 330px;
+    .carousel-inner {
+      li.item {
+        width: 100% !important;
+        .carousel-chart{
+          width: 95% !important;
+          margin: 0 !important;
+          padding: 15px !important;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
   }
-
+  .modal-dialog {
+    width: 98%;
+    .modal-content{
+      .modal-header{
+        .modal-title{
+        }
+      }
+      .modal-body{
+        img{
+          width: 100%;
+          padding: 1%;
+        }
+      }
+      .modal-footer {
+      }
+    }
+  }
 
   /** EU-ESTIMATES **/
   .countries-comparison{

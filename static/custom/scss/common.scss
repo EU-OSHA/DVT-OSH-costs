@@ -155,13 +155,16 @@ div.contextual-menu > div.dropdown {
   }
 }
 
-
+.back-color{
+  background: #F9F9F9;
+}
 
 
 
 /****** GRÃƒÂFICAS GENERALES *****/
 
 /* tooltip size */
+
 .tipsy{
   z-index: 99999999999999999!important;
 }
@@ -177,7 +180,7 @@ div.contextual-menu > div.dropdown {
 .zylk-bar-chart,
 .dvt-chart{
   padding:.5em .7em !important;
-  background:#cecece!important;
+  background:$backGraps !important;
   height:auto;
 
   h3 {
@@ -504,6 +507,9 @@ div.blockUIDefaultImg:before {
   display:none;
 }
 .modal-body {
+  h2{
+    color: #000 !important;
+  }
   .logoGraphics-wrapper{
     float: left;
     width: 100%;
@@ -590,7 +596,7 @@ p {
 /** hover links **/
 .bulletsItems a:hover,
 .bulletsItems a:hover.selected {
-    background: #cecece;
+    background: $backGraps;
 }
 .cursor-pointer:hover {
     opacity: 0.6;

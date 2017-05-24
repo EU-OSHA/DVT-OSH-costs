@@ -1,9 +1,15 @@
+.main-text-eu-estimates{
+  p:first-child{
+    text-align: center;
+  }
+}
 .osha-eu-estimates-wrapper{
   background: #f9f9f9;
   .carousel-countries{
     float: left;
     margin-top: 40px;
     width:100%;
+    z-index: 2;
   }
   .carousel-indicators {
     position: relative !important;
