@@ -163,6 +163,9 @@ div.contextual-menu > div.dropdown {
 /****** GRÃƒÂFICAS GENERALES *****/
 
 /* tooltip size */
+.tipsy{
+  z-index: 99999999999999999999999999999999999!important;
+}
 .tipsy-inner{
   font-size:12px;
 }
