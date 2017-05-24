@@ -169,7 +169,6 @@
         <delete dir="${release-dir}/${release_solution_name}"/>
         <mkdir dir="${release-dir}/${release_solution_name}"/>
         <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>
-        <target name="deploy-database">
         <echo message="Import database dump" />
         <exec executable="/bin/bash">
             <arg value="-c"/>
