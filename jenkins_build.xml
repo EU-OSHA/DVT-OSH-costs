@@ -20,6 +20,7 @@
             jenkins vars
     -->
     <property name="jenkins-environment"        value="local"/>
+    <property name="do_db"                      value="false"/>
     <property name="db_pass"                    value=""/>
     <property name="do_track"                   value="false"/>
     <property name="packed"                     value="false"/>
@@ -27,7 +28,13 @@
     <property name="seo"                        value="false"/>
     <property name="wipeLibraries"              value="false"/>
 
+    <!-- Ant 1.7.1 or lower: A 'property' is initilised to evaluate it in a conditional statement -->
+    <condition property="do_db_prop" value="true">
+        <istrue value="${do_db}"/>
+    </condition>
+
     <echo>jenkins-environment: ${jenkins-environment}</echo>
+    <echo>do_db: ${do_db}</echo>
     <echo>do_track: ${do_track}</echo>
     <echo>packed: ${packed}</echo>
     <echo>cache: ${cache}</echo>
@@ -165,15 +172,18 @@
         <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" basedir="jenkins_dist"/>
     </target>
 
-    <target name="release-publish" depends="release">
-        <delete dir="${release-dir}/${release_solution_name}"/>
-        <mkdir dir="${release-dir}/${release_solution_name}"/>
-        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>
+    <target name="import-database" if="do_db_prop">
         <echo message="Import database dump" />
         <exec executable="/bin/bash">
             <arg value="-c"/>
             <arg value="mysql -uroot -p${db_pass} ${db_name} &lt; resources-ext/dbdump/${db_name}.sql"/>
         </exec>
+    </target>
+
+    <target name="release-publish" depends="release, import-database">
+        <delete dir="${release-dir}/${release_solution_name}"/>
+        <mkdir dir="${release-dir}/${release_solution_name}"/>
+        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>        
     </target>
 
     <target name="release-publish-snapshots" depends="release-publish">
