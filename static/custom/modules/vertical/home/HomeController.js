@@ -51,7 +51,7 @@ define(function (require) {
 
         // Charts
         $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
-        $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], message: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
+        $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], text: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
 
         $scope.update = function() {
             $scope.currency = $scope.currency == $scope.select[0] ? $scope.select[1] : $scope.select[0];

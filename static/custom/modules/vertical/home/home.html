@@ -62,7 +62,7 @@
 					<img data-ng-src="{{chartDaly.image}}" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
 				</div>
 				<div class="content-section-second">
-					<p data-ng-bind="chartDaly.message"></p>
+					<p data-ng-bind="chartDaly.text"></p>
 				</div>
 				<p class="see-more"><a data-ui-sref='#' data-ng-bind="i18n.L34"></a></p>
 			</div>
@@ -88,6 +88,7 @@
 				<img data-ng-src="{{modalData.image}}" alt="modalData.title"  data-toggle="modal" data-target="#modalChart">
 			</div>
 			<div class="modal-footer">
+				<p data-ng-bind="modalData.text"></p>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 		</div>

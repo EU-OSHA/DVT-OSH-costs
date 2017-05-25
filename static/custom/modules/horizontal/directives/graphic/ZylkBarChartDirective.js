@@ -270,7 +270,7 @@ define(function (require) {
                     scope.haveEnlarge = "true";
                 }
                 scope.isMaximized = !!attributes.isMaximized;
-                scope.title = attributes.title;
+                //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
 
@@ -717,18 +717,19 @@ define(function (require) {
                 //  title, functional legend
                 // TODO separar tÃ­tulo de leyenda ya que la primera puede venir de la directiva y no de db (multi-indicador)
                 // =========================
-                /*if (!!attributes.id) {
+                if (!!attributes.id) {
                     definition.chartDefinition.title = null;
                     var indicators = JSON.parse("["+attributes.id+ "]");
-                    indicators.forEach(function (id,index,array) {
+                    plotsProvider.showContextualData('', definition, scope, attributes);
+                    /*indicators.forEach(function (id,index,array) {
                         $log.debug("METADATA INDICATORS FOREACH---------------------------------->");
                         $log.debug(id);
                         dataService.getIndicatorMetadata(id).then(function (dataset) {
                             $log.debug(dataset);
-                            plotsProvider.showContextualData(dataset, definition, scope, attributes);
+                            
                          });
-                    });
-                }*/
+                    });*/
+                }
             }
         }
     }

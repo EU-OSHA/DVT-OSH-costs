@@ -200,13 +200,14 @@ define(function () {
             showContextualData: function (metadata, definition, scope, attributes) {
 
                 // TODO encapsulate in modeldata
-                var shortD = metadata.data.resultset[0][0];
-                var longD = !!scope.isMaximized && scope.longTitle? scope.longTitle: metadata.data.resultset[0][1];
-                var officialName = metadata.data.resultset[0][2];
+                //var shortD = metadata.data.resultset[0][0];
+                var shortD = '';
+                var longD = !!scope.isMaximized && scope.longTitle? scope.longTitle:''/*: metadata.data.resultset[0][1]*/;
+                /*var officialName = metadata.data.resultset[0][2];
                 var source = metadata.data.resultset[0][3];
                 var year = metadata.data.resultset[0][4];
                 var notes = metadata.data.resultset[0][5];
-                var eucomments = metadata.data.resultset[0][6];
+                var eucomments = metadata.data.resultset[0][6];*/
 
 
                 var showTitle = attributes.showTitle != -1 || false;
@@ -220,7 +221,7 @@ define(function () {
 
                 if(!!showLegend) {
                         scope.functionalLegend = !attributes.maxFunctionalLegend
-                            ?setContainerLegendComposition(officialName, source, year, notes, eucomments, scope.functionalLegend)
+                            ?''/*setContainerLegendComposition(officialName, source, year, notes, eucomments, scope.functionalLegend)*/
                             :attributes.maxFunctionalLegend;
                     definition ['functLegen'] = scope.functionalLegend;
                 }
