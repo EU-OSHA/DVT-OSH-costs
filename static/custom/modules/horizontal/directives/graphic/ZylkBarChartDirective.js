@@ -181,8 +181,9 @@ define(function (require) {
             + '<div class="row">'
             + '<div class="header col-md-12 nopadding">'
             + '<div class="col-xs-11 col-sm-11 col-md-11 nopadding text-left wrapper-title-graphic">'
-            + '<h2 ng-if="(!!title && !isMaximized) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h2>'
+            + '<h2 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h2>'
             + '<h2 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h2>'
+            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title" data-ng-bind-html="title"></h3>'
             + '</div>'
             + '<div class="nopadding pull-right wrapper-contextual-menu">'
             + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
@@ -270,6 +271,7 @@ define(function (require) {
                     scope.haveEnlarge = "true";
                 }
                 scope.isMaximized = !!attributes.isMaximized;
+                scope.titleH3 = !!attributes.titleH3;
                 //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
