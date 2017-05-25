@@ -32,21 +32,24 @@ define(function (require) {
         this.dispatchEvent(evt);
     };
 
-    var _getPiwikInstance=function() {
-            if (environment.do_track === false) {
+     var _getPiwikInstance=function() {
+        if (environment.do_track === false) {
             return [];
 
         } else {
             var url = configuration.paths.piwik[environment.piwik].protocol + ":" + configuration.paths.piwik[environment.piwik].domain + ":" + configuration.paths.piwik[environment.piwik].port + configuration.paths.piwik[environment.piwik].path;
-            if(typeof(_paq) != "undefined") {
-                window._paq = _paq;
-            } else {
+            var basePath = configuration.paths.enviroment[environment.pentaho].domain + ":" + configuration.paths.enviroment[environment.pentaho].port + "/#!"
+            if(typeof(_paq) == "undefined") {
                 window._paq = [];
             }
             //window._paq.push(['trackPageView']);
             window._paq.push(['enableLinkTracking']);
             window._paq.push(['setTrackerUrl', url+'piwik.php']);
+            window.piwikBasePath = basePath;
             window._paq.push(['setSiteId', configuration.paths.piwik[environment.piwik].SiteId]);
+
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('head')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=url +'piwik.js'; s.appendChild(g);
             return window._paq;
         }
     }
