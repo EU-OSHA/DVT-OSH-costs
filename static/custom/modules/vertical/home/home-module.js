@@ -15,7 +15,9 @@ define(function (require) {
     var module = angular.module('home', ['ui.router', configModule.name]);
 
     /* List of states of the  module */
-    module.config(function ($stateProvider, configService, $urlRouterProvider, $controllerProvider) {
+    module.config(function ($stateProvider, configService, $urlRouterProvider, $controllerProvider, $uiViewScrollProvider) {
+
+        $uiViewScrollProvider.useAnchorScroll();
         
         $urlRouterProvider.when('', '/');
         $stateProvider.state('home', {

@@ -11,7 +11,9 @@ define(function (require) {
      * @requires configModule
      */
     var module = angular.module('eu-estimates', ['ui.router', configModule.name]);
-    module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider) {
+    module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider, $uiViewScrollProvider) {
+
+        $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('countries-comparison', {
             url: "/countries-comparison",
