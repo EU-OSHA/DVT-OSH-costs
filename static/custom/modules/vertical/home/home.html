@@ -10,7 +10,6 @@
 
 						<li ng-repeat="slide in slides" class="item" ng-class="{'active': $index == 0 }">
 							<h2 data-ng-bind="slide.title"></h2>
-							<p data-ng-bind="slide.text"></p>
 
 							<div class="carousel-chart">
 								<select class="currency-chart" data-ng-if="$first" data-ng-options="option as option.label for option in select track by option.id" data-ng-model="currency" data-ng-change="update()">
@@ -21,7 +20,7 @@
 									<img data-ng-src="{{slide.image}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
 								</picture>
 							</div>
-							<p class="carousel-note" data-ng-bind-html="::slide.text"></p>
+							<p class="carousel-note" data-ng-bind-html="slide.text"></p>
 						</li>
 					</ul>
 					<!-- Left and right controls -->

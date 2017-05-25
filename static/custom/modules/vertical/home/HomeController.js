@@ -27,16 +27,16 @@ define(function (require) {
         $scope.select = [
             {
                 id: '1',
+                label: i18n.L114,
+                text: i18n[i18n_home.slider1.relatedEuro],
+                image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
+                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2                
+            },{
+                id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
                 image: configService.getImagesPath()+ i18n_home.slider1.image,
                 image2: configService.getImagesPath()+ i18n_home.slider1.image2
-            },{
-                id: '2',
-                label: i18n.L114,
-                text: i18n[i18n_home.slider1.relatedEuro],
-                image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
-                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2
             }
         ];
 
