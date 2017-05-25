@@ -13,9 +13,7 @@
 
 
 @media screen and (min-width: 1200px) {
-
 }
-
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
   .page-header {
       width: 80%;
@@ -25,7 +23,6 @@
       left: 10%;
   }
 }
-
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
   #carouselHome {
     .carousel-inner {
@@ -74,8 +71,6 @@
     }
   }
 }
-
-
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
   #carouselHome {
     .carousel-inner {
@@ -116,13 +111,10 @@
       }
     }
   }
-
-
-
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
-    top: 24px;
+    top: 29px;
   }
   .ilo-header {
     #containerMenu {
@@ -132,8 +124,6 @@
     }
   }
 }
-
-
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
   body{
     padding-top: 90px;
@@ -240,7 +230,9 @@
 
 } /** end media query 768 - 1024 portrait **/
 
+@media screen and (max-width:767px){
 
+}
 
 
 

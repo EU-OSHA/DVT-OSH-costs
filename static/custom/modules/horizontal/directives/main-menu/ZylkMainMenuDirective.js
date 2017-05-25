@@ -170,12 +170,29 @@ define(function (require) {
                         }
                     });
 
-
                     // Trigger drop-up menu when you click on the burger buttton
                     angular.element( "#osha-menu-collapse .dropdown-menu a" ).click(function() {
                         collapse.removeClass("indvt");
                         collapse.removeClass("in");
                     });
+
+
+                    // Social network responsive menu
+                    var toggleSocial = angular.element( ".submenu-icon > a" );
+                    var collapseSocial = angular.element("#osha-menu-social");
+
+                    toggleSocial.click(function() {
+                        if(collapseSocial.hasClass( "indvt" ) == true){
+                            collapseSocial.removeClass("indvt");
+                            $log.debug('cerrado');
+                            collapseSocial.removeClass("in");
+                        }else{
+                            collapseSocial.addClass("indvt");
+                            $log.debug('abierto');
+                            collapseSocial.removeClass("in");
+                        }
+                    });
+
 
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")

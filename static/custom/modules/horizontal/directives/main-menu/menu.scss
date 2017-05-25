@@ -237,10 +237,23 @@ ul.navbar-nav {
 .collapse.indvt {
     display: block !important;
 }
+.social-network.indvt{
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 0 10px 0 !important;
+    width: 40px;
+    top: 69px;
+    position: absolute;
+    text-align: center;
+    background: #FFF;
+    box-shadow: 0 3px 4px 1px #ccc;
+    li{
+        padding: 5px;
+    }
+}
 
 
-
-/*google gadget*/
+    /*google gadget*/
 
 #google_translate_element_wrapper {
     text-align: right;
@@ -371,13 +384,23 @@ ul.navbar-nav {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .ilo-header {
         #containerMenu {
             .menu-tools-top {
                 padding: 15px 15px 0;
                 .submenu-icon {
                     display: block;
+                    .three-points{
+                        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point.svg) no-repeat;
+                        background-size: 40px 40px;
+                        width: 40px;
+                        height: 40px;
+                        display: inline-block;
+                        opacity: 1;
+                        position: relative;
+                        top: -3px;
+                    }
                 }
                 .social-network {
                     display: none;
