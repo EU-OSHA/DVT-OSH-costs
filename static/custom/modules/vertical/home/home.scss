@@ -112,6 +112,9 @@
     text-align: center;
     margin-top: 4rem;
   }
+  img:hover{
+    cursor: pointer;
+  }
 }
 .section-second-home{
   background: #F9F9F9;
@@ -123,6 +126,9 @@
   .chart-section-second{
     text-align: center;
     margin-top: 4rem;
+  }
+  img:hover{
+    cursor: pointer;
   }
 }
 .compare-buttons{
@@ -229,6 +235,10 @@
       padding: 20px 10px;
       text-align: right;
       border-top: none;
+      p{
+        color: #000;
+        text-align: left;
+      }
     }
   }
 }

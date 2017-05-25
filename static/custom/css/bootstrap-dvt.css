@@ -399,7 +399,7 @@ h3, .h3 {
   font-size: 23px; }
 
 h4, .h4 {
-  font-size: 19px; }
+  font-size: 17px; }
 
 h5, .h5 {
   font-size: 13px; }
@@ -2893,7 +2893,7 @@ tbody.collapse.in {
       border-top: 0;
       box-shadow: none; }
       .navbar-collapse.collapse {
-        display: block;
+        display: block !important;
         height: auto !important;
         padding-bottom: 0;
         overflow: visible !important; }

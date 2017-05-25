@@ -231,8 +231,146 @@
 } /** end media query 768 - 1024 portrait **/
 
 @media screen and (max-width:767px){
+  #google_translate_element_wrapper {
+    top: -8px;
+    right: -8px;
+  }
+  .modal-dialog {
+    width: 98%;
+    height: 98%;
+    padding: 1%;
+    margin: 1%;
+  }
+  .ilo-header{
+    #home-cover {
+      background-size: cover;
+      height: 135px;
+    }
+    #containerMenu {
+      .menu-tools-top {
+        padding: 0;
+        position: absolute;
+        right: 16px;
+        top: 41px;
+        width: auto;
+      }
+    }
+    .social-network.indvt {
+      top: 32px;
+    }
+  }
+  .section-carrousel{
+    #carouselHome{
+      .carousel-inner{
+        li.item{
+          .carousel-chart {
+            position: relative;
+            width: 88%;
+            margin: 40px 0 20px;
+            padding: 15px 0px;
+            img{
+              width:100%;
+            }
+          }
+        }
+      }
+      .carousel-control.right {
+        right: -14px;
+      }
+    }
+  }
+  .chart-section-first{
+    img{
+      width:100%;
+    }
+  }
+  .chart-section-second{
+    img{
+      width:100%;
+    }
+  }
+  .compare-buttons {
+    .compare-buttons-list{
+      li {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+    }
+  }
+  .osha-eu-estimates-wrapper{
+    .carousel-indicators {
+      li {
+        width: 100%;
+      }
+    }
+  }
 
+
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses.affix ~ .compare-buttons {
+      margin-top: 15px;
+    }
+    .chart-analysis-illnesses.affix {
+      top: 100px;
+      width: 100%;
+      height: auto;
+      z-index: 9;
+      overflow: hidden;
+      background: #FFF;
+      padding: 20px 0 0 0 !important;
+      position: initial;
+      .chart-analysis-illnesses-box {
+        border-bottom: 0 !important;
+        h2 {
+          width: 100%;
+          float: none;
+          text-align: left;
+          padding-left: 15px;
+          text-align: center;
+          width: 100%;
+          font-size: 26px;
+          color: #00A0A4;
+        }
+        .zylk-chart {
+          width: 100%;
+          float: none;
+          text-align: center;
+          .backGraps {
+            zoom:1;
+          }
+        }
+        ul.legend-list {
+          margin-top: 2rem;
+          width: 100%;
+          transform: translateY(0%);
+          -webkit-transform: translateY(0%);
+          column-count: 2;
+          -webkit-column-count: 2;
+          -moz-column-count: 2;
+          li{
+            margin: 0px 0 10px;
+          }
+        }
+        .chart-description {
+          display: block;
+        }
+      }
+    }
+    .countries-analysis-by-illnesses{
+      .country-analysis-by-illnesses {
+        padding:0;
+        .country-wrapper {
+          position: relative;
+          background: #FFF !important;
+          padding: 20px 0 !important;
+          margin: 0px auto 20px;
+        }
+      }
+    }
+  }
 }
+
 
 
 
