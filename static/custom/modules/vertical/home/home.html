@@ -17,7 +17,7 @@
 								<picture>
 									<source data-ng-srcset="{{slide.image2}}" alt="{{slide.title}}" media="(max-width: 767px)">
 									<source data-ng-srcset="{{slide.image}}" alt="{{slide.title}}">
-									<img data-ng-src="{{slide.image}}" title="View larger image" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
+									<img data-ng-src="{{slide.image}}" title="{{i18n_home.largerImage}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
 								</picture>
 							</div>
 							<p class="carousel-note" data-ng-bind-html="slide.text"></p>
@@ -46,7 +46,7 @@
 				<div class="chart-section-first">
 					<h4 data-ng-bind="i18n.L13"></h4>
 					<p data-ng-bind="i18n.L26"></p>
-					<img data-ng-src="{{chartDeath.image}}" title="View larger image" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
+					<img data-ng-src="{{chartDeath.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
 				</div>
 				<div class="content-section-first"></div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="chart-section-second">
 					<h4 data-ng-bind="i18n.L13"></h4>
 					<p data-ng-bind="i18n.L30"></p>
-					<img data-ng-src="{{chartDaly.image}}" title="View larger image" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
+					<img data-ng-src="{{chartDaly.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
 				</div>
 				<div class="content-section-second">
 					<p data-ng-bind="chartDaly.text"></p>
@@ -81,7 +81,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<p class="modal-title" id="exampleModalLabel" data-ng-bind="modalData.title"></p>
+				<p class="modal-title" data-ng-bind="modalData.title"></p>
 			</div>
 			<div class="modal-body">
 				<img data-ng-src="{{modalData.image}}" alt="modalData.title"  data-toggle="modal" data-target="#modalChart">

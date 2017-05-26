@@ -23,6 +23,13 @@
         "indicator0":"rgb(135,206,250, .5)",
         "indicator1":"rgb(255,20,147, .5)",
         "valuesColor": "gray"
+    },
+
+    "illnessColors": {
+      "Cancer": "#0FA9A9",
+      "MSD": "#F2C466",
+      "Injuries": "#DB3081",
+      "Circulatory": "#575759",
+      "Others": "#C9E3E3"
     }
 }
-

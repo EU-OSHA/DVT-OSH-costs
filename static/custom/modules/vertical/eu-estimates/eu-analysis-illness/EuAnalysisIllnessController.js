@@ -29,6 +29,8 @@ define(function (require) {
             parameters: {}
         };
 
+        // Get chart colors
+        $scope.illnessColors = dvtUtils.getIllnessColors();
 
         // 'Legends' logic
         PieChartLegendService.getDataSet_Country_Type_value().then(function (dataset) {

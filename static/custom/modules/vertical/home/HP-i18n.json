@@ -31,5 +31,9 @@
     "title": "L32",
     "message": "L33",
     "image": "illnesses-injuries-daly.svg"
-  }
+  },
+
+  "previous": "Previous",
+  "next": "Next",
+  "largerImage": "View larger image"
 }

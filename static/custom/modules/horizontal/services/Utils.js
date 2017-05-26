@@ -172,6 +172,18 @@ define(function (require) {
              * @description
              * My Description rules
              */
+            getIllnessColors: function(){
+                return colors.illnessColors;
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
             setCDAIn: function (vertical) {
                 switch (vertical) {
                     case 'CA':
