@@ -411,6 +411,9 @@ define(function (require) {
                 }
                 if (!!attributes.angle) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
+                    if (definition.chartDefinition.orientation == 'horizontal') {
+                        definition.chartDefinition.baseAxisLabel_textAngle = 0;
+                    }
                     definition.chartDefinition.baseAxisLabel_textAlign = 'right';
                     definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     if(attributes.angle>1)
