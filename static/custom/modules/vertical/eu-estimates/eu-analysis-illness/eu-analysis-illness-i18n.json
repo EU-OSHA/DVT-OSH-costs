@@ -29,5 +29,11 @@
   "ES":"Spain",
   "SE":"Sweden",
   "UK":"United Kingdom",
-  "EU":"EU28"
+  "EU":"EU28",
+
+  "Cancer": "L129",
+  "MSD": "L130",
+  "Injuries": "L132",
+  "Circulatory": "L131",
+  "Others": "L133"
 }

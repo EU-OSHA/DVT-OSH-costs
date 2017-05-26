@@ -20,17 +20,17 @@
                                         plots="stories[0].plots"
                                         type="pie"
                                         values-visible="false"
-                                        title="{{regions.EU}}"
-                                        long-title="{{i18n.L91}} - {{regions.EU}}"
+                                        title="{{i18n_illness.EU}}"
+                                        long-title="{{i18n.L91}} - {{i18n_illness.EU}}"
                                         title-h3="true"
                         ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EU]['Cancer']""></span><span class="legend-name">Cancer</span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EU]['MSD']"></span><span class="legend-name">MSD</span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EU]['Injuries']"></span><span class="legend-name">Injuries</span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EU]['Circulatory']"></span><span class="legend-name">Circulatory</span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EU]['Others']"></span><span class="legend-name">Others</span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EU]['Cancer']""></span><span class="legend-name" data-ng-bind="i18n[i18n_illness.Cancer]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EU]['MSD']"></span><span class="legend-name" data-ng-bind="i18n[i18n_illness.MSD]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EU]['Injuries']"></span><span class="legend-name" data-ng-bind="i18n[i18n_illness.Injuries]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EU]['Circulatory']"></span><span class="legend-name" data-ng-bind="i18n[i18n_illness.Circulatory]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EU]['Others']"></span><span class="legend-name" data-ng-bind="i18n[i18n_illness.Others]"></span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
                         <p data-ng-bind="i18n.L92"></p>
@@ -63,8 +63,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.AT}}"
-                                                long-title="{{i18n.L94}} - {{regions.AT}}"
+                                                title="{{i18n_illness.AT}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.AT}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -72,11 +72,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.AT]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.AT]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.AT]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.AT]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.AT]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.AT]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.AT]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.AT]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.AT]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.AT]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -101,8 +101,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.BE}}"
-                                                long-title="{{i18n.L94}} - {{regions.BE}}"
+                                                title="{{i18n_illness.BE}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.BE}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -110,11 +110,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BE]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BE]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BE]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BE]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BE]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BE]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BE]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BE]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BE]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BE]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -138,8 +138,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.BG}}"
-                                                long-title="{{i18n.L94}} - {{regions.BG}}"
+                                                title="{{i18n_illness.BG}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.BG}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -147,11 +147,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BG]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BG]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BG]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BG]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.BG]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BG]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BG]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BG]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BG]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.BG]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -175,8 +175,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.HR}}"
-                                                long-title="{{i18n.L94}} - {{regions.HR}}"
+                                                title="{{i18n_illness.HR}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.HR}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -184,11 +184,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HR]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HR]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HR]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HR]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HR]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HR]['Others']"></span></li>
                         </div>
                     </div>
 
@@ -211,8 +211,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.CY}}"
-                                                long-title="{{i18n.L94}} - {{regions.CY}}"
+                                                title="{{i18n_illness.CY}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.CY}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -220,11 +220,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CY]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CY]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CY]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CY]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CY]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CY]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CY]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CY]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CY]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CY]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -247,8 +247,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.CZ}}"
-                                                long-title="{{i18n.L94}} - {{regions.CZ}}"
+                                                title="{{i18n_illness.CZ}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.CZ}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -256,11 +256,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CZ]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CZ]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CZ]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CZ]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.CZ]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CZ]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CZ]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CZ]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CZ]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.CZ]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -283,8 +283,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.DK}}"
-                                                long-title="{{i18n.L94}} - {{regions.DK}}"
+                                                title="{{i18n_illness.DK}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.DK}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -292,11 +292,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DK]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DK]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DK]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DK]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DK]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DK]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DK]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DK]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DK]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DK]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -318,8 +318,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.EE}}"
-                                                long-title="{{i18n.L94}} - {{regions.EE}}"
+                                                title="{{i18n_illness.EE}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.EE}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -327,11 +327,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EE]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EE]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EE]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EE]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EE]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EE]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EE]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EE]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EE]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EE]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -353,8 +353,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.FI}}"
-                                                long-title="{{i18n.L94}} - {{regions.FI}}"
+                                                title="{{i18n_illness.FI}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.FI}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -362,11 +362,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FI]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FI]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FI]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FI]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FI]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FI]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FI]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FI]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FI]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FI]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -388,8 +388,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.FR}}"
-                                                long-title="{{i18n.L94}} - {{regions.FR}}"
+                                                title="{{i18n_illness.FR}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.FR}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -397,11 +397,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FR]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FR]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FR]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FR]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.FR]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FR]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FR]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FR]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FR]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.FR]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -422,8 +422,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.DE}}"
-                                                long-title="{{i18n.L94}} - {{regions.DE}}"
+                                                title="{{i18n_illness.DE}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.DE}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -431,11 +431,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DE]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DE]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DE]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DE]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.DE]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DE]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DE]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DE]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DE]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.DE]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -456,8 +456,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.EL}}"
-                                                long-title="{{i18n.L94}} - {{regions.EL}}"
+                                                title="{{i18n_illness.EL}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.EL}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -465,11 +465,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EL]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EL]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EL]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EL]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.EL]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EL]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EL]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EL]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EL]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.EL]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -490,8 +490,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.HU}}"
-                                                long-title="{{i18n.L94}} - {{regions.HU}}"
+                                                title="{{i18n_illness.HU}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.HU}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -499,11 +499,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HU]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HU]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HU]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HU]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.HU]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HU]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HU]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HU]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HU]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.HU]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -524,8 +524,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.IS}}"
-                                                long-title="{{i18n.L94}} - {{regions.IS}}"
+                                                title="{{i18n_illness.IS}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.IS}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -533,11 +533,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IS]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IS]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IS]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IS]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IS]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IS]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IS]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IS]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IS]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IS]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -559,8 +559,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.IE}}"
-                                                long-title="{{i18n.L94}} - {{regions.IE}}"
+                                                title="{{i18n_illness.IE}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.IE}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -568,11 +568,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IE]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IE]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IE]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IE]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IE]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IE]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IE]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IE]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IE]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IE]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -595,8 +595,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.IT}}"
-                                                long-title="{{i18n.L94}} - {{regions.IT}}"
+                                                title="{{i18n_illness.IT}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.IT}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -604,11 +604,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IT]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IT]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IT]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IT]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.IT]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IT]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IT]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IT]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IT]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.IT]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -630,8 +630,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.LV}}"
-                                                long-title="{{i18n.L94}} - {{regions.LV}}"
+                                                title="{{i18n_illness.LV}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.LV}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -639,11 +639,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LV]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LV]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LV]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LV]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LV]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LV]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LV]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LV]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LV]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LV]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -665,8 +665,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.LT}}"
-                                                long-title="{{i18n.L94}} - {{regions.LT}}"
+                                                title="{{i18n_illness.LT}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.LT}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -674,11 +674,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LT]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LT]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LT]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LT]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LT]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LT]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LT]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LT]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LT]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LT]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -700,8 +700,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.LU}}"
-                                                long-title="{{i18n.L94}} - {{regions.LU}}"
+                                                title="{{i18n_illness.LU}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.LU}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -709,11 +709,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LU]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LU]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LU]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LU]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.LU]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LU]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LU]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LU]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LU]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.LU]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -736,8 +736,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.MT}}"
-                                                long-title="{{i18n.L94}} - {{regions.MT}}"
+                                                title="{{i18n_illness.MT}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.MT}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -745,11 +745,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.MT]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.MT]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.MT]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.MT]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.MT]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.MT]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.MT]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.MT]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.MT]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.MT]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -771,8 +771,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.NL}}"
-                                                long-title="{{i18n.L94}} - {{regions.NL}}"
+                                                title="{{i18n_illness.NL}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.NL}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -780,11 +780,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NL]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NL]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NL]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NL]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NL]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NL]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NL]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NL]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NL]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NL]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -807,8 +807,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.NO}}"
-                                                long-title="{{i18n.L94}} - {{regions.NO}}"
+                                                title="{{i18n_illness.NO}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.NO}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -816,11 +816,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NO]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NO]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NO]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NO]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.NO]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NO]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NO]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NO]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NO]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.NO]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -842,8 +842,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.PL}}"
-                                                long-title="{{i18n.L94}} - {{regions.PL}}"
+                                                title="{{i18n_illness.PL}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.PL}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -851,11 +851,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PL]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PL]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PL]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PL]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PL]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PL]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PL]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PL]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PL]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PL]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -879,8 +879,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.PT}}"
-                                                long-title="{{i18n.L94}} - {{regions.PT}}"
+                                                title="{{i18n_illness.PT}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.PT}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -888,11 +888,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PT]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PT]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PT]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PT]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.PT]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PT]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PT]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PT]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PT]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.PT]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -914,8 +914,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.RO}}"
-                                                long-title="{{i18n.L94}} - {{regions.RO}}"
+                                                title="{{i18n_illness.RO}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.RO}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -923,11 +923,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.RO]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.RO]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.RO]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.RO]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.RO]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.RO]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.RO]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.RO]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.RO]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.RO]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -949,8 +949,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.SK}}"
-                                                long-title="{{i18n.L94}} - {{regions.SK}}"
+                                                title="{{i18n_illness.SK}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.SK}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -958,11 +958,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SK]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SK]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SK]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SK]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SK]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SK]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SK]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SK]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SK]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SK]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -984,8 +984,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.SI}}"
-                                               long-title="{{i18n.L94}} - {{regions.SI}}"
+                                                title="{{i18n_illness.SI}}"
+                                               long-title="{{i18n.L94}} - {{i18n_illness.SI}}"
                                                title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -993,11 +993,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SI]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SI]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SI]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SI]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SI]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SI]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SI]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SI]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SI]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SI]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1019,8 +1019,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.ES}}"
-                                                long-title="{{i18n.L94}} - {{regions.ES}}"
+                                                title="{{i18n_illness.ES}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.ES}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -1028,11 +1028,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.ES]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.ES]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.ES]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.ES]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.ES]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.ES]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.ES]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.ES]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.ES]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.ES]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1054,8 +1054,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.SE}}"
-                                                long-title="{{i18n.L94}} - {{regions.SE}}"
+                                                title="{{i18n_illness.SE}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.SE}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -1063,11 +1063,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SE]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SE]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SE]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SE]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.SE]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SE]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SE]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SE]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SE]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.SE]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1089,8 +1089,8 @@
                                                 plots="stories[0].plots"
                                                 type="pie"
                                                 values-visible="false"
-                                                title="{{regions.UK}}"
-                                                long-title="{{i18n.L94}} - {{regions.UK}}"
+                                                title="{{i18n_illness.UK}}"
+                                                long-title="{{i18n.L94}} - {{i18n_illness.UK}}"
                                                 title-h3="true"
                                 ></zylk-bar-chart>
                             </div>
@@ -1098,11 +1098,11 @@
                         <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                             <p data-ng-bind="i18n.L93"></p>
                             <ul class="legend-list">
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.UK]['Cancer']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.UK]['MSD']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.UK]['Injuries']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.UK]['Circulatory']"></span></li>
-                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[regions.UK]['Others']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.UK]['Cancer']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.UK]['MSD']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.UK]['Injuries']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.UK]['Circulatory']"></span></li>
+                                <li class="legend-item"><span class="legend-data" data-ng-bind="countries[i18n_illness.UK]['Others']"></span></li>
                             </ul>
                         </div>
                     </div>

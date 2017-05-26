@@ -15,17 +15,14 @@
  */
 define(function (require) {
     'use strict';
-    //var regions = require('json!vertical/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n');
+
     function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, mapProvider, $log,configService, $document, $compile) {
         // CDA
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
-
-        //Countries
-        var myI18n = require('json!vertical/eu-estimates/eu-analysis-illness/i18n');
-        $scope.regions = myI18n;
+        $scope.i18n_illness = require('json!vertical/eu-estimates/eu-analysis-illness/i18n');
 
         $scope.dashboard = {
             promises: $scope.promises,
@@ -33,7 +30,7 @@ define(function (require) {
         };
 
 
-
+        // 'Legends' logic
         PieChartLegendService.getDataSet_Country_Type_value().then(function (dataset) {
             var countries = {};
             var types = {};
