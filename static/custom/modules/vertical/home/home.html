@@ -15,7 +15,7 @@
 								<select class="currency-chart" data-ng-if="$first" data-ng-options="option as option.label for option in select track by option.id" data-ng-model="currency" data-ng-change="update()">
 								</select>
 								<picture>
-									<source data-ng-srcset="{{slide.image2}}" alt="{{slide.title}}" media="(max-width: 767px)">
+									<source data-ng-srcset="{{slide.image2}}" alt="{{slide.title}}" media="(max-width: 600px)">
 									<source data-ng-srcset="{{slide.image}}" alt="{{slide.title}}">
 									<img data-ng-src="{{slide.image}}" title="{{i18n_home.largerImage}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
 								</picture>
@@ -85,10 +85,11 @@
 			</div>
 			<div class="modal-body">
 				<picture>
-					<source data-ng-srcset="{{modalData.image2}}" alt="{{modalData.title}}" media="(max-width: 767px)">
+					<source data-ng-srcset="{{modalData.image2}}" alt="{{modalData.title}}" media="(max-width: 600px)">
 					<source data-ng-srcset="{{modalData.image}}" alt="{{modalData.title}}">
 					<img data-ng-src="{{modalData.image}}" alt="{{modalData.title}}" data-toggle="modal" data-target="#modalChart">
 				</picture>
+				<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>
 			</div>
 			<div class="modal-footer">
 				<p data-ng-bind="modalData.text"></p>

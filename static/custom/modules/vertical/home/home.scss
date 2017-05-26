@@ -69,8 +69,13 @@
               color: $subheader;
             }
           }
-          picture  img:hover{
-            cursor: pointer;
+          picture{
+            img{
+              width: 100%;
+              &:hover{
+                cursor: pointer;
+              }
+            }
           }
         }
         p.carousel-note{
@@ -230,6 +235,20 @@
         background: #FFF;
         padding: 5%;
       }
+      .logoGraphics-wrapper{
+        float: none;
+        text-align: right;
+        img{
+          width: 150px;
+          height: auto;
+          display: block;
+          padding: 0;
+          float: none;
+          display: inline-block;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+      }
     }
     .modal-footer {
       padding: 20px 10px;
@@ -243,4 +262,15 @@
   }
 }
 
+.modal.in .modal-dialog {
+  overflow-y: auto;
+}
+.modal.in .modal-dialog::-webkit-scrollbar {
+  width:8px;
+  background-color: #F5F5F5;
+}
+
+.modal.in .modal-dialog::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
 

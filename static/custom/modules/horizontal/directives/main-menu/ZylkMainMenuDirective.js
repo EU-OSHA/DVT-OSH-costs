@@ -161,11 +161,12 @@ define(function (require) {
                     toggle.click(function() {
                         if(collapse.hasClass( "indvt" ) == true){
                             collapse.removeClass("indvt");
-                            $log.debug('cerrado');
+                            //$log.debug('cerrado');
                             collapse.removeClass("in");
                         }else{
                             collapse.addClass("indvt");
-                            $log.debug('abierto');
+                            collapseSocial.removeClass("indvt");
+                            //$log.debug('abierto');
                             collapse.removeClass("in");
                         }
                     });
@@ -184,11 +185,12 @@ define(function (require) {
                     toggleSocial.click(function() {
                         if(collapseSocial.hasClass( "indvt" ) == true){
                             collapseSocial.removeClass("indvt");
-                            $log.debug('cerrado');
+                            //$log.debug('cerrado');
                             collapseSocial.removeClass("in");
                         }else{
                             collapseSocial.addClass("indvt");
-                            $log.debug('abierto');
+                            collapse.removeClass("indvt");
+                            //$log.debug('abierto');
                             collapseSocial.removeClass("in");
                         }
                     });

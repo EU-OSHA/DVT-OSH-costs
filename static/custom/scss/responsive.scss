@@ -114,15 +114,19 @@
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
-    top: 29px;
+    top: 41px;
   }
   .ilo-header {
     #containerMenu {
       .menu-tools-top {
         padding: 40px 15px 0;
+        .social-network {
+          padding-right: 136px;
+        }
       }
     }
   }
+
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
   body{
@@ -212,7 +216,7 @@
     .footer-elements{
       text-align: center;
       ul{
-        margin:20px 0 !important;
+       margin: 10px 0 20px !important;
       }
     }
   }
@@ -232,7 +236,7 @@
 
 @media screen and (max-width:767px){
   #google_translate_element_wrapper {
-    top: -8px;
+    top: 0px;
     right: -8px;
   }
   .modal-dialog {
@@ -244,9 +248,10 @@
   .ilo-header{
     #home-cover {
       background-size: cover;
-      height: 135px;
+      //height: 135px;
     }
     #containerMenu {
+      min-height: 105px;
       .menu-tools-top {
         padding: 0;
         position: absolute;
@@ -265,8 +270,8 @@
         li.item{
           .carousel-chart {
             position: relative;
-            width: 88%;
-            margin: 40px 0 20px;
+            width: auto;
+            margin: 40px 25px 20px 0;
             padding: 15px 0px;
             img{
               width:100%;
@@ -372,8 +377,47 @@
 }
 
 
-
-
+@media screen and (max-width:600px) {
+  #carouselHome {
+    .carousel-chart {
+      picture {
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+  .ilo-container-footer{
+    .footer-logotypes {
+      li {
+        width: 33%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .footer-elements{
+    .footer-nav-accessibility {
+      margin: 10px 0 10px;
+      text-align: center;
+    }
+    .footer-social-network {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+}
+@media screen and (max-width:440px) {
+  #carouselHome {
+    .carousel-chart {
+      picture {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 
 
 /* only for IE11
