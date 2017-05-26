@@ -69,6 +69,7 @@ define(function (require) {
                     }else if (index == 2) { 
                         $scope.modalData = $scope.chartDaly;
                     }
+                    $scope.modalData.image2 = $scope.modalData.image;
                     break;
                 case 'slide':
                     $scope.modalData = $scope.slides[index];

@@ -84,7 +84,11 @@
 				<p class="modal-title" data-ng-bind="modalData.title"></p>
 			</div>
 			<div class="modal-body">
-				<img data-ng-src="{{modalData.image}}" alt="modalData.title"  data-toggle="modal" data-target="#modalChart">
+				<picture>
+					<source data-ng-srcset="{{modalData.image2}}" alt="{{modalData.title}}" media="(max-width: 767px)">
+					<source data-ng-srcset="{{modalData.image}}" alt="{{modalData.title}}">
+					<img data-ng-src="{{modalData.image}}" alt="{{modalData.title}}" data-toggle="modal" data-target="#modalChart">
+				</picture>
 			</div>
 			<div class="modal-footer">
 				<p data-ng-bind="modalData.text"></p>
