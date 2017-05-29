@@ -38,56 +38,33 @@
        </Query>
    </DataAccess>
 
-    <!-- GET INDICATOR DATA FOR REGIONS -->
-    <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegionMortality" type="sql">
+    <!-- GET INDICATOR DATA FOR REGIONS (INDICATOR SPLIT) -->
+    <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegionSplit" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
         <Parameter default="1" name="pIndicator" type="Numeric" />
+        <Parameter default="" name="pSplit1" type="String" />
+        <Parameter default="" name="pSplit2" type="String" />
       </Parameters>
       <Query>
         (
-          SELECT 'Fatal work-related illnesses' as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
+          SELECT ${pSplit1} as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
           FROM fact_figures ff
-          WHERE ff.INDICATOR_ID = 11
-          AND ff.SPLIT_1='Fatal work-related illnesses'
+          WHERE ff.INDICATOR_ID = ${pIndicator}
+          AND ff.SPLIT_1=${pSplit1}
           ORDER BY Measure ASC
         )
         UNION
         (
-          SELECT 'Fatal work-related injuries' as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
+          SELECT ${pSplit2} as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
           FROM fact_figures ff
-          WHERE ff.INDICATOR_ID = 11
-          AND ff.SPLIT_1='Fatal work-related injuries'
+          WHERE ff.INDICATOR_ID = ${pIndicator}
+          AND ff.SPLIT_1=${pSplit2}
           ORDER BY Measure ASC
         )
       </Query>
-   </DataAccess>
-
-   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegionYLLYLD" type="sql">
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters>
-        <Parameter default="1" name="pIndicator" type="Numeric" />
-      </Parameters>
-      <Query>
-        (
-          SELECT 'YLL-Fatal injuries and illnesses per 100.000 workers' as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
-          FROM fact_figures ff
-          WHERE ff.INDICATOR_ID = 13
-          AND ff.SPLIT_1='YLL-Fatal injuries and illnesses per 100.000 workers'
-          ORDER BY Measure ASC
-        )
-        UNION
-        (
-          SELECT 'YLD-non fatal injuries and illnesses per 100.000 workers' as Indicator, ff.REGION AS Region, ff.MEASURE AS Value, ff.INDICATOR_ID AS 'Indicator Number'
-          FROM fact_figures ff
-          WHERE ff.INDICATOR_ID = 13
-          AND ff.SPLIT_1='YLD-non fatal injuries and illnesses per 100.000 workers'
-          ORDER BY Measure ASC
-          )
-      </Query>
-   </DataAccess>  
+   </DataAccess> 
 
    <!-- GET INDICATOR DATA BY COUNTRY -->
    <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataByCountry" type="sql">

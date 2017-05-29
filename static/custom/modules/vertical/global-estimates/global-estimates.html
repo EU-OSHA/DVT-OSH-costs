@@ -3,6 +3,7 @@
     <section class="container-full back-color ">
         <div class="main-text-eu-estimates container">
             <p data-ng-bind="i18n.L38"></p>
+            <p data-ng-bind="i18n_esimates.I111"></p>
             <p class="see-more"><a ui-sref="" data-ng-bind="i18n.L39"></a></p>
         </div>
     </section>
@@ -31,11 +32,11 @@
                     <li class="item active" data-name="mortality">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataRegionMortality" cda="{{::cda }}"
+                                query="getIndicatorDataRegionSplit" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="horizontal"
                                 axis-fixed-max="120" step="20"
-                                params="[['pIndicator','11']]"
+                                params="[['pIndicator','11'],['pSplit1','Fatal work-related illnesses'],['pSplit2','Fatal work-related injuries']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
                                 title="{{i18n.L47}}" id="11"
@@ -69,11 +70,11 @@
                     <li class="item" data-name="years-life-lost-vs-years-lived-disability">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataRegionYLLYLD" cda="{{::cda }}"
+                                query="getIndicatorDataRegionSplit" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="horizontal"
                                 axis-fixed-max="100" step="20"
-                                params="[['pIndicator','13']]"
+                                params="[['pIndicator','13'],['pSplit1','YLL-Fatal injuries and illnesses per 100.000 workers'],['pSplit2','YLD-non fatal injuries and illnesses per 100.000 workers']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
                                 axis-percent="1"
