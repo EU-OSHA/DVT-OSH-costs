@@ -1,0 +1,145 @@
+<!-- global-estimates.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
+    <section class="container-full back-color ">
+        <div class="main-text-eu-estimates container">
+            <p data-ng-bind="i18n.L38"></p>
+            <p class="see-more"><a ui-sref="" data-ng-bind="i18n.L39"></a></p>
+        </div>
+    </section>
+
+
+    <section class="container-full osha-eu-estimates-wrapper ">
+        <div class="osha-eu-estimates container">
+            <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators container eu-estimates-indicators">
+                    <li data-target="#carouselCountries" data-slide-to="0" class="active">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L40"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="1">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L41"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="2">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L42"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="3">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L43"></span>
+                    </li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <ul class="carousel-inner">
+                    <li class="item active" data-name="mortality">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegionMortality" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="120" step="20"
+                                params="[['pIndicator','11']]"
+                                color-role="series"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L47}}" id="11"
+                                long-title="{{i18n.L48}}"
+                                max-functional-legend="{{i18n.L49}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind="i18n.L49"></p>
+                        </div>
+                    </li>
+                    <li class="item"  data-name="years-life-lost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegion" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="3000" step="500"
+                                params="[['pIndicator','12']]"
+                                color-role="series"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L50}}" id="12"
+                                long-title="{{i18n.L51}}"
+                                max-functional-legend="{{i18n.L52}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind="i18n.L52"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="years-life-lost-vs-years-lived-disability">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegionYLLYLD" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="100" step="20"
+                                params="[['pIndicator','13']]"
+                                color-role="series"
+                                ortho-axis-title-visible="true"
+                                axis-percent="1"
+                                title="{{i18n.L53}}" id="13"
+                                stacked="1"
+                                long-title="{{i18n.L54}}"
+                                max-functional-legend="{{i18n.L55}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind="i18n.L55"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="total-cost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegion" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="5000" step="2500"
+                                params="[['pIndicator','14']]"
+                                color-role="series"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L56}}" id="14"
+                                long-title="{{i18n.L57}}"
+                                max-functional-legend="{{i18n.L58}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorData" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="5" step="2.5"
+                                params="[['pIndicator','15']]"
+                                color-role="series"
+                                ortho-axis-title-visible="true"
+                                axis-percent="1"
+                                title="{{i18n.L56}}" id="15"
+                                long-title="{{i18n.L57}}"
+                                max-functional-legend="{{i18n.L58}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind="i18n.L58"></p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carouselCountries" data-slide="prev" data-ng-non-bindable>
+                    <i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselCountries" data-slide="next" data-ng-non-bindable>
+                    <i class="fa fa-chevron-right next" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="compare-buttons">
+        <ul class="compare-buttons-list  list-inline container">
+            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind="i18n.L68"></a></li>
+            <li><a data-ui-sref="#" data-ng-bind="i18n.L69"></a></li>
+        </ul>
+    </section>
+
+</zylk-dashboard>

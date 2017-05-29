@@ -168,6 +168,10 @@
     requirePaths['vertical/eu-analysis-illness/services/PieChartLegendService'] = verticalModules + '/eu-estimates/eu-analysis-illness/services/PieChartLegendService' + suffix;
     requirePaths['vertical/eu-estimates/eu-analysis-illness/i18n'] = verticalModules + '/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n' + suffix + '.json';
 
+    /* GLOBAL ESTIMATES */
+    requirePaths['vertical/global-estimates/GlobalEstimatesController'] = verticalModules + '/global-estimates/GlobalEstimatesController' + suffix;
+    requirePaths['vertical/global-estimates/global-estimates-module'] = verticalModules + '/global-estimates/global-estimates-module' + suffix;
+
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;
     requirePaths['vertical/footer-pages/FooterPagesController'] = verticalModules + '/footer-pages/FooterPagesController' + suffix;

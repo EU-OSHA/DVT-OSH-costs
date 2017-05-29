@@ -5,6 +5,7 @@ define(function (require) {
         configModule = require('horizontal/config/config-module'),
         homeModule = require('vertical/home/home-module'),
         euEstimatesModule = require('vertical/eu-estimates/eu-estimates-module'),
+        globalEstimatesModule = require('vertical/global-estimates/global-estimates-module'),
         directivesModule = require('horizontal/directives/directives-module'),
         chartingModule =  require('horizontal/directives/charting-module'),
         footerPagesModule = require('vertical/footer-pages/footer-pages-module');
@@ -33,6 +34,7 @@ define(function (require) {
                                      'ngSanitize',
                                      homeModule.name,
                                      euEstimatesModule.name,
+                                     globalEstimatesModule.name,
                                      configModule.name,
                                      directivesModule.name,
                                      chartingModule.name,
