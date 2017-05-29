@@ -71,6 +71,12 @@ define(function (require) {
             // Prevent carousel from sliding automatically
             jQuery('#carouselCountries').carousel('pause');
         })
+        $('.global-estimates-indicators li').click(function() {
+            $('.global-estimates-indicators li').toggleClass('item-block');
+
+        })
+
+
 
         $scope.status = 'ready';
     }

@@ -165,3 +165,28 @@
     }
   }
 }
+
+@media screen and (max-width:767px){
+
+  .eu-estimates-indicators{
+    li{
+      display: none;
+      &.active{
+        display: block;
+        &:after{
+          content: "\f078";
+          font: normal normal normal 14px/1 FontAwesome;
+          right: 15px;
+          top: 25px;
+          position: absolute;
+        }
+      }
+      &:hover{
+        display: block !important;
+      }
+      &.item-block{
+        display: block;
+      }
+    }
+  }
+}

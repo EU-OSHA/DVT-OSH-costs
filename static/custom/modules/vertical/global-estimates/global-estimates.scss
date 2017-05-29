@@ -1,3 +1,235 @@
-h2 {
-	color: red;
+.main-text-global-estimates{
+	p:first-child{
+		text-align: center;
+	}
+}
+.osha-global-estimates-wrapper{
+	background: #f9f9f9;
+	.carousel-countries{
+		float: left;
+		margin-top: 40px;
+		width:100%;
+		z-index: 2;
+	}
+	.carousel-indicators {
+		position: relative !important;
+		bottom: 0 !important;
+		left: 0;
+		z-index: 15;
+		width: 100%;
+		margin: 0;
+		padding: 10px 0 0;
+		list-style: none;
+		text-align: center;
+		background: #FFF;
+		border: 1px solid #EAEAEA;
+		li {
+			width: 20%;
+			height: 40px;
+			cursor: pointer;
+			margin: 10px 12px;
+			background-color: transparent;
+			border: 0px solid #fff;
+			border-radius: 0px;
+			text-indent: 0;
+			text-align: left;
+			.fa {
+				margin: 0 15px;
+				font-size: 22px;
+			}
+			&.active, &:hover, &:focus, &:active {
+				background-color: transparent;
+				font-family: "OpenSans-Bold";
+				color: #00A0A4 !important;
+				.fa-circle-o:before {
+					content: "\f05d";
+				}
+			}
+			&:nth-child(1){
+				width: 12%;
+			}
+			&:nth-child(2){
+				width: 20%;
+			}
+			&:nth-child(3){
+				width: 45%;
+			}
+			&:nth-child(4){
+				width: 12%;
+			}
+		}
+	}
+	.carousel-inner {
+		float: left;
+		width:100%;
+		padding:0;
+		max-height: 640px;
+		min-height: 640px;
+		> .item{
+			width: 100% !important;
+		}
+		li {
+			float: left;
+			width: 100% !important;
+
+			.dvt-chart {
+				min-height: 500px;
+				width: 100%;
+				background: #EAEAEA !important;
+				padding: 0 20px 0 !important;
+				border: 1px solid #EAEAEA;
+				border-radius: 0 0 8px 8px;
+				overflow: hidden;
+				-webkit-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				-moz-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				.header{
+					h2{
+						margin: 0;
+						text-align: center;
+						width: 100%;
+						font-size: 26px;
+						color:#00A0A4 ;
+					}
+				}
+				.backGraps {
+					background: transparent !important;
+					margin: 0em auto 0;
+				}
+				.header{
+					margin-top: 20px !important;
+				}
+				div[id^='zylk_bar_chart'] {
+				}
+			}
+			&.active{
+				width: 100% !important;
+			}
+			.chart-legend{
+				padding: 40px 20px;
+				width: 100%;
+				clear: both;
+			}
+		}
+		li:nth-child(4) {
+			.dvt-chart:nth-child(1) {
+				width: 50%;
+				border-right:0;
+				border-radius: 0 0 0 8px;
+
+			}
+			.dvt-chart:nth-child(2) {
+				width: 50%;
+				border-left:0;
+				border-radius: 0 0 8px 0;
+			}
+		}
+
+	}
+	.carousel-control{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 34px;
+		opacity: .5;
+		filter: alpha(opacity=50);
+		font-size: 20px;
+		background-color: transparent;
+		z-index: 15;
+		&.right{
+			background-image: none;
+			left: 98.5%;
+			i{
+				top: 40%;
+				position: relative;
+				color: #FFF;
+			}
+		}
+		&.right:hover i{
+			color: #666;
+		}
+		&.left{
+			background-image: none;
+			left: -1.5%;
+			i{
+				top: 310px;
+				position: relative;
+				color: #FFF;
+			}
+		}
+		&.left:hover i{
+			color: #666;
+		}
+	}
+}
+
+.countries-comparison{
+	.compare-buttons{
+		background: #FFF;
+		padding: 40px 0;
+		.compare-buttons-list{
+			text-align: center;
+			li{
+				margin-right: 30px;
+				width:40%;
+				a{
+					display: block;
+					border-radius: 4px;
+					border: 2px solid #ababab;
+					padding: 20px 20px;
+					font-family: 'OpenSans-Bold';
+					font-size: 14px;
+					color: #ababab;
+					&:hover{
+						background:$lightgrey;
+						text-decoration: none;
+					}
+				}
+				&:last-child{
+					margin-right: 0px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:767px){
+	.osha-global-estimates-wrapper .carousel-indicators li {
+		width: 100% !important;
+	}
+
+	.osha-global-estimates-wrapper {
+		.carousel-inner{
+			max-height: none !important;
+			li:nth-child(4) {
+				.dvt-chart{
+					width: 100% !important;
+				}
+			}
+
+		}
+	}
+	.global-estimates-indicators{
+		li{
+			display: none;
+			width: 100% !important;
+			&.active{
+				display: block;
+				&:after{
+					content: "\f078";
+					font: normal normal normal 14px/1 FontAwesome;
+					right: 15px;
+					top: 25px;
+					position: absolute;
+				}
+			}
+			&:hover{
+				display: block !important;
+			}
+			&.item-block{
+				display: block;
+			}
+		}
+	}
 }

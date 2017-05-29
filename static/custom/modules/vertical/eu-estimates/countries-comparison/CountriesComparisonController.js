@@ -81,6 +81,12 @@ define(function (require) {
             jQuery('#carouselCountries').carousel('pause');
         })
 
+
+        $('.eu-estimates-indicators li').click(function() {
+            $('.eu-estimates-indicators li').toggleClass('item-block');
+
+        })
+
         $scope.status = 'ready';
     }
     
