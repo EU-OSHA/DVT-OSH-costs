@@ -24,6 +24,19 @@ define(function (require) {
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
+        $scope.i18n_global = require('json!vertical/global-estimates/i18n');
+
+        // Countries Select
+        dataService.getCountriesRegion().then(function(dataset) {
+            var countries = {};
+            dataset.data.resultset.forEach(function(country){
+                countries["" + country[0]] = {
+                    name: country[0],
+                    region: country[1]
+                }
+            });
+            $scope.countries = countries;
+        });
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
@@ -57,6 +70,8 @@ define(function (require) {
         };
 
         $scope.graphWidth = jQuery('li.item.active').width() - 30;
+
+        $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 : $scope.graphWidth;
 
         angular.element($window).bind('resize', function() {
             $state.reload();

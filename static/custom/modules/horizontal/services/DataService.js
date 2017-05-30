@@ -13,7 +13,20 @@ define(function () {
                 return $http.get(url);
             }
 
-        return {
+        return {            
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAllCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * My Description rules
+             */
+            getCountriesRegion: function () {
+                var url = configService.getPilotDataPath() + "&dataAccessId=getCountriesRegion";
+                $log.debug('getCountriesRegion url:' + url);
+                return promise(url);
+            },            
 
             /**
              * @ngdoc method

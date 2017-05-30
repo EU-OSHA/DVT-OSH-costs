@@ -34,7 +34,7 @@
            INNER JOIN indicators i
            ON i.INDICATOR_ID = ff.INDICATOR_ID
            WHERE ff.INDICATOR_ID = ${pIndicator}
-           ORDER BY Measure ASC
+           ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
        </Query>
    </DataAccess>
 
@@ -53,7 +53,7 @@
           FROM fact_figures ff
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.SPLIT_1=${pSplit1}
-          ORDER BY Measure ASC
+          ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
         )
         UNION
         (
@@ -61,7 +61,7 @@
           FROM fact_figures ff
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.SPLIT_1=${pSplit2}
-          ORDER BY Measure ASC
+          ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
         )
       </Query>
    </DataAccess> 
@@ -99,6 +99,17 @@
             WHERE ff.INDICATOR_ID = ${pIndicator}
             AND ff.REGION = ${pRegion}
             ORDER BY Measure ASC
+        </Query>
+    </DataAccess>
+
+    <!-- GET COUNTRIES NAMES AND REGIONS -->
+    <DataAccess access="public" connection="ilo_conn" id="getCountriesRegion" type="sql">
+        <Cache duration="3600" enabled="true"/>
+        <Columns/>
+        <Parameters/>
+        <Query>SELECT COUNTRY, REGION
+          FROM regions_countries
+          ORDER BY COUNTRY ASC
         </Query>
     </DataAccess>
 

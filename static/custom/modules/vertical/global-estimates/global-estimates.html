@@ -3,10 +3,16 @@
     <section class="container-full back-color ">
         <div class="main-text-global-estimates container">
             <p data-ng-bind="i18n.L38"></p>
-            <p class="see-more"><a ui-sref="" data-ng-bind="i18n.L39"></a></p>
+            <p class="see-more"><a ui-sref="#" data-ng-bind="i18n.L39"></a></p>
         </div>
     </section>
 
+    <p data-ng-bind="i18n.L44"></p>
+    <select data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countries">
+        <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+    </select>
+    <span>:</span>
+    <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
 
     <section class="container-full osha-global-estimates-wrapper ">
         <div class="osha-global-estimates container">
@@ -37,11 +43,13 @@
                                 axis-fixed-max="120" step="20"
                                 params="[['pIndicator','11'],['pSplit1','Fatal work-related illnesses'],['pSplit2','Fatal work-related injuries']]"
                                 color-role="series"
+                                ortho-axis-title="{{i18n.L117}}"
                                 ortho-axis-title-visible="true"
                                 title="{{i18n.L47}}" id="11"
                                 long-title="{{i18n.L48}}"
                                 max-functional-legend="{{i18n.L49}}"
                                 plots="stories[0].plots"
+                                legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L49"></p>
@@ -56,11 +64,13 @@
                                 axis-fixed-max="3000" step="500"
                                 params="[['pIndicator','12']]"
                                 color-role="series"
+                                ortho-axis-title="{{i18n.L118}}"
                                 ortho-axis-title-visible="true"
                                 title="{{i18n.L50}}" id="12"
                                 long-title="{{i18n.L51}}"
                                 max-functional-legend="{{i18n.L52}}"
                                 plots="stories[0].plots"
+                                legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L52"></p>
@@ -82,40 +92,44 @@
                                 long-title="{{i18n.L54}}"
                                 max-functional-legend="{{i18n.L55}}"
                                 plots="stories[0].plots"
+                                legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L55"></p>
                         </div>
                     </li>
                     <li class="item" data-name="total-cost">
+                        <h2 data-ng-bind="{{i18n.L56}}"></h2>
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorDataRegion" cda="{{::cda }}"
-                                angle="1" width="{{graphWidth}}" height="330"
+                                angle="1" width="{{lastGraphWidth}}" height="330"
                                 orientation="horizontal"
                                 axis-fixed-max="5000" step="2500"
                                 params="[['pIndicator','14']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
-                                title="{{i18n.L56}}" id="14"
+                                id="14"
                                 long-title="{{i18n.L57}}"
                                 max-functional-legend="{{i18n.L58}}"
                                 plots="stories[0].plots"
+                                legend="true"
                         ></zylk-bar-chart>
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorData" cda="{{::cda }}"
-                                angle="1" width="{{graphWidth}}" height="330"
+                                angle="1" width="{{lastGraphWidth}}" height="330"
                                 orientation="horizontal"
                                 axis-fixed-max="5" step="2.5"
                                 params="[['pIndicator','15']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
                                 axis-percent="1"
-                                title="{{i18n.L56}}" id="15"
+                                id="15"
                                 long-title="{{i18n.L57}}"
                                 max-functional-legend="{{i18n.L58}}"
                                 plots="stories[0].plots"
+                                legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L58"></p>
