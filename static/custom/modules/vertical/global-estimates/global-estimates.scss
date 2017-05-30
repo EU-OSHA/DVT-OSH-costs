@@ -33,32 +33,42 @@
 			border-radius: 0px;
 			text-indent: 0;
 			text-align: left;
+			float: left;
 			.fa {
 				margin: 0 15px;
 				font-size: 22px;
+				min-height:5rem;
+				float: left;
 			}
-			&.active, &:hover, &:focus, &:active {
+			&:hover{
 				background-color: transparent;
-				font-family: "OpenSans-Bold";
 				color: #00A0A4 !important;
 				.fa-circle-o:before {
 					content: "\f05d";
 				}
 			}
-			/*
+			&.active, &:focus, &:active {
+				background-color: transparent;
+				//font-family: "OpenSans-Bold";
+				color: #00A0A4 !important;
+				.fa-circle-o:before {
+					content: "\f05d";
+				}
+			}
+
 			&:nth-child(1){
-				width: 12%;
+				width: auto;
 			}
 			&:nth-child(2){
-				width: 20%;
+				width: auto;
 			}
 			&:nth-child(3){
-				width: 45%;
+				width: auto;
 			}
 			&:nth-child(4){
-				width: 12%;
+				width:auto;
 			}
-			*/
+
 		}
 	}
 	.carousel-inner {
@@ -118,12 +128,14 @@
 				width: 50%;
 				border-right:0;
 				border-radius: 0 0 0 8px;
+				float: left;
 
 			}
 			.dvt-chart:nth-child(2) {
 				width: 50%;
 				border-left:0;
 				border-radius: 0 0 8px 0;
+				float: left;
 			}
 		}
 
