@@ -103,4 +103,31 @@
   .copyright{
     text-align: center !important;
   }
+
+  // ANALYSIS BY ILLNESS
+
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses{
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .zylk-chart{
+            width: 40% !important;
+            float: left;
+          }
+          .ul.legend-list{
+            width: 50%;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+
+
+  .country-analysis-by-illnesses{
+    width: 50% !important;
+    page-break-inside: avoid !important;
+  }
+
+
 }
