@@ -10,6 +10,74 @@
 		margin-top: 40px;
 		width:100%;
 		z-index: 2;
+		.global-estimates-countries-regions{
+			background: #F6F6F6;
+			border: 1px solid #EAEAEA;
+			border-bottom: none;
+			border-top: none;
+			padding: 10px 0;
+			p.countries-regions-text {
+				width: 49%;
+				display: inline-block;
+				padding: 15px 30px;
+			}
+			.countries-regions-select {
+				width: 50%;
+				display: inline-block;
+				position: relative;
+				select{
+					padding: 5px;
+					width: 250px;
+					border-radius: 6px;
+					background: transparent;
+					font-family:'OpenSans-bold';
+					border: 1px solid #CCC;
+					option{
+						font-family:'Arial';
+					}
+					&:focus{
+						background:#FFF;
+						outline: none;
+					}
+				}
+				input{
+					padding: 5px;
+					width: 120px;
+					border-radius: 6px;
+					background: transparent;
+					border: 1px solid #CCC;
+					font-family: 'OpenSans-bold';
+					color: #00A0A4;
+					opacity:0.6;
+				}
+				.countries-regions-info{
+					display: inline-block;
+					//position: absolute;
+					vertical-align: middle;
+					margin-left: 15px;
+					margin-top: 6px;
+					//left: 30px;
+					width: 30px;
+					height: 30px;
+					border: 1px solid #ccc;
+					-webkit-border-radius: 30px;
+					-moz-border-radius: 30px;
+					border-radius: 30px;
+					overflow: hidden;
+					a{
+						background: #FFF;
+						padding: 3px 10px;
+						display: block;
+						color: #666;
+						&:hover{
+							background: #666;
+							color: #FFFFFF;
+						}
+					}
+
+				}
+			}
+		}
 	}
 	.carousel-indicators {
 		position: relative !important;
@@ -83,7 +151,16 @@
 		li {
 			float: left;
 			width: 100% !important;
-
+			h2{
+				margin: 0;
+				text-align: center;
+				width: 100%;
+				font-size: 26px;
+				color:#00A0A4 ;
+				background: #EAEAEA;
+				border-bottom: none !important;
+				padding: 15px 0;
+			}
 			.dvt-chart {
 				min-height: 500px;
 				width: 100%;
@@ -124,18 +201,19 @@
 			}
 		}
 		li:nth-child(4) {
-			.dvt-chart:nth-child(1) {
+			.dvt-chart:nth-child(2) {
 				width: 50%;
 				border-right:0;
 				border-radius: 0 0 0 8px;
 				float: left;
-
+				box-shadow: 0px 2px 0px 0px #cccccc;
 			}
-			.dvt-chart:nth-child(2) {
+			.dvt-chart:nth-child(3) {
 				width: 50%;
 				border-left:0;
 				border-radius: 0 0 8px 0;
 				float: left;
+				box-shadow: 0px 2px 0px 0px #cccccc;
 			}
 		}
 
@@ -208,7 +286,27 @@
 	}
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:991px){
+	.global-estimates-countries-regions {
+		p.countries-regions-text {
+			width: 30% !important;
+		}
+		.countries-regions-select {
+			width: 64% !important;
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 18px;
+			select {
+				option {
+				}
+				&:focus {
+				}
+			}
+			input {
+			}
+		}
+	}
+
 	.osha-global-estimates-wrapper .carousel-indicators li {
 		width: 100% !important;
 	}

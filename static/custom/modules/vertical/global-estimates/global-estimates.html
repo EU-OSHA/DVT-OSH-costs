@@ -7,12 +7,7 @@
         </div>
     </section>
 
-    <p data-ng-bind="i18n.L44"></p>
-    <select data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countries">
-        <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
-    </select>
-    <span>:</span>
-    <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+
 
     <section class="container-full osha-global-estimates-wrapper ">
         <div class="osha-global-estimates container">
@@ -32,6 +27,18 @@
                         <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L43"></span>
                     </li>
                 </ol>
+                <div class="global-estimates-countries-regions">
+                    <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
+                    <div class="countries-regions-select">
+                        <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countries">
+                            <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+                        </select>
+                        <span>:</span>
+                        <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+                        <p class="countries-regions-info"><a href="" title="Be open in a modal window"><i class="fa fa-info" aria-hidden="true"></i><span class="sr-only">Info</span></a></p>
+                    </div>
+
+                </div>
                 <!-- Wrapper for slides -->
                 <ul class="carousel-inner">
                     <li class="item active" data-name="mortality">
@@ -99,7 +106,7 @@
                         </div>
                     </li>
                     <li class="item" data-name="total-cost">
-                        <h2 data-ng-bind="{{i18n.L56}}"></h2>
+                        <h2 data-ng-bind="i18n.L56"></h2>
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorDataRegion" cda="{{::cda }}"

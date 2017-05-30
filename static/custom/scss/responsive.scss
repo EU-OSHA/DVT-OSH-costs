@@ -374,6 +374,31 @@
       }
     }
   }
+
+  // GLOBAL ESTIMATES
+  .global-estimates-countries-regions {
+    p.countries-regions-text {
+      width: 100% !important;
+    }
+    .countries-regions-select {
+      width: 100% !important;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 0px;
+      padding: 15px 30px;
+      select {
+        width: 100% !important;
+        margin: 0 0 15px 0;
+        option {
+        }
+        &:focus {
+        }
+      }
+      input {
+        width: 80%!important;
+      }
+    }
+  }
 }
 
 
