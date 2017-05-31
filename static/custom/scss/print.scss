@@ -75,7 +75,7 @@
       }
     }
   }
-  osha-eu-estimates{
+  .osha-eu-estimates{
     padding:0 !important;
     overflow: visible !important;
   }
@@ -102,5 +102,45 @@
   }
   .copyright{
     text-align: center !important;
+  }
+  // ANALYSIS BY ILLNESS
+
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses{
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .zylk-chart{
+            width: 40% !important;
+            float: left;
+          }
+          .ul.legend-list{
+            width: 50%;
+            float: right;
+            li{
+              &:nth-child(1) .legend-data{
+                background:#0FA9A9 !important;
+              }
+              &:nth-child(2) .legend-data{
+                background:#F2C466 !important;
+              }
+              &:nth-child(3) .legend-data{
+                background:#DB3081 !important;
+              }
+              &:nth-child(4) .legend-data{
+                background:#575759 !important;
+              }
+              &:nth-child(5) .legend-data{
+                background:#C9E3E3 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .country-analysis-by-illnesses{
+    width: 50% !important;
+    page-break-inside: avoid !important;
   }
 }
