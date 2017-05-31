@@ -50,12 +50,18 @@
            display: inline-block;
            &:hover{
              text-decoration:none;
+             color: #000!important;
            }
          }
          &:after{
            content: '   |';
            display: inline;
            font-weight: normal;
+         }
+         &:last-child{
+           &:after {
+             content: '';
+           }
          }
        }
      }
