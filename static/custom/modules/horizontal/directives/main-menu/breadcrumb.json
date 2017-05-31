@@ -6,9 +6,7 @@
     "home": "<span>Home</span>",
 
     "_SECCTION-GLOBAL-ESTIMATES": null,
-    "who-regions-comparison": "Global estimates >> <span>WHO Regions comparison</span>",
-    "global-analysis-illness": "Global estimates >> <span>Analysis by illness</span>",
-
+    "global-estimates":"<span>Global Estimates</span>",
     "_SECCTION-EU-ESTIMATES": null,
     "countries-comparison": "EU estimates >> <span>EU countries comparison<span>",
     "eu-analysis-illness": "EU estimates >> <span>Analysis by illness<span>",

@@ -173,6 +173,10 @@
     requirePaths['vertical/global-estimates/global-estimates-module'] = verticalModules + '/global-estimates/global-estimates-module' + suffix;
     requirePaths['vertical/global-estimates/i18n'] = verticalModules + '/global-estimates/global-estimates-i18n' + suffix + '.json';
 
+    /* GLOSSARY */
+    requirePaths['vertical/glossary/GlossaryController'] = verticalModules + '/glossary/GlossaryController' + suffix;
+    requirePaths['vertical/glossary/glossary-module'] = verticalModules + '/glossary/glossary-module' + suffix;
+
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;
     requirePaths['vertical/footer-pages/FooterPagesController'] = verticalModules + '/footer-pages/FooterPagesController' + suffix;
