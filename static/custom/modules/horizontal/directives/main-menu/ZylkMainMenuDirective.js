@@ -196,6 +196,7 @@ define(function (require) {
                     });
 
 
+
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
