@@ -148,8 +148,8 @@
       li.item {
         width: 100% !important;
         .carousel-chart{
-          width: 95% !important;
-          margin: 0 !important;
+          width: 90% !important;
+          margin: 0 auto !important;
           padding: 15px !important;
           overflow: hidden;
           img{
@@ -158,7 +158,11 @@
         }
       }
     }
+    .carousel-control .prev, .carousel-control .next{
+      top: 235px !important;
+    }
   }
+
   .modal-dialog {
     width: 98%;
     .modal-content{
