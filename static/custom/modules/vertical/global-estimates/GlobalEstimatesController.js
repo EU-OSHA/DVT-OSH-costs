@@ -71,7 +71,7 @@ define(function (require) {
 
         $scope.graphWidth = jQuery('li.item.active').width() - 30;
 
-        $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 : $scope.graphWidth;
+        $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
         angular.element($window).bind('resize', function() {
             $state.reload();
