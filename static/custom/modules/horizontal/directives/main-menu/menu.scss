@@ -109,6 +109,19 @@
         background: #f9f9f9;
     }
 }
+
+html.translated-ltr{
+    .ilo-header{
+        #containerMenu{
+            top:36px;
+            .menu-tools-top{
+                .social-network{
+                    padding-right: 12px;
+                }
+            }
+        }
+    }
+}
 .container-header{
     overflow:hidden;
     position:relative;
@@ -121,7 +134,7 @@ zylk-menu {
 
 #main-menu {
     border-radius: 0;
-    margin-top:0em;
+    margin: 10px 0 5px !important;
     background: $colorWhite;
     width:auto;
     float: right;
