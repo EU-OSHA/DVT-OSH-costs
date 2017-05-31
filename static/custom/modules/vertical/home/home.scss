@@ -21,7 +21,7 @@
     }
   }
   #carouselHome{
-    min-height:auto;
+    min-height: 620px;
     margin: 0px 0 0;
     .carousel-indicators{
       bottom: 0;
@@ -82,7 +82,7 @@
           text-align: center;
           font-size: 14px;
           padding: 5px;
-          min-height: 7rem;
+          min-height: 8rem;
           width: 80%;
           margin: 0 auto;
         }
@@ -92,7 +92,7 @@
       background-image: none !important;
       width: 40px;
       .icon-prev, .icon-next, .prev, .next {
-        top:50%;
+        top:43%;
         position: relative;
         color: #666;
       }
