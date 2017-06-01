@@ -51,7 +51,7 @@ define(function (require) {
         ];
 
         // Charts
-        $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
+        $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], text: i18n[i18n_home.chartDeath.message], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
         $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], text: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
 
         $scope.update = function() {
@@ -78,8 +78,6 @@ define(function (require) {
             }
         }
 
-<<<<<<< Updated upstream
-=======
         $('div#modalChart').click(function() {
             $('div#modalChart').modal('hide');
         }).children().click(function(e){
@@ -88,8 +86,6 @@ define(function (require) {
                 return false;
             }
         });
-    
->>>>>>> Stashed changes
        $scope.status = 'ready';
     }
 
