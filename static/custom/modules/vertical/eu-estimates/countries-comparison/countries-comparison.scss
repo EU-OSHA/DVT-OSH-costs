@@ -81,7 +81,7 @@
         .backGraps {
           background: transparent !important;
           margin: 0em auto 0;
-          svg > g > g > g > g:nth-child(5){
+          svg > g > g > g > g:nth-last-child(2){
             -ms-transform: translate(-12px,6px) !important;
             -webkit-transform: translate(-12px,6px) !important;
             transform: translate(-12px,6px) !important;
@@ -173,7 +173,7 @@
 
 .dvt-modal.in{
   .backGraps {
-    svg > g > g > g > g:nth-child(5){
+    svg > g > g > g > g:nth-last-child(2){
       -ms-transform: translate(-5px,6px) !important;
       -webkit-transform: translate(-5px,6px) !important;
       transform: translate(-5px,6px) !important;

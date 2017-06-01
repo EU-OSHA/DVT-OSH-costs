@@ -143,7 +143,6 @@ header {
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-
 .ovh {
   overflow:hidden;
 }
@@ -594,7 +593,6 @@ div.blockUIDefaultImg:before {
 p {
   clear: both;
 }
-
 .zylk-bar-chart > div.row > .header,
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
@@ -604,7 +602,10 @@ p {
 .cursor-pointer {
   cursor: pointer;
 }
-
+/** tooltip charts **/
+.tipsy-inner {
+  max-width: 250px !important;
+}
 /** hover links **/
 .bulletsItems a:hover,
 .bulletsItems a:hover.selected {
@@ -633,7 +634,6 @@ p {
   max-width: 900px !important;
   padding: 0 50px;
 }
-
 
 .introNoScript {
   border: 1px solid #000;
