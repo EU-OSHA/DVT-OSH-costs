@@ -73,6 +73,7 @@ define(function (require) {
                     break;
                 case 'slide':
                     $scope.modalData = $scope.slides[index];
+                    $('#carouselHome').carousel('pause');
                     break;
             }
         }
