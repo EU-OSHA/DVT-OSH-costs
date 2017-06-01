@@ -4614,8 +4614,7 @@ button.close {
 .carousel-inner {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  padding: 0; }
+  width: 100%; }
   .carousel-inner > .item {
     display: none;
     position: relative;

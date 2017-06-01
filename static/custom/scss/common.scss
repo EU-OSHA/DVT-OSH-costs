@@ -115,9 +115,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
 }
-header a:focus{
-  outline: 1px dotted #CCC !important;
+header {
+  a:focus{
+    outline: 1px dotted #CCC !important;
+  }
+  .submenu-icon{
+    a:focus{
+      outline: 0px;
+    }
+  }
 }
+
 .page-content {
   float: left;
   margin: 0;
