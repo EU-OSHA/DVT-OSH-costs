@@ -274,8 +274,8 @@
         li.item{
           .carousel-chart {
             position: relative;
-            width: auto;
-            margin: 40px 25px 20px 0;
+            width: 80%;
+            margin: auto;
             padding: 15px 0px;
             img{
               width:100%;
@@ -284,7 +284,7 @@
         }
       }
       .carousel-control.right {
-        right: -14px;
+        right:0;
       }
     }
   }
@@ -388,6 +388,14 @@
         img {
           width: auto;
         }
+      }
+    }
+    .carousel-control{
+      .prev{
+        top: 500px !important;
+      }
+      .next{
+        top: 500px !important;
       }
     }
   }

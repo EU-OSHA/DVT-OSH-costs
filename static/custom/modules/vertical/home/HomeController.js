@@ -77,10 +77,10 @@ define(function (require) {
                     break;
             }
         }
-    
+
        $scope.status = 'ready';
     }
-    
+
     controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log'];
     return controller;
 });
