@@ -81,7 +81,6 @@ define(function (require) {
         $('div#modalChart').click(function() {
             $('div#modalChart').modal('hide');
         }).children().click(function(e){
-            debugger;
             if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
                 return false;
             }
