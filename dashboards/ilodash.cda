@@ -69,7 +69,7 @@
           FROM fact_figures ff
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.REGION = 'EU28'
-          ORDER BY SPLIT_1 ASC
+          ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
 
@@ -84,7 +84,7 @@
                        FROM fact_figures ff
                        WHERE ff.INDICATOR_ID = 25
                        AND ff.COUNTRY = ${pCountry}
-                       ORDER BY SPLIT_1 ASC
+                       ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
 
