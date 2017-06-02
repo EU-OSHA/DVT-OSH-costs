@@ -83,6 +83,9 @@ $backgroundCookies:#cbe4e5;
 $backgroundGlossary1:#cfd8dc;
 $backgroundGlossary2:#eceff1;
 
+html{
+  font-size: 10px;
+}
 .outleft{
   position: absolute;
   top: -9999px;
@@ -597,7 +600,7 @@ p {
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
   background-color: transparent;
-}
+}font-size
 
 .cursor-pointer {
   cursor: pointer;
