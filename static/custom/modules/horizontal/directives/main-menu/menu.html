@@ -121,11 +121,13 @@
     </div>
 
     <div data-ng-if="!isHome" id="not-home-cover" class="nopadding">
-        <p class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
+        <div class="container">
+            <p class="title-banner" data-ng-bind-html="titleHeader"></p>
+        </div>
     </div>
 
     <div class="col-xs-12 col-md-12  titleAndWidget">
-        <p data-ng-if="isHome" class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
+        <p  class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
 
         <div data-ng-if="!isHome" class="page-header-wrapper container">
         <h1 class="page-header text-center" data-ng-bind-html="i18n_literals[title]"></h1>

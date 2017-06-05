@@ -1,9 +1,13 @@
 /** fluid 100% to 1650 px **/
 @media only screen and (min-width : $ful1650)  {
-
+  .container{
+    //width: 1650px !important;
+  }
 }
 @media only screen and (max-width : $ful1650)  {
-
+  .container{
+    //width: 100% !important;
+  }
 }
 
 @media only screen  and (min-width : 1280px) and (max-width : $ful1650)  {
