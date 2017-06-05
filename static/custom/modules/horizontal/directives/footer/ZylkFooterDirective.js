@@ -43,29 +43,5 @@ define(function (require) {
 
     ZylkFooterDirective.$inject = ['$log'];
 
-    /** GO TO TOP **/
-
-
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 350) {
-                    $(".go-to").css('display','block');
-                    $(".go-to").fadeIn();
-                } else {
-                    $(".go-to").fadeOut();
-                    $(".go-to").css('display','none');
-                }
-            });
-            // scroll body to 0px on click
-            $("a[href='#top']").click(function () {
-                $(".go-to").css('display','none');
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 800);
-                return false;
-            });
-
-
-    /** END GO TO TOP **/
-
     return ZylkFooterDirective;
 });

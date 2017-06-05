@@ -56,8 +56,8 @@
         }
     }
     #home-cover {
-        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.png') #529FA2 no-repeat right top;
-        height: 65px;
+        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/home-header-bg.gif') #529FA2 no-repeat right top;
+        height: 192px;
         clear:both;
         h1 {
             color: $colorA;
@@ -69,11 +69,11 @@
         }
         p.title-banner {
             color:  $colorWhite;
-            font-size: 2em;
             font-weight: 500;
-            line-height: 36px;
-            margin-top: 15px;
+            margin-top: 44px;
             font-family: "Oswald", sans-serif;
+            font-size: 3.6rem;
+            width: 395px;
         }
         a:link, a:visited, a:hover, a:active{
             text-decoration: none;
