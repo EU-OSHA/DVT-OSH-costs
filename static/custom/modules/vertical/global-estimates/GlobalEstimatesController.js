@@ -74,15 +74,14 @@ define(function (require) {
         $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
         angular.element($window).bind('resize', function() {
-            $state.reload();
-
-            $scope.number = 1;
+            $state.reload();            
         });
 
         jQuery('#carouselCountries').on('slid.bs.carousel', function () {
             // Update location based on slide
             var item = jQuery(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
+            
             // Prevent carousel from sliding automatically
             jQuery('#carouselCountries').carousel('pause');
         })
