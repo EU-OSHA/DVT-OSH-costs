@@ -36,6 +36,16 @@
   }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .ilo-header{
+    #home-cover {
+      p.title-banner {
+        width:100%;
+        margin-top: 67px;
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -141,6 +151,13 @@
     padding-top: 90px;
   }
   .ilo-header{
+    #home-cover {
+      p.title-banner {
+        width:100%;
+        margin-top: 67px;
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+      }
+    }
     #not-home-cover {
       margin-top: 5px !important;
     }
