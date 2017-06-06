@@ -25,6 +25,7 @@
   },
     "chartDeath": {
     "title": "L28",
+    "message": "L29",
     "image": "illnesses-injuries-death.svg"
   },
     "chartDaly": {

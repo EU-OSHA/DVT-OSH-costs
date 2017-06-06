@@ -10,22 +10,22 @@
     </ul>
     </div>
     <div class="footer-elements">
-        <p class="copyright  col-md-5">© {{CurrentDate | date:'yyyy'}} EU-OSHA | an agency of the <a href="https://osha.europa.eu/" target="_blank">European Union</a></p>
+        <p class="copyright  col-md-5">© {{CurrentDate | date:'yyyy'}} EU-OSHA | <a href="https://osha.europa.eu/" target="_blank">an agency of the European Union</a></p>
         <ul class="footer-nav-accessibility list-inline col-md-5">
             <li>
-                <a ui-sref="site-map()" accesskey="M" class="menu__link"><span data-ng-bind="footer.siteMap"></span></a>
+                <a ui-sref="site-map()" accesskey="M" class="menu__link"><span data-ng-bind="i18n.L7"></span></a>
             </li>
             <li>
-                <a target="_blank" href="https://osha.europa.eu/en/contact-us" accesskey="U" class="menu__link"> <span data-ng-bind="footer.contact"></span></a>
+                <a target="_blank" href="https://osha.europa.eu/en/contact-us" accesskey="U" class="menu__link"> <span data-ng-bind="i18n.L11"></span></a>
             </li>
             <li>
-                <a ui-sref='accessibility()' accesskey="A" class="menu__link"> <span data-ng-bind="footer.access"></span> </a>
+                <a ui-sref='accessibility()' accesskey="A" class="menu__link"> <span data-ng-bind="i18n.L10"></span> </a>
             </li>
             <li>
-                <a ui-sref="privacy-policy()" accesskey="P" class="menu__link"> <span data-ng-bind="footer.privacity"></span></a>
+                <a ui-sref="privacy-policy()" accesskey="P" class="menu__link"> <span data-ng-bind="i18n.L8"></span></a>
             </li>
             <li>
-                <a ui-sref='legal-notice()' accesskey="L" class="menu__link"> <span data-ng-bind="footer.legal"></span></a>
+                <a ui-sref='legal-notice()' accesskey="L" class="menu__link"> <span data-ng-bind="i18n.L9"></span></a>
             </li>
         </ul>
         <ul class="footer-social-network list-inline col-md-2">

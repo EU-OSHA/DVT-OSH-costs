@@ -167,7 +167,7 @@
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.REGION = 'EU28'
           AND SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
-          ORDER BY SPLIT_1 ASC
+          ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
 
@@ -183,7 +183,7 @@
                        WHERE ff.INDICATOR_ID = 25
                        AND ff.COUNTRY = ${pCountry}
                        AND SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
-                       ORDER BY SPLIT_1 ASC
+                       ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
 

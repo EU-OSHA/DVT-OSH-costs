@@ -20,6 +20,11 @@
         width: 100%;
         position: fixed;
         top:0;
+        .eu-osha-logo{
+            img{
+                padding-top: 7px;
+            }
+        }
         .menu-tools-top{
             padding: 15px 15px 0;
             .submenu-icon{
@@ -70,10 +75,10 @@
         p.title-banner {
             color:  $colorWhite;
             font-weight: 500;
-            margin-top: 44px;
+            line-height: 36px;
             font-family: "Oswald", sans-serif;
-            font-size: 3.6rem;
-            width: 395px;
+            width: 350px;
+            margin-top: 40px;
         }
         a:link, a:visited, a:hover, a:active{
             text-decoration: none;
@@ -81,7 +86,7 @@
     }
     #not-home-cover {
         background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png') #529FA2 no-repeat right top;
-        height: 65px;
+        height: 61px;
         clear:both;
         h1 {
             color: $colorA;
@@ -114,8 +119,8 @@ html.translated-ltr{
         #containerMenu{
             top:36px;
             .menu-tools-top{
-                .social-network {
-                    padding-right: 10px;
+                .social-network{
+                    padding-right: 12px;
                 }
             }
         }
@@ -229,9 +234,10 @@ ul.navbar-nav {
 
 .path {
     margin-bottom: 0;
-    margin-top: 8px;
+    margin-top: 0;
     font-style: italic;
-    font-size:1.3rem;
+    font-size: 1.3rem;
+    padding-top: 8px;
     span {
         color: $colorA;
         font-weight:bold;

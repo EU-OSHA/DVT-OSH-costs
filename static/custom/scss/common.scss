@@ -85,6 +85,9 @@ $backgroundCookies:#cbe4e5;
 $backgroundGlossary1:#cfd8dc;
 $backgroundGlossary2:#eceff1;
 
+html{
+  font-size: 10px;
+}
 .outleft{
   position: absolute;
   top: -9999px;
@@ -117,10 +120,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
 }
-a:focus {
-  outline: 1px dotted #ccc !important;
-  outline-offset: 0 !important;
+
+header {
+  a:focus{
+    outline: 1px dotted #CCC !important;
+  }
+  .submenu-icon{
+    a:focus{
+      outline: 0px;
+    }
+  }
 }
+
 .page-content {
   float: left;
   margin: 0;
@@ -136,7 +147,6 @@ a:focus {
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
 
 .ovh {
   overflow:hidden;
@@ -588,17 +598,19 @@ div.blockUIDefaultImg:before {
 p {
   clear: both;
 }
-
 .zylk-bar-chart > div.row > .header,
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
   background-color: transparent;
-}
+}font-size
 
 .cursor-pointer {
   cursor: pointer;
 }
-
+/** tooltip charts **/
+.tipsy-inner {
+  max-width: 250px !important;
+}
 /** hover links **/
 .bulletsItems a:hover,
 .bulletsItems a:hover.selected {
@@ -627,7 +639,6 @@ p {
   max-width: 900px !important;
   padding: 0 50px;
 }
-
 
 .introNoScript {
   border: 1px solid #000;

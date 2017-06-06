@@ -48,7 +48,9 @@
 					<p data-ng-bind="i18n.L26"></p>
 					<img data-ng-src="{{chartDeath.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
 				</div>
-				<div class="content-section-first"></div>
+				<div class="content-section-first">
+					<p data-ng-bind="chartDeath.text"></p>
+				</div>
 			</div>
 		</section>
 
@@ -87,13 +89,12 @@
 				<picture>
 					<source data-ng-srcset="{{modalData.image2}}" alt="{{modalData.title}}" media="(max-width: 600px)">
 					<source data-ng-srcset="{{modalData.image}}" alt="{{modalData.title}}">
-					<img data-ng-src="{{modalData.image}}" alt="{{modalData.title}}" data-toggle="modal" data-target="#modalChart">
+					<img data-ng-src="{{modalData.image}}" alt="{{modalData.title}}">
 				</picture>
 				<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>
 			</div>
 			<div class="modal-footer">
 				<p data-ng-bind="modalData.text"></p>
-				<!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
 			</div>
 		</div>
 	</div>
