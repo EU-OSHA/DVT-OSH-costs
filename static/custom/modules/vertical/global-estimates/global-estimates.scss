@@ -47,7 +47,7 @@
 					background: transparent;
 					border: 1px solid #CCC;
 					font-family: 'OpenSans-bold';
-					color: #00A0A4;
+					color: $subheader;
 					opacity:0.6;
 				}
 				.countries-regions-info{
@@ -110,7 +110,7 @@
 			}
 			&:hover{
 				background-color: transparent;
-				color: #00A0A4 !important;
+				color: $subheader !important;
 				.fa-circle-o:before {
 					content: "\f05d";
 				}
@@ -118,7 +118,7 @@
 			&.active, &:focus, &:active {
 				background-color: transparent;
 				//font-family: "OpenSans-Bold";
-				color: #00A0A4 !important;
+				color: $subheader !important;
 				.fa-circle-o:before {
 					content: "\f05d";
 				}
@@ -156,7 +156,7 @@
 				text-align: center;
 				width: 100%;
 				font-size: 2.6rem;
-				color:#00A0A4 ;
+				color:$subheader ;
 				background: #EAEAEA;
 				border-bottom: none !important;
 				padding: 15px 0;
@@ -178,7 +178,7 @@
 						text-align: center;
 						width: 100%;
 						font-size:2.6rem;
-						color:#00A0A4 ;
+						color:$subheader ;
 					}
 				}
 				.backGraps {
@@ -344,4 +344,27 @@
 			}
 		}
 	}
+}
+.osha-global-estimates-wrapper .carousel-inner{
+	position: relative;
+}
+.osha-global-estimates-wrapper .carousel-inner > .item{
+	display: block !important;
+	position: absolute;
+}
+.osha-global-estimates-wrapper .carousel-inner > .item{
+	top:-999999px;
+}
+.osha-global-estimates-wrapper .carousel-inner > .item.active{
+	top:0px;
+}
+.carousel-inner > .active.left {
+	left: -100%;
+}
+.carousel-inner > .left {
+	left: -100%;
+	top:0px;
+}
+.carousel-inner > .prev.left, .carousel-inner > .prev.left {
+	top:0px;
 }

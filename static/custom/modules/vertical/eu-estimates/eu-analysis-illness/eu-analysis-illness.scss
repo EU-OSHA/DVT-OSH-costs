@@ -17,7 +17,7 @@
       text-align: center;
       width: 100%;
       font-size: 2.6rem;
-      color:#00A0A4 ;
+      color:$subheader ;
     }
     .chart-wrapper{
       .zylk-chart{
@@ -65,23 +65,23 @@
           }
           // CANCER
           &:nth-child(1) .legend-data{
-            background:#0FA9A9 !important;
+            background:$plt-eu01 !important;
           }
           // MSD
           &:nth-child(2) .legend-data{
-            background:#F2C466 !important;
+            background:$plt-eu02 !important;
           }
           // INJURIES
           &:nth-child(3) .legend-data{
-            background:#575759 !important;
+            background:$plt-eu04 !important;
           }
           // CIRCULATORY
           &:nth-child(4) .legend-data{
-            background:#DB3081 !important;
+            background:$plt-eu03 !important;
           }
           // OTHERS
           &:nth-child(5) .legend-data{
-            background:#C9E3E3 !important;
+            background:$plt-eu05 !important;
           }
           .legend-name{
 
@@ -104,7 +104,7 @@
       height:auto;
       z-index: 9;
       overflow: hidden;
-      background: #FFF;
+      background:$colorWhite;
       padding:20px 0 0 0 !important;
       .chart-analysis-illnesses-box{
         top:0;
@@ -116,7 +116,7 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         border-width: 0 0 1px 0;
-        border-bottom: 1px solid #CCC;
+        border-bottom: 1px solid $border;
         .zylk-chart {
           width: 20%;
           float: left;
@@ -177,7 +177,7 @@
         position: relative;
         background: #FFF!important;
         padding: 20px !important;
-        border: 1px solid #EAEAEA;
+        border: 1px solid $border;
         border-radius: 8px;
         margin: 0px auto 30px;
         overflow: hidden;
@@ -198,7 +198,7 @@
           text-align: center;
           width: 100%;
           font-size: 2.2rem;
-          color:#666;
+          color:$font-grey;
           margin: 0px;
         }
         .wrapper-contextual-menu{
@@ -227,19 +227,19 @@
               padding-top: 2px;
             }
             &:nth-child(1) .legend-data{
-              background:#0FA9A9;
+              background:$plt-eu01;
             }
             &:nth-child(2) .legend-data{
-              background:#F2C466;
+              background:$plt-eu02;
             }
             &:nth-child(3) .legend-data{
-              background:#DB3081;
+              background:$plt-eu03;
             }
             &:nth-child(4) .legend-data{
-              background:#575759;
+              background:$plt-eu04;
             }
             &:nth-child(5) .legend-data{
-              background:#C9E3E3;
+              background:$plt-eu05;
             }
             .legend-name{
 

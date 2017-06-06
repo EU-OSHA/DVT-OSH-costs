@@ -27,22 +27,23 @@ $corporativo : #003399;
 
 /* Font color */
 $font-black: #000000;
-$font-grey: #57575a;
+$font-grey: #666;
 $header:#f6a400;
 $subheader:#00A0A4;
 $link-menu:#b1b3b4;
 
 /* Palete */
-$plt-eu01: #363d90; /*dark blue*/
-$plt-eu02: #9ba9d3;
-$plt-eu03: #c83188; /**/
-$plt-eu04: #eabbd4;
+$plt-eu01: #449FA2; /*aquamarine*/ /*CANCER*/
+$plt-eu02: #F2C466; /*MSD*/
+$plt-eu03: #DC2F82; /*CIRCULATORY*/
+$plt-eu04: #58585A; /*INJURIES*/
+$plt-eu05: #C9E3E3; /*OTHERS*/
 
 /* Color */
 $colorWhite: #FFFFFF;
 $colorTrans: transparent;
 $colorA: #f6a400; /*orange*/
-$colorB: #00A0A4;
+$colorB: #00A0A4; /* aquamarine */
 
 
 $color01: #dd9444;
@@ -54,6 +55,7 @@ $color06: #babdc1;
 $color07: #359f4b;
 $color08: #e1d643;
 $color09: #fbdb99;
+$border: #EAEAEA;
 $lightgrey: #F0F0F0; /* light grey*/
 $darkgrey : #222;
 
@@ -128,7 +130,6 @@ a:focus {
     overflow: auto;
     width: 100%;
 }
-
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -553,7 +554,7 @@ div.blockUIDefaultImg:before {
   }
   button {
     color: #FFFFFF;
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png) no-repeat 90% 56% #00A0A4;
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png) no-repeat 90% 56% $subheader;
     font-family: "Oswald", sans-serif;
     padding: 7px 25px 7px 15px;
     border: 0;

@@ -21,15 +21,15 @@
     padding: 10px 0 0;
     list-style: none;
     text-align: center;
-    background: #FFF;
-    border: 1px solid #EAEAEA;
+    background: $colorWhite;
+    border: 1px solid $border;
     li {
       width: 30%;
       height: 40px;
       cursor: pointer;
       margin: 10px 12px;
       background-color: transparent;
-      border: 0px solid #fff;
+      border: 0px solid $colorWhite;
       border-radius: 0px;
       text-indent: 0;
       text-align: left;
@@ -39,7 +39,7 @@
       }
       &:hover{
         background-color: transparent;
-        color: #00A0A4 !important;
+        color: $subheader !important;
         .fa-circle-o:before {
           content: "\f05d";
         }
@@ -47,7 +47,7 @@
       &.active, &:focus, &:active {
         background-color: transparent;
         //font-family: "OpenSans-Bold";
-        color: #00A0A4 !important;
+        color:$subheader !important;
         .fa-circle-o:before {
           content: "\f05d";
         }
@@ -68,9 +68,9 @@
       width: 100% !important;
       .dvt-chart {
         width: 100% !important;
-        background: #EAEAEA !important;
+        background: $border !important;
         padding: 0 20px 0 !important;
-        border: 1px solid #EAEAEA;
+        border: 1px solid $border;
         border-radius: 0 0 8px 8px;
         overflow: hidden;
         -webkit-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
@@ -82,7 +82,7 @@
             text-align: center;
             width: 100%;
             font-size:2.6rem;
-            color:#00A0A4 ;
+            color:$subheader ;
           }
         }
         .backGraps {
@@ -122,11 +122,11 @@
       i{
         top: 310px;
         position: relative;
-        color: #FFF;
+        color: $colorWhite;
       }
     }
     &.right:hover i{
-      color: #666;
+      color: $font-grey;
     }
     &.left{
       background-image: none;
@@ -134,18 +134,18 @@
       i{
         top: 310px;
         position: relative;
-        color: #FFF;
+        color: $colorWhite;
       }
     }
     &.left:hover i{
-      color: #666;
+      color: $font-grey;
     }
   }
 }
 
 .countries-comparison{
   .compare-buttons{
-    background: #FFF;
+    background: $colorWhite;
     padding: 40px 0;
     .compare-buttons-list{
       text-align: center;
@@ -155,7 +155,7 @@
         a{
           display: block;
           border-radius: 4px;
-          border: 2px solid #ababab;
+          border: 2px solid $border;
           padding: 20px 20px;
           font-family: 'OpenSans-Bold';
           font-size: 1.4rem;
