@@ -26,10 +26,10 @@
     },
 
     "illnessColors": {
-      "Cancer": "#0FA9A9",
+      "Cancer": "#449FA2",
       "MSD": "#F2C466",
-      "Circulatory": "#DB3081",
-      "Injuries": "#575759",
+      "Circulatory": "#DC2F82",
+      "Injuries": "#58585A",
       "Others": "#C9E3E3"
     }
 }
