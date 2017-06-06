@@ -34,7 +34,7 @@
        margin: 0;
        line-height: 40px;
        font-family: "Open Sans",sans-serif;
-       font-size: 14px;
+       font-size:1.4rem;
        color: #57575a;
      }
      .footer-nav-accessibility {
@@ -44,7 +44,7 @@
          list-style-type: none;
          padding: 0;
          a{
-           font-size: 14px;
+           font-size: 1.4rem;
            color: #fff!important;
            font-weight: normal;
            display: inline-block;
@@ -64,7 +64,7 @@
        li{
          a{
            color: #FFF;
-           font-size: 24px;
+           font-size: 2.4rem;
            &:hover{
              color:$color03;
            }
