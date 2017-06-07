@@ -195,8 +195,8 @@ define(function (require) {
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
-                            $log.info("Results in pretty-print mode");
-                            $log.info(JSON.stringify($scope.results, undefined, 2));
+                            /*$log.info("Results in pretty-print mode");
+                            $log.info(JSON.stringify($scope.results, undefined, 2));*/
 
                             $scope.firstPage();
 

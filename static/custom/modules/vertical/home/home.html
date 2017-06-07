@@ -19,8 +19,8 @@
 									<source data-ng-srcset="{{slide.image}}" alt="{{slide.title}}">
 									<img data-ng-src="{{slide.image}}" title="{{i18n_home.largerImage}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
 								</picture>
+								<p class="carousel-note" data-ng-bind-html="slide.text"></p>
 							</div>
-							<p class="carousel-note" data-ng-bind-html="slide.text"></p>
 						</li>
 					</ul>
 					<!-- Left and right controls -->
@@ -47,24 +47,11 @@
 					<h4 data-ng-bind="i18n.L13"></h4>
 					<p data-ng-bind="i18n.L26"></p>
 					<img data-ng-src="{{chartDeath.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
-				</div>
-				<div class="content-section-first">
 					<p data-ng-bind="chartDeath.text"></p>
-				</div>
-			</div>
-		</section>
-
-		<section class="section-second-home">
-			<div class="container">
-				<h3 data-ng-bind="chartDaly.title"></h3>
-				<div class="chart-section-second">
-					<h4 data-ng-bind="i18n.L13"></h4>
 					<p data-ng-bind="i18n.L30"></p>
 					<img data-ng-src="{{chartDaly.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
 				</div>
-				<div class="content-section-second">
-					<p data-ng-bind="chartDaly.text"></p>
-				</div>
+				<p data-ng-bind="i18n.L17"></p>
 				<p class="see-more"><a data-ui-sref='#' data-ng-bind="i18n.L34"></a></p>
 			</div>
 		</section>
@@ -72,7 +59,9 @@
 		<div class="compare-buttons">
 			<ul class="compare-buttons-list  list-inline container">
 				<li><a data-ui-sref='#' data-ng-bind="i18n.L35"></a></li>
+				<!-- TO BE INCLUDED WITH COUNTRIES COMPARISON PAGE
 				<li><a data-ui-sref='countries-comparison' data-ng-bind="i18n.L36"></a></li>
+				-->
 			</ul>
 		</div>
 </div>
