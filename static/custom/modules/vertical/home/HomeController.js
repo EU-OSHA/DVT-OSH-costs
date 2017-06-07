@@ -50,6 +50,8 @@ define(function (require) {
             {title: i18n[i18n_home.slider3.title], text: i18n[i18n_home.slider3.related], image: configService.getImagesPath()+ i18n_home.slider3.image, image2: configService.getImagesPath()+ i18n_home.slider3.image2}
         ];
 
+        $('#carouselHome').carousel();
+
         // Charts
         $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], text: i18n[i18n_home.chartDeath.message], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
         $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], text: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
@@ -80,6 +82,7 @@ define(function (require) {
 
         $('div#modalChart').click(function() {
             $('div#modalChart').modal('hide');
+            $('#carouselHome').carousel();
         }).children().click(function(e){
             if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
                 return false;
