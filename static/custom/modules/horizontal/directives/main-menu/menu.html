@@ -1,12 +1,12 @@
 <header class="ilo-header col-xs-12 nopadding container-header" >
     <div id="containerMenu">
         <div class="eu-osha-logo col-xs-7 col-sm-3 col-md-4">
-            <a href="https://osha.europa.eu" role="link" title="European Agency for Safety and Health at Work webpage" tabindex="0">
+            <a href="https://osha.europa.eu" role="link" title="{{i18n_menu.OSHAWebpage}}" tabindex="0">
                 <picture>
                     <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en-respx2.png" media="(max-width: 440px)">
                     <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en-resp.png" media="(max-width: 991px)">
                     <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png">
-                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" alt="European Agency for Safety and Health at Work">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" alt="{{i18n_menu.OSHA}}">
                 </picture>
             </a>
         </div>
@@ -14,39 +14,39 @@
         <!-- nav tools top -->
         <nav class="menu-tools-top col-xs-4 col-sm-8 col-md-8">
             <div class="submenu-icon">
-                <a href="javascript:" title="Submenu social networks and print">
-                    <i class="three-points"></i><span class="sr-only">Social networks menu</span>
+                <a href="javascript:" title="{{i18n_menu.Submenu}}">
+                    <i class="three-points"></i><span class="sr-only" data-ng-bind="i18n_menu.SocialMenu"></span>
                 </a>
             </div>
             <ul class="social-network list-inline navbar-right" id="osha-menu-social">
                 <li>
-                    <a target="_blank" href="https://twitter.com/eu_osha" title="EU OSHA in Twitter">
-                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only">EU OSHA in Twitter</span>
+                    <a target="_blank" href="https://twitter.com/eu_osha" title="{{i18n_menu.OSHATwitter}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.facebook.com/EuropeanAgencyforSafetyandHealthatWork" title="EU OSHA Facebook Page">
-                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only">EU OSHA Facebook Page</span>
+                    <a target="_blank" href="https://www.facebook.com/EuropeanAgencyforSafetyandHealthatWork" title="{{i18n_menu.OSHAFacebook}}">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="http://www.linkedin.com/company/european-agency-for-safety-and-health-at-work" title="Follow EU OSHA in LinkedIn">
-                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only">Follow EU OSHA in LinkedIn</span>
+                    <a target="_blank" href="http://www.linkedin.com/company/european-agency-for-safety-and-health-at-work" title="{{i18n_menu.OSHALinkedin}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.youtube.com/user/EUOSHA" title="EU OSHA channel in Youtube">
-                        <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i><span class="sr-only">EU OSHA channel in Youtube</span>
+                    <a target="_blank" href="https://www.youtube.com/user/EUOSHA" title="{{i18n_menu.OSHAYoutube}}">
+                        <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAYoutube"></span>
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://osha.europa.eu/es/tools-and-publications/blog" title="EU OSHA Blog">
-                        <i class="blogger-icon"></i><span class="sr-only">EU OSHA Blog</span>
+                    <a target="_blank" href="https://osha.europa.eu/es/tools-and-publications/blog" title="{{i18n_menu.OSHABlog}}">
+                        <i class="blogger-icon"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHABlog"></span>
                     </a>
                 </li>
                 <li>
-                    <a class="print" href="javascript:"  title="Print page" onclick="window.print()">
-                        <i class="fa fa-lg fa-print" aria-hidden="true"></i><span class="sr-only">Print</span>
+                    <a class="print" href="javascript:"  title="{{i18n_menu.PrintPage}}" onclick="window.print()">
+                        <i class="fa fa-lg fa-print" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.Print"></span>
                     </a>
                 </li>
             </ul>
@@ -57,7 +57,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#osha-menu-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only" data-ng-bind="i18n_menu.Toggle"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -121,7 +121,7 @@
     </div>
 
     <div data-ng-if="!isHome" id="not-home-cover" class="nopadding">
-        <a ui-sref="home" role="button" title="Access to Home page">
+        <a ui-sref="home" role="button" title="{{i18n_menu.AccessHomepage}}">
             <div class="container">
                 <p class="title-banner" data-ng-bind-html="titleHeader"></p>
             </div>
@@ -129,7 +129,7 @@
     </div>
 
     <div class="col-xs-12 col-md-12  titleAndWidget">
-        <p class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs">Home</p>
+        <p class="path col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-bind-html="breadCrumb" id="breadCrumbs" data-ng-bind="i18n_menu.Home"></p>
 
         <div data-ng-if="!isHome" class="page-header-wrapper container">
         <h1 class="page-header text-center" data-ng-bind-html="i18n_literals[title]"></h1>
