@@ -14,6 +14,10 @@ define(function (require) {
         generateController: function (module, ctrlName) {
             return angular.module(module)
                 .controller(ctrlName, function ($scope, $log, $window, $cookies) {
+
+                    // Literals
+                    $scope.i18n_cookies = require('json!dvt/cookies-disclaimer/i18n');
+
                     var cookieLife= new Date();
                     cookieLife.setDate(cookieLife.getDate() + 360);
                     var cookieName = "disclaimerCookie";

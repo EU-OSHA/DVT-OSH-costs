@@ -148,6 +148,7 @@
 
     requirePaths['dvt/directives/paging'] = horizontalModules + '/directives/paging/paging' + suffix;
     requirePaths['dvt/cookies-disclaimer/CookiesController'] = horizontalModules + '/includes/general/CookiesController' + suffix;
+    requirePaths['dvt/cookies-disclaimer/i18n'] = horizontalModules + '/includes/general/cookies' + suffix + '.json';
 
     /* VERTICAL *****************************************************************/
 

@@ -14,24 +14,11 @@
         "accesskey": "G"
     },
     {
-        "id": "eu-estimates",
-        "name":"L2",
-        "target":"_self",
-        "tabindex":"3",
-        "levels":[
-            {
-                "id": "countries-comparison",
-                "name":"L3",
-                "sref": "countries-comparison",
-                "accesskey": "C"
-            },
-            {
-                "id": "eu-analysis-illness",
-                "name":"L4",
-                "sref": "eu-analysis-illness",
-                "accesskey": "E"
-            }
-        ]
+        "id": "eu-analysis-illness",
+        "name":"L4",
+        "sref": "eu-analysis-illness",
+        "accesskey": "E",
+        "tabindex":"3"
     },
     {
         "id": "glossary",
