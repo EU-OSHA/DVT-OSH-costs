@@ -15,7 +15,7 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        $stateProvider.state('countries-comparison', {
+        /*$stateProvider.state('countries-comparison', {
             url: "/countries-comparison",
             params: {
 
@@ -27,7 +27,7 @@ define(function (require) {
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/countries-comparison/CountriesComparisonController', 'countries-comparison', 'CountriesComparisonController')
                 }
             }
-        });
+        });*/
 
         $stateProvider.state('eu-analysis-illness', {
             url: "/eu-analysis-illness",
