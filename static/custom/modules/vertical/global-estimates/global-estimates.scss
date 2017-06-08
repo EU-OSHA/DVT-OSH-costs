@@ -268,13 +268,13 @@
 				a{
 					display: block;
 					border-radius: 4px;
-					border: 2px solid #ababab;
+					border: 0px solid #ababab;
 					padding: 20px 20px;
 					font-family: 'OpenSans-Bold';
 					font-size: 1.6rem;
-					color: #ababab;
+					color: #FFF;
 					&:hover{
-						background:$lightgrey;
+						background:#222;
 						text-decoration: none;
 					}
 				}

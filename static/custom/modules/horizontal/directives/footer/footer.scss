@@ -35,7 +35,10 @@
        line-height: 40px;
        font-family: "Open Sans",sans-serif;
        font-size:1.4rem;
-       color: #57575a;
+       color:#57575a;
+       a{
+         color: #57575a !important;
+       }
      }
      .footer-nav-accessibility {
        margin:5px 0 0;
@@ -54,7 +57,7 @@
            }
          }
          &:after{
-           content: '   |';
+           content: '   |   ';
            display: inline;
            font-weight: normal;
          }
