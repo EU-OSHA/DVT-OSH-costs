@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, dvtUtils, dataService, plotsProvider, $document, configService) {
+    function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, mapProvider, dvtUtils, dataService, plotsProvider, $document, configService) {
         $scope.title ="Countries Comparison";
 
         // CDA
@@ -53,6 +53,9 @@ define(function (require) {
             parameters: {
                 "pColorEU": dvtUtils.getColorCountry(),
                 "pColorEU2": dvtUtils.getEUColor(2)
+            },
+            promises: {
+                promiseShape: mapProvider.getEuropeShape()
             }
         };
 
@@ -91,7 +94,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'countriesComparisonService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'countriesComparisonService', 'mapProvider', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
     return controller;
     
 });
