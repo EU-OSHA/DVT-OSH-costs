@@ -43,16 +43,20 @@
 		<section class="section-first-home">
 			<div class="container">
 				<h3 data-ng-bind="chartDeath.title"></h3>
-				<div class="chart-section-first">
+				<div class="chart1-section-first">
 					<h4 data-ng-bind="i18n.L13"></h4>
 					<p data-ng-bind="i18n.L26"></p>
 					<img data-ng-src="{{chartDeath.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
 					<p data-ng-bind="chartDeath.text"></p>
+				</div>
+				<div class="chart2-section-first">
 					<p data-ng-bind="i18n.L30"></p>
 					<img data-ng-src="{{chartDaly.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
 				</div>
-				<p data-ng-bind="chartDaly.text"></p>
+				<div class="content-section-first">
+				<p data-ng-bind="chartDaly.text" class="text-section-first"></p>
 				<p class="see-more"><a data-ui-sref='#' data-ng-bind="i18n.L34"></a></p>
+				</div>
 			</div>
 		</section>
 

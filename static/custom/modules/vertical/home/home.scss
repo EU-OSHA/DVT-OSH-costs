@@ -8,7 +8,7 @@
   clear:both;
 }
 .section-carrousel{
-  background:#C7DFDF;
+  background:#DBECED;
   padding: 0px 0 15px;
   .ilo-container-carrousel{
     h2.title-section{
@@ -56,9 +56,9 @@
           background: #FFF;
           padding: 15px 30px;
           border-radius: 8px;
-          -webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-          -moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-          box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+          //-webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+          //-moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
+         //box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
           select{
             border: none;
             padding: 5px;
@@ -94,7 +94,7 @@
           margin: 0 auto;
           font-family: OpenSans-bold;
           vertical-align: middle;
-          margin-top: 15rem;
+          margin-top: 11rem;
         }
       }
     }
@@ -102,7 +102,7 @@
       background-image: none !important;
       width: 40px;
       .icon-prev, .icon-next, .prev, .next {
-        top:43%;
+        top:50%;
         position: relative;
         color: $subheader;
       }
@@ -120,16 +120,30 @@
   }
 }
 .section-first-home{
-  background: #FFF;
+  background: #FAFAFA;
   padding: 40px 0;
   h3{
     color: $subheader;
     text-align: center;
     font-size: 28px;
   }
-  .chart-section-first{
+  .chart1-section-first{
     text-align: center;
     margin-top: 2rem;
+    p{
+      margin: 0;
+    }
+    h4{
+      margin-bottom: 3rem;
+      font-size: 22px;
+    }
+  }
+  .chart2-section-first{
+    text-align: center;
+    margin-top: 7rem;
+    p{
+      margin: 0;
+    }
     h4{
       margin-bottom: 3rem;
       font-size: 22px;
@@ -139,8 +153,10 @@
     cursor: pointer;
   }
   .content-section-first{
-    p{
+    margin: 5rem auto 0;
+    p.text-section-first{
       text-align: center;
+      color:$subheader;
     }
   }
 }
@@ -174,8 +190,8 @@
       margin-right: 30px;
       width: 48%;
       a{
-        font-family: 'OpenSans-Bold';
-        font-size: 1.6rem;
+        font-family: Oswald-Light,sans-serif!important;
+        font-size: 1.8rem;
         display: inline-block;
         background: #00A0A4;
         color: #FFF;
@@ -197,7 +213,8 @@
 .see-more{
   text-align: center;
   margin: 25px 0 5px;
-  font-family: "Opensans-bold";
+  font-family: Oswald-Light,sans-serif!important;
+  font-size: 1.8rem;
   text-decoration: none;
   a{
     display: inline-block;
@@ -261,10 +278,16 @@
       }
     }
     .modal-body{
+      padding: 1px 10px;
+      background: #FFF;
+      text-align: center;
+      width: 96%;
+      margin: auto;
       img{
-        width: 100%;
+        width:75%;
         background: #FFF;
-        padding: 5%;
+        padding: 2%;
+        margin: auto;
       }
       .logoGraphics-wrapper{
         float: none;

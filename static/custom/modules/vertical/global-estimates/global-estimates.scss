@@ -4,7 +4,7 @@
 	}
 }
 .osha-global-estimates-wrapper{
-	background: #f9f9f9;
+	background: #DBECED;
 	.carousel-countries{
 		float: left;
 		margin-top: 40px;
@@ -157,21 +157,21 @@
 				width: 100%;
 				font-size: 2.6rem;
 				color:$subheader ;
-				background: #EAEAEA;
+				background: #FFF;
 				border-bottom: none !important;
 				padding: 15px 0;
 			}
 			.dvt-chart {
 				min-height: 500px;
 				width: 100%;
-				background: #EAEAEA !important;
+				background: #FFF !important;
 				padding: 0 20px 0 !important;
-				border: 1px solid #EAEAEA;
+				//border: 1px solid #EAEAEA;
 				border-radius: 0 0 8px 8px;
 				overflow: hidden;
-				-webkit-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
-				-moz-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
-				box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				//-webkit-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				//-moz-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				//box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
 				.header{
 					h2{
 						margin: 0;
@@ -206,14 +206,14 @@
 				border-right:0;
 				border-radius: 0 0 0 8px;
 				float: left;
-				box-shadow: 0px 2px 0px 0px #cccccc;
+				//box-shadow: 0px 2px 0px 0px #cccccc;
 			}
 			.dvt-chart:nth-child(3) {
 				width: 50%;
 				border-left:0;
 				border-radius: 0 0 8px 0;
 				float: left;
-				box-shadow: 0px 2px 0px 0px #cccccc;
+				//box-shadow: 0px 2px 0px 0px #cccccc;
 			}
 		}
 
@@ -233,21 +233,21 @@
 			background-image: none;
 			left: 98.5%;
 			i{
-				top: 40%;
+				top: 45%;
 				position: relative;
-				color: #FFF;
+				color: $subheader;
 			}
 		}
 		&.right:hover i{
-			color: #666;
+			color: #000;
 		}
 		&.left{
 			background-image: none;
 			left: -1.5%;
 			i{
-				top: 40%;
+				top: 45%;
 				position: relative;
-				color: #FFF;
+				color: $subheader;
 			}
 		}
 		&.left:hover i{
@@ -270,8 +270,8 @@
 					border-radius: 4px;
 					border: 0px solid #ababab;
 					padding: 20px 20px;
-					font-family: 'OpenSans-Bold';
-					font-size: 1.6rem;
+					font-family: Oswald-Light,sans-serif!important;
+					font-size: 1.8rem;
 					color: #FFF;
 					&:hover{
 						background:#222;
