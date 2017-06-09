@@ -8,12 +8,12 @@
   clear:both;
 }
 .section-carrousel{
-  background: #f9f9f9;
+  background:#C7DFDF;
   padding: 0px 0 15px;
   .ilo-container-carrousel{
     h2.title-section{
       text-align: center;
-      color: $header;
+      color: $subheader;
       font-size:4rem;
     }
     .subject-section{
@@ -30,11 +30,11 @@
         height: 20px;
         cursor: pointer;
         margin: 0 12px;
-        background-color: #D9D9D9;
+        background-color:$header;
         border: 0px solid #fff;
         border-radius: 20px;
         &.active{
-          background-color:#333333;
+          background-color:$subheader;
         }
       }
     }
@@ -44,12 +44,15 @@
         text-align: center;
         cursor: default;
         h2{
-          color:  $header;
+          color:$subheader;
+          margin-top: 30px;
+          font-size: 32px;
         }
         .carousel-chart{
           position: relative;
-          width: 75%;
-          margin: 40px auto 20px;
+          width: 92%;
+          overflow: auto;
+          margin: 30px auto 20px;
           background: #FFF;
           padding: 15px 30px;
           border-radius: 8px;
@@ -71,6 +74,8 @@
             }
           }
           picture{
+            width:60%;
+            float: left;
             img{
               width: 100%;
               &:hover{
@@ -80,12 +85,16 @@
           }
         }
         p.carousel-note{
-          text-align: center;
-          font-size:1.6rem;
-          padding: 5px;
-          min-height: 8rem;
-          width: 80%;
+          text-align: left;
+          font-size: 1.6rem;
+          padding: 5px 2% 5px 5px;
+          width: 34%;
+          float: right;
+          clear: none;
           margin: 0 auto;
+          font-family: OpenSans-bold;
+          vertical-align: middle;
+          margin-top: 15rem;
         }
       }
     }
@@ -95,7 +104,7 @@
       .icon-prev, .icon-next, .prev, .next {
         top:43%;
         position: relative;
-        color: #666;
+        color: $subheader;
       }
     }
     .carousel-indicators {
@@ -116,10 +125,15 @@
   h3{
     color: $subheader;
     text-align: center;
+    font-size: 28px;
   }
   .chart-section-first{
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    h4{
+      margin-bottom: 3rem;
+      font-size: 22px;
+    }
   }
   img:hover{
     cursor: pointer;
@@ -136,6 +150,7 @@
   h3{
     color: $subheader;
     text-align: center;
+    font-size: 28px;
   }
   .chart-section-second{
     text-align: center;
@@ -255,7 +270,7 @@
         float: none;
         text-align: right;
         img{
-          width: 150px;
+          width: 100px;
           height: auto;
           display: block;
           padding: 0;
