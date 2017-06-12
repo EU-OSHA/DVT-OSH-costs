@@ -38,6 +38,14 @@ define(function (require) {
             $scope.countries = countries;
         });
 
+        $scope.step = {
+            chart1: 20,
+            chart2: jQuery(window).width() > 425? 500 : 1000,
+            chart3: 20,
+            chart4: 2500,
+            chart5: 2.5
+        }
+
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
         if ($window.location.href.indexOf('global-estimates') > -1){
@@ -93,6 +101,14 @@ define(function (require) {
             $('.global-estimates-indicators li').toggleClass('item-block');
 
         })
+
+        $('div#modalWHO').click(function() {
+            $('div#modalWHO').modal('hide');
+        }).children().click(function(e){
+            if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                return false;
+            }
+        });
 
         $scope.status = 'ready';
     }

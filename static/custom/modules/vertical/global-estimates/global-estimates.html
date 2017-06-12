@@ -47,7 +47,7 @@
                                 query="getIndicatorDataRegionSplit" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="horizontal"
-                                axis-fixed-max="120" step="20"
+                                axis-fixed-max="120" step="{{step.chart1}}"
                                 params="[['pIndicator','11'],['pSplit1','Fatal work-related illnesses'],['pSplit2','Fatal work-related injuries']]"
                                 color-role="series"
                                 ortho-axis-title="{{i18n.L117}}"
@@ -68,7 +68,7 @@
                                 query="getIndicatorDataRegion" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="horizontal"
-                                axis-fixed-max="3000" step="500"
+                                axis-fixed-max="3000" step="{{step.chart2}}"
                                 params="[['pIndicator','12']]"
                                 color-role="series"
                                 ortho-axis-title="{{i18n.L118}}"
@@ -78,6 +78,7 @@
                                 max-functional-legend="{{i18n.L52}}"
                                 plots="stories[0].plots"
                                 legend="true"
+                                disable-max-legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L52"></p>
@@ -89,7 +90,7 @@
                                 query="getIndicatorDataRegionSplit" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="330"
                                 orientation="horizontal"
-                                axis-fixed-max="100" step="20"
+                                axis-fixed-max="100" step="{{step.chart3}}"
                                 params="[['pIndicator','13'],['pSplit1','YLL-Fatal injuries and illnesses per 100.000 workers'],['pSplit2','YLD-non fatal injuries and illnesses per 100.000 workers']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
@@ -112,7 +113,7 @@
                                 query="getIndicatorDataRegion" cda="{{::cda }}"
                                 angle="1" width="{{lastGraphWidth}}" height="330"
                                 orientation="horizontal"
-                                axis-fixed-max="5000" step="2500"
+                                axis-fixed-max="5000" step="{{step.chart4}}"
                                 params="[['pIndicator','14']]"
                                 color-role="series"
                                 ortho-axis-title-visible="true"
@@ -121,13 +122,14 @@
                                 max-functional-legend="{{i18n.L58}}"
                                 plots="stories[0].plots"
                                 legend="true"
+                                disable-max-legend="true"
                         ></zylk-bar-chart>
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorDataRegion" cda="{{::cda }}"
                                 angle="1" width="{{lastGraphWidth}}" height="330"
                                 orientation="horizontal"
-                                axis-fixed-max="5" step="2.5"
+                                axis-fixed-max="5" step="{{step.chart5}}"
                                 params="[['pIndicator','15']]"
                                 color-role="series" colors="['#C0504D']"
                                 ortho-axis-title-visible="true"
@@ -137,6 +139,7 @@
                                 max-functional-legend="{{i18n.L58}}"
                                 plots="stories[0].plots"
                                 legend="true"
+                                disable-max-legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind="i18n.L58"></p>
@@ -159,64 +162,81 @@
     <section class="compare-buttons">
         <ul class="compare-buttons-list  list-inline container">
             <li><a data-ui-sref="eu-analysis-illness" data-ng-bind="i18n.L68"></a></li>
-            <li><a data-ui-sref="#" data-ng-bind="i18n.L69"></a></li>
+            <li><a data-ng-bind="i18n.L69" data-toggle="modal" data-target="#modalWHO"></a></li>
         </ul>
     </section>
 
     <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p class="modal-title" data-ng-bind="modalData.title"></p>
-            </div>
-            <div class="modal-body">
-                <div class="logoGraphics-wrapper">
-                    <p>
-                        <span data-ng-bind="i18n_global.RegionCode"></span>
-                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
-                    </p>
-                    <ul>
-                        <li>
-                            <span>HIGH</span>
-                            <span data-ng-bind="i18n_global.HIGH"></span>
-                        </li>
-                        <li>
-                            <span>AFRO</span>
-                            <span data-ng-bind="i18n_global.AFRO"></span>
-                        </li>
-                        <li>
-                            <span>AMRO</span>
-                            <span data-ng-bind="i18n_global.AMRO"></span>
-                        </li>
-                        <li>
-                            <span>EMRO</span>
-                            <span data-ng-bind="i18n_global.EMRO"></span>
-                        </li>
-                        <li>
-                            <span>EURO</span>
-                            <span data-ng-bind="i18n_global.EURO"></span>
-                        </li>
-                        <li>
-                            <span>SEARO</span>
-                            <span data-ng-bind="i18n_global.SEARO"></span>
-                        </li>
-                        <li>
-                            <span>WPRO</span>
-                            <span data-ng-bind="i18n_global.WPRO"></span>
-                        </li>
-                    </ul>                    
-                    <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind="modalData.title"></p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <p data-ng-bind="modalData.text"></p>
-                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                <div class="modal-body">
+                    <div class="logoGraphics-wrapper">
+                        <p>
+                            <span data-ng-bind="i18n_global.RegionCode"></span>
+                            <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                        </p>
+                        <ul>
+                            <li>
+                                <span>HIGH</span>
+                                <span data-ng-bind="i18n_global.HIGH"></span>
+                            </li>
+                            <li>
+                                <span>AFRO</span>
+                                <span data-ng-bind="i18n_global.AFRO"></span>
+                            </li>
+                            <li>
+                                <span>AMRO</span>
+                                <span data-ng-bind="i18n_global.AMRO"></span>
+                            </li>
+                            <li>
+                                <span>EMRO</span>
+                                <span data-ng-bind="i18n_global.EMRO"></span>
+                            </li>
+                            <li>
+                                <span>EURO</span>
+                                <span data-ng-bind="i18n_global.EURO"></span>
+                            </li>
+                            <li>
+                                <span>SEARO</span>
+                                <span data-ng-bind="i18n_global.SEARO"></span>
+                            </li>
+                            <li>
+                                <span>WPRO</span>
+                                <span data-ng-bind="i18n_global.WPRO"></span>
+                            </li>
+                        </ul>                    
+                        <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p data-ng-bind="modalData.text"></p>
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="modal fade" id="modalWHO" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind="modalData.title"></p>
+                </div>
+                <div class="modal-body">
+                    <picture>
+                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who_regions.jpg" alt="{{i18n_home.WHO}}">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
 </zylk-dashboard>

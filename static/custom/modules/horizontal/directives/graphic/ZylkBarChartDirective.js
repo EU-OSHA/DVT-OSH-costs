@@ -167,6 +167,7 @@ define(function (require) {
     var BarChartComponent = require('cdf/components/CccBarChartComponent');
     var PieChartComponent = require('cdf/components/CccPieChartComponent');
     var configService = require('horizontal/config/configService');
+    var i18n = configService.getLiterals();
 
     var sequence = 1;
 
@@ -216,6 +217,7 @@ define(function (require) {
             + '<div class="backGraps">'
             + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
+            + '<div class="legend-info" ng-if="isMaximized && legendClickMode" data-ng-bind="i18n.L1"></div>'
             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
             + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>';
@@ -270,11 +272,15 @@ define(function (require) {
                 if (!!scope.enlargeAction) {
                     scope.haveEnlarge = "true";
                 }
+                scope.i18n = i18n;
                 scope.isMaximized = !!attributes.isMaximized;
                 scope.titleH3 = !!attributes.titleH3;
                 //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
+                if(attributes.legendClickMode=="toggleVisible"){
+                    scope.legendClickMode=true;
+                }
 
                 var definition = {
                     type: "cccBarChart",
