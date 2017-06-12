@@ -107,16 +107,36 @@
   // ANALYSIS BY ILLNESS
 
   .osha-analysis-illnesses{
-    .chart-analysis-illnesses{
+    .chart-analysis-illnesses,
+    .chart-analysis-illnesses.affix{
+      position: relative;
+      top:0;
       .chart-analysis-illnesses-box{
+        position: relative;
+        background: #FFF !important;
+        padding: 20px !important;
+        border: 0px solid #EAEAEA;
+        border-radius: 8px;
+        margin: auto;
+        overflow: hidden;
+        h2 {
+          text-align: center;
+          width: 100%;
+          font-size: 2.6rem;
+          color: #00A0A4;
+        }
         .chart-wrapper{
           .zylk-chart{
-            width: 40% !important;
+            width: 25% !important;
             float: left;
           }
           .ul.legend-list{
-            width: 50%;
+            width: 70%;
             float: right;
+            list-style-type: none;
+            column-count: 2;
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
             li{
               &:nth-child(1) .legend-data{
                 background:#0FA9A9 !important;
@@ -145,4 +165,13 @@
     page-break-inside: avoid !important;
   }
 
+  //GLOBAL ESTIMATES
+  .osha-global-estimates-wrapper{
+    .carousel-indicators{
+      border:none !important;
+    }
+    .global-estimates-countries-regions{
+      border:none !important;
+    }
+  }
 }

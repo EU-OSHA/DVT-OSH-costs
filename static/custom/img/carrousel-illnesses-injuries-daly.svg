@@ -9,13 +9,13 @@
 		<g>
 			<g>
 				<g>
-					<rect x="416.008" y="68.6" fill="#1F9B9C" width="205.532" height="47.1"/>
+					<rect x="416.008" y="68.6" fill="#449FA2" width="205.532" height="47.1"/>
 				</g>
 			</g>
 			<g>
 				<g>
-					<rect x="406.551" y="68.6" fill="#C7DFDF" width="9.459" height="47.1"/>
-					<rect x="406.551" y="134.017" fill="#E9BF64" width="213.097" height="47.104"/>
+					<rect x="406.551" y="68.6" fill="#C9E3E3" width="9.459" height="47.1"/>
+					<rect x="406.551" y="134.017" fill="#F2C466" width="213.097" height="47.104"/>
 				</g>
 			</g>
 		</g>
@@ -178,10 +178,10 @@
 </g>
 <g>
 	<g>
-		<rect x="221.733" y="71.327" fill="#1F9B9C" width="103.222" height="45.656"/>
+		<rect x="221.733" y="71.327" fill="#449FA2" width="103.222" height="45.656"/>
 	</g>
-	<rect x="182.492" y="71.327" fill="#C7DFDF" width="39.242" height="45.656"/>
-	<rect x="182.492" y="134.736" fill="#E9BF64" width="101.996" height="45.655"/>
+	<rect x="182.492" y="71.327" fill="#C9E3E3" width="39.242" height="45.656"/>
+	<rect x="182.492" y="134.736" fill="#F2C466" width="101.996" height="45.655"/>
 	<line fill="none" stroke="#666666" stroke-miterlimit="10" x1="182.492" y1="189.27" x2="182.492" y2="62.45"/>
 	<line fill="none" stroke="#666666" stroke-miterlimit="10" x1="182.492" y1="189.27" x2="351.813" y2="189.27"/>
 	<g>
@@ -514,9 +514,9 @@
 		c-0.459-0.305-0.801-0.651-1.025-1.039S600.431,4.047,600.431,3.509z"/>
 </g>
 <g>
-	<rect x="180.536" y="253.92" fill="#1F9B9C" width="18.592" height="18.596"/>
-	<rect x="180.536" y="280.111" fill="#C7DFDF" width="18.592" height="18.594"/>
-	<rect x="180.536" y="306.303" fill="#E9BF64" width="18.592" height="18.594"/>
+	<rect x="180.536" y="253.92" fill="#449FA2" width="18.592" height="18.596"/>
+	<rect x="180.536" y="280.111" fill="#C9E3E3" width="18.592" height="18.594"/>
+	<rect x="180.536" y="306.303" fill="#F2C466" width="18.592" height="18.594"/>
 	<g>
 		<path fill="#666666" d="M207.006,257.605h1.272l2.639,4.997l2.658-4.997h1.258l-3.336,6.118v3.876h-1.162v-3.821L207.006,257.605z
 			"/>

@@ -90,7 +90,8 @@
 // HOME
   .section-carrousel{
     #carouselHome {
-      min-height: 330px;
+      //min-height: 330px;
+      min-height: auto;
       .carousel-inner {
         li.item {
           width: 100% !important;
@@ -124,7 +125,7 @@
       }
       .modal-body{
         img{
-          width: 100%;
+          width: 60%;
           padding: 1%;
         }
       }
@@ -135,7 +136,7 @@
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
-    top: 43px;
+    top: 38px;
     right:0;
   }
   .ilo-header {
@@ -172,7 +173,8 @@
 
   /** HOME **/
   #carouselHome {
-    min-height: 330px;
+    //min-height: 330px;
+    min-height: auto !important;
     .carousel-inner {
       li.item {
         width: 100% !important;
@@ -183,6 +185,9 @@
           overflow: hidden;
           img{
             width: 100%;
+          }
+          p.carousel-note {
+            margin-top: 4rem;
           }
         }
       }
@@ -272,6 +277,24 @@
     }
   }
 
+  /** footer **/
+  .ilo-container-footer{
+    .footer-elements{
+      .copyright{
+        width: 100%;
+        text-align: center;
+        float: none;
+      }
+      .footer-nav-accessibility{
+        margin: auto;
+        float: none;
+      }
+      .footer-social-network{
+        margin: 30px auto 20px !important;
+        float: none;
+      }
+    }
+  }
 
 } /** end media query 768 - 1024 portrait **/
 
@@ -440,6 +463,27 @@
       }
     }
   }
+
+  /** footer **/
+  .ilo-container-footer{
+    .footer-elements{
+      .copyright{
+        width: 100%;
+        text-align: center;
+        float: none;
+      }
+      .footer-nav-accessibility{
+        margin: auto;
+        float: none;
+        text-align: center;
+      }
+      .footer-social-network{
+        margin: 30px auto 20px !important;
+        float: none;
+        text-align: center;
+      }
+    }
+  }
 }
 
 
@@ -477,7 +521,8 @@
     }
     .footer-social-network {
       text-align: center;
-      margin: 20px 0;
+      margin: 30px auto !important;
+      float: none !important;
     }
   }
 }

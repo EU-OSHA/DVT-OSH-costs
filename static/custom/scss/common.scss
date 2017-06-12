@@ -358,6 +358,13 @@ div.contextual-menu > div.dropdown {
       font-size:20px !important ;
       min-height: auto !important;
     }
+    .legend-info{
+      float: left;
+      background: #FFF;
+      width: 100%;
+      padding: 0 30px;
+      color: #000;
+    }
   }
 
 
@@ -503,7 +510,7 @@ div.blockUIDefaultImg:before {
   padding:2.5em;
   overflow: auto;
   z-index:9999;
-  bottom: 0;
+  top: 0;
   position: fixed;
   color: #666;
   .text {
@@ -533,8 +540,8 @@ div.blockUIDefaultImg:before {
   .logoGraphics-wrapper{
     float: left;
     width: 100%;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
     background: #FFF;
       .logoGraphics{
         float: right;
@@ -584,8 +591,8 @@ div.blockUIDefaultImg:before {
   .logoGraphics-wrapper{
     float: left;
     width: 100%;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
     background: #FFF;
       .logoGraphics{
         float: right;

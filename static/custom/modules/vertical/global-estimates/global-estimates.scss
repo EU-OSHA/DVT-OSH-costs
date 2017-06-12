@@ -143,8 +143,8 @@
 		float: left;
 		width:100%;
 		padding:0;
-		max-height: 640px;
-		min-height: 640px;
+		max-height: 730px;
+		min-height: 730px;
 		> .item{
 			width: 100% !important;
 		}
@@ -159,10 +159,10 @@
 				color:$subheader ;
 				background: #FFF;
 				border-bottom: none !important;
-				padding: 15px 0;
+				padding: 15px;
 			}
 			.dvt-chart {
-				min-height: 500px;
+				min-height: 502px;
 				width: 100%;
 				background: #FFF !important;
 				padding: 0 20px 0 !important;
@@ -206,6 +206,7 @@
 				border-right:0;
 				border-radius: 0 0 0 8px;
 				float: left;
+				min-height: 416px;
 				//box-shadow: 0px 2px 0px 0px #cccccc;
 			}
 			.dvt-chart:nth-child(3) {
@@ -213,6 +214,7 @@
 				border-left:0;
 				border-radius: 0 0 8px 0;
 				float: left;
+				min-height: 416px;
 				//box-shadow: 0px 2px 0px 0px #cccccc;
 			}
 		}
@@ -307,8 +309,13 @@
 		}
 	}
 
-	.osha-global-estimates-wrapper .carousel-indicators li {
-		width: 100% !important;
+	.osha-global-estimates-wrapper{
+		.carousel-indicators {
+			min-height: 72px;
+			li {
+				width: 100% !important;
+			}
+		}
 	}
 
 	.osha-global-estimates-wrapper {
@@ -345,15 +352,17 @@
 		}
 	}
 }
+
 .osha-global-estimates-wrapper .carousel-inner{
 	position: relative;
 }
 .osha-global-estimates-wrapper .carousel-inner > .item{
-	position: absolute;
+
 }
 .osha-global-estimates-wrapper .carousel-inner > .item.newClass{
 	display: block !important;
 	top:-999999px;
+	position: absolute;
 }
 .osha-global-estimates-wrapper .carousel-inner > .item.newClass.active{
 	top:0px;
