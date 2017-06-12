@@ -42,7 +42,7 @@
         <section class="compare-buttons">
             <ul class="compare-buttons-list  list-inline container">
                 <li><a data-ui-sref='#' data-ng-bind="i18n.L46"></a></li>
-                <li><a data-ui-sref='#' data-ng-bind="i18n.L69"></a></li>
+                <li><a data-ng-bind="i18n.L69" data-toggle="modal" data-target="#modalWHO"></a></li>
             </ul>
         </section>
 
@@ -1112,5 +1112,23 @@
         </section>
 
 
+    </div>
+
+    <div class="modal fade" id="modalWHO" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind="modalData.title"></p>
+                </div>
+                <div class="modal-body">
+                    <picture>
+                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who_regions.jpg" alt="{{i18n_home.WHO}}">
+                    </picture>
+                </div>
+            </div>
+        </div>
     </div>
 </zylk-dashboard>
