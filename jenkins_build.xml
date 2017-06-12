@@ -26,6 +26,7 @@
     <property name="packed"                     value="false"/>
     <property name="cache"                      value="false"/>
     <property name="seo"                        value="false"/>
+    <property name="seo_url"                    value=""/>
     <property name="wipeLibraries"              value="false"/>
 
     <!-- Ant 1.7.1 or lower: A 'property' is initilised to evaluate it in a conditional statement -->
@@ -39,6 +40,7 @@
     <echo>packed: ${packed}</echo>
     <echo>cache: ${cache}</echo>
     <echo>seo: ${seo}</echo>
+    <echo>seo_url: ${seo_url}</echo>
     <echo>wipeLibraries: ${wipeLibraries}</echo>
 
     <!--
@@ -163,6 +165,25 @@
         </copy>
     </target>
 
+    <target name="prepare-snapshots">
+
+        <delete>
+            <fileset dir="static/custom/seo/snapshots" includes="*.html"/>
+        </delete>
+
+        <exec executable="gulp" spawn="false">
+            <arg value="seo"/>
+            <arg value="--seo"/>
+            <arg value="${seo}"/>
+            <arg value="--seo_url"/>
+            <arg value="${seo_url}"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="seo-clean"/>
+        </exec>
+
+    </target>
+
     <!--
         =========================
             release
@@ -186,7 +207,12 @@
         <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>        
     </target>
 
-    <target name="release-publish-snapshots" depends="release-publish">
+    <!--
+        =========================
+            release - snapshots
+        =========================
+    -->
+    <target name="release-snapshots" depends="prepare-snapshots">
         <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
     </target>
 </project>
