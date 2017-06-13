@@ -29,6 +29,12 @@ define(function (require) {
                 // Literals / i18n
                 $scope.i18n = configService.getLiterals();
 
+                $( document ).ready(function() {
+                    if ( $('#cookiesConsent').length > 0 ) {
+                        $('body').addClass('hasCookies');
+                    };
+                });
+
                 $scope.path = configService.getHorizontalDirectiveDataPath("footer", "footer");
                 $http.get($scope.path).success(function(footer) {
                     $log.debug(footer)
