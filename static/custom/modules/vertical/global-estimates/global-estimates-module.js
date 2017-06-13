@@ -31,5 +31,7 @@ define(function (require) {
 
     });
 
+    module.factory('globalEstimatesService', require('vertical/global-estimates/services/GlobalEstimatesService'));
+
     return module;
 });

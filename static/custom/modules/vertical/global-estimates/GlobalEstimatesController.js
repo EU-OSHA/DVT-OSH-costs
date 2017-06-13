@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name ilo.eu-estimates.controller:CountriesComparisonController
+ * @name ilo.eu-estimates.controller:GlobalEstimatesController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -16,8 +16,8 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, plotsProvider, $document, configService) {
-        $scope.title ="WHO Regions";
+    function controller($scope, $window, $stateParams, $state, $log, GlobalEstimatesService, dvtUtils, dataService, plotsProvider, $document, configService) {
+        $scope.title ="Global Estimates";
 
         // CDA
         $scope.cda =  configService.getIloCda();
@@ -37,6 +37,18 @@ define(function (require) {
             });
             $scope.countries = countries;
         });
+
+        // Splits when the indicator has more than 1 split
+        $scope.splits = [
+            {
+                split1: 'Fatal work-related illnesses',
+                split2: 'Fatal work-related injuries'
+            },
+            {
+                split1: 'YLL-Fatal injuries and illnesses per 100.000 workers',
+                split2: 'YLD-non fatal injuries and illnesses per 100.000 workers'
+            }
+        ]
 
         $scope.step = {
             chart1: 20,
@@ -77,6 +89,27 @@ define(function (require) {
             }
         };
 
+        $scope.stories = [
+            //0
+            {
+                color1: dvtUtils.getColorCountry(-1),
+                color2: dvtUtils.getColorCountry(0),
+                plots: GlobalEstimatesService.getStoryMainPlots()
+            },
+            // 1
+            {
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0])
+            },
+            // 2
+            {
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[1])
+            },
+            // 3
+            {
+                plots: GlobalEstimatesService.getStoryLightPlots()
+            }
+        ];
+
         $scope.graphWidth = jQuery('li.item.active').width() - 30;
 
         $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
@@ -113,7 +146,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalEstimatesService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
     return controller;
     
 });

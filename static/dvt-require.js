@@ -171,6 +171,7 @@
 
     /* GLOBAL ESTIMATES */
     requirePaths['vertical/global-estimates/GlobalEstimatesController'] = verticalModules + '/global-estimates/GlobalEstimatesController' + suffix;
+    requirePaths['vertical/global-estimates/services/GlobalEstimatesService'] = verticalModules + '/global-estimates/services/GlobalEstimatesService' + suffix;
     requirePaths['vertical/global-estimates/global-estimates-module'] = verticalModules + '/global-estimates/global-estimates-module' + suffix;
     requirePaths['vertical/global-estimates/i18n'] = verticalModules + '/global-estimates/global-estimates-i18n' + suffix + '.json';
 
