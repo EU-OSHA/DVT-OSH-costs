@@ -7,7 +7,7 @@
 	background: #DBECED;
 	.carousel-countries{
 		float: left;
-		margin-top: 40px;
+		margin-top: 4rem;
 		width:100%;
 		z-index: 2;
 		.global-estimates-countries-regions{
@@ -15,20 +15,20 @@
 			border: 1px solid #EAEAEA;
 			border-bottom: none;
 			border-top: none;
-			padding: 10px 0;
+			padding:1rem 0;
 			p.countries-regions-text {
 				width: 49%;
 				display: inline-block;
-				padding: 15px 30px;
+				padding: 1.5rem 3rem;
 			}
 			.countries-regions-select {
 				width: 50%;
 				display: inline-block;
 				position: relative;
 				select{
-					padding: 5px;
+					padding: 0.5rem;
 					width: 250px;
-					border-radius: 6px;
+					border-radius: 0.6rem;
 					background: transparent;
 					font-family:'OpenSans-bold';
 					border: 1px solid #CCC;
@@ -54,8 +54,8 @@
 					display: inline-block;
 					//position: absolute;
 					vertical-align: middle;
-					margin-left: 15px;
-					margin-top: 6px;
+					margin-left: 1.5rem;
+					margin-top: 0.6rem;
 					//left: 30px;
 					width: 30px;
 					height: 30px;
@@ -66,7 +66,7 @@
 					overflow: hidden;
 					a{
 						background: #FFF;
-						padding: 3px 10px;
+						padding: 0.3rem 1rem;
 						display: block;
 						color: #666;
 						&:hover{

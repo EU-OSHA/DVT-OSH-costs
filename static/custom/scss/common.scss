@@ -112,7 +112,7 @@ html{
 }
 body {
   font-family: $font-body;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #898989;
   padding-top: 100px;
 }
@@ -184,7 +184,7 @@ div.contextual-menu > div.dropdown {
   z-index: 99999999999999999!important;
 }
 .tipsy-inner{
-  font-size:12px;
+  font-size:1.2rem;
 }
 
 /* tooltip percentage hidden for stacked bars */
@@ -203,7 +203,7 @@ div.contextual-menu > div.dropdown {
     font-family: "Open Sans",sans-serif;
     font-weight:bold;
     color:$font-black !important;
-    font-size: 16px !important;;
+    font-size: 1.6rem !important;;
     line-height: 1.2em !important;
     padding: 0.2em 0 !important;
   }

@@ -301,7 +301,7 @@
 @media screen and (max-width:767px){
   #google_translate_element_wrapper {
     top: 0px;
-    right: -8px;
+    right: -29px;
   }
   .modal-dialog {
     width: 98%;
@@ -398,7 +398,7 @@
           padding-left: 15px;
           text-align: center;
           width: 100%;
-          font-size: 26px;
+          font-size: 2.6rem;
           color:$subheader;
         }
         .zylk-chart {
@@ -484,6 +484,16 @@
       }
     }
   }
+  // glossary
+  .glossary {
+    .pagination-block {
+      text-align: center;
+      .pag-numbers-wrapper {
+        padding: 7px 21px;
+        margin: 0;
+      }
+    }
+  }
 }
 
 
@@ -523,6 +533,23 @@
       text-align: center;
       margin: 30px auto !important;
       float: none !important;
+    }
+  }
+
+  // GLOSSARY
+  .glossary {
+    .search-results{
+      .glossary-def, .glossary-term{
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+    .pagination-block {
+      text-align: center;
+      .pag-numbers-wrapper {
+        padding: 7px 21px;
+        margin: 0;
+      }
     }
   }
 }

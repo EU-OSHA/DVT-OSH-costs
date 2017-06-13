@@ -8,6 +8,16 @@
  * A description of the directive
  *
  */
+    function zoomSmall(){
+        $('html').css('font-size','8px');
+    }
+    function zoomMedium(){
+        $('html').css('font-size','10px');
+    }
+    function zoomBig(){
+        $('html').css('font-size','12px');
+    }
+
 define(function (require) {
     'use strict';
 
@@ -201,8 +211,6 @@ define(function (require) {
                             collapseSocial.removeClass("in");
                         }
                     });
-
-
 
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")

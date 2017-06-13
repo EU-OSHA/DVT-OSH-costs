@@ -45,16 +45,16 @@
         cursor: default;
         h2{
           color:$subheader;
-          margin-top: 30px;
-          font-size: 32px;
+          margin-top: 3rem;
+          font-size: 3.2rem;
         }
         .carousel-chart{
           position: relative;
           width: 92%;
           overflow: auto;
-          margin: 30px auto 20px;
+          margin: 3rem auto 2rem;
           background: #FFF;
-          padding: 15px 30px;
+          padding: 1.5rem 3rem;
           border-radius: 8px;
           //-webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
           //-moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
@@ -125,7 +125,7 @@
   h3{
     color: $subheader;
     text-align: center;
-    font-size: 28px;
+    font-size: 2.8rem;
   }
   .chart1-section-first{
     text-align: center;
@@ -135,7 +135,7 @@
     }
     h4{
       margin-bottom: 3rem;
-      font-size: 22px;
+      font-size: 2.2rem;
     }
   }
   .chart2-section-first{
@@ -146,7 +146,7 @@
     }
     h4{
       margin-bottom: 3rem;
-      font-size: 22px;
+      font-size: 2.2rem;
     }
   }
   img:hover{
@@ -166,7 +166,7 @@
   h3{
     color: $subheader;
     text-align: center;
-    font-size: 28px;
+    font-size: 2.8rem;
   }
   .chart-section-second{
     text-align: center;
@@ -238,7 +238,7 @@
     .cdfNotificationTitle{
       color: #FF8000;
       font-family: Open Sans !important;
-      font-size: 16px !important;
+      font-size: 1.6rem !important;
       /*
       &:before{
         content: "\f071";
@@ -272,7 +272,7 @@
       border-bottom: none;
       .modal-title{
         font-family: "Oswald", sans-serif;
-        font-size: 27px;
+        font-size: 2.7rem;
         font-weight: normal;
         color: #000 !important;
       }
