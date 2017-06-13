@@ -92,6 +92,22 @@
            &:hover{
              color:$color03;
            }
+
+         .flickr-icon{
+           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/all-ages/static/custom/img/footer-flickr.png) no-repeat;
+           background-size: 24px 24px;
+           width: 24px;
+           height: 24px;
+           display: inline-block;
+           opacity:1;
+           position: relative;
+           top: 4px;
+         }
+           &:hover .flickr-icon{
+             background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/all-ages/static/custom/img/footer-flickr.png') no-repeat;
+             background-size: 24px 24px;
+             opacity:1;
+           }
            .blogger-icon{
              background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/blog-white.svg) no-repeat;
              background-size: 24px 24px;

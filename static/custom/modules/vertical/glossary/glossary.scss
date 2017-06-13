@@ -1,0 +1,56 @@
+.glossary {
+  font-size: 1.4rem;
+  .main-text-glossary{
+    text-align: center;
+  }
+  .glossary-terms{
+    .searcher {
+      text-align: center;
+      background-color: #fdedcc;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .search {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .search-results{
+    min-height: 404px;
+    .col-lg-10{
+      width: 100%;
+    }
+    .row {
+      background: #eceff1;
+      border-radius: 5px;
+      margin: 10px 0;
+      .glossary-term {
+        font-weight: 700;
+        background: #cfd8dc;
+        border-radius: 5px;
+        text-align: center;
+        width: 30%;
+        vertical-align: middle;
+      }
+      .glossary-def {
+        width: 70%;
+      }
+      .glossary-def, .glossary-term {
+        display: table-cell;
+        padding: 1em;
+        color: #333;
+      }
+    }
+  }
+  .pagination-block{
+    text-align: right;
+    .pagination-wrapper{
+
+    }
+    .pag-numbers-wrapper{
+      padding: 7px 21px;
+      margin: 18px 0;
+    }
+  }
+}
+
