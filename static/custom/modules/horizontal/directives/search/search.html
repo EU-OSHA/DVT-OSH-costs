@@ -23,9 +23,9 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 pull-right">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right pagination-block">
 
-            <div class="col-sm-6" data-ng-if="!!results.length" ng-hide="paginationHidden">
+            <div class="col-sm-7 pagination-wrapper" data-ng-if="!!results.length" ng-hide="paginationHidden">
                 <ul class="pagination">
                     <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
                         <span aria-hidden="currentPage == 0">&laquo;</span>
@@ -45,18 +45,17 @@
                 </ul>
             </div>
 
-            <div class="col-sm-6 m20" data-ng-if="!!results.length">
+            <div class="col-sm-5 pag-numbers-wrapper" data-ng-if="!!results.length">
                 <span class="pag-numbers" data-ng-bind="paginationText"></span>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 pull-right search-results">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right search-results">
             <div data-ng-repeat="result in results | pagination:currentPage*pageSize | limitTo:pageSize track by $index" ng-include="itemTemplate" class="col-xs-12"></div>
-
             <div class="col-sm-6" ng-hide="results.length>0" data-ng-bind="i18n['no-results']"></div>
 
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 pull-right">
-            <div class="col-sm-6" data-ng-if="!!results.length" ng-hide="seeAllCountryPolicy">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right pagination-block">
+            <div class="col-sm-7 pagination-wrapper" data-ng-if="!!results.length" ng-hide="seeAllCountryPolicy">
                 <ul class="pagination">
                     <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
                         <span aria-hidden="currentPage == 0">&laquo;</span>
@@ -76,7 +75,7 @@
                 </ul>
             </div>
 
-            <div class="col-sm-6 m20" data-ng-if="!!results.length">
+            <div class="col-sm-5  pag-numbers-wrapper" data-ng-if="!!results.length">
                 <span class="pag-numbers" data-ng-bind="paginationText"></span>
             </div>
 
