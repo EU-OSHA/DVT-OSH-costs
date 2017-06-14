@@ -244,41 +244,47 @@
             stroke:#FFF;
           }
         }
-        ul.legend-list {
-          list-style-type: none;
-          position: relative;
-          padding:0;
-          overflow: auto;
-          li{
-            margin: 20px 0 10px;
-            .legend-data{
-              width: 40px;
-              height: 25px;
-              margin-right: 4px;
-              display: inline-block;
-              text-align: center;
-              color: #FFF;
-              font-family: "OpenSans-Bold";
-              font-size: 1.4rem;
-              padding-top: 2px;
-            }
-            &:nth-child(1) .legend-data{
-              background:$plt-eu01;
-            }
-            &:nth-child(2) .legend-data{
-              background:$plt-eu02;
-            }
-            &:nth-child(3) .legend-data{
-              background:$plt-eu03;
-            }
-            &:nth-child(4) .legend-data{
-              background:$plt-eu04;
-            }
-            &:nth-child(5) .legend-data{
-              background:$plt-eu05;
-            }
-            .legend-name{
+        .country-chart-legend{
+          > p{
+            text-align: center;
+          }
+          ul.legend-list {
+            list-style-type: none;
+            position: relative;
+            padding:0;
+            overflow: auto;
+            text-align: center;
+            li{
+              margin: 20px 0 10px;
+              .legend-data{
+                width: 40px;
+                height: 25px;
+                margin-right: 4px;
+                display: inline-block;
+                text-align: center;
+                color: #FFF;
+                font-family: "OpenSans-Bold";
+                font-size: 1.4rem;
+                padding-top: 2px;
+              }
+              &:nth-child(1) .legend-data{
+                background:$plt-eu01 !important;
+              }
+              &:nth-child(2) .legend-data{
+                background:$plt-eu02 !important;
+              }
+              &:nth-child(3) .legend-data{
+                background:$plt-eu03 !important;
+              }
+              &:nth-child(4) .legend-data{
+                background:$plt-eu04 !important;
+              }
+              &:nth-child(5) .legend-data{
+                background:$plt-eu05 !important;
+              }
+              .legend-name{
 
+              }
             }
           }
         }

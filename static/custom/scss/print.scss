@@ -159,7 +159,29 @@
       }
     }
   }
-
+  .country-analysis-by-illnesses{
+    .country-wrapper{
+      ul.legend-list {
+        li{
+          &:nth-child(1) .legend-data{
+            background:$plt-eu01 !important;
+          }
+          &:nth-child(2) .legend-data{
+            background:$plt-eu02 !important;
+          }
+          &:nth-child(3) .legend-data{
+            background:$plt-eu03 !important;
+          }
+          &:nth-child(4) .legend-data{
+            background:$plt-eu04 !important;
+          }
+          &:nth-child(5) .legend-data{
+            background:$plt-eu05 !important;
+          }
+        }
+      }
+    }
+  }
   .country-analysis-by-illnesses{
     width: 50% !important;
     page-break-inside: avoid !important;

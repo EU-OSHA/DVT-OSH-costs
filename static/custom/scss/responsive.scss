@@ -341,6 +341,16 @@
               width:100%;
             }
           }
+          picture {
+            width: 100% !important;
+            float: none !important;
+          }
+          p.carousel-note {
+            padding: 0 5% !important;
+            width: 100% !important;
+            float: none !important;
+            margin-top: 0 !important;
+          }
         }
       }
       .carousel-control.right {
@@ -348,7 +358,8 @@
       }
     }
   }
-  .chart-section-first{
+
+  .chart1-section-first, .chart2-section-first{
     img{
       width:100%;
     }

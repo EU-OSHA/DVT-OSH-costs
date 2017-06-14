@@ -325,6 +325,11 @@ div.contextual-menu > div.dropdown {
     font-size: 10px !important;
     padding:0 !important;
   }
+  .backGraps {
+    svg path{
+      stroke:#FFF;
+    }
+  }
 }
 .dvt-modal .pyramid{
   clear: both;
