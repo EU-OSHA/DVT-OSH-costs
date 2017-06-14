@@ -3,7 +3,7 @@ define (function (require) {
     var configService = require('horizontal/config/configService');
     var GlobalEstimatesService = function (dvtUtils) {
         return {
-            getStoryMainPlots: function() {
+            getStoryMainPlots: function(pColor) {
 
                 var dashboard = this.dashboard;
 
@@ -16,7 +16,7 @@ define (function (require) {
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getColorCountry();
                             }
-                            return dvtUtils.getColorCountry(-1);
+                            return pColor;
                         },
                         visualRoles:{
                             series:'series',
@@ -25,7 +25,7 @@ define (function (require) {
                     }
                 ];
             },
-            getSplitMainPlots: function(splits) {
+            getSplitMainPlots: function(pSplits, pColor, pLightColor) {
 
                 var dashboard = this.dashboard;
 
@@ -36,40 +36,20 @@ define (function (require) {
                         bar_fillStyle: function (scene) {
                             var countryKey = scene.firstAtoms.category;
                             var split = scene.firstAtoms.series;
-                            if (split == splits.split1){
+                            console.log("DAVID DEV");
+                            console.log(split);
+                            if (split == pSplits.split1){
                                 if (countryKey == 'EU28') {
                                     return dvtUtils.getColorCountry();
                                 }
-                                return dvtUtils.getColorCountry(-1);    
-                            }else if (split == splits.split2) {
+                                return pColor;    
+                            }else if (split == pSplits.split2) {
                                 if (countryKey == 'EU28') {
                                     return dvtUtils.getEUColor(2);
                                 }
-                                return dvtUtils.getColorCountry(0); 
+                                return pLightColor; 
                             }
                             
-                        },
-                        visualRoles:{
-                            series:'series',
-                            category:'category'
-                        }
-                    }
-                ];
-            },
-            getStoryLightPlots: function() {
-
-                var dashboard = this.dashboard;
-
-                return [
-                    {
-                        name: "main",
-                        dataPart: "0",
-                        bar_fillStyle: function (scene) {
-                            var countryKey = scene.firstAtoms.category;
-                            if (countryKey == 'EU28') {
-                                return dvtUtils.getEUColor(2);
-                            }
-                            return dvtUtils.getColorCountry(0);
                         },
                         visualRoles:{
                             series:'series',

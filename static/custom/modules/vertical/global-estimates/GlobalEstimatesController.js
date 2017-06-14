@@ -52,7 +52,7 @@ define(function (require) {
 
         $scope.step = {
             chart1: 20,
-            chart2: jQuery(window).width() > 425? 500 : 1000,
+            chart2: jQuery(window).width() > 425 ? 500 : 1000,
             chart3: 20,
             chart4: 2500,
             chart5: 2.5
@@ -90,23 +90,29 @@ define(function (require) {
         };
 
         $scope.stories = [
-            //0
+            //0 - Mortality
             {
                 color1: dvtUtils.getColorCountry(-1),
                 color2: dvtUtils.getColorCountry(0),
-                plots: GlobalEstimatesService.getStoryMainPlots()
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getColorCountry(0))
             },
-            // 1
+            // 1 - Years of Life Lost
             {
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0])
+                color: dvtUtils.getColorCountry(-1),
+                plots: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
             },
-            // 2
+            // 2 - YLL vs YLD
             {
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[1])
+                color1: dvtUtils.getColorCountry(-1),
+                color2: dvtUtils.getIllnessColors(2),
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
             },
-            // 3
+            // 3 - Total Cost
             {
-                plots: GlobalEstimatesService.getStoryLightPlots()
+                color1: dvtUtils.getIllnessColors(4),
+                color2: dvtUtils.getIllnessColors(3),
+                plots1: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
+                plots2: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(3)),
             }
         ];
 

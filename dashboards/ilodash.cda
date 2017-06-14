@@ -50,17 +50,18 @@
       </Parameters>
       <Query>
         (
-          SELECT ${pSplit2} as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
-          FROM fact_figures ff
-          WHERE ff.INDICATOR_ID = ${pIndicator}
-          AND ff.SPLIT_1=${pSplit2}
-        )UNION(
           SELECT ${pSplit1} as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
           FROM fact_figures ff
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.SPLIT_1=${pSplit1}
+        )UNION(
+          SELECT ${pSplit2} as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
+          FROM fact_figures ff
+          WHERE ff.INDICATOR_ID = ${pIndicator}
+          AND ff.SPLIT_1=${pSplit2}
         )
-        ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
+        ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH'),
+        FIELD(Indicator, ${pSplit1}, ${pSplit2})
       </Query>
    </DataAccess>
 

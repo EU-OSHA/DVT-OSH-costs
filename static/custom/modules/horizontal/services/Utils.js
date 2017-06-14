@@ -172,8 +172,26 @@ define(function (require) {
              * @description
              * My Description rules
              */
-            getIllnessColors: function(){
-                return colors.illnessColors;
+            getIllnessColors: function(color){
+                switch(color) {
+                    case 1:
+                        return colors.illnessColors.Cancer;
+                        break;
+                    case 2:
+                        return colors.illnessColors.MSD;
+                        break;
+                    case 3:
+                        return colors.illnessColors.Circulatory;
+                        break;
+                    case 4:
+                        return colors.illnessColors.Injuries;
+                        break;
+                    case 5:
+                        return colors.illnessColors.Others;
+                        break;
+                    default:
+                        return colors.illnessColors;
+                }                
             },
 
             /**
