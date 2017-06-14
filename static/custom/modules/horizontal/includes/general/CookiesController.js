@@ -36,19 +36,14 @@ define(function (require) {
                         $log.info("widthConsent");
                         $scope.showwidthdisclaimer=false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
-                        if ($('body').hasClass('hasCookies')) {
-                            $('body').removeClass('hasCookies');
-                        }
                     };
                     $scope.consentAgree = function() {
                         if ($('body').hasClass('hasCookies')) {
-                            if ($window.screen.width>=1024){
-                                $('body').removeClass('hasCookies');    
-                            }                            
+                            $('body').removeClass('hasCookies');                            
                         }
                     }
 
-                    if ($cookies.get('disclaimerCookie') != "false") {
+                    if ($cookies.get('disclaimerCookie') != "false" && !$scope.showwidthdisclaimer) {
                         $('body').addClass('hasCookies');
                     } else if (!$cookies.get('angular-consent.global')) {
                         $('body').addClass('hasCookies');
