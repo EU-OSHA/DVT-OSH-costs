@@ -40,11 +40,17 @@ define(function (require) {
                             $('body').removeClass('hasCookies');
                         }
                     };
+                    $scope.consentAgree = function() {
+                        if ($('body').hasClass('hasCookies')) {
+                            if ($window.screen.width>=1024){
+                                $('body').removeClass('hasCookies');    
+                            }                            
+                        }
+                    }
 
-                    if ($cookies.get('disclaimerCookie') != false) {
-                        console.log("DAVID DEV");
-                        console.log($cookies.get('disclaimerCookie'));
-                        console.log($cookies.get('disclaimerCookie') != false);
+                    if ($cookies.get('disclaimerCookie') != "false") {
+                        $('body').addClass('hasCookies');
+                    } else if (!$cookies.get('angular-consent.global')) {
                         $('body').addClass('hasCookies');
                     }
 
