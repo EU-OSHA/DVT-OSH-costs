@@ -116,7 +116,16 @@ body {
   color: #898989;
   padding-top: 100px;
 }
-
+body.hasCookies{
+  padding-top: 100px;
+  .ilo-header #containerMenu{
+    position: relative;
+  }
+  #google_translate_element_wrapper{
+    top: 40px;
+    position: relative;;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
 }
@@ -507,7 +516,7 @@ div.blockUIDefaultImg:before {
 #cookiesConsent {
   background: $backgroundCookies;
   width: 100%;
-  padding:2.5em;
+  padding:1.5em;
   overflow: auto;
   z-index:9999;
   top: 0;
