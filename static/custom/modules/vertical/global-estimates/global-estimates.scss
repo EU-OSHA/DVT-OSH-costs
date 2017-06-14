@@ -143,8 +143,11 @@
 		float: left;
 		width:100%;
 		padding:0;
-		max-height: 730px;
-		min-height: 730px;
+		background: #FFF;
+		border-radius: 0 0 8px 8px;
+		margin-bottom: 4rem;
+		//max-height: 730px;
+		//min-height: 730px;
 		> .item{
 			width: 100% !important;
 		}
@@ -195,7 +198,7 @@
 				width: 100% !important;
 			}
 			.chart-legend{
-				padding: 40px 20px;
+				padding:20px 20px;;
 				width: 100%;
 				clear: both;
 			}
@@ -366,6 +369,7 @@
 }
 .osha-global-estimates-wrapper .carousel-inner > .item.newClass.active{
 	top:0px;
+	position: relative;
 }
 .carousel-inner > .active.left {
 	left: -100%;

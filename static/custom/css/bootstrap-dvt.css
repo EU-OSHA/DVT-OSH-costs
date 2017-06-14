@@ -61,7 +61,7 @@ dfn {
   font-style: italic; }
 
 h1 {
-  font-size: 2em;
+  font-size: 3.6rem;
   margin: 0.67em 0; }
 
 mark {
@@ -105,7 +105,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em; }
+  font-size: 1.6rem; }
 
 button,
 input,
@@ -2893,7 +2893,7 @@ tbody.collapse.in {
       border-top: 0;
       box-shadow: none; }
       .navbar-collapse.collapse {
-        display: block;
+        display: block !important;
         height: auto !important;
         padding-bottom: 0;
         overflow: visible !important; }
