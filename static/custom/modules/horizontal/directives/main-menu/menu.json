@@ -12,13 +12,20 @@
         "sref": "global-estimates",
         "tabindex":"2",
         "accesskey": "G"
-    },
+    },    
     {
-        "id": "eu-analysis-illness",
-        "name":"L4",
-        "sref": "eu-analysis-illness",
-        "accesskey": "E",
-        "tabindex":"3"
+        "id": "eu-estimates",
+        "name":"L2",
+        "target":"_self",
+        "tabindex":"3",
+        "levels":[
+            {
+                "id": "eu-analysis-illness",
+                "name":"L4",
+                "sref": "eu-analysis-illness",
+                "accesskey": "E"
+            }
+        ]
     },
     {
         "id": "glossary",

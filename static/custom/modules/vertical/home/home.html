@@ -60,14 +60,14 @@
 			</div>
 		</section>
 
-		<div class="compare-buttons">
+		<!--<div class="compare-buttons">
 			<ul class="compare-buttons-list  list-inline container">
-				<li><a data-ng-bind="i18n.L35" data-toggle="modal" data-target="#modalWHO"></a></li>
+				<li><a data-ng-bind="i18n.L35"></a></li>
 				<!-- TO BE INCLUDED WITH COUNTRIES COMPARISON PAGE
 				<li><a data-ui-sref='countries-comparison' data-ng-bind="i18n.L36"></a></li>
-				-->
+				
 			</ul>
-		</div>
+		</div>-->
 </div>
 <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -88,23 +88,6 @@
 			</div>
 			<div class="modal-footer">
 				<p data-ng-bind="modalData.text"></p>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="modalWHO" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<p class="modal-title" data-ng-bind="modalData.title"></p>
-			</div>
-			<div class="modal-body">
-				<picture>
-					<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who_regions.jpg" alt="{{i18n_home.WHO}}">
-				</picture>
 			</div>
 		</div>
 	</div>

@@ -27,15 +27,24 @@ define(function (require) {
                     }else {
                         $scope.showwidthdisclaimer = false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
+                        if ($('body').hasClass('hasCookies')) {
+                            $('body').removeClass('hasCookies');
+                        }
                     }
                     $scope.widthAgree= function () {
 
                         $log.info("widthConsent");
                         $scope.showwidthdisclaimer=false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
+                        if ($('body').hasClass('hasCookies')) {
+                            $('body').removeClass('hasCookies');
+                        }
                     };
 
                     if ($cookies.get('disclaimerCookie') != false) {
+                        console.log("DAVID DEV");
+                        console.log($cookies.get('disclaimerCookie'));
+                        console.log($cookies.get('disclaimerCookie') != false);
                         $('body').addClass('hasCookies');
                     }
 
