@@ -88,13 +88,6 @@ define(function (require) {
                 return false;
             }
         });
-        $('div#modalWHO').click(function() {
-            $('div#modalWHO').modal('hide');
-        }).children().click(function(e){
-            if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
-                return false;
-            }
-        });
        $scope.status = 'ready';
     }
 
