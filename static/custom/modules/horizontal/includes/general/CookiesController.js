@@ -35,6 +35,9 @@ define(function (require) {
                         $cookies.put(cookieName,false,{expires:cookieLife});
                     };
 
+                    if ($cookies.get('disclaimerCookie') != false) {
+                        $('body').addClass('hasCookies');
+                    }
 
                 });
 

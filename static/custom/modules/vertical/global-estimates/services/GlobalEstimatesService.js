@@ -36,8 +36,6 @@ define (function (require) {
                         bar_fillStyle: function (scene) {
                             var countryKey = scene.firstAtoms.category;
                             var split = scene.firstAtoms.series;
-                            console.log("DAVID DEV");
-                            console.log(split);
                             if (split == pSplits.split1){
                                 if (countryKey == 'EU28') {
                                     return dvtUtils.getColorCountry();
