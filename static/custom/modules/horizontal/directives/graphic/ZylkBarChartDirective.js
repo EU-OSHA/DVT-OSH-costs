@@ -511,6 +511,16 @@ define(function (require) {
                 if (!!scope.valuesVisible) {
                     definition.chartDefinition.valuesVisible = !!attributes.valuesVisible;
                 }
+                if (scope.isMaximized && attributes.type == 'pie') {
+                    definition.chartDefinition.valuesVisible = true;
+                    definition.chartDefinition.valuesAnchor = "center";
+                    definition.chartDefinition.valuesLabelStyle= 'inside';
+                    definition.chartDefinition.valuesFont= '20px sans-serif';                   
+                    definition.chartDefinition.valuesOverflow= 'trim';
+                    definition.chartDefinition.label_textStyle = 'black';
+                    definition.chartDefinition.valuesMask= '{value}%';
+                    definition.chartDefinition.label_textAngle= 0;
+                }
 
                 // custom legend dot background color
                 if (!!attributes.legendDotFillStyle) {

@@ -235,6 +235,31 @@ define(function () {
                 this.pvMark.scene[0].left = -5;
                 return this.delegate().concat("%");
             },
+            paintPieLabel: function() {
+                return [{
+                    valuesLabelStyle: 'inside',
+                    valuesFont: '10px "sans-serif"',
+                    label_visible: function() { return !this.index; },
+                    label_left:function () {
+                        return this.delegate()*0.9;
+                    },
+                    label_top:function () {
+                        return this.delegate()*0.94;
+                    },
+                    max_label_left:function () {
+                        return this.delegate()*0.91;
+                    },
+                    max_label_top:function () {
+                        return this.delegate();
+                    },
+                    label_textAngle: 0,
+                    label_textStyle: 'white',
+                    valuesMask: '{value}%',
+                    slice_fillStyle: function() {
+                        return this.index === 0 ? this.delegate() : "lightgray";
+                    }
+                }]               
+            },
             getDonoughtPlots: function(figure) {
                 switch (figure){
                     case 3:

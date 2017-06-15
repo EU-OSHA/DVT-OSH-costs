@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, mapProvider, $log,configService, $document, $compile) {
+    function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, plotsProvider, mapProvider, $log,configService, $document, $compile) {
         // CDA
         $scope.cda =  configService.getIloCda();
 
@@ -26,7 +26,8 @@ define(function (require) {
 
         $scope.dashboard = {
             promises: $scope.promises,
-            parameters: {}
+            parameters: {},
+            plots: plotsProvider.getDonoughtPlots(3),
         };
 
         // Get chart colors
@@ -59,7 +60,7 @@ define(function (require) {
 
     }
     
-    controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'mapProvider', '$log','configService','$document', '$compile'];
+    controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile'];
     return controller;
     
 });

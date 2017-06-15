@@ -119,11 +119,15 @@
       <Parameters>
           <Parameter default="1" name="pIndicator" type="Numeric" />
       </Parameters>
-      <Query>SELECT ff.SPLIT_1 as Illness,  Round(ff.MEASURE) AS Value
-          FROM fact_figures ff
+      <Query>SELECT Round(ff.MEASURE) AS Value, ff.SPLIT_1 as Illness, ROUND(ff2.MEASURE) AS Percentage
+          FROM fact_figures ff, fact_figures ff2
           WHERE ff.INDICATOR_ID = ${pIndicator}
           AND ff.REGION = 'EU28'
-          AND SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+          AND ff.REGION = ff2.REGION
+          AND ff.INDICATOR_ID = ff2.INDICATOR_ID
+          AND ff.SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+          AND ff2.SPLIT_1 LIKE '%|%%' ESCAPE '|'
+          AND CONCAT(ff.SPLIT_1, ' (%)')=ff2.SPLIT_1
           ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
@@ -135,11 +139,15 @@
       <Parameters>
           <Parameter default="1" name="pCountry" type="String" />
       </Parameters>
-      <Query>SELECT ff.SPLIT_1 as Illness,  Round(ff.MEASURE) AS Value
-                       FROM fact_figures ff
+      <Query>SELECT Round(ff.MEASURE) AS Value, ff.SPLIT_1 as Illness, Round(ff2.MEASURE) AS Percentage
+                       FROM fact_figures ff, fact_figures ff2
                        WHERE ff.INDICATOR_ID = 25
+                       and ff.INDICATOR_ID = ff2.INDICATOR_ID
                        AND ff.COUNTRY = ${pCountry}
-                       AND SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+                       AND ff.COUNTRY = ff2.COUNTRY
+                       AND ff.SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+                       AND ff2.SPLIT_1 LIKE '%|%%' ESCAPE '|'
+                       AND CONCAT(ff.SPLIT_1, ' (%)')=ff2.SPLIT_1
                        ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
       </Query>
    </DataAccess>
