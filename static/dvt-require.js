@@ -53,8 +53,8 @@
     requirePaths['common-ui/angular-ui-router'] = componentsPath + '/angular-ui-router/release/angular-ui-router.min';
     shim['common-ui/angular-ui-router'] = ['common-ui/angular'];
 
-    requirePaths['common-ui/angular-ui-router-metatags'] = componentsPath + '/angular-ui-router-metatags/angular-ui-router-metatags.min';
-    shim['common-ui/angular-ui-router-metatags'] = ["common-ui/angular", "common-ui/angular-ui-router"];
+    requirePaths['common-ui/ui-router-metatags'] = componentsPath + '/ui-router-metatags/dist/ui-router-metatags.min';
+    shim['common-ui/ui-router-metatags'] = ["common-ui/angular", "common-ui/angular-ui-router"];
 
     requirePaths['dvt/angulartics'] = componentsPath + '/angulartics/dist/angulartics.min';
     shim['dvt/angulartics'] = ["common-ui/angular", "common-ui/angular-ui-router"];

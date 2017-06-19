@@ -12,7 +12,7 @@ define(function (require) {
         footerPagesModule = require('vertical/footer-pages/footer-pages-module');
 
     require('common-ui/angular-ui-router');
-    require('common-ui/angular-ui-router-metatags');
+    require('common-ui/ui-router-metatags');
     require('common-ui/angular-sanitize');
     require('common-ui/bootstrap');
     require('common-ui/angular-jquery');
