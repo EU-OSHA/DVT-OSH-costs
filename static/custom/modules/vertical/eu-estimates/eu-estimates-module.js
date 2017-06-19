@@ -10,8 +10,11 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('eu-estimates', ['ui.router', configModule.name]);
+    var module = angular.module('eu-estimates', ['ui.router', 'ui.router.metatags', configModule.name]);
     module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider, $uiViewScrollProvider) {
+
+        // Literals / i18n
+        var i18n = configService.getLiterals();
 
         $uiViewScrollProvider.useAnchorScroll();
 
@@ -26,6 +29,10 @@ define(function (require) {
                     controller: 'CountriesComparisonController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/countries-comparison/CountriesComparisonController', 'countries-comparison', 'CountriesComparisonController')
                 }
+            },
+            metaTags: {
+                title: i18n.L3 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L60,
             }
         });*/
 
@@ -40,6 +47,10 @@ define(function (require) {
                     controller: 'EuAnalysisIllnessController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/eu-analysis-illness/EuAnalysisIllnessController', 'eu-analysis-illness', 'EuAnalysisIllnessController')
                 }
+            },
+            metaTags: {
+                title: i18n.L88 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L92,
             }
         });
 

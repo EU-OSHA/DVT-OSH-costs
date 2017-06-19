@@ -10,9 +10,13 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('footerPages', ['ui.router', configModule.name]);
+    var module = angular.module('footerPages', ['ui.router', 'ui.router.metatags', configModule.name]);
 
     module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider) {
+        
+        // Literals / i18n
+        var i18n = configService.getLiterals();
+
         $urlRouterProvider.otherwise("/404");
         $stateProvider.state('legal-notice', {
             url: "/legal-notice",
@@ -22,6 +26,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider,'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L9 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L9,
             }
         });
 
@@ -33,6 +41,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L10 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L10,
             }
         });
 
@@ -44,6 +56,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L8 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L8,
             }
         });
 
@@ -55,6 +71,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L7 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L7,
             }
         });
 
@@ -64,6 +84,10 @@ define(function (require) {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "404")
                 }
+            },
+            metaTags: {
+                title: "Page not Found" +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: "Page not Found",
             }
         });
 

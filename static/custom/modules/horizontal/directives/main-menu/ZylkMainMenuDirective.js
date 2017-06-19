@@ -130,6 +130,8 @@ define(function (require) {
                                             cadena += trozos[i] + " - ";
                                         }
                                         cadena = cadena.replace(/<[^>]*>?/g, '');
+                                    }else {
+                                        cadena = $scope.breadCrumb.replace(/<[^>]*>?/g, '') + ' - ';
                                     }
                                     $scope.titleHeader = cadena + titleStructure['pages-title'];
                                 };
@@ -144,7 +146,7 @@ define(function (require) {
                             }
 
                             //lo pongo en el title
-                            angular.element("title").html($scope.titleHeader);
+                            //angular.element("title").html($scope.titleHeader);
 
                         }, $scope);
 

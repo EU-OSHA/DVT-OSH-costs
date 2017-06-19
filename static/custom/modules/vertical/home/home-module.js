@@ -12,7 +12,7 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('home', ['ui.router', configModule.name]);
+    var module = angular.module('home', ['ui.router', 'ui.router.metatags', configModule.name]);
 
     /* List of states of the  module */
     module.config(function ($stateProvider, configService, $urlRouterProvider, $controllerProvider, $uiViewScrollProvider) {
@@ -28,6 +28,10 @@ define(function (require) {
                     controller: 'HomeController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/home/HomeController', 'home', 'HomeController')
                 }
+            },
+            metaTags: {
+                title: "OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: "OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
             }
         });
     });    

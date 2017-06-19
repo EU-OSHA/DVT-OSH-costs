@@ -10,8 +10,11 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('glossary', ['ui.router', configModule.name]);
+    var module = angular.module('glossary', ['ui.router', 'ui.router.metatags', configModule.name]);
     module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider, $uiViewScrollProvider) {
+
+        // Literals / i18n
+        var i18n = configService.getLiterals();
 
         $uiViewScrollProvider.useAnchorScroll();
 
@@ -26,6 +29,10 @@ define(function (require) {
                     controller: 'GlossaryController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/glossary/GlossaryController', 'glossary', 'GlossaryController')
                 }
+            },
+            metaTags: {
+                title: i18n.L5 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: i18n.L112,
             }
         });
 
