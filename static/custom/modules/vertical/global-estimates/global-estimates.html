@@ -174,12 +174,14 @@
                     </button>
                     <p class="modal-title" data-ng-bind="modalData.title"></p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
+                    <p>
+                        <span data-ng-bind="i18n_global.RegionCode"></span>
+                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                    </p>
                     <div class="logoGraphics-wrapper">
-                        <p>
-                            <span data-ng-bind="i18n_global.RegionCode"></span>
-                            <span data-ng-bind="i18n_global.RegionTableTitle"></span>
-                        </p>
+                        <!--
                         <ul>
                             <li>
                                 <span>HIGH</span>
@@ -209,7 +211,8 @@
                                 <span>WPRO</span>
                                 <span data-ng-bind="i18n_global.WPRO"></span>
                             </li>
-                        </ul>                    
+                        </ul>
+                        -->
                         <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics">
                     </div>
                 </div>

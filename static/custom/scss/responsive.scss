@@ -136,15 +136,18 @@
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
-    top: 38px;
+    top: 0px;
     right:0;
   }
   .ilo-header {
     #containerMenu {
       .menu-tools-top {
-        padding: 40px 15px 0;
+        padding: 50px 15px 0;
         .social-network {
-          padding-right: 136px;
+          padding-right: 0px;
+          .zoom-text{
+            display: none;
+          }
         }
       }
     }
@@ -249,9 +252,23 @@
   }
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix{
-      top: 95px;
+      top: 90px;
+    }
+    .chart-analysis-illnesses {
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .chart-description > p {
+            position: relative;
+            transform: translateY(0%);
+            -webkit-transform: translateY(0%);
+            -ms-transform: translateY(60%);
+            margin-top: 30px;
+          }
+        }
+      }
     }
   }
+
   .chart-analysis-illnesses.affix ~ .compare-buttons {
     margin-top: 250px;
   }
@@ -302,6 +319,9 @@
   #google_translate_element_wrapper {
     top: 0px;
     right: -29px;
+  }
+  .item-print{
+    display: none !important;
   }
   .modal-dialog {
     width: 98%;
