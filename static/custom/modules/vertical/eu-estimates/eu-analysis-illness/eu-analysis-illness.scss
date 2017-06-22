@@ -1,7 +1,7 @@
 .osha-analysis-illnesses{
   .chart-analysis-illnesses{
     background:#F9F9F9;
-    padding:0px 0 20px;
+    padding: 20px 0 20px;
     .chart-analysis-illnesses-box{
       position: relative;
       background: #FFF!important;
@@ -208,7 +208,7 @@
         }
         h3{
           margin: 0px;
-          font-size: 2rem;
+          font-size: 2rem !important;
           text-align: center;
           font-weight: normal !important;
           padding: 0.2em 0 0 12% !important;
@@ -247,6 +247,9 @@
         .country-chart-legend{
           > p{
             text-align: center;
+            font-size: 14px;
+            top: 8px;
+            position: relative;
           }
           ul.legend-list {
             list-style-type: none;
