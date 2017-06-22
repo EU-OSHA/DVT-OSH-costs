@@ -139,8 +139,16 @@ define(function (require) {
         $('.global-estimates-indicators li').click(function() {
             $('.global-estimates-indicators li').toggleClass('item-block');
 
-        })
+        });
 
+        $('div#modalChart').click(function() {
+            $('div#modalChart').modal('hide');
+            $('#carouselHome').carousel();
+        }).children().click(function(e){
+            if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                return false;
+            }
+        });
         $scope.status = 'ready';
     }
     
