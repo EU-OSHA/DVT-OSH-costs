@@ -515,7 +515,11 @@ define(function (require) {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.valuesAnchor = "center";
                     definition.chartDefinition.valuesLabelStyle= 'inside';
-                    definition.chartDefinition.valuesFont= '20px sans-serif';                   
+                    if (scope.isMaximized) {
+                        definition.chartDefinition.valuesFont= '20px sans-serif';
+                    }else {
+                        definition.chartDefinition.valuesFont= '14px sans-serif';
+                    }                    
                     definition.chartDefinition.valuesOverflow= 'trim';
                     definition.chartDefinition.label_textStyle = 'black';
                     definition.chartDefinition.valuesMask= '{value}%';
