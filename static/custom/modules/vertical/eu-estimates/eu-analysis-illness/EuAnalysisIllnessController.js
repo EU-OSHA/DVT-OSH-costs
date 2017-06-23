@@ -45,7 +45,7 @@ define(function (require) {
                     countries["" + country[0]] = {};
                     obj = {};
                 }
-                obj[country[1]] = country[2] + '%';
+                obj[country[1]] = country[2];
                 countries[country[0]] = obj;
                 oldcountry = country[0];
             });
