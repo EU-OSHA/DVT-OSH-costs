@@ -511,7 +511,7 @@ define(function (require) {
                 if (!!scope.valuesVisible) {
                     definition.chartDefinition.valuesVisible = !!attributes.valuesVisible;
                 }
-                if (scope.isMaximized && attributes.type == 'pie') {
+                if ((scope.isMaximized && attributes.type == 'pie') || attributes.type=='pie') {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.valuesAnchor = "center";
                     definition.chartDefinition.valuesLabelStyle= 'inside';
