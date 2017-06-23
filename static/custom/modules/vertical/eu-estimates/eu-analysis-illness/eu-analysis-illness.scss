@@ -125,6 +125,7 @@
       overflow: hidden;
       background:$colorWhite;
       padding:20px 0 0 0 !important;
+
       .chart-analysis-illnesses-box{
         top:0;
         width:100%;
@@ -136,6 +137,8 @@
         padding-bottom: 0 !important;
         border-width: 0 0 1px 0;
         border-bottom: 1px solid $border;
+        -webkit-transition: width 0.4s;
+        transition: width 0.4s;
         .zylk-chart {
           width: 20%;
           float: left;
@@ -190,7 +193,7 @@
     padding: 20px 0;
   }
   .countries-analysis-by-illnesses{
-    margin:0px auto 40px;
+    margin:20px auto 40px;
     .country-analysis-by-illnesses{
       .country-wrapper{
         position: relative;
@@ -306,5 +309,8 @@
   }
 }
 .chart-analysis-illnesses.affix ~ .compare-buttons{
-  margin-top: 220px;
+  //margin-top: 220px;
+}
+.chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
+  margin-top: 240px;
 }
