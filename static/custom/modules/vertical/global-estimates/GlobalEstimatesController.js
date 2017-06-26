@@ -38,6 +38,22 @@ define(function (require) {
             $scope.countries = countries;
         });
 
+        $scope.selectChange = function() {
+            var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
+            $('text.label-country').attr('class','');
+            $('rect.label-country').attr('class','');
+            for (var i = 0; i < labels.length; i++) {
+                if ($(labels[i]).text() == $scope.country.region) {
+                    $(labels[i]).attr('class','label-country');
+
+                    if (i < 8) {
+                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill','red');
+                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
+                    }
+                }
+            }
+        }
+
         // Splits when the indicator has more than 1 split
         $scope.splits = [
             {
@@ -52,7 +68,7 @@ define(function (require) {
 
         $scope.step = {
             chart1: 20,
-            chart2: jQuery(window).width() > 425 ? 500 : 1000,
+            chart2: $(window).width() > 425 ? 500 : 1000,
             chart3: 20,
             chart4: 2500,
             chart5: 2.5
@@ -71,11 +87,11 @@ define(function (require) {
 
             href = href.replace(href.substr(href.indexOf('global-estimates#')),'global-estimates');
 
-            var items = jQuery('#carouselCountries ul.carousel-inner li.item');
+            var items = $('#carouselCountries ul.carousel-inner li.item');
 
             for (var i = 0; i < items.length; i++) {
-                if (jQuery(items[i]).attr("data-name") == selected) {
-                    jQuery('#carouselCountries').carousel(i).carousel('pause');
+                if ($(items[i]).attr("data-name") == selected) {
+                    $('#carouselCountries').carousel(i).carousel('pause');
                     break;
                 }
             }
@@ -94,7 +110,7 @@ define(function (require) {
             {
                 color1: dvtUtils.getColorCountry(-1),
                 color2: dvtUtils.getColorCountry(0),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getColorCountry(0))
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getColorCountry(0)),
             },
             // 1 - Years of Life Lost
             {
@@ -112,27 +128,27 @@ define(function (require) {
                 color1: dvtUtils.getIllnessColors(4),
                 color2: dvtUtils.getIllnessColors(3),
                 plots1: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
-                plots2: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(3)),
+                plots2: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
             }
         ];
 
-        $scope.graphWidth = jQuery('li.item.active').width() - 30;
+        $scope.graphWidth = $('li.item.active').width() - 30;
 
-        $scope.lastGraphWidth = jQuery(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
+        $scope.lastGraphWidth = $(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
         angular.element($window).bind('resize', function() {
             $state.reload();            
         });
 
-        jQuery('#carouselCountries').on('slid.bs.carousel', function () {
+        $('#carouselCountries').on('slid.bs.carousel', function () {
             $('#carouselCountries li.item').removeClass('newClass');
             
             // Update location based on slide
-            var item = jQuery(this).find('.item.active').data('name');
+            var item = $(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
             
             // Prevent carousel from sliding automatically
-            jQuery('#carouselCountries').carousel('pause');
+            $('#carouselCountries').carousel('pause');
 
 
         })
