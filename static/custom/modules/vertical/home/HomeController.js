@@ -89,6 +89,7 @@ define(function (require) {
             $scope.slides[0].text = $scope.currency.text;
             $scope.slides[0].image = $scope.currency.image;
             $scope.slides[0].image2 = $scope.currency.image2;
+            $scope.slides[0].imageModal = $scope.currency.imageModal;
         }
 
         $scope.modal = function(type, index) {
