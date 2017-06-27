@@ -133,6 +133,20 @@
       }
     }
   }
+  .ilo-container-footer{
+    .footer-elements{
+      .footer-nav-accessibility{
+        width: 50%;
+      }
+      .footer-social-network {
+        float: left;
+        clear: both;
+        margin: 2rem auto;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 991px) {
   #google_translate_element_wrapper {
@@ -251,6 +265,21 @@
     }
   }
   .osha-analysis-illnesses{
+    .chart-analysis-illnesses{
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .zylk-chart{
+            .wrapper-contextual-menu{
+              img{
+                margin: 10px -10px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix{
       top: 90px;
     }
@@ -296,6 +325,11 @@
 
   /** footer **/
   .ilo-container-footer{
+    .logos{
+      .footer-logotypes li {
+        width: 32%;
+      }
+    }
     .footer-elements{
       .copyright{
         width: 100%;
@@ -312,7 +346,6 @@
       }
     }
   }
-
 } /** end media query 768 - 1024 portrait **/
 
 @media screen and (max-width:767px){
@@ -548,10 +581,12 @@
   }
   .ilo-container-footer{
     .footer-logotypes {
+      padding: 2rem 0;
+      margin: 0;
       li {
-        width: 33%;
+        width: 45%;
         padding: 0;
-        margin: 0;
+        margin: 1rem 0;
       }
     }
   }

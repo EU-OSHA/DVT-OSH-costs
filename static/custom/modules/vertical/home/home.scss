@@ -326,3 +326,6 @@
   background-color: #000000;
 }
 
+select::-ms-expand{
+  display: none;
+}

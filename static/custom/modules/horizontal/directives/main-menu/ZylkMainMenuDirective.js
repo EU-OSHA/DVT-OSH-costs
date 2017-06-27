@@ -168,11 +168,15 @@ define(function (require) {
                             collapse.removeClass("indvt");
                             //$log.debug('cerrado');
                             collapse.removeClass("in");
+                            toggle.addClass('openIcon');
+                            toggle.removeClass('closeIcon');
                         }else{
                             collapse.addClass("indvt");
                             collapseSocial.removeClass("indvt");
                             //$log.debug('abierto');
                             collapse.removeClass("in");
+                            toggle.addClass('closeIcon');
+                            toggle.removeClass('openIcon');
                         }
                     });
 
