@@ -204,6 +204,18 @@ define(function (require) {
                         }
                     });
 
+                    // Hide Social Menu if it is displayed
+                    $('div.submenu-icon').click(function(e) {
+                        e.stopPropagation();
+                    });
+
+                    $(document).click(function() {
+                        console.log("DOCUMENT CLICK");
+                        if ($('ul#osha-menu-social').hasClass('indvt')) {
+                            $('ul#osha-menu-social').removeClass('indvt');
+                        }
+                    });
+
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
