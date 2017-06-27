@@ -1,7 +1,7 @@
 .osha-analysis-illnesses{
   .chart-analysis-illnesses{
     background:#F9F9F9;
-    padding:0px 0 20px;
+    padding: 20px 0 20px;
     .chart-analysis-illnesses-box{
       position: relative;
       background: #FFF!important;
@@ -125,6 +125,7 @@
       overflow: hidden;
       background:$colorWhite;
       padding:20px 0 0 0 !important;
+
       .chart-analysis-illnesses-box{
         top:0;
         width:100%;
@@ -136,6 +137,8 @@
         padding-bottom: 0 !important;
         border-width: 0 0 1px 0;
         border-bottom: 1px solid $border;
+        -webkit-transition: width 0.4s;
+        transition: width 0.4s;
         .zylk-chart {
           width: 20%;
           float: left;
@@ -190,7 +193,7 @@
     padding: 20px 0;
   }
   .countries-analysis-by-illnesses{
-    margin:0px auto 40px;
+    margin:20px auto 40px;
     .country-analysis-by-illnesses{
       .country-wrapper{
         position: relative;
@@ -208,7 +211,7 @@
         }
         h3{
           margin: 0px;
-          font-size: 2rem;
+          font-size: 2rem !important;
           text-align: center;
           font-weight: normal !important;
           padding: 0.2em 0 0 12% !important;
@@ -247,6 +250,9 @@
         .country-chart-legend{
           > p{
             text-align: center;
+            font-size: 14px;
+            top: 8px;
+            position: relative;
           }
           ul.legend-list {
             list-style-type: none;
@@ -303,5 +309,12 @@
   }
 }
 .chart-analysis-illnesses.affix ~ .compare-buttons{
-  margin-top: 220px;
+  //margin-top: 220px;
+}
+.chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
+  margin-top: 240px;
+}
+.chart-analysis-illnesses.affix  text{
+  font-size: 2.4rem !important;
+  font-family: OpenSans-Bold !important;
 }

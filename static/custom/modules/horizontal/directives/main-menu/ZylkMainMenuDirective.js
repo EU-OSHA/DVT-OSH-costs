@@ -111,7 +111,7 @@ define(function (require) {
 
                             if ($state.current.name == 'home') {
                                 $scope.isHome = true;
-                                $scope.titleHeader = titleStructure['default-title'];
+                                $scope.titleHeader = $scope.i18n_menu.Header;
                                 $scope.title = titleStructure[$state.current.name];
                             } else {
                                 var pathURL = path.split("/");
@@ -123,21 +123,7 @@ define(function (require) {
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
-                                var setTitleHeaderHTML=function() {
-                                    if($scope.breadCrumb.indexOf(" >> ")!=-1) {
-                                        var trozos = $scope.breadCrumb.split(" >> ");
-                                        for (var i = trozos.length - 1; i > -1; i--) {
-                                            cadena += trozos[i] + " - ";
-                                        }
-                                        cadena = cadena.replace(/<[^>]*>?/g, '');
-                                    }else {
-                                        cadena = $scope.breadCrumb.replace(/<[^>]*>?/g, '') + ' - ';
-                                    }
-                                    $scope.titleHeader = cadena + titleStructure['pages-title'];
-                                };
-
-                                 setBreadCrumbs();
-                                 setTitleHeaderHTML();
+                                setBreadCrumbs();
                             }
 
                             if(collapse.hasClass( "indvt" ) == true) {
@@ -182,11 +168,15 @@ define(function (require) {
                             collapse.removeClass("indvt");
                             //$log.debug('cerrado');
                             collapse.removeClass("in");
+                            toggle.addClass('openIcon');
+                            toggle.removeClass('closeIcon');
                         }else{
                             collapse.addClass("indvt");
                             collapseSocial.removeClass("indvt");
                             //$log.debug('abierto');
                             collapse.removeClass("in");
+                            toggle.addClass('closeIcon');
+                            toggle.removeClass('openIcon');
                         }
                     });
 
@@ -211,6 +201,18 @@ define(function (require) {
                             collapse.removeClass("indvt");
                             //$log.debug('abierto');
                             collapseSocial.removeClass("in");
+                        }
+                    });
+
+                    // Hide Social Menu if it is displayed
+                    $('div.submenu-icon').click(function(e) {
+                        e.stopPropagation();
+                    });
+
+                    $(document).click(function() {
+                        console.log("DOCUMENT CLICK");
+                        if ($('ul#osha-menu-social').hasClass('indvt')) {
+                            $('ul#osha-menu-social').removeClass('indvt');
                         }
                     });
 

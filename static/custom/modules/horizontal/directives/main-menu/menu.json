@@ -23,7 +23,7 @@
                 "id": "eu-analysis-illness",
                 "name":"L4",
                 "sref": "eu-analysis-illness",
-                "accesskey": "E"
+                "accesskey": "I"
             }
         ]
     },
@@ -37,7 +37,7 @@
     {
         "id": "about-estimates",
         "name":"L6",
-        "sref": "about",
+        "sref": "about-estimates",
         "accesskey": "T",
         "tabindex":"5"
     }

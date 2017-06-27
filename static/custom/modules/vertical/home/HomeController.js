@@ -31,13 +31,15 @@ define(function (require) {
                 label: i18n.L114,
                 text: i18n[i18n_home.slider1.relatedEuro],
                 image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
-                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2                
+                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2,
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,               
             },{
                 id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
                 image: configService.getImagesPath()+ i18n_home.slider1.image,
-                image2: configService.getImagesPath()+ i18n_home.slider1.image2
+                image2: configService.getImagesPath()+ i18n_home.slider1.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageModal
             }
         ];
 
@@ -45,16 +47,42 @@ define(function (require) {
     
         // Carrousel slides
         $scope.slides = [
-            {title: i18n[i18n_home.slider1.title], text: $scope.currency.text, image: $scope.currency.image, image2: $scope.currency.image2},
-            {title: i18n[i18n_home.slider2.title], text: i18n[i18n_home.slider2.related], image: configService.getImagesPath()+ i18n_home.slider2.image, image2: configService.getImagesPath()+ i18n_home.slider2.image2},
-            {title: i18n[i18n_home.slider3.title], text: i18n[i18n_home.slider3.related], image: configService.getImagesPath()+ i18n_home.slider3.image, image2: configService.getImagesPath()+ i18n_home.slider3.image2}
+            {
+                title: i18n[i18n_home.slider1.title], 
+                text: $scope.currency.text, 
+                image: $scope.currency.image, 
+                image2: $scope.currency.image2,
+                imageModal: $scope.currency.imageModal
+            },{
+                title: i18n[i18n_home.slider2.title], 
+                text: i18n[i18n_home.slider2.related], 
+                image: configService.getImagesPath()+ i18n_home.slider2.image, 
+                image2: configService.getImagesPath()+ i18n_home.slider2.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider2.imageModal
+            },{
+                title: i18n[i18n_home.slider3.title], 
+                text: i18n[i18n_home.slider3.related], 
+                image: configService.getImagesPath()+ i18n_home.slider3.image, 
+                image2: configService.getImagesPath()+ i18n_home.slider3.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider3.imageModal
+            }
         ];
 
         $('#carouselHome').carousel();
 
         // Charts
-        $scope.chartDeath = {title: i18n[i18n_home.chartDeath.title], text: i18n[i18n_home.chartDeath.message], image: configService.getImagesPath()+ i18n_home.chartDeath.image};
-        $scope.chartDaly = {title: i18n[i18n_home.chartDaly.title], text: i18n[i18n_home.chartDaly.message], image: configService.getImagesPath()+ i18n_home.chartDaly.image};
+        $scope.chartDeath = {
+            title: i18n[i18n_home.chartDeath.title], 
+            text: i18n[i18n_home.chartDeath.message], 
+            image: configService.getImagesPath()+ i18n_home.chartDeath.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDeath.imageModal
+        };
+        $scope.chartDaly = {
+            title: i18n[i18n_home.chartDaly.title], 
+            text: i18n[i18n_home.chartDaly.message], 
+            image: configService.getImagesPath()+ i18n_home.chartDaly.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDaly.imageModal
+        };
 
         $scope.update = function() {
             $scope.currency = $scope.currency == $scope.select[0] ? $scope.select[1] : $scope.select[0];
@@ -71,7 +99,7 @@ define(function (require) {
                     }else if (index == 2) { 
                         $scope.modalData = $scope.chartDaly;
                     }
-                    $scope.modalData.image2 = $scope.modalData.image;
+                    $scope.modalData.image2 = $scope.modalData.imageModal;
                     break;
                 case 'slide':
                     $scope.modalData = $scope.slides[index];

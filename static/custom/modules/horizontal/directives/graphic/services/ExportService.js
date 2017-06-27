@@ -51,7 +51,6 @@ define(function(require){
 
             //---------------------------------
             // 1 dom-to-image
-
             //convierto el svg a imagen...
             var svg = document.querySelector('.modal svg');
             var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
@@ -76,10 +75,12 @@ define(function(require){
             //$log.info(PromiseR.Promise());
             //var Promise=PromiseR.Promise;
 
+            var Promise = require('es6-promise').Promise;
 
              html2canvas(node)
              .then(function(canvas) {
                  canvas.toBlob(function(blob){
+
                      if(scope.title=="undefined" || scope.title==undefined) {
                          //anterior h2 que haya....
                          scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
@@ -94,6 +95,64 @@ define(function(require){
                      $("#svg2image").remove();
                      angular.element(".modal svg").removeAttr("style");
                  });
+             }, function(error) {
+
+                 /*if (window.navigator.userAgent.indexOf('MSIE') > -1) {
+                     if ($('#svg2image')) {
+                        /*if(scope.title=="undefined" || scope.title==undefined) {
+                            //anterior h2 que haya....
+                            scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                        } else {
+                            var filename = scope.title + '.png';
+                        }
+
+                        //var filename="graph.png";
+
+                        var img = new Image();
+                        img.setAttribute('crossOrigin','Anonymous');
+                        img.src = $('#svg2image').attr('src');
+
+                        var blob = $('#svg2image').attr('src');
+
+                        var canvas = document.createElement( "canvas" );
+                        console.log("AAA");
+                        var ctx = canvas.getContext( "2d" );
+                        console.log("BBB");
+
+                        var image = document.getElementById('svg2image');
+
+                        ctx.drawImage(image, 0,0);
+
+                        debugger;
+
+                        
+
+                        console.log(canvas);
+
+
+
+                        console.log( canvas.toDataURL( "image/png" ));
+                        console.log("CCC");
+
+                        
+
+                        /*console.log(blob);
+                        blob = blob.substring(blob.indexOf('base64,') + 7);
+
+                        blob = atob(blob);
+                        var byteNumbers = new Array(blob.length);
+                        for (var i = 0; i < blob.length; i++) {
+                            byteNumbers[i] = blob.charCodeAt(i);
+                        }
+                        var byteArray = new Uint8Array(byteNumbers);
+                        blob = new Blob([byteArray], {type: 'image/png'});
+                        saveAs(blob, filename);
+                        /*$('#svg2image').remove();
+                        angular.element(".modal svg").removeAttr("style");
+                     }
+                     $(".dropdown").show();
+                 //}  */               
              });
 
         

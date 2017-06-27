@@ -196,4 +196,47 @@
       border:none !important;
     }
   }
+
+
+
+  // GLOSSARY
+  .glossary {
+    font-size: 1.4rem;
+    .see-more{
+      display: none;
+    }
+    .main-text-glossary{
+      text-align: center;
+    }
+    .glossary-terms{
+      .searcher {
+        display: none;
+        .search {
+        }
+      }
+    }
+    .search-results{
+      .col-lg-10{
+        width: 100%;
+      }
+      .row {
+        .glossary-term {
+        text-align: left !important;
+        }
+        .glossary-def {
+
+        }
+        .glossary-def, .glossary-term {
+          display: block;
+          padding: 1em;
+          color: #333;
+          width: 100%;
+        }
+      }
+    }
+    .pagination-block{
+      display: none;
+    }
+  }
+
 }

@@ -3,7 +3,7 @@
     <section class="container-full back-color ">
         <div class="main-text-global-estimates container">
             <p data-ng-bind="i18n.L38"></p>
-            <p class="see-more"><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/files/about-estimates.pdf" target="_blank" data-ng-bind="i18n.L39"></a></p>
+            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind="i18n.L39"></a></p>
         </div>
     </section>
 
@@ -174,42 +174,13 @@
                     </button>
                     <p class="modal-title" data-ng-bind="modalData.title"></p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
+                    <p>
+                        <span data-ng-bind="i18n_global.RegionCode"></span>
+                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                    </p>
                     <div class="logoGraphics-wrapper">
-                        <p>
-                            <span data-ng-bind="i18n_global.RegionCode"></span>
-                            <span data-ng-bind="i18n_global.RegionTableTitle"></span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span>HIGH</span>
-                                <span data-ng-bind="i18n_global.HIGH"></span>
-                            </li>
-                            <li>
-                                <span>AFRO</span>
-                                <span data-ng-bind="i18n_global.AFRO"></span>
-                            </li>
-                            <li>
-                                <span>AMRO</span>
-                                <span data-ng-bind="i18n_global.AMRO"></span>
-                            </li>
-                            <li>
-                                <span>EMRO</span>
-                                <span data-ng-bind="i18n_global.EMRO"></span>
-                            </li>
-                            <li>
-                                <span>EURO</span>
-                                <span data-ng-bind="i18n_global.EURO"></span>
-                            </li>
-                            <li>
-                                <span>SEARO</span>
-                                <span data-ng-bind="i18n_global.SEARO"></span>
-                            </li>
-                            <li>
-                                <span>WPRO</span>
-                                <span data-ng-bind="i18n_global.WPRO"></span>
-                            </li>
-                        </ul>                    
                         <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics">
                     </div>
                 </div>

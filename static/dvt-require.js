@@ -178,6 +178,10 @@
     requirePaths['vertical/global-estimates/global-estimates-module'] = verticalModules + '/global-estimates/global-estimates-module' + suffix;
     requirePaths['vertical/global-estimates/i18n'] = verticalModules + '/global-estimates/global-estimates-i18n' + suffix + '.json';
 
+    /* ABOUT ESTIMATES */
+    requirePaths['vertical/about-estimates/AboutEstimatesController'] = verticalModules + '/about-estimates/AboutEstimatesController' + suffix;
+    requirePaths['vertical/about-estimates/about-estimates-module'] = verticalModules + '/about-estimates/about-estimates-module' + suffix;
+
     /* GLOSSARY */
     requirePaths['vertical/glossary/GlossaryController'] = verticalModules + '/glossary/GlossaryController' + suffix;
     requirePaths['vertical/glossary/glossary-module'] = verticalModules + '/glossary/glossary-module' + suffix;
