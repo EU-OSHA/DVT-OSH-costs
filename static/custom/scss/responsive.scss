@@ -501,6 +501,22 @@
         }
       }
     }
+    .chart-analysis-illnesses{
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .chart-description{
+            > p {
+              transform: translateY(0%);
+              -webkit-transform: translateY(0%);
+              -ms-transform: translateY(0%);
+            }
+          }
+        }
+      }
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
+    margin-top:4rem;
   }
 
   // GLOBAL ESTIMATES
