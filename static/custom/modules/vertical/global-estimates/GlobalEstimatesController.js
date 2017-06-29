@@ -145,9 +145,15 @@ define(function (require) {
             $('div#modalChart').modal('hide');
             $('#carouselHome').carousel();
         }).children().click(function(e){
-            if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
-                return false;
-            }
+            if (!$(e.target).is('button')) {
+                if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                    return false;
+                }
+            }else {
+                if (!$(e.target).is('button') && !$(e.target).hasClass('close')) {
+                    return false;
+                }
+            } 
         });
         $scope.status = 'ready';
     }
