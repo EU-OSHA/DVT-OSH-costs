@@ -28,6 +28,11 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://visualisation.osha.europa.eu/osh-costs/#!/about-estimates</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://visualisation.osha.europa.eu/osh-costs/#!/site-map</loc>
         <changefreq>monthly</changefreq>
         <priority>0.2</priority>

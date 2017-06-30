@@ -15,6 +15,7 @@
     -->
     <property name="release_solution_name"      value="osha-dvt-ilo"/>
     <property name="release-dir"                value="/opt/pentaho/biserver-ce/pentaho-solutions/system/"/>
+    <property name="release-dir-snapshots"      value="/opt/pentaho/biserver-ce/pentaho-solutions/system/${release_solution_name}/static/custom/seo/snapshots/"/>
 
     <!--
             jenkins vars
@@ -149,7 +150,8 @@
                 <exclude name="**/**build**/**"/>
                 <exclude name="**/jenkins_dist/**"/>
                 <exclude name="**/resources-ext/**"/>
-                <exclude name="**/static/custom/seo/snapshots/**"/>
+                <exclude name="**/static/custom/seo/snapshots/**/*"/>
+                <exclude name="**/.git/**"/>
             </fileset>
         </copy>
         <!-- add resources-ext content -->
@@ -214,5 +216,6 @@
     -->
     <target name="release-snapshots" depends="prepare-snapshots">
         <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
+        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" dest="${release-dir-snapshots}"/>
     </target>
 </project>

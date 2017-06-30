@@ -162,6 +162,12 @@ define(function (require) {
                     var toggle = angular.element( "button.navbar-toggle" );
                     var collapse = angular.element("#osha-menu-collapse");
 
+                    collapse.click(function() {
+                        if (toggle.hasClass('closeIcon')) {
+                            toggle.removeClass('closeIcon');
+                            toggle.addClass('openIcon');
+                        }
+                    });
 
                     toggle.click(function() {
                         if(collapse.hasClass( "indvt" ) == true){
@@ -210,7 +216,6 @@ define(function (require) {
                     });
 
                     $(document).click(function() {
-                        console.log("DOCUMENT CLICK");
                         if ($('ul#osha-menu-social').hasClass('indvt')) {
                             $('ul#osha-menu-social').removeClass('indvt');
                         }

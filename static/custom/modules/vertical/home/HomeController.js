@@ -89,6 +89,7 @@ define(function (require) {
             $scope.slides[0].text = $scope.currency.text;
             $scope.slides[0].image = $scope.currency.image;
             $scope.slides[0].image2 = $scope.currency.image2;
+            $scope.slides[0].imageModal = $scope.currency.imageModal;
         }
 
         $scope.modal = function(type, index) {
@@ -112,9 +113,15 @@ define(function (require) {
             $('div#modalChart').modal('hide');
             $('#carouselHome').carousel();
         }).children().click(function(e){
-            if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
-                return false;
-            }
+            if (!$(e.target).is('button')) {
+                if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                    return false;
+                }
+            }else {
+                if (!$(e.target).is('button') && !$(e.target).hasClass('close')) {
+                    return false;
+                }
+            }            
         });
        $scope.status = 'ready';
     }

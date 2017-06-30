@@ -307,9 +307,18 @@ gulp.task('seo', function () {
     gulp.src('./static/custom/seo/sitemap.xml', {read: false})
     //TODO AUTOMATIZE PARSE THE SITEMAP URLS
         .pipe(gulpif((seo === 'true'), shell([
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + ' home.html',
-                        
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'eu-analysis-illness eu-analysis-illness.html'
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + ' home.html',     
+
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'global-estimates global-estimates.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'eu-analysis-illness eu-analysis-illness.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'about-estimates about-estimates.html',
+
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'glossary glossary.html',
+
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'site-map site-map.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'accessibility accessibility.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'privacy-policy privacy-policy.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'legal-notice legal-notice.html'
         ], {
             templateData: {
                 f: function (s) {
