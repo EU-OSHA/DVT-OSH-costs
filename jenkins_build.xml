@@ -150,7 +150,7 @@
                 <exclude name="**/**build**/**"/>
                 <exclude name="**/jenkins_dist/**"/>
                 <exclude name="**/resources-ext/**"/>
-                <exclude name="**/static/custom/seo/snapshots/**"/>
+                <exclude name="**/static/custom/seo/snapshots/**/*"/>
                 <exclude name="**/.git/**"/>
             </fileset>
         </copy>
