@@ -525,7 +525,32 @@
           display: block;
         }
       }
+
+      text {
+        font-size: 1.4rem !important;
+        font-family: Open Sans !important;
+        }
+      /*
+      text:nth-child(2) {
+        -ms-transform: translate(202px,143px) ;
+        -webkit-transform: translate(202px,143px) ;
+        transform: translate(202px,143px) ;
+      }
+
+      text:nth-child(3) {
+        -ms-transform: translate(163px,169px) !important;
+        -webkit-transform: translate(163px,169px) !important;
+        transform: translate(163px,169px) !important;
+      }
+
+      text:nth-child(4) {
+        -ms-transform: translate(123px,159px) !important;
+        -webkit-transform: translate(123px,159px) !important;
+        transform: translate(123px,159px) !important;
+      }
+     */
     }
+
     .countries-analysis-by-illnesses{
       .country-analysis-by-illnesses {
         padding:0;
