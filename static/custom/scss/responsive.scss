@@ -16,7 +16,18 @@
 /** end fluid 100% to 1650 px **/
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
+  .ilo-header{
+    #not-home-cover {
+      background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png) #529FA2 no-repeat right top;
+      background-size: cover;
+      height: 10.1rem;
+      clear: both;
+      p.title-banner {
+        text-shadow: 0px 1px 5px black;
+      }
+    }
+  }
 }
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
   .page-header {
