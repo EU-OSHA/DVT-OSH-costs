@@ -107,11 +107,10 @@ define(function (require) {
 
 
                             $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-
+                            $scope.titleHeader = $scope.i18n_menu.Header;
 
                             if ($state.current.name == 'home') {
-                                $scope.isHome = true;
-                                $scope.titleHeader = $scope.i18n_menu.Header;
+                                $scope.isHome = true;                                
                                 $scope.title = titleStructure[$state.current.name];
                             } else {
                                 var pathURL = path.split("/");
