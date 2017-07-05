@@ -17,15 +17,12 @@ define(function (require) {
     'use strict';
     
     function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, plotsProvider, $document, configService) {
-        $scope.title ="WHO Regions";
 
         // CDA
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
-
-        
 
         $scope.status = 'ready';
     }
