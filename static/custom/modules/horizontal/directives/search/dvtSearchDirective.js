@@ -217,6 +217,9 @@ define(function (require) {
                             queryFunction = dataService[$attrs.titleQuery];
                         }else if ($scope.query != '') { // Change URL
                             var href = window.location.href;
+                            if (href.indexOf('?search=') > -1){
+                                href = href.substring(0, href.indexOf('?search='));
+                            }
                             href = href + '?search=' + $scope.query;
                             href = encodeURI(href);
                             window.location.href = href;
@@ -289,6 +292,15 @@ define(function (require) {
                         */
                         $scope.search();
                         $scope.currentPage = 0;
+
+                        var href = $window.location.href;
+                        if (href.indexOf('?title=') > -1) {
+                            href = href.substring(0, href.indexOf('?title='));
+                            window.location.href = href;
+                        } else if (href.indexOf('?search=') > -1) {
+                            href = href.substring(0, href.indexOf('?search='));
+                            window.location.href = href;
+                        }
 
                       //  $state.transitionTo($attrs.searchState, { }, {notify: false});
 
