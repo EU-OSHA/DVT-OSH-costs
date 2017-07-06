@@ -41,7 +41,22 @@ define(function () {
                 var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTerms" + "&parampTerm=" + term;
                 $log.debug('getGlossaryTerms url: ' + url);
                 return promise(url);
-            },      
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGlossaryTermsTitle
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Country Approaches Tab1 Group Description Policies
+             */
+            getGlossaryTermsTitle: function(term) {
+                var term = !term ? ".*" : ".*" + term;
+
+                var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTermsTitle" + "&parampTerm=" + term;
+                $log.debug('getGlossaryTermsTitle url: ' + url);
+                return promise(url);
+            },   
 
             /**
              * @ngdoc method

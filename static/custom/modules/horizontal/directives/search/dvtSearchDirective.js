@@ -38,8 +38,8 @@ define(function (require) {
              * @requires $log
              * @description
              */
-            controller: [ 'dataService', 'mapProvider', 'configService', '$scope', '$state', '$stateParams', '$attrs', '$document', '$log',
-                function (dataService, mapProvider, configService, $scope, $state, $stateParams, $attrs, $document, $log) {
+            controller: [ 'dataService', 'mapProvider', 'configService', '$scope', '$window', '$state', '$stateParams', '$attrs', '$document', '$timeout', '$log',
+                function (dataService, mapProvider, configService, $scope, $window, $state, $stateParams, $attrs, $document, $timeout, $log) {
 
                     // BINDDING VARIABLES START ------------------------------------------------------------------------
                     $scope.isCollapsed = false;
@@ -52,6 +52,25 @@ define(function (require) {
                     $scope.data = [];
                     $scope.elementsStart=1;
                     $scope.elementsEnd=$scope.pageSize;
+
+
+                    $scope.query = '';
+                    $scope.searchTitle = false;
+                    var href = $window.location.href;
+                    if (href.indexOf('?title=') > -1) {
+                        $scope.query = href.substring(href.indexOf('?title=')+7);
+                        $scope.query = decodeURI($scope.query);
+                        $scope.searchTitle = true;
+                        $timeout(function() {
+                            angular.element('button#policy-search').triggerHandler('click');
+                        }, 0);
+                    }else if (href.indexOf('?search=') > -1) {
+                        $scope.query = href.substring(href.indexOf('?search=')+8);
+                        $scope.query = decodeURI($scope.query);
+                        $timeout(function() {
+                            angular.element('button#policy-search').triggerHandler('click');
+                        }, 0);
+                    }
                     
 
                     /**
@@ -188,15 +207,23 @@ define(function (require) {
                      * My Description rules
                      */
                     function search($event) {
+
                         var searchInput = $('#search-input').val();
                         $log.debug('searchInput free text: ' + searchInput);
 
                         var queryFunction = dataService[$attrs.searchQuery];
+                        if ($scope.searchTitle) {
+                            $scope.searchTitle = false;
+                            queryFunction = dataService[$attrs.titleQuery];
+                        }else if ($scope.query != '') { // Change URL
+                            var href = window.location.href;
+                            href = href + '?search=' + $scope.query;
+                            href = encodeURI(href);
+                            window.location.href = href;
+                        }
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
-                            /*$log.info("Results in pretty-print mode");
-                            $log.info(JSON.stringify($scope.results, undefined, 2));*/
 
                             $scope.firstPage();
 

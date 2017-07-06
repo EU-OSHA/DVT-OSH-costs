@@ -183,4 +183,22 @@
       </Query>
     </DataAccess>
 
+    <!-- GET GLOSSARY TERMS BY TITLE -->
+    <DataAccess access="public" connection="ilo_conn" id="getGlossaryTermsTitle" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default=".*" name="pTerm" type="String" />
+      </Parameters>
+      <Query>
+        SELECT
+          term_id as termID,
+          term_name as Term,
+          description as Description
+        FROM glossary
+        WHERE term_name REGEXP ${pTerm}
+        ORDER BY term_name ASC, description ASC
+      </Query>
+    </DataAccess>
+
 </CDADescriptor>
