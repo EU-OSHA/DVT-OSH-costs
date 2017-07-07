@@ -36,9 +36,28 @@ define(function (require) {
             }
         });
 
+        $stateProvider.state('global-analysis-illness', {
+            url: "/global-analysis-illness",
+            params: {
+
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("global-estimates/global-analysis-illness", "global-analysis-illness"),
+                    controller: 'GlobalAnalysisIllnessController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/global-analysis-illness/GlobalAnalysisIllnessController', 'global-analysis-illness', 'GlobalAnalysisIllnessController')
+                }
+            },
+            metaTags: {
+                title: "Global Analysis by Illness" +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                description: "Lorem ipsum dolor sit amet",
+            }
+        });
+
     });
 
     module.factory('globalEstimatesService', require('vertical/global-estimates/services/GlobalEstimatesService'));
+    module.factory('globalAnalysisIllnessService', require('vertical/global-analysis-illness/services/GlobalAnalysisIllnessService'));
 
     return module;
 });

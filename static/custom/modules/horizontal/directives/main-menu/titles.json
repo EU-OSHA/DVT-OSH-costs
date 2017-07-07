@@ -3,6 +3,7 @@
 
   "_SECCTION-GLOBAL-ESTIMATES": null,
   "global-estimates": "L37",
+  "global-analysis-illness": "L138",
 
   "_SECCTION-EU-ESTIMATES": null,
   "eu-estimates": "L2",
@@ -25,5 +26,5 @@
   "default-title":"ILO - Data Visualisation Tool - European Agency for Safety & Health at Work",
   "pages-title":"ILO - Data Visualisation Tool - European Agency for Safety & Health at Work",
 
-  "404": "Page not found"
+  "404": "L136"
 }

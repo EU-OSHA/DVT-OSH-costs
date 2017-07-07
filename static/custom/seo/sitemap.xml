@@ -8,12 +8,13 @@
         <priority>1.0</priority>
     </url>
 
-
-    <!--
-        key issue
-    -->
     <url>
         <loc>https://visualisation.osha.europa.eu/osh-costs/#!/global-estimates</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://visualisation.osha.europa.eu/osh-costs/#!/global-analysis-illness</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

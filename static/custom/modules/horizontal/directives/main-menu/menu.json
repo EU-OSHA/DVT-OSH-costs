@@ -9,10 +9,23 @@
     {
         "id": "global-estimates",
         "name":"L1",
-        "sref": "global-estimates",
+        "target":"_self",
         "tabindex":"2",
-        "accesskey": "G"
-    },    
+        "levels":[
+            {
+                "id":"global-estimates",
+                "name":"L1",
+                "sref":"global-estimates",
+                "accesskey":"G"
+            },
+            {
+                "id":"global-analysis-illness",
+                "name": "L137",
+                "sref":"global-analysis-illness",
+                "accesskey": "A"
+            }
+        ]
+    },  
     {
         "id": "eu-estimates",
         "name":"L2",
