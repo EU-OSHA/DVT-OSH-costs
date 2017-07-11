@@ -156,10 +156,12 @@
       <DataAccess access="public" connection="ilo_conn" id="getLegendByCounty" type="sql">
          <Cache duration="3600" enabled="true"/>
          <Columns/>
-         <Parameters/>
+         <Parameters>
+            <Parameter default="25" name="pIndicator" type="Numeric" />
+         </Parameters>
          <Query>SELECT IFNULL(ff.COUNTRY,ff.REGION) as country,  ff.SPLIT_1 as SPLIT,  Round(ff.MEASURE) AS Value
                           FROM fact_figures ff
-                          WHERE ff.INDICATOR_ID = 25
+                          WHERE ff.INDICATOR_ID = ${pIndicator}
                           ORDER BY country ASC
          </Query>
       </DataAccess>

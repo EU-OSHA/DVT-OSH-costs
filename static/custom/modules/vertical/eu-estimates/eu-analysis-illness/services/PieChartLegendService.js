@@ -7,7 +7,7 @@ define (function (require) {
         }
         return {
             getDataSet_Country_Type_value: function(){
-                var url = configService.getPilotDataPath() + "&dataAccessId=getLegendByCounty";
+                var url = configService.getPilotDataPath() + "&dataAccessId=getLegendByCounty&parampIndicator=25";
                 //$log.debug('getDataSet_Country_Type_value url:' + url);
                 return promise(url);
             }
