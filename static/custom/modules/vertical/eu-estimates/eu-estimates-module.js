@@ -18,7 +18,7 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        /*$stateProvider.state('countries-comparison', {
+        $stateProvider.state('countries-comparison', {
             url: "/countries-comparison",
             params: {
 
@@ -34,7 +34,7 @@ define(function (require) {
                 title: i18n.L3 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
                 description: i18n.L60,
             }
-        });*/
+        });
 
         $stateProvider.state('eu-analysis-illness', {
             url: "/eu-analysis-illness",
