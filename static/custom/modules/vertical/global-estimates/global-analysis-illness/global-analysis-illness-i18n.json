@@ -1,3 +1,18 @@
 {
-	
+
+  "GLOBAL": "GLOBAL",
+  "EU":"EU28",
+  "HIGH":"HIGH",
+  "AFRO":"AFRO",
+  "AMRO":"AMRO",
+  "EMRO":"EMRO",
+  "EURO":"EURO",
+  "SEARO":"SEARO",
+  "WPRO":"WPRO",
+
+  "Cancer": "L129",
+  "MSD": "L130",
+  "Injuries": "L132",
+  "Circulatory": "L131",
+  "Others": "L133"
 }

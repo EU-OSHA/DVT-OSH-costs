@@ -112,17 +112,18 @@
         </Query>
     </DataAccess>
 
-    <!-- GET SPLIT_1 DATA BY ALL COUNTRY (EU28) -->
+    <!-- GET SPLIT_1 DATA BY REGION -->
   <DataAccess access="public" connection="ilo_conn" id="getSplitAllCountryDataByIndicator" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
-          <Parameter default="1" name="pIndicator" type="Numeric" />
+          <Parameter default="25" name="pIndicator" type="Numeric" />
+          <Parameter default="EU28" name="pRegion" type="String" />
       </Parameters>
       <Query>SELECT Round(ff.MEASURE) AS Value, ff.SPLIT_1 as Illness, ROUND(ff2.MEASURE) AS Percentage
           FROM fact_figures ff, fact_figures ff2
           WHERE ff.INDICATOR_ID = ${pIndicator}
-          AND ff.REGION = 'EU28'
+          AND ff.REGION = ${pRegion}
           AND ff.REGION = ff2.REGION
           AND ff.INDICATOR_ID = ff2.INDICATOR_ID
           AND ff.SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
