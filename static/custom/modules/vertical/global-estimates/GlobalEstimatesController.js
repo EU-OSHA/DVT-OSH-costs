@@ -38,7 +38,8 @@ define(function (require) {
             $scope.countries = countries;
         });
 
-        $scope.selectChange = function() {
+        // TO BE ADDED To the select change event
+        /*$scope.selectChange = function() {
             var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
             $('text.label-country').attr('class','');
             $('rect.label-country').attr('class','');
@@ -52,7 +53,7 @@ define(function (require) {
                     }
                 }
             }
-        }
+        }*/
 
         // Splits when the indicator has more than 1 split
         $scope.splits = [

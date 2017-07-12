@@ -29,6 +29,18 @@ define(function (require) {
         // Get chart colors
         $scope.illnessColors = dvtUtils.getIllnessColors();
 
+        // Regions Select
+        dataService.getCountriesRegion().then(function(dataset) {
+            var countries = {};
+            dataset.data.resultset.forEach(function(country){
+                countries["" + country[0]] = {
+                    name: country[0],
+                    region: country[1]
+                }
+            });
+            $scope.countriesSelect = countries;
+        });
+
         // 'Legends' logic
        globalAnalysisIllnessService.getDataSet_Country_Type_value().then(function (dataset) {
             var countries = {};
@@ -49,8 +61,6 @@ define(function (require) {
 
             $scope.countries = countries;
             $log.debug($scope.countries);
-            console.log("DAVID DEV");
-            console.log($scope.countries);
         }).catch (function (err) {
             $log.warn("getAllLegenddata request fail!");
         });

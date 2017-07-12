@@ -29,15 +29,15 @@
                                         title="{{i18n_global.GLOBAL}}"
                                         long-title="{{i18n.L139}} - {{i18n_global.GLOBAL}}"
                                         title-h3="true"
-                                        max-functional-legend="DALY"
+                                        max-functional-legend="{{i18n.L140}}"
                         ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Cancer']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Cancer]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['MSD']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.MSD]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Circulatory']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Circulatory]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Injuries']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Injuries]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Others']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Others]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Cancer']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Cancer]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['MSD']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.MSD]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Circulatory']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Circulatory]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Injuries']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Injuries]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Others']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Others]"></span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
                         <p data-ng-bind="i18n.L140"></p>
@@ -45,6 +45,18 @@
                 </div>
             </div>
         </section>
+
+        <div class="global-estimates-countries-regions">
+            <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
+            <div class="countries-regions-select">
+                <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countriesSelect">
+                    <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+                </select>
+                <span>:</span>
+                <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+                <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)"><i class="fa fa-info" aria-hidden="true"></i><span class="sr-only">{{i18n_global.Info}}</span></a></p>
+            </div>
+        </div>
 
         <section class="countries-analysis-by-illnesses container">
             <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-4">
@@ -73,11 +85,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Austria']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Austria']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Austria']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Austria']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Austria']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -88,19 +100,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Belgium']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'HIGH']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="5"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Belgium"
-                                            long-title="Belgium"
+                                            title="{{i18n_global.HIGH}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.HIGH}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -108,11 +120,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Belgium']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Belgium']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Belgium']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Belgium']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Belgium']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -123,19 +135,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Bulgaria']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'AFRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="6"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Bulgaria"
-                                            long-title="Bulgaria"
+                                            title="{{i18n_global.AFRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.AFRO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -143,11 +155,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Bulgaria']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Bulgaria']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Bulgaria']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Bulgaria']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Bulgaria']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -158,19 +170,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Croatia']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'AMRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="7"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Croatia"
-                                            long-title="Croatia"
+                                            title="{{i18n_global.AMRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.AMRO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -178,11 +190,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Croatia']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Croatia']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Croatia']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Croatia']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Croatia']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -193,19 +205,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Cyprus']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'EMRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="8"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Cyprus"
-                                            long-title="Cyprus"
+                                            title="{{i18n_global.EMRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.EMRO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -213,11 +225,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Cyprus']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Cyprus']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Cyprus']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Cyprus']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Cyprus']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -228,19 +240,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Czech Republic']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'EURO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="9"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Czech Republic"
-                                            long-title="Czech Republic"
+                                            title="{{i18n_global.EURO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.EURO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -248,11 +260,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Czech Republic']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Czech Republic']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Czech Republic']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Czech Republic']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Czech Republic']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -263,19 +275,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Denmark']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'SEARO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="10"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Denmark"
-                                            long-title="Denmark"
+                                            title="{{i18n_global.SEARO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.SEARO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -283,11 +295,11 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Denmark']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Denmark']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Denmark']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Denmark']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Denmark']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -298,19 +310,19 @@
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
                         <div class="zylk-chart">
                             <zylk-bar-chart data-ng-cloak class="text-center"
-                                            query="getSplitDataByCountry" cda="{{::cda }}"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pCountry','Estonia']]"
+                                            params="[['pIndicator','28'], ['pRegion', 'WPRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
-                                            id="11"
+                                            id="4"
                                             color2-axis-colors="['#eda308','lightgray']"
                                             plots="stories[0].plots"
                                             type="pie"
                                             values-visible="false"
-                                            title="Estonia"
-                                            long-title="Estonia"
+                                            title="{{i18n_global.WPRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.WPRO}}"
                                             title-h3="true"
                             ></zylk-bar-chart>
                         </div>
@@ -318,15 +330,42 @@
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
                         <p data-ng-bind="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Estonia']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Estonia']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Estonia']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Estonia']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['Estonia']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
+
+    <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind="modalData.title"></p>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
+                    <p>
+                        <span data-ng-bind="i18n_global.RegionCode"></span>
+                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                    </p>
+                    <div class="logoGraphics-wrapper">
+                        <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p data-ng-bind="modalData.text"></p>
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                </div>
+            </div>
+        </div>
     </div>
 </zylk-dashboard>
