@@ -1,5 +1,5 @@
 <!-- eu-analysis-illness.html -->
-<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="osha-analysis-illnesses">
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="osha-analysis-illnesses who-regions">
     <div class="container-full eu-analysis-illness-wrapper">
 
         <section class="chart-analysis-illnesses affix-top" bs-affix  data-offset-top="150">
@@ -40,19 +40,20 @@
             </div>
         </section>
 
-        <div class="global-estimates-countries-regions">
-            <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
-            <div class="countries-regions-select">
-                <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countriesSelect">
-                    <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
-                </select>
-                <span>:</span>
-                <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
-                <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)"><i class="fa fa-info" aria-hidden="true"></i><span class="sr-only">{{i18n_global.Info}}</span></a></p>
-            </div>
-        </div>
 
         <section class="countries-analysis-by-illnesses container">
+            <div class="global-estimates-countries-regions">
+                <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
+                <div class="countries-regions-select">
+                    <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countriesSelect">
+                        <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+                    </select>
+                    <span>:</span>
+                    <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+                    <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)"><i class="fa fa-info" aria-hidden="true"></i><span class="sr-only">{{i18n_global.Info}}</span></a></p>
+                </div>
+            </div>
+
             <div class="country-analysis-by-illnesses col-xs-12 col-sm-6 col-md-4">
                 <div class="country-wrapper">
                     <div class="country-chart col-xs-8 col-sm-9 col-md-9">
