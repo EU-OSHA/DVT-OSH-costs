@@ -4,7 +4,7 @@
 
         <section class="chart-analysis-illnesses affix-top" bs-affix  data-offset-top="150">
             <div class="chart-analysis-illnesses-box container" >
-                <h2 data-ng-bind="i18n.L139"></h2>
+                <h2 data-ng-bind-html="i18n.L139"></h2>
                 <div class="chart-wrapper">
                     <div class="zylk-chart col-sm-5 col-md-3">
                         <zylk-bar-chart data-ng-cloak class="text-center"
@@ -27,19 +27,18 @@
                         ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Cancer']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Cancer]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['MSD']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.MSD]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Circulatory']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Circulatory]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Injuries']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Injuries]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Others']"></span><span class="legend-name" data-ng-bind="i18n[i18n_global.Others]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['GLOBAL_ESTIMATE']['Cancer']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Cancer]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['GLOBAL_ESTIMATE']['MSD']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.MSD]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['GLOBAL_ESTIMATE']['Circulatory']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Circulatory]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['GLOBAL_ESTIMATE']['Injuries']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Injuries]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['GLOBAL_ESTIMATE']['Others']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Others]"></span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
-                        <p data-ng-bind="i18n.L140"></p>
+                        <p data-ng-bind-html="i18n.L140"></p>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <section class="countries-analysis-by-illnesses container">
             <div class="global-estimates-countries-regions">
@@ -78,13 +77,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EU28']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EU28']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EU28']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EU28']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EU28']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -113,13 +112,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['HIGH']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['HIGH']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['HIGH']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['HIGH']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['HIGH']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -148,13 +147,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AFRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AFRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AFRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AFRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AFRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -183,13 +182,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['AMRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -218,13 +217,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EMRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -253,13 +252,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EURO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EURO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EURO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EURO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['EURO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -288,13 +287,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['SEARO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['SEARO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['SEARO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['SEARO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['SEARO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -323,13 +322,13 @@
                         </div>
                     </div>
                     <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
-                        <p data-ng-bind="i18n.L93"></p>
+                        <p data-ng-bind-html="i18n.L93"></p>
                         <ul class="legend-list">
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Cancer']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['MSD']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Circulatory']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Injuries']"></span></li>
-                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Others']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['WPRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['WPRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['WPRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['WPRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind-html="countries['WPRO']['Others']"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -339,7 +338,7 @@
 
     <section class="container-full back-color ">
         <div class="main-text-global-estimates container">
-            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind="i18n.L39"></a></p>
+            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>
         </div>
     </section>
 
@@ -350,20 +349,20 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <p class="modal-title" data-ng-bind="modalData.title"></p>
+                    <p class="modal-title" data-ng-bind-html="modalData.title"></p>
                 </div>
                 <div class="modal-body text-center">
                     <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
                     <p>
-                        <span data-ng-bind="i18n_global.RegionCode"></span>
-                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                        <span data-ng-bind-html="i18n_global.RegionCode"></span>
+                        <span data-ng-bind-html="i18n_global.RegionTableTitle"></span>
                     </p>
                     <div class="logoGraphics-wrapper">
                         <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <p data-ng-bind="modalData.text"></p>
+                    <p data-ng-bind-html="modalData.text"></p>
                     <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
                 </div>
             </div>
