@@ -31,7 +31,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L1 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L1 +  " - " + i18n.L135,
                 description: i18n.L38,
             }
         });
@@ -49,8 +49,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Global Analysis by Illness" +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
-                description: "Lorem ipsum dolor sit amet",
+                title: i18n.L137 +  " - " + i18n.L135,
+                description: i18n.L140,
             }
         });
 

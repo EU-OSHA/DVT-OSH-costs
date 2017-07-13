@@ -31,7 +31,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L6 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L6 +  " - " + i18n.L135,
                 description: i18n.L6,
             }
         });

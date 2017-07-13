@@ -17,6 +17,9 @@ define(function (require) {
     /* List of states of the  module */
     module.config(function ($stateProvider, configService, $urlRouterProvider, $controllerProvider, $uiViewScrollProvider) {
 
+        // Literals / i18n
+        var i18n = configService.getLiterals();
+
         $uiViewScrollProvider.useAnchorScroll();
         
         $urlRouterProvider.when('', '/');
@@ -30,8 +33,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
-                description: "OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L135,
+                description: i18n.L135,
             }
         });
     });    

@@ -28,7 +28,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L9 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L9 +  " - " + i18n.L135,
                 description: i18n.L9,
             }
         });
@@ -43,7 +43,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L10 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L10 +  " - " + i18n.L135,
                 description: i18n.L10,
             }
         });
@@ -58,7 +58,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L8 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L8 +  " - " + i18n.L135,
                 description: i18n.L8,
             }
         });
@@ -73,7 +73,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L7 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L7 +  " - " + i18n.L135,
                 description: i18n.L7,
             }
         });
@@ -86,8 +86,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Page not Found" +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
-                description: "Page not Found",
+                title: i18n.L136 +  " - " + i18n.L135,
+                description: i18n.L135,
             }
         });
 

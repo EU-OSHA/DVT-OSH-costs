@@ -31,7 +31,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L3 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L3 +  " - " + i18n.L135,
                 description: i18n.L60,
             }
         });
@@ -49,7 +49,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L88 +  " - OSH costs - Data Visualisation Tool - European Agency for Safety and Health at Work",
+                title: i18n.L88 +  " - " + i18n.L135,
                 description: i18n.L92,
             }
         });
