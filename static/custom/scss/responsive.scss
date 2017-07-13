@@ -16,7 +16,18 @@
 /** end fluid 100% to 1650 px **/
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
+  .ilo-header{
+    #not-home-cover {
+      background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png) #529FA2 no-repeat right top;
+      background-size: cover;
+      height: 10.1rem;
+      clear: both;
+      p.title-banner {
+        text-shadow: 0px 1px 5px black;
+      }
+    }
+  }
 }
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
   .page-header {
@@ -503,18 +514,43 @@
           width: 100%;
           transform: translateY(0%);
           -webkit-transform: translateY(0%);
-          column-count: 2;
-          -webkit-column-count: 2;
-          -moz-column-count: 2;
+          column-count: 1;
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
           li{
-            margin: 0px 0 10px;
+            margin: 0px 10px 10px 0;
           }
         }
         .chart-description {
           display: block;
         }
       }
+
+      text {
+        font-size: 1.4rem !important;
+        font-family: Open Sans !important;
+        }
+      /*
+      text:nth-child(2) {
+        -ms-transform: translate(202px,143px) ;
+        -webkit-transform: translate(202px,143px) ;
+        transform: translate(202px,143px) ;
+      }
+
+      text:nth-child(3) {
+        -ms-transform: translate(163px,169px) !important;
+        -webkit-transform: translate(163px,169px) !important;
+        transform: translate(163px,169px) !important;
+      }
+
+      text:nth-child(4) {
+        -ms-transform: translate(123px,159px) !important;
+        -webkit-transform: translate(123px,159px) !important;
+        transform: translate(123px,159px) !important;
+      }
+     */
     }
+
     .countries-analysis-by-illnesses{
       .country-analysis-by-illnesses {
         padding:0;

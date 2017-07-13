@@ -361,8 +361,14 @@ div.contextual-menu > div.dropdown {
 }
 
 .dvt-modal {
+  .modal-wrapper {
+    height: 95%;
+    .modal-body {
+      height: 100%;
+    }
+  }
   .dvt-chart {
-    height: auto!important;
+    height: 100% !important;
     width: 100%;
     overflow: hidden;
     border-radius: .5em;
@@ -425,7 +431,7 @@ div.contextual-menu > div.dropdown {
 
 .dvt-modal .functionalLegend{
     height: auto !important;
-    margin: 2em 0;
+    padding:1.2rem;
     overflow: auto!important;
     float: none;
     clear: both;

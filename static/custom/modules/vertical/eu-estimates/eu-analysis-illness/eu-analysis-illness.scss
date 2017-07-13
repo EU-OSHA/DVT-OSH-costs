@@ -148,7 +148,7 @@
             background: transparent !important;
           }
           .backGraps{
-            zoom: 0.5;
+            zoom: 0.75;
           }
           h2{
             text-align: center;
@@ -314,7 +314,29 @@
 .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
   margin-top: 240px;
 }
-.chart-analysis-illnesses.affix  text{
-  font-size: 2.4rem !important;
-  font-family: OpenSans-Bold !important;
+
+.chart-analysis-illnesses.affix {
+  text {
+    font-size: 1.75rem !important;
+    font-family: OpenSans-Bold !important;
+  }
+/*
+  text:nth-child(2) {
+    -ms-transform: translate(174px,149px) !important;
+    -webkit-transform: translate(174px,149px) !important;
+    transform: translate(174px,149px) !important;
+  }
+
+  text:nth-child(3) {
+    -ms-transform: translate(125px,186px) !important;
+    -webkit-transform: translate(125px,186px) !important;
+    transform: translate(125px,186px) !important;
+  }
+
+  text:nth-child(4) {
+    -ms-transform: translate(63px,176px) !important;
+    -webkit-transform: translate(63px,176px) !important;
+    transform: translate(63px,176px) !important;
+  }
+  */
 }

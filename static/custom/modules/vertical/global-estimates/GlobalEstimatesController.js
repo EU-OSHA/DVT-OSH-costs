@@ -71,8 +71,8 @@ define(function (require) {
             chart1: 20,
             chart2: $(window).width() > 425 ? 500 : 1000,
             chart3: 20,
-            chart4: 2500,
-            chart5: 2.5
+            chart4: 1000,
+            chart5: 1
         }
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
@@ -134,8 +134,9 @@ define(function (require) {
         ];
 
         $scope.graphWidth = $('li.item.active').width() - 30;
-
+        
         $scope.lastGraphWidth = $(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
+
 
         angular.element($window).bind('resize', function() {
             $state.reload();            
@@ -151,8 +152,8 @@ define(function (require) {
             // Prevent carousel from sliding automatically
             $('#carouselCountries').carousel('pause');
 
+        });
 
-        })
         $('.global-estimates-indicators li').click(function() {
             $('.global-estimates-indicators li').toggleClass('item-block');
 

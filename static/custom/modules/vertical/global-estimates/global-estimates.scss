@@ -150,6 +150,7 @@
 		//min-height: 730px;
 		> .item{
 			width: 100% !important;
+			min-height: 640px;
 		}
 		li {
 			float: left;
@@ -165,7 +166,7 @@
 				padding: 15px;
 			}
 			.dvt-chart {
-				min-height: 502px;
+				min-height: auto;
 				width: 100%;
 				background: #FFF !important;
 				padding: 0 20px 0 !important;
@@ -193,10 +194,10 @@
 				}
 				div[id^='zylk_bar_chart'] {
 				}
-				svg > g g:nth-child(2) > g g:nth-child(4) g:nth-child(1) g {
-					transform: translate(0px,-7px) !important;
-					-webkit-transform: translate(0px,-7px) !important;
-					-ms-transform: translate(0px,-7px) !important;
+				svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+					transform: translate(0px,-9px) !important;
+					-webkit-transform: translate(0px,-9px) !important;
+					-ms-transform: translate(0px,-9px) !important;
 				}
 			}
 			&.active{
@@ -272,19 +273,21 @@
 		padding: 40px 0;
 		.compare-buttons-list{
 			text-align: center;
+			margin: 0 auto;
 			li{
 				margin-right: 30px;
-				width:40%;
+				width:50%;
 				a{
 					display: block;
 					border-radius: 4px;
 					border: 0px solid #ababab;
 					padding: 20px 20px;
+					padding: 10px 40px;
 					font-family: Oswald-Light,sans-serif!important;
 					font-size: 1.8rem;
 					color: #FFF;
 					&:hover{
-						background:#222;
+						background:$plt-eu02;
 						text-decoration: none;
 					}
 				}
@@ -294,7 +297,27 @@
 			}
 		}
 	}
+	.modal-dialog{
+		.modal-content{
+			.modal-body{
+				img{
+					width: 70%;
+				}
+			}
+		}
+	}
 }
+.modal {
+	.modal-body{
+		svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+			transform: translate(0px,-11px) !important;
+			-webkit-transform: translate(0px,-11px) !important;
+			-ms-transform: translate(0px,-11px) !important;
+		}
+	}
+}
+
+
 
 @media screen and (max-width:991px){
 	.global-estimates-countries-regions {
