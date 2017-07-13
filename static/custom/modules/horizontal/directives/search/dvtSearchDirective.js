@@ -54,7 +54,8 @@ define(function (require) {
                     $scope.elementsEnd=$scope.pageSize;
 
 
-                    $scope.query = '';
+                    // APPLY QUERY VIA URL
+                    /*$scope.query = '';
                     $scope.searchTitle = false;
                     var href = $window.location.href;
                     if (href.indexOf('?title=') > -1) {
@@ -70,7 +71,7 @@ define(function (require) {
                         $timeout(function() {
                             angular.element('button#policy-search').triggerHandler('click');
                         }, 0);
-                    }
+                    }*/
                     
 
                     /**
