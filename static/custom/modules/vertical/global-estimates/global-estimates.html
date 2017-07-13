@@ -2,8 +2,8 @@
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
     <section class="container-full back-color ">
         <div class="main-text-global-estimates container">
-            <p data-ng-bind="i18n.L38"></p>
-            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind="i18n.L39"></a></p>
+            <p data-ng-bind-html="i18n.L38"></p>
+            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>
         </div>
     </section>
 
@@ -15,16 +15,16 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators container global-estimates-indicators four-items">
                     <li data-target="#carouselCountries" data-slide-to="0" class="active">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L40"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L40"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="1">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L41"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L41"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="2">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L42"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L42"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="3">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind="i18n.L43"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L43"></span>
                     </li>
                 </ol>
                 <div class="global-estimates-countries-regions">
@@ -59,7 +59,7 @@
                                 legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind="i18n.L49"></p>
+                            <p data-ng-bind-html="i18n.L49"></p>
                         </div>
                     </li>
                     <li class="item newClass"  data-name="years-life-lost">
@@ -81,7 +81,7 @@
                                 disable-max-legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind="i18n.L52"></p>
+                            <p data-ng-bind-html="i18n.L52"></p>
                         </div>
                     </li>
                     <li class="item newClass" data-name="years-life-lost-vs-years-lived-disability">
@@ -103,11 +103,11 @@
                                 legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind="i18n.L55"></p>
+                            <p data-ng-bind-html="i18n.L55"></p>
                         </div>
                     </li>
                     <li class="item newClass" data-name="total-cost">
-                        <h2 data-ng-bind="i18n.L56"></h2>
+                        <h2 data-ng-bind-html="i18n.L56"></h2>
                         <zylk-bar-chart
                                 data-ng-cloak
                                 query="getIndicatorDataRegion" cda="{{::cda }}"
@@ -142,7 +142,7 @@
                                 disable-max-legend="true"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind="i18n.L58"></p>
+                            <p data-ng-bind-html="i18n.L58"></p>
                         </div>
                     </li>
                 </ul>
@@ -161,7 +161,7 @@
 
     <section class="compare-buttons">
         <ul class="compare-buttons-list  list-inline container">
-            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind="i18n.L68"></a></li>
+            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind-html="i18n.L68"></a></li>
         </ul>
     </section>
 
@@ -172,20 +172,20 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <p class="modal-title" data-ng-bind="modalData.title"></p>
+                    <p class="modal-title" data-ng-bind-html="modalData.title"></p>
                 </div>
                 <div class="modal-body text-center">
                     <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
                     <p>
-                        <span data-ng-bind="i18n_global.RegionCode"></span>
-                        <span data-ng-bind="i18n_global.RegionTableTitle"></span>
+                        <span data-ng-bind-html="i18n_global.RegionCode"></span>
+                        <span data-ng-bind-html="i18n_global.RegionTableTitle"></span>
                     </p>
                     <div class="logoGraphics-wrapper">
                         <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <p data-ng-bind="modalData.text"></p>
+                    <p data-ng-bind-html="modalData.text"></p>
                     <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
                 </div>
             </div>

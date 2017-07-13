@@ -9,7 +9,7 @@
 					<ul class="carousel-inner">
 
 						<li ng-repeat="slide in slides" class="item" ng-class="{'active': $index == 0 }">
-							<h2 data-ng-bind="slide.title"></h2>
+							<h2 data-ng-bind-html="slide.title"></h2>
 
 							<div class="carousel-chart">
 								<select class="currency-chart" data-ng-if="$first" data-ng-options="option as option.label for option in select track by option.id" data-ng-model="currency" data-ng-change="update()">
@@ -26,11 +26,11 @@
 					<!-- Left and right controls -->
 					<a class="left carousel-control" ng-non-bindable  href="#carouselHome" data-slide="prev">
 						<i class="fa fa-chevron-left prev " aria-hidden="true"></i>
-						<span class="sr-only" data-ng-bind="i18n_home.previous"></span>
+						<span class="sr-only" data-ng-bind-html="i18n_home.previous"></span>
 					</a>
 					<a class="right carousel-control" ng-non-bindable  href="#carouselHome" data-slide="next">
 						<i class="fa fa-chevron-right next" aria-hidden="true"></i>
-						<span class="sr-only" data-ng-bind="i18n_home.next"></span>
+						<span class="sr-only" data-ng-bind-html="i18n_home.next"></span>
 					</a>
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -42,29 +42,27 @@
 
 		<section class="section-first-home">
 			<div class="container">
-				<h3 data-ng-bind="chartDeath.title"></h3>
+				<h3 data-ng-bind-html="chartDeath.title"></h3>
 				<div class="chart1-section-first">
-					<h4 data-ng-bind="i18n.L13"></h4>
-					<p data-ng-bind="i18n.L26"></p>
+					<h4 data-ng-bind-html="i18n.L13"></h4>
+					<p data-ng-bind-html="i18n.L26"></p>
 					<img data-ng-src="{{chartDeath.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDeath.title}}" data-ng-click="modal('chart',1)" data-toggle="modal" data-target="#modalChart">
-					<p data-ng-bind="chartDeath.text"></p>
+					<p data-ng-bind-html="chartDeath.text"></p>
 				</div>
 				<div class="chart2-section-first">
-					<p data-ng-bind="i18n.L30"></p>
+					<p data-ng-bind-html="i18n.L30"></p>
 					<img data-ng-src="{{chartDaly.image}}" title="{{i18n_home.largerImage}}" alt="{{chartDaly.title}}" data-ng-click="modal('chart',2)" data-toggle="modal" data-target="#modalChart">
 				</div>
 				<div class="content-section-first">
-				<p data-ng-bind="chartDaly.text" class="text-section-first"></p>
-				<p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind="i18n.L34"></a></p>
+				<p data-ng-bind-html="chartDaly.text" class="text-section-first"></p>
+				<p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L34"></a></p>
 				</div>
 			</div>
 		</section>
 
 		<div class="compare-buttons">
 			<ul class="compare-buttons-list  list-inline container">
-				<!-- TO BE INCLUDED WITH THE WHO REGIONS
-				<li><a data-ng-bind="i18n.L35"></a></li> -->
-				<li><a data-ui-sref='eu-analysis-illness' data-ng-bind="i18n.L68"></a></li>
+				<li><a data-ui-sref='eu-analysis-illness' data-ng-bind-html="i18n.L68"></a></li>
 				
 			</ul>
 		</div>
@@ -76,7 +74,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<p class="modal-title" data-ng-bind="modalData.title"></p>
+				<p class="modal-title" data-ng-bind-html="modalData.title"></p>
 			</div>
 			<div class="modal-body">
 				<picture>
@@ -87,7 +85,7 @@
 				<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>
 			</div>
 			<div class="modal-footer">
-				<p data-ng-bind="modalData.text"></p>
+				<p data-ng-bind-html="modalData.text"></p>
 			</div>
 		</div>
 	</div>
