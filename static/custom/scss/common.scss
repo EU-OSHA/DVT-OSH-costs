@@ -117,12 +117,12 @@ body {
   padding-top: 100px;
 }
 body.hasCookies{
-  padding-top: 100px;
+  padding-top: 12rem;
   .ilo-header #containerMenu{
     position: relative;
   }
   #google_translate_element_wrapper{
-    top: 40px;
+    top: 4rem;
     position: relative;
     width: 125px;
     float: right;
@@ -362,7 +362,19 @@ div.contextual-menu > div.dropdown {
 
 .dvt-modal {
   .modal-wrapper {
-    height: 95%;
+    height: auto;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+    }
     .modal-body {
       height: 100%;
     }

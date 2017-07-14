@@ -80,7 +80,8 @@
             color: #FFF;
             font-family: "OpenSans-Bold";
             font-size: 1.6rem;
-            padding-top: 2px;
+            padding-top: 1px;
+            vertical-align: middle;
           }
           // CANCER
           &:nth-child(1) .legend-data{
@@ -103,7 +104,8 @@
             background:$plt-eu05 !important;
           }
           .legend-name{
-
+            top: 1px;
+            position: relative;
           }
         }
       }
@@ -272,6 +274,7 @@
                 font-family: "OpenSans-Bold";
                 font-size: 1.4rem;
                 padding-top: 2px;
+                vertical-align: middle;
               }
               &:nth-child(1) .legend-data{
                 background:$plt-eu01 !important;
