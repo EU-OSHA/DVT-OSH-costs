@@ -38,23 +38,6 @@ define(function (require) {
             $scope.countries = countries;
         });
 
-        // TO BE ADDED To the select change event
-        /*$scope.selectChange = function() {
-            var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
-            $('text.label-country').attr('class','');
-            $('rect.label-country').attr('class','');
-            for (var i = 0; i < labels.length; i++) {
-                if ($(labels[i]).text() == $scope.country.region) {
-                    $(labels[i]).attr('class','label-country');
-
-                    if (i < 8) {
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill','red');
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
-                    }
-                }
-            }
-        }*/
-
         // Splits when the indicator has more than 1 split
         $scope.splits = [
             {

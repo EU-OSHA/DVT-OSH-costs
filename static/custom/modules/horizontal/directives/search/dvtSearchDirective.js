@@ -52,26 +52,6 @@ define(function (require) {
                     $scope.data = [];
                     $scope.elementsStart=1;
                     $scope.elementsEnd=$scope.pageSize;
-
-
-                    // APPLY QUERY VIA URL
-                    /*$scope.query = '';
-                    $scope.searchTitle = false;
-                    var href = $window.location.href;
-                    if (href.indexOf('?title=') > -1) {
-                        $scope.query = href.substring(href.indexOf('?title=')+7);
-                        $scope.query = decodeURI($scope.query);
-                        $scope.searchTitle = true;
-                        $timeout(function() {
-                            angular.element('button#policy-search').triggerHandler('click');
-                        }, 0);
-                    }else if (href.indexOf('?search=') > -1) {
-                        $scope.query = href.substring(href.indexOf('?search=')+8);
-                        $scope.query = decodeURI($scope.query);
-                        $timeout(function() {
-                            angular.element('button#policy-search').triggerHandler('click');
-                        }, 0);
-                    }*/
                     
 
                     /**
