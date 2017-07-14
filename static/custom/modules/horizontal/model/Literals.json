@@ -56,7 +56,7 @@
   "L55":"In HIGH and AMRO, more years are lived with disability (YLD) than are lost due to early death (YLL). In the EU28, YLD accounts for 50% and YLL for 50%.<br/>Source: ILO, 2017",
   "L56":"Cost to society in terms of DALY rate (years per 100,000 workers) and in terms of contribution to work-years lost expressed as percentage equivalent of total GDP (%)",
   "L57":"Cost to society in terms of DALY rate (years per 100,000 workers) and in terms of contribution to work-years lost expressed as percentage equivalent of total GDP (%)",
-  "L58":"Disability Adjusted Life Years (DALY) is the sum of Years of Life Lost (YLL) due to work-related death and Years Lived with Disability (YLD) due to work-related injury and illness. DALY rate (years per 100.000 workers) varies from 3,190 years in WPRO to 4,397 years in SEARO (3,127 in the EU28).<br/>Source: ILO, 2017 \r\nThe total cost can be expressed as DALY rate or contribution to work-years lost expressed as percentage equivalent of total GDP (%). In this sense, the workyears loss ranges from 3.19% in WPRO to 4.40% in SEARO.",
+  "L58":"Disability Adjusted Life Years (DALY) is the sum of Years of Life Lost (YLL) due to work-related death and Years Lived with Disability (YLD) due to work-related injury and illness. DALY rate (years per 100.000 workers) varies from 3,190 years in WPRO to 4,397 years in SEARO (3,127 in the EU28). \r\nThe total cost can be expressed as DALY rate or contribution to work-years lost expressed as percentage equivalent of total GDP (%). In this sense, the workyears loss ranges from 3.19% in WPRO to 4.40% in SEARO.<br/>Source: ILO, 2017",
   "L59":"EU countries comparison",
   "L60":"3.1% of the GDP work-years are lost due to work-related injury and illness. The majority is due to work-related illnesses reaching the 3,0% of the GDP workyears.",
   "L61":"See more about the estimates",
@@ -141,5 +141,6 @@
   "L140":"Dummy data Dummy data dsagdsgdffd fdfdhdh fdh fdh hfdhfd. Fdhhfdh fdhfdhfdh fdhfdh.<br/>Source: ILO, 2017",
   "L141":"DALY",
   "L142":"DALY",
-  "L143":"See more about work-related illnesses groups in the WHO regions"
+  "L143":"See more about work-related illnesses groups in the WHO regions",
+  "L144":"Global regions"
 }
