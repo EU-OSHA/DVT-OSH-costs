@@ -134,7 +134,11 @@
   }
   .chart1-section-first{
     text-align: center;
-    margin-top: 2rem;
+    padding: 2rem 0;
+    background: #FFF;
+    width: 60%;
+    margin: auto;
+    border-radius: 8px 8px 0 0;
     p{
       margin: 0;
     }
@@ -145,7 +149,11 @@
   }
   .chart2-section-first{
     text-align: center;
-    margin-top: 7rem;
+    background: #FFF;
+    padding: 7rem 0 2rem;
+    width: 60%;
+    margin: auto;
+    border-radius:0 0  8px 8px ;
     p{
       margin: 0;
     }

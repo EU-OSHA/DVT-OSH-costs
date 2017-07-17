@@ -309,10 +309,12 @@
 }
 .modal {
 	.modal-body{
-		svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
-			transform: translate(0px,-11px) !important;
-			-webkit-transform: translate(0px,-11px) !important;
-			-ms-transform: translate(0px,-11px) !important;
+		.zylk-chart[type="pie"]{
+			svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+				transform: translate(0px,-11px) !important;
+				-webkit-transform: translate(0px,-11px) !important;
+				-ms-transform: translate(0px,-11px) !important;
+			}
 		}
 	}
 }

@@ -93,6 +93,7 @@
   }
   div[id^=zylk_bar_chart]{
     zoom: 0.928;
+    -moz-transform: scale(0.928);
   }
   .chart-legend {
     padding: 20px 20px !important;
