@@ -25,6 +25,8 @@
         "valuesColor": "gray"
     },
 
+    "chartSecondaryColor":"#A6D0D0",
+
     "illnessColors": {
       "Cancer": "#449FA2",
       "MSD": "#F2C466",

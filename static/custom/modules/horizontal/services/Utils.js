@@ -56,6 +56,18 @@ define(function (require) {
              * @description
              * My Description rules
              */
+             getChartSecondaryColor: function() {
+                return colors.chartSecondaryColor;
+             },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
             getGroupColor: function (group) {
                 switch (group) {
                     case '1':

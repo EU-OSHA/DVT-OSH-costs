@@ -93,8 +93,8 @@ define(function (require) {
             //0 - Mortality
             {
                 color1: dvtUtils.getColorCountry(-1),
-                color2: dvtUtils.getColorCountry(0),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getColorCountry(0)),
+                color2: dvtUtils.getChartSecondaryColor(),
+                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getChartSecondaryColor()),
             },
             // 1 - Years of Life Lost
             {
