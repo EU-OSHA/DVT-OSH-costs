@@ -28,6 +28,14 @@
       }
     }
   }
+  .section-first-home{
+    .chart1-section-first {
+      width: 100%;
+    }
+    .chart2-section-first{
+      width: 100%;
+    }
+  }
 }
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
   .page-header {
@@ -60,7 +68,6 @@
       }
     }
   }
-
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -623,6 +630,15 @@
         margin: 30px auto 20px !important;
         float: none;
         text-align: center;
+      }
+    }
+    .footer-logotypes {
+      padding: 2rem 0;
+      margin: 0;
+      li {
+        width: 45%;
+        padding: 0;
+        margin: 1rem 0;
       }
     }
   }

@@ -75,6 +75,7 @@
                 li.zoom-text{
                     span {
                         display: inline-block;
+                        vertical-align: sub;
                         a{
                             display: block;
                             font-weight: bold;
@@ -321,10 +322,10 @@ ul.navbar-nav {
 #google_translate_element_wrapper {
     text-align: right;
     z-index: 21 !important;
-    margin: 0px 40px 0em 0;
+    margin: 0px 3rem 0em 0;
     position: fixed;
     right: 0px;
-    top:13px;
+    top:1.45rem;
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
