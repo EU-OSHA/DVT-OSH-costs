@@ -310,6 +310,7 @@ gulp.task('seo', function () {
             'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + ' home.html',     
 
             'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'global-estimates global-estimates.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'global-analysis-illness global-analysis-illness.html',
             'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'eu-analysis-illness eu-analysis-illness.html',
             'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'about-estimates about-estimates.html',
 
