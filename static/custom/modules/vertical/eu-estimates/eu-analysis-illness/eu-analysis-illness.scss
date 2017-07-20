@@ -150,8 +150,12 @@
             background: transparent !important;
           }
           .backGraps{
-            zoom: 0.75;
-            -moz-transform: scale(0.75);
+            svg{
+              //zoom: 0.75;
+              -moz-transform: scale(0.75);
+              -webkit-transform: scale(0.75);
+              transform: scale(0.75);
+            }
           }
           h2{
             text-align: center;

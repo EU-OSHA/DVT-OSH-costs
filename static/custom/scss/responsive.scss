@@ -513,8 +513,12 @@
           float: none;
           text-align: center;
           .backGraps {
-            zoom:1;
-            -moz-transform: scale(1);
+            svg{
+              //zoom:1;
+              -moz-transform: scale(1);
+              -webkit-transform: scale(1);
+              transform: scale(1);
+            }
           }
         }
         ul.legend-list {
