@@ -336,7 +336,7 @@ define(function (require) {
                         axisBandSizeRatio: 0.6,
                         //show values
                         valuesVisible: false,
-                        valuesMask: attributes.valuesMask || '{series}',
+                        valuesMask: attributes.valuesMask || '{series}/2',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
                         valuesOptimizeLegibility: true,
                         valuesNormalized: false,
@@ -519,10 +519,21 @@ define(function (require) {
                         definition.chartDefinition.valuesFont= '20px sans-serif';
                     }else {
                         definition.chartDefinition.valuesFont= '14px sans-serif';
-                    }                    
+                    }
+                    definition.chartDefinition.format = {
+                        percent: "#%"
+                    };
+                    definition.chartDefinition.dimensions= {
+                        value: {
+                            format: {
+                                number: "#.00",
+                                percent: "#%"
+                            }
+                        }
+                    };                 
                     definition.chartDefinition.valuesOverflow= 'trim';
                     definition.chartDefinition.label_textStyle = 'black';
-                    definition.chartDefinition.valuesMask= '{value}%';
+                    definition.chartDefinition.valuesMask= '{value.percent}';
                     definition.chartDefinition.label_textAngle= 0;
                 }
 
