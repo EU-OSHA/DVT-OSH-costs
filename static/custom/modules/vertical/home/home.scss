@@ -108,7 +108,7 @@
       width: 40px;
       .icon-prev, .icon-next, .prev, .next {
         top:50%;
-        position: relative;
+        position: absolute;
         color: $subheader;
       }
     }

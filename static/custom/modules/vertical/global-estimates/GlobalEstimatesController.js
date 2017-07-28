@@ -126,7 +126,7 @@ define(function (require) {
             if (angular.element($window).width() != width) {
                 width = angular.element($window).width();
                 $state.reload();
-            }            
+            }
         });
 
         $('#carouselCountries').on('slid.bs.carousel', function () {

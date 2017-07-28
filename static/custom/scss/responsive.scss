@@ -58,7 +58,7 @@
     }
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
   .ilo-header{
     #home-cover {
       p.title-banner {
@@ -103,7 +103,7 @@
     }
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
   #not-home-cover {
     margin-top: 5px !important;
     background-size: cover !important;
@@ -194,7 +194,7 @@
   }
 
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
   body{
     padding-top: 80px;
   }
@@ -224,7 +224,7 @@
   /** HOME **/
   #carouselHome {
     //min-height: 330px;
-    min-height: auto !important;
+    min-height: 1% !important;
     .carousel-inner {
       li.item {
         width: 100% !important;
@@ -461,6 +461,7 @@
           picture {
             width: 100% !important;
             float: none !important;
+            margin-top: 4rem !important;
           }
           p.carousel-note {
             padding: 0 5% !important;
@@ -519,6 +520,8 @@
       position: initial;
       .chart-analysis-illnesses-box {
         border-bottom: 0 !important;
+        -webkit-transition:none;
+        transition: none;
         h2 {
           width: 100%;
           float: none;
@@ -716,10 +719,10 @@
     }
     .carousel-control{
       .prev{
-        top: 500px !important;
+        top: 50% !important;
       }
       .next{
-        top: 500px !important;
+        top: 50% !important;
       }
     }
   }
