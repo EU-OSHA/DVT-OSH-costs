@@ -193,7 +193,7 @@ define(function (require) {
                         $log.debug('searchInput free text: ' + searchInput);
 
                         var queryFunction = dataService[$attrs.searchQuery];
-                        if ($scope.searchTitle) {
+                        /*if ($scope.searchTitle) {
                             $scope.searchTitle = false;
                             queryFunction = dataService[$attrs.titleQuery];
                         }else if ($scope.query != '') { // Change URL
@@ -204,7 +204,7 @@ define(function (require) {
                             href = href + '?search=' + $scope.query;
                             href = encodeURI(href);
                             window.location.href = href;
-                        }
+                        }*/
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
