@@ -61,10 +61,14 @@ define(function (require) {
 
         $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
 
+        var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {
-            $state.reload();
+            if (angular.element($window).width() != width) {
+                width = angular.element($window).width();
+                $state.reload();
 
-            $scope.number = 1;
+                $scope.number = 1;
+            }            
         });
 
         $scope.stories = [

@@ -121,8 +121,12 @@ define(function (require) {
         $scope.lastGraphWidth = $(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
 
+        var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {
-            $state.reload();            
+            if (angular.element($window).width() != width) {
+                width = angular.element($window).width();
+                $state.reload();
+            }            
         });
 
         $('#carouselCountries').on('slid.bs.carousel', function () {
