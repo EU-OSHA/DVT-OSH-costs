@@ -177,6 +177,7 @@
   #google_translate_element_wrapper {
     top: 0px;
     right:0;
+    z-index: 100000 !important;
   }
   .ilo-header {
     #containerMenu {
@@ -254,8 +255,8 @@
         }
       }
       .modal-body{
-        img{
-          width: 100%;
+        > img{
+          width: 100% !important;
           padding: 1%;
         }
       }
@@ -263,7 +264,16 @@
       }
     }
   }
-
+  .compare-buttons{
+    .compare-buttons-list{
+      li, li:last-child {
+        margin-right: 0px;
+        margin: 2rem auto;
+        width: 90%;
+        display: block;
+      }
+    }
+  }
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -290,8 +300,8 @@
     .compare-buttons{
       .compare-buttons-list{
         li {
-          margin-right: 2%;
-          width: 48%;
+          width: 90%;
+          margin:2rem auto !important;
         }
       }
     }
@@ -314,6 +324,17 @@
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix{
       top: 90px;
+      ul.legend-list {
+        width: 63% !important;
+        float: right;
+      }
+      h2{
+        margin-top: 0;
+        width: 63% !important;
+      }
+      .zylk-chart {
+        width: 35% !important;
+      }
     }
     .chart-analysis-illnesses {
       .chart-analysis-illnesses-box{
@@ -390,7 +411,7 @@
   }
   .modal-dialog {
     width: 98%;
-    height: 98%;
+    height:auto;
     padding: 1%;
     margin: 1%;
   }
@@ -591,7 +612,32 @@
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     margin-top:4rem !important;
   }
-
+  .countries-comparison{
+    .modal{
+      &.in{
+        .modal-dialog{
+          height: auto;
+          padding: 0;
+          .modal-content{
+            margin: 5px;
+            .modal-body{
+              padding:0;
+              > img{
+                width: 100%;
+                padding:0;
+              }
+              p{
+                padding:2%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dvt-modal .modal-wrapper {
+    padding: 0px;
+  }
   // GLOBAL ESTIMATES
   .global-estimates-countries-regions {
     p.countries-regions-text {
@@ -679,8 +725,10 @@
   }
   .ilo-header {
     #home-cover{
+      height: 23.1rem !important;
       p.title-banner{
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+        width: auto;
       }
     }
     #not-home-cover {
@@ -758,8 +806,37 @@
       }
     }
   }
-}
 
+  .osha-global-estimates-wrapper .carousel-control.right {
+    left: 90.5%;
+  }
+  .global-estimates-countries-regions{
+    .countries-regions-select{
+      input {
+        width: 70% !important;
+      }
+    }
+  }
+
+  .modal-dialog .modal-content .modal-body img{
+    width: 100%;
+    background: #FFF;
+    padding: 2rem 0;
+    margin: auto;
+  }
+  .ilo-container-footer{
+    .footer-logotypes{
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width:340px) {
+  .osha-global-estimates-wrapper .carousel-control.right {
+    left: 90.5%;
+  }
+}
 
 /* only for IE11
 @media screen and (min-width :1440px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :1440px){

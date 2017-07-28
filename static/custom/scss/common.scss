@@ -334,6 +334,12 @@ div.contextual-menu > div.dropdown {
     }
   }
 }
+.modal-backdrop{
+  z-index: 999999 !important;
+}
+.modal {
+  z-index: 1000000 !important;
+}
 .dvt-modal .pyramid{
   clear: both;
   height: auto !important;
@@ -597,7 +603,7 @@ div.blockUIDefaultImg:before {
   padding: 20px 20px;
   font-size: 14px;
   overflow: auto;
-  z-index: 100000;
+  z-index: 100001;
   position: fixed;
   top: 0;
   color: #000;
