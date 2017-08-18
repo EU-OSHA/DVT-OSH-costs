@@ -28,7 +28,7 @@
                     </li>
                 </ol>
                 <div class="global-estimates-countries-regions">
-                    <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
+                    <p data-ng-bind-html="to_trusted(i18n.L44)" class="countries-regions-text"></p>
                     <div class="countries-regions-select">
                         <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countries">
                             <option value="" disabled selected hidden>{{i18n_global.Select}}</option>

@@ -42,7 +42,7 @@
   "L41":"Years of life lost",
   "L42":"Years of Life Lost vs Years Lived with Disability",
   "L43":"Total cost",
-  "L44":"What <a data-toggle=\\\"modal\\\" data-target=\\\"#modalChart\\\" data-ng-click=\\\"modal('slide',$index)\\\">region</a> is each country in?",
+  "L44":"What <a data-toggle='modal' data-target='#modalChart' data-ng-click='modal(\"slide\",$index)'>region</a> is each country in?",
   "L45":"See more about the situation in the European countries",
   "L46":"See more about work-related illnesses groups in the WHO regions",
   "L47":"Mortality: deaths per 100,000 workers",

@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, GlobalEstimatesService, dvtUtils, dataService, plotsProvider, $document, configService) {
+    function controller($scope, $window, $stateParams, $state, $log, GlobalEstimatesService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Global Estimates";
 
         // CDA
@@ -160,10 +160,15 @@ define(function (require) {
                 }
             } 
         });
+
+        $scope.to_trusted = function(html_code) {
+            return $sce.trustAsHtml(html_code);
+        }
+
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalEstimatesService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalEstimatesService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
     
 });
