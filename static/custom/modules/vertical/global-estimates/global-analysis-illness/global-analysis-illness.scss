@@ -45,18 +45,18 @@
           //left: 30px;
           width: 30px;
           height: 30px;
-          border: 1px solid #ccc;
+          //border: 1px solid #ccc;
           -webkit-border-radius: 30px;
           -moz-border-radius: 30px;
           border-radius: 30px;
           overflow: hidden;
           a{
             background: #FFF;
-            padding: 0.3rem 1rem;
+            padding:1px;
             display: block;
             color: #666;
             &:hover{
-              background: #666;
+              background: #f2f2f2;
               color: #FFFFFF;
             }
           }
