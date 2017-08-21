@@ -336,7 +336,7 @@ define(function (require) {
                         axisBandSizeRatio: 0.6,
                         //show values
                         valuesVisible: false,
-                        valuesMask: attributes.valuesMask || '{series}/2',
+                        valuesMask: attributes.valuesMask || '{series}',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
                         valuesOptimizeLegibility: true,
                         valuesNormalized: false,
@@ -533,7 +533,14 @@ define(function (require) {
                     };                 
                     definition.chartDefinition.valuesOverflow= 'trim';
                     definition.chartDefinition.label_textStyle = 'black';
-                    definition.chartDefinition.valuesMask= '{value.percent}';
+                    //Solve problem when maximizing chart and percentage changing
+                    if (!scope.isMaximized) {
+                        definition.chartDefinition.valuesMask= '{value.percent}';    
+                    }else {
+                        definition.chartDefinition.valuesMask = '{value}%';
+
+                    }
+                    
                     definition.chartDefinition.label_textAngle= 0;
                 }
 
