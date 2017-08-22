@@ -78,17 +78,27 @@
       }
       .carousel-control{
         &.left {
-          left: -25px !important;
+          left: -26px !important;
           i{
             top: 370px;
           }
         }
         &.right {
-          left: 97.5%;
+          left: 93.5%;
           i{
             top: 370px;
           }
         }
+      }
+    }
+  }
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -42px !important;
+      }
+      &.right {
+        left: 99.5%;
       }
     }
   }
@@ -306,6 +316,7 @@
       }
     }
   }
+
   .osha-analysis-illnesses{
     .chart-analysis-illnesses{
       .chart-analysis-illnesses-box{
@@ -400,6 +411,19 @@
     }
   }
 } /** end media query 768 - 1024 portrait **/
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -33px !important;
+      }
+      &.right {
+        left: 98%;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width:767px){
   #google_translate_element_wrapper {
@@ -503,7 +527,16 @@
       }
     }
   }
-
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -33px;
+      }
+      &.right {
+        left: 98%;
+      }
+    }
+  }
 
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix ~ .compare-buttons {
@@ -747,7 +780,10 @@
   .osha-global-estimates-wrapper{
     .carousel-control{
       &.left{
-        left: -25px;
+        left: -27px;
+      }
+      &.right {
+        left: 96%;
       }
     }
     .carousel-countries{

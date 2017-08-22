@@ -10,6 +10,7 @@
 		margin-top: 4rem;
 		width:100%;
 		z-index: 2;
+		cursor: default;
 		.global-estimates-countries-regions{
 			background: #F6F6F6;
 			border: 1px solid #EAEAEA;
@@ -65,7 +66,7 @@
 					border-radius: 30px;
 					overflow: hidden;
 					a{
-						background: #FFF;
+						background: transparent;
 						padding:1px;
 						display: block;
 						color: #666;
