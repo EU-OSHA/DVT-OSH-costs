@@ -78,7 +78,7 @@
       }
       .carousel-control{
         &.left {
-          left: -2.5%;
+          left: -25px !important;
           i{
             top: 370px;
           }
@@ -284,7 +284,7 @@
       }
       .carousel-control{
         &.left {
-          left: -2.5%;
+          left: -25px;
           i{
             top: 370px;
           }
@@ -745,6 +745,11 @@
   }
 
   .osha-global-estimates-wrapper{
+    .carousel-control{
+      &.left{
+        left: -25px;
+      }
+    }
     .carousel-countries{
       .global-estimates-countries-regions{
         .countries-regions-select{
@@ -811,7 +816,7 @@
   }
 
   .osha-global-estimates-wrapper .carousel-control.right {
-    left: 90.5%;
+    left: 93.5%;
   }
   .global-estimates-countries-regions{
     .countries-regions-select{
@@ -837,7 +842,7 @@
 }
 @media screen and (max-width:340px) {
   .osha-global-estimates-wrapper .carousel-control.right {
-    left: 90.5%;
+    left: 93.5%;
   }
 }
 
