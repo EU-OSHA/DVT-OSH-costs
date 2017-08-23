@@ -68,7 +68,9 @@ define(function (require) {
             }
         ];
 
-        $('#carouselHome').carousel();
+        $('#carouselHome').carousel({
+            interval: 1000 * 20
+        });
 
         // Charts
         $scope.chartDeath = {
