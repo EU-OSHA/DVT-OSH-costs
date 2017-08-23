@@ -13,9 +13,9 @@
         "tabindex":"2",
         "levels":[
             {
-                "id":"global-estimates",
+                "id":"global-regions",
                 "name":"L144",
-                "sref":"global-estimates",
+                "sref":"global-regions",
                 "accesskey":"G"
             },
             {

@@ -18,16 +18,16 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        $stateProvider.state('global-estimates', {
-            url: "/global-estimates",
+        $stateProvider.state('global-regions', {
+            url: "/global-regions",
             params: {
 
             },
             views: {
                 "content-main": {
-                    templateUrl: configService.getVerticalTplPath("global-estimates", "global-estimates"),
-                    controller: 'GlobalEstimatesController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/global-estimates/GlobalEstimatesController', 'global-estimates', 'GlobalEstimatesController')
+                    templateUrl: configService.getVerticalTplPath("global-estimates/global-regions", "global-regions"),
+                    controller: 'GlobalRegionsController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/global-regions/GlobalRegionsController', 'global-regions', 'GlobalRegionsController')
                 }
             },
             metaTags: {
@@ -56,7 +56,7 @@ define(function (require) {
 
     });
 
-    module.factory('globalEstimatesService', require('vertical/global-estimates/services/GlobalEstimatesService'));
+    module.factory('globalRegionsService', require('vertical/global-regions/services/GlobalRegionsService'));
     module.factory('globalAnalysisIllnessService', require('vertical/global-analysis-illness/services/GlobalAnalysisIllnessService'));
 
     return module;

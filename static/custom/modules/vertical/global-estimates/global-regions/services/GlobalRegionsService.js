@@ -1,7 +1,7 @@
 define (function (require) {
 
     var configService = require('horizontal/config/configService');
-    var GlobalEstimatesService = function (dvtUtils) {
+    var GlobalRegionsService = function (dvtUtils) {
         return {
             getStoryMainPlots: function(pColor) {
 
@@ -59,8 +59,8 @@ define (function (require) {
         };
     };
 
-    GlobalEstimatesService.$inject = ['dvtUtils'];
+    GlobalRegionsService.$inject = ['dvtUtils'];
 
-    return GlobalEstimatesService;
+    return GlobalRegionsService;
 
 });

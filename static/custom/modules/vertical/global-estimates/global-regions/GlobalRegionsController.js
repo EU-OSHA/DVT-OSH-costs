@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name ilo.eu-estimates.controller:GlobalEstimatesController
+ * @name ilo.eu-estimates.controller:GlobalRegionsController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -16,15 +16,15 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, GlobalEstimatesService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
-        $scope.title ="Global Estimates";
+    function controller($scope, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
+        $scope.title ="Global Regions";
 
         // CDA
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
-        $scope.i18n_global = require('json!vertical/global-estimates/i18n');
+        $scope.i18n_global = require('json!vertical/global-regions/i18n');
 
         // Countries Select
         dataService.getCountriesRegion().then(function(dataset) {
@@ -60,16 +60,16 @@ define(function (require) {
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
-        if ($window.location.href.indexOf('global-estimates') > -1){
+        if ($window.location.href.indexOf('global-regions') > -1){
             href = $window.location.href;
         }
 
         // Some graphic is set
-        if (href.indexOf('global-estimates#') > -1) {
-            var selected = href.substr(href.indexOf('global-estimates#'));
-            selected = selected.replace('global-estimates#', '');
+        if (href.indexOf('global-regions#') > -1) {
+            var selected = href.substr(href.indexOf('global-regions#'));
+            selected = selected.replace('global-regions#', '');
 
-            href = href.replace(href.substr(href.indexOf('global-estimates#')),'global-estimates');
+            href = href.replace(href.substr(href.indexOf('global-regions#')),'global-regions');
 
             var items = $('#carouselCountries ul.carousel-inner li.item');
 
@@ -94,25 +94,25 @@ define(function (require) {
             {
                 color1: dvtUtils.getColorCountry(-1),
                 color2: dvtUtils.getChartSecondaryColor(),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getChartSecondaryColor()),
+                plots: GlobalRegionsService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getChartSecondaryColor()),
             },
             // 1 - Years of Life Lost
             {
                 color: dvtUtils.getColorCountry(-1),
-                plots: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
+                plots: GlobalRegionsService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
             },
             // 2 - YLL vs YLD
             {
                 color1: dvtUtils.getColorCountry(-1),
                 color2: dvtUtils.getIllnessColors(2),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+                plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
             },
             // 3 - Total Cost
             {
                 color1: dvtUtils.getIllnessColors(4),
                 color2: dvtUtils.getIllnessColors(3),
-                plots1: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
-                plots2: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
+                plots1: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
+                plots2: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
             }
         ];
 
@@ -168,7 +168,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalEstimatesService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
     
 });

@@ -1,12 +1,14 @@
 {
     "sections": {
         "countries-comparison": "eu-estimates",
-        "eu-analysis-illness": "eu-estimates"
+        "eu-analysis-illness": "eu-estimates",
+        "global-regions": "global-estimates",
+        "global-analysis-illness": "global-estimates"
     },
     "home": "<span>Home</span>",
 
     "_SECCTION-GLOBAL-ESTIMATES": null,
-    "global-estimates":"Global Estimates >> <span>Global Regions</span>",
+    "global-regions":"Global Estimates >> <span>Global Regions</span>",
     "global-analysis-illness":"Global Estimates >> <span>Analysis by illness",
     "_SECCTION-EU-ESTIMATES": null,
     "countries-comparison": "EU estimates >> <span>EU countries comparison<span>",

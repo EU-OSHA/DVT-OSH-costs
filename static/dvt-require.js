@@ -173,10 +173,10 @@
     requirePaths['vertical/eu-estimates/eu-analysis-illness/i18n'] = verticalModules + '/eu-estimates/eu-analysis-illness/eu-analysis-illness-i18n' + suffix + '.json';
 
     /* GLOBAL ESTIMATES */
-    requirePaths['vertical/global-estimates/GlobalEstimatesController'] = verticalModules + '/global-estimates/GlobalEstimatesController' + suffix;
-    requirePaths['vertical/global-estimates/services/GlobalEstimatesService'] = verticalModules + '/global-estimates/services/GlobalEstimatesService' + suffix;
+    requirePaths['vertical/global-regions/GlobalRegionsController'] = verticalModules + '/global-estimates/global-regions/GlobalRegionsController' + suffix;
+    requirePaths['vertical/global-regions/services/GlobalRegionsService'] = verticalModules + '/global-estimates/global-regions/services/GlobalRegionsService' + suffix;
     requirePaths['vertical/global-estimates/global-estimates-module'] = verticalModules + '/global-estimates/global-estimates-module' + suffix;
-    requirePaths['vertical/global-estimates/i18n'] = verticalModules + '/global-estimates/global-estimates-i18n' + suffix + '.json';
+    requirePaths['vertical/global-regions/i18n'] = verticalModules + '/global-estimates/global-regions/global-regions-i18n' + suffix + '.json';
 
     /* GLOBAL ANALYSIS ILLNESS */
     requirePaths['vertical/global-analysis-illness/GlobalAnalysisIllnessController'] = verticalModules + '/global-estimates/global-analysis-illness/GlobalAnalysisIllnessController' + suffix;
