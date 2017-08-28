@@ -65,6 +65,20 @@ define(function (require) {
             $log.warn("getAllLegenddata request fail!");
         });
 
+        $('div#modalChart').click(function() {
+            $('div#modalChart').modal('hide');
+        }).children().click(function(e){
+            if (!$(e.target).is('button') && !$(e.target).is('font')) {
+                if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                    return false;
+                }
+            }else {
+                if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
+                    return false;
+                }
+            } 
+        });
+
         $scope.to_trusted = function(html_code) {
             return $sce.trustAsHtml(html_code);
         }
