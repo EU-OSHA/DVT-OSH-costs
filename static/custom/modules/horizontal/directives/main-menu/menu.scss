@@ -341,9 +341,57 @@ ul.navbar-nav {
             }
             .goog-te-menu-value > span {
                 //display: none;
+                text-decoration: none;
+                top: -4px;
+                position: relative;
             }
         }
     }
+    .google_translate_span{
+        font-size: 11px;
+        position: absolute;
+        left: 27px;
+        top: 22px;
+    }
+    .gtranslator-info {
+        width: 15px;
+        height: 15px;
+        overflow: hidden;
+        display: inline-block;
+        font-size: .8em;
+        vertical-align: middle;
+        line-height: 15px;
+        margin-left: 5px;
+        cursor: pointer;
+        right: 0;
+        top: 22px;
+        position: absolute;
+       &:before {
+            content: "\f059";
+            font-family: "FontAwesome";
+            float: left;
+            font-size: 1.2em;
+            vertical-align: top;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+    }
+}
+.gtranslator-msg{
+    width: 350px;
+    height: 150px;
+    padding: 15px;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 38px;
+    background-color: #FFFFFF;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    right: 28px;
+    z-index: 999999;
+    box-shadow: 0px 0px 4px #aaa;
 }
 .overflowed {
     overflow:auto;
