@@ -23,6 +23,18 @@ define(function (require) {
 
     var i18n = require('json!horizontal/model/literals');
 
+    /*gtranslator info*/
+    var gtranslatorinfo = jQuery(".gtranslator-info");
+    var gtranslatorinfo = gtranslatorinfo.offset();
+    
+    jQuery(".gtranslator-info").mouseover(function(){
+        jQuery("#gTranslate-modal").fadeIn('fast');
+    });
+    jQuery("#gTranslate-modal").mouseleave(function(){
+        jQuery("#gTranslate-modal").fadeOut('fast');
+    });
+    /*end gtranslator*/
+
     /**
      HTMLElement.prototype.click Click event firefox override to map correct click event.
      */
