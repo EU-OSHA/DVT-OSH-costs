@@ -74,7 +74,17 @@ define(function (require) {
         $scope.stories = [
             //0
             {
-                plots: CountriesComparisonService.getStoryMainPlots(),
+                plots: CountriesComparisonService.getStoryMainPlots(dvtUtils.getColorCountry(-1)),
+                color1: dvtUtils.getIllnessColors(2),
+                plots1: CountriesComparisonService.getStoryMainPlots(dvtUtils.getIllnessColors(2)),
+                color2: dvtUtils.getIllnessColors(4),
+                plots2: CountriesComparisonService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
+                color3: dvtUtils.getChartPinkColor(),
+                plots3: CountriesComparisonService.getStoryMainPlots(dvtUtils.getChartPinkColor()),
+                color4: dvtUtils.getChartSecondaryColor(),
+                plots4: CountriesComparisonService.getStoryMainPlots(dvtUtils.getChartSecondaryColor()),
+                color5: dvtUtils.getChartYellowColor(),
+                plots5: CountriesComparisonService.getStoryMainPlots(dvtUtils.getChartYellowColor())
             }
         ];
 

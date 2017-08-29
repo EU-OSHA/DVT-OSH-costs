@@ -68,6 +68,30 @@ define(function (require) {
              * @description
              * My Description rules
              */
+             getChartPinkColor: function() {
+                return colors.chartPink;
+             },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
+             getChartYellowColor: function() {
+                return colors.chartYellow;
+             },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
             getGroupColor: function (group) {
                 switch (group) {
                     case '1':
