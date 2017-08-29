@@ -189,6 +189,9 @@
     right:0;
     z-index: 100000 !important;
   }
+  .gtranslator-msg {
+    top: 22px;
+  }
   .ilo-header {
     #containerMenu {
       .menu-tools-top {
@@ -430,6 +433,7 @@
     top: 0px;
     right: -29px;
   }
+
   .item-print{
     display: none !important;
   }
@@ -742,6 +746,11 @@
 
 
 @media screen and (max-width:600px) {
+  .gtranslator-msg {
+    width: 100%;
+    top: 28px;
+    right: 0;
+  }
   #carouselHome {
     .carousel-chart {
       picture {
@@ -879,6 +888,35 @@
 @media screen and (max-width:340px) {
   .osha-global-estimates-wrapper .carousel-control.right {
     left: 93.5%;
+  }
+
+  #google_translate_element_wrapper {
+    top: -1px;
+    right:0px;
+    #google_translate_element {
+      .goog-te-gadget-simple {
+        .goog-te-menu-value > span {
+          text-decoration: none;
+          top: 0px;
+          position: relative;
+        }
+      }
+    }
+    .google_translate_span{
+      font-size: 11px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+    .gtranslator-info {
+      right: -20px;
+      top: 5px;
+    }
+  }
+  .ilo-header #containerMenu .menu-tools-top {
+    right: 7px;
+    top: 47px;
+    width: auto;
   }
 }
 
