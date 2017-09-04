@@ -3,7 +3,7 @@ define (function (require) {
     var configService = require('horizontal/config/configService');
     var CountriesComparisonService = function (dvtUtils) {
         return {
-            getStoryMainPlots: function() {
+            getStoryMainPlots: function(pColor) {
 
                 var dashboard = this.dashboard;
 
@@ -16,7 +16,7 @@ define (function (require) {
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getColorCountry();
                             }
-                            return dvtUtils.getColorCountry(-1);
+                            return pColor;
                         },
                         bar_strokeStyle: dvtUtils.getColorCountry(0),
                         visualRoles:{

@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name ilo.eu-estimates.controller:GlobalEstimatesController
+ * @name ilo.eu-estimates.controller:GlobalRegionsController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -16,15 +16,15 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, GlobalEstimatesService, dvtUtils, dataService, plotsProvider, $document, configService) {
-        $scope.title ="Global Estimates";
+    function controller($scope, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
+        $scope.title ="Global Regions";
 
         // CDA
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
-        $scope.i18n_global = require('json!vertical/global-estimates/i18n');
+        $scope.i18n_global = require('json!vertical/global-regions/i18n');
 
         // Countries Select
         dataService.getCountriesRegion().then(function(dataset) {
@@ -37,23 +37,6 @@ define(function (require) {
             });
             $scope.countries = countries;
         });
-
-        // TO BE ADDED To the select change event
-        /*$scope.selectChange = function() {
-            var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
-            $('text.label-country').attr('class','');
-            $('rect.label-country').attr('class','');
-            for (var i = 0; i < labels.length; i++) {
-                if ($(labels[i]).text() == $scope.country.region) {
-                    $(labels[i]).attr('class','label-country');
-
-                    if (i < 8) {
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill','red');
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
-                    }
-                }
-            }
-        }*/
 
         // Splits when the indicator has more than 1 split
         $scope.splits = [
@@ -77,16 +60,16 @@ define(function (require) {
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
-        if ($window.location.href.indexOf('global-estimates') > -1){
+        if ($window.location.href.indexOf('global-regions') > -1){
             href = $window.location.href;
         }
 
         // Some graphic is set
-        if (href.indexOf('global-estimates#') > -1) {
-            var selected = href.substr(href.indexOf('global-estimates#'));
-            selected = selected.replace('global-estimates#', '');
+        if (href.indexOf('global-regions#') > -1) {
+            var selected = href.substr(href.indexOf('global-regions#'));
+            selected = selected.replace('global-regions#', '');
 
-            href = href.replace(href.substr(href.indexOf('global-estimates#')),'global-estimates');
+            href = href.replace(href.substr(href.indexOf('global-regions#')),'global-regions');
 
             var items = $('#carouselCountries ul.carousel-inner li.item');
 
@@ -110,26 +93,26 @@ define(function (require) {
             //0 - Mortality
             {
                 color1: dvtUtils.getColorCountry(-1),
-                color2: dvtUtils.getColorCountry(0),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getColorCountry(0)),
+                color2: dvtUtils.getChartSecondaryColor(),
+                plots: GlobalRegionsService.getSplitMainPlots($scope.splits[0], dvtUtils.getColorCountry(-1), dvtUtils.getChartSecondaryColor()),
             },
             // 1 - Years of Life Lost
             {
                 color: dvtUtils.getColorCountry(-1),
-                plots: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
+                plots: GlobalRegionsService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
             },
             // 2 - YLL vs YLD
             {
                 color1: dvtUtils.getColorCountry(-1),
                 color2: dvtUtils.getIllnessColors(2),
-                plots: GlobalEstimatesService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+                plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
             },
             // 3 - Total Cost
             {
                 color1: dvtUtils.getIllnessColors(4),
                 color2: dvtUtils.getIllnessColors(3),
-                plots1: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
-                plots2: GlobalEstimatesService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
+                plots1: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
+                plots2: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
             }
         ];
 
@@ -138,8 +121,12 @@ define(function (require) {
         $scope.lastGraphWidth = $(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
 
+        var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {
-            $state.reload();            
+            if (angular.element($window).width() != width) {
+                width = angular.element($window).width();
+                $state.reload();
+            }
         });
 
         $('#carouselCountries').on('slid.bs.carousel', function () {
@@ -161,22 +148,26 @@ define(function (require) {
 
         $('div#modalChart').click(function() {
             $('div#modalChart').modal('hide');
-            $('#carouselHome').carousel();
         }).children().click(function(e){
-            if (!$(e.target).is('button')) {
+            if (!$(e.target).is('button') && !$(e.target).is('font')) {
                 if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
                     return false;
                 }
             }else {
-                if (!$(e.target).is('button') && !$(e.target).hasClass('close')) {
+                if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
                     return false;
                 }
             } 
         });
+
+        $scope.to_trusted = function(html_code) {
+            return $sce.trustAsHtml(html_code);
+        }
+
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalEstimatesService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
     
 });

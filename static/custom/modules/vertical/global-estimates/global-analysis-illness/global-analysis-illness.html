@@ -42,14 +42,16 @@
 
         <section class="countries-analysis-by-illnesses container">
             <div class="global-estimates-countries-regions">
-                <p data-ng-bind="i18n.L44" class="countries-regions-text"></p>
+                <p data-ng-bind-html="to_trusted(i18n.L44)" class="countries-regions-text"></p>
                 <div class="countries-regions-select">
                     <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countriesSelect">
                         <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
                     </select>
                     <span>:</span>
                     <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
-                    <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)"><i class="fa fa-info" aria-hidden="true"></i><span class="sr-only">{{i18n_global.Info}}</span></a></p>
+                    <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
+                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/regions-icon.svg" width="26" height="26" alt="region icon"><span class="sr-only">{{i18n_global.Info}}</span></a>
+                    </p>
                 </div>
             </div>
 
@@ -336,11 +338,11 @@
         </section>
     </div>
 
-    <section class="container-full back-color ">
+    <!--<section class="container-full back-color ">
         <div class="main-text-global-estimates container">
             <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>
         </div>
-    </section>
+    </section>-->
 
     <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
         <div class="modal-dialog" role="document">

@@ -69,6 +69,7 @@ define(function(require){
             
            // var node = $('#' + scope.id).parents('.dvt-chart')[0];
             $(".dropdown").hide();
+            angular.element(".legend-info").attr("style","display:none");
 
 
             //$log.info(PromiseR);

@@ -68,7 +68,9 @@ define(function (require) {
             }
         ];
 
-        $('#carouselHome').carousel();
+        $('#carouselHome').carousel({
+            interval: 1000 * 20
+        });
 
         // Charts
         $scope.chartDeath = {
@@ -113,12 +115,12 @@ define(function (require) {
             $('div#modalChart').modal('hide');
             $('#carouselHome').carousel();
         }).children().click(function(e){
-            if (!$(e.target).is('button')) {
+            if (!$(e.target).is('button') && !$(e.target).is('font')) {
                 if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
                     return false;
                 }
             }else {
-                if (!$(e.target).is('button') && !$(e.target).hasClass('close')) {
+                if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
                     return false;
                 }
             }            

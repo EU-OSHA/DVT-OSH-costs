@@ -28,6 +28,14 @@
       }
     }
   }
+  .section-first-home{
+    .chart1-section-first {
+      width: 100%;
+    }
+    .chart2-section-first{
+      width: 100%;
+    }
+  }
 }
 @media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
   .page-header {
@@ -50,7 +58,7 @@
     }
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
   .ilo-header{
     #home-cover {
       p.title-banner {
@@ -60,7 +68,6 @@
       }
     }
   }
-
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -71,17 +78,27 @@
       }
       .carousel-control{
         &.left {
-          left: -2.5%;
+          left: -26px !important;
           i{
             top: 370px;
           }
         }
         &.right {
-          left: 97.5%;
+          left: 93.5%;
           i{
             top: 370px;
           }
         }
+      }
+    }
+  }
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -42px !important;
+      }
+      &.right {
+        left: 99.5%;
       }
     }
   }
@@ -96,7 +113,7 @@
     }
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
   #not-home-cover {
     margin-top: 5px !important;
     background-size: cover !important;
@@ -170,6 +187,10 @@
   #google_translate_element_wrapper {
     top: 0px;
     right:0;
+    z-index: 100000 !important;
+  }
+  .gtranslator-msg {
+    top: 22px;
   }
   .ilo-header {
     #containerMenu {
@@ -186,7 +207,7 @@
   }
 
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
   body{
     padding-top: 80px;
   }
@@ -216,7 +237,7 @@
   /** HOME **/
   #carouselHome {
     //min-height: 330px;
-    min-height: auto !important;
+    min-height: 1% !important;
     .carousel-inner {
       li.item {
         width: 100% !important;
@@ -247,8 +268,8 @@
         }
       }
       .modal-body{
-        img{
-          width: 100%;
+        > img{
+          width: 100% !important;
           padding: 1%;
         }
       }
@@ -256,7 +277,16 @@
       }
     }
   }
-
+  .compare-buttons{
+    .compare-buttons-list{
+      li, li:last-child {
+        margin-right: 0px;
+        margin: 2rem auto;
+        width: 90%;
+        display: block;
+      }
+    }
+  }
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -267,7 +297,7 @@
       }
       .carousel-control{
         &.left {
-          left: -2.5%;
+          left: -25px;
           i{
             top: 370px;
           }
@@ -283,12 +313,13 @@
     .compare-buttons{
       .compare-buttons-list{
         li {
-          margin-right: 2%;
-          width: 48%;
+          width: 90%;
+          margin:2rem auto !important;
         }
       }
     }
   }
+
   .osha-analysis-illnesses{
     .chart-analysis-illnesses{
       .chart-analysis-illnesses-box{
@@ -307,6 +338,17 @@
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix{
       top: 90px;
+      ul.legend-list {
+        width: 63% !important;
+        float: right;
+      }
+      h2{
+        margin-top: 0;
+        width: 63% !important;
+      }
+      .zylk-chart {
+        width: 35% !important;
+      }
     }
     .chart-analysis-illnesses {
       .chart-analysis-illnesses-box{
@@ -372,18 +414,32 @@
     }
   }
 } /** end media query 768 - 1024 portrait **/
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -33px !important;
+      }
+      &.right {
+        left: 98%;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width:767px){
   #google_translate_element_wrapper {
     top: 0px;
     right: -29px;
   }
+
   .item-print{
     display: none !important;
   }
   .modal-dialog {
     width: 98%;
-    height: 98%;
+    height:auto;
     padding: 1%;
     margin: 1%;
   }
@@ -433,6 +489,7 @@
           picture {
             width: 100% !important;
             float: none !important;
+            margin-top: 4rem !important;
           }
           p.carousel-note {
             padding: 0 5% !important;
@@ -474,7 +531,16 @@
       }
     }
   }
-
+  .osha-global-estimates-wrapper {
+    .carousel-control{
+      &.left {
+        left: -33px;
+      }
+      &.right {
+        left: 98%;
+      }
+    }
+  }
 
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix ~ .compare-buttons {
@@ -491,6 +557,8 @@
       position: initial;
       .chart-analysis-illnesses-box {
         border-bottom: 0 !important;
+        -webkit-transition:none;
+        transition: none;
         h2 {
           width: 100%;
           float: none;
@@ -506,7 +574,12 @@
           float: none;
           text-align: center;
           .backGraps {
-            zoom:1;
+            svg{
+              //zoom:1;
+              -moz-transform: scale(1);
+              -webkit-transform: scale(1);
+              transform: scale(1);
+            }
           }
         }
         ul.legend-list {
@@ -579,7 +652,32 @@
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     margin-top:4rem !important;
   }
-
+  .countries-comparison{
+    .modal{
+      &.in{
+        .modal-dialog{
+          height: auto;
+          padding: 0;
+          .modal-content{
+            margin: 5px;
+            .modal-body{
+              padding:0;
+              > img{
+                width: 100%;
+                padding:0;
+              }
+              p{
+                padding:2%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dvt-modal .modal-wrapper {
+    padding: 0px;
+  }
   // GLOBAL ESTIMATES
   .global-estimates-countries-regions {
     p.countries-regions-text {
@@ -624,6 +722,15 @@
         text-align: center;
       }
     }
+    .footer-logotypes {
+      padding: 2rem 0;
+      margin: 0;
+      li {
+        width: 45%;
+        padding: 0;
+        margin: 1rem 0;
+      }
+    }
   }
   // glossary
   .glossary {
@@ -639,6 +746,11 @@
 
 
 @media screen and (max-width:600px) {
+  .gtranslator-msg {
+    width: 100%;
+    top: 28px;
+    right: 0;
+  }
   #carouselHome {
     .carousel-chart {
       picture {
@@ -649,17 +761,19 @@
     }
     .carousel-control{
       .prev{
-        top: 500px !important;
+        top: 50% !important;
       }
       .next{
-        top: 500px !important;
+        top: 50% !important;
       }
     }
   }
   .ilo-header {
     #home-cover{
+      height: 23.1rem !important;
       p.title-banner{
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+        width: auto;
       }
     }
     #not-home-cover {
@@ -673,6 +787,14 @@
   }
 
   .osha-global-estimates-wrapper{
+    .carousel-control{
+      &.left{
+        left: -27px;
+      }
+      &.right {
+        left: 96%;
+      }
+    }
     .carousel-countries{
       .global-estimates-countries-regions{
         .countries-regions-select{
@@ -737,8 +859,66 @@
       }
     }
   }
-}
 
+  .osha-global-estimates-wrapper .carousel-control.right {
+    left: 93.5%;
+  }
+  .global-estimates-countries-regions{
+    .countries-regions-select{
+      input {
+        width: 70% !important;
+      }
+    }
+  }
+
+  .modal-dialog .modal-content .modal-body img{
+    width: 100%;
+    background: #FFF;
+    padding: 2rem 0;
+    margin: auto;
+  }
+  .ilo-container-footer{
+    .footer-logotypes{
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width:340px) {
+  .osha-global-estimates-wrapper .carousel-control.right {
+    left: 93.5%;
+  }
+
+  #google_translate_element_wrapper {
+    top: -1px;
+    right:0px;
+    #google_translate_element {
+      .goog-te-gadget-simple {
+        .goog-te-menu-value > span {
+          text-decoration: none;
+          top: 0px;
+          position: relative;
+        }
+      }
+    }
+    .google_translate_span{
+      font-size: 11px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+    .gtranslator-info {
+      right: -20px;
+      top: 5px;
+    }
+  }
+  .ilo-header #containerMenu .menu-tools-top {
+    right: 7px;
+    top: 47px;
+    width: auto;
+  }
+}
 
 /* only for IE11
 @media screen and (min-width :1440px) and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width :1440px){

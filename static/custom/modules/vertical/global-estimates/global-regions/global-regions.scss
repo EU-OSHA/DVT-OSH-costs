@@ -10,6 +10,7 @@
 		margin-top: 4rem;
 		width:100%;
 		z-index: 2;
+		cursor: default;
 		.global-estimates-countries-regions{
 			background: #F6F6F6;
 			border: 1px solid #EAEAEA;
@@ -59,18 +60,18 @@
 					//left: 30px;
 					width: 30px;
 					height: 30px;
-					border: 1px solid #ccc;
+					//border: 1px solid #ccc;
 					-webkit-border-radius: 30px;
 					-moz-border-radius: 30px;
 					border-radius: 30px;
 					overflow: hidden;
 					a{
-						background: #FFF;
-						padding: 0.3rem 1rem;
+						background: transparent;
+						padding:1px;
 						display: block;
 						color: #666;
 						&:hover{
-							background: #666;
+							background: #f2f2f2;
 							color: #FFFFFF;
 						}
 					}
@@ -245,7 +246,7 @@
 			left: 99.5%;
 			i{
 				top: 45%;
-				position: relative;
+				position: absolute;
 				color: $subheader;
 			}
 		}
@@ -254,10 +255,10 @@
 		}
 		&.left{
 			background-image: none;
-			left: -2.5%;
+			left: -42px;
 			i{
 				top: 45%;
-				position: relative;
+				position: absolute;
 				color: $subheader;
 			}
 		}
@@ -309,10 +310,12 @@
 }
 .modal {
 	.modal-body{
-		svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
-			transform: translate(0px,-11px) !important;
-			-webkit-transform: translate(0px,-11px) !important;
-			-ms-transform: translate(0px,-11px) !important;
+		.zylk-chart[type="pie"]{
+			svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+				transform: translate(0px,-11px) !important;
+				-webkit-transform: translate(0px,-11px) !important;
+				-ms-transform: translate(0px,-11px) !important;
+			}
 		}
 	}
 }

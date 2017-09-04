@@ -69,6 +69,7 @@
         transform: translateY(80%);
         -webkit-transform: translateY(80%);
         -ms-transform: translateY(80%);
+        min-height: 100%;
         li{
           margin: 0px 0 10px;
           .legend-data{
@@ -150,7 +151,12 @@
             background: transparent !important;
           }
           .backGraps{
-            zoom: 0.75;
+            svg{
+              //zoom: 0.75;
+              -moz-transform: scale(0.75);
+              -webkit-transform: scale(0.75);
+              transform: scale(0.75);
+            }
           }
           h2{
             text-align: center;
@@ -315,7 +321,7 @@
   //margin-top: 220px;
 }
 .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
-  margin-top: 280px;
+  margin-top: 37rem;
 }
 
 .chart-analysis-illnesses.affix {

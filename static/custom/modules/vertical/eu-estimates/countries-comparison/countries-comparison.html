@@ -62,13 +62,13 @@
                                 orientation="{{orientation}}"
                                 axis-fixed-max="4500" step="500"
                                 params="[['pIndicator','17']]"
-                                color-role="series"
+                                color-role="series" colors="[stories[0].color1]"
                                 ortho-axis-title="{{i18n.L120}}"
                                 ortho-axis-title-visible="true"
                                 title="{{i18n.L73}}" id="17"
                                 long-title="{{i18n.L74}}"
                                 max-functional-legend="{{i18n.L75}}"
-                                plots="stories[0].plots"
+                                plots="stories[0].plots1"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind-html="i18n.L75"></p>
@@ -82,13 +82,13 @@
                                 orientation="{{orientation}}"
                                 axis-fixed-max="5500" step="500"
                                 params="[['pIndicator','18']]"
-                                color-role="series"
+                                color-role="series" colors="[stories[0].color2]"
                                 ortho-axis-title="{{i18n.L121}}"
                                 ortho-axis-title-visible="true"
                                 title="{{i18n.L76}}" id="18"
                                 long-title="{{i18n.L77}}"
                                 max-functional-legend="{{i18n.L78}}"
-                                plots="stories[0].plots"
+                                plots="stories[0].plots2"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind-html="i18n.L78"></p>
@@ -102,14 +102,14 @@
                                 orientation="{{orientation}}"
                                 axis-fixed-max="6" step="1"
                                 params="[['pIndicator','19']]"
-                                color-role="series"
+                                color-role="series" colors="[stories[0].color3]"
                                 ortho-axis-title="{{i18n.L122}}"
                                 ortho-axis-title-visible="true"
                                 axis-percent="1"
                                 title="{{i18n.L79}}" id="19"
                                 long-title="{{i18n.L80}}"
                                 max-functional-legend="{{i18n.L81}}"
-                                plots="stories[0].plots"
+                                plots="stories[0].plots3"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind-html="i18n.L81"></p>
@@ -123,14 +123,14 @@
                             orientation="{{orientation}}"
                             axis-fixed-max="0.6" step="0.2"
                             params="[['pIndicator','20']]"
-                            color-role="series"
+                            color-role="series" colors="[stories[0].color4]"
                             ortho-axis-title="{{i18n.L123}}"
                             ortho-axis-title-visible="true"
                             axis-percent="1"
                             title="{{i18n.L82}}" id="20"
                             long-title="{{i18n.L83}}"
                             max-functional-legend="{{i18n.L84}}"
-                            plots="stories[0].plots"
+                            plots="stories[0].plots4"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind-html="i18n.L84"></p>
@@ -144,14 +144,14 @@
                             orientation="{{orientation}}"
                             axis-fixed-max="6" step="1"
                             params="[['pIndicator','21']]"
-                            color-role="series"
+                            color-role="series" colors="[stories[0].color5]"
                             ortho-axis-title="{{i18n.L124}}"
                             ortho-axis-title-visible="true"
                             axis-percent="1"
                             title="{{i18n.L85}}" id="21"
                             long-title="{{i18n.L86}}"
                             max-functional-legend="{{i18n.L87}}"
-                            plots="stories[0].plots"
+                            plots="stories[0].plots5"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
                             <p data-ng-bind-html="i18n.L87"></p>
@@ -174,7 +174,7 @@
     <section class="compare-buttons">
         <ul class="compare-buttons-list  list-inline container">
             <li><a data-ui-sref="eu-analysis-illness" data-ng-bind-html="i18n.L68"></a></li>
-            <li><a data-ui-sref="#" data-ng-bind-html="i18n.L69"></a></li>
+            <li><a data-ui-sref="about-estimates" data-ng-bind-html="i18n.L69"></a></li>
         </ul>
     </section>
 

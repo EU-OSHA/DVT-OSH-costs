@@ -126,7 +126,7 @@ body.hasCookies{
     position: relative;
     width: 125px;
     float: right;
-    right: 28px;
+    right:2.8rem;
   }
 }
 h1, h2, h3, h4, h5, h6 {
@@ -333,6 +333,12 @@ div.contextual-menu > div.dropdown {
       stroke:#FFF;
     }
   }
+}
+.modal-backdrop{
+  z-index: 999999 !important;
+}
+.modal {
+  z-index: 1000000 !important;
 }
 .dvt-modal .pyramid{
   clear: both;
@@ -544,7 +550,7 @@ div.blockUIDefaultImg:before {
   width: 100%;
   padding:1.5em;
   overflow: auto;
-  z-index:9999;
+  z-index:1000001;
   top: 0;
   position: fixed;
   color: #666;
@@ -597,7 +603,7 @@ div.blockUIDefaultImg:before {
   padding: 20px 20px;
   font-size: 14px;
   overflow: auto;
-  z-index: 100000;
+  z-index: 100001;
   position: fixed;
   top: 0;
   color: #000;

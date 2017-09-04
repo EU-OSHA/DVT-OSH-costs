@@ -52,26 +52,6 @@ define(function (require) {
                     $scope.data = [];
                     $scope.elementsStart=1;
                     $scope.elementsEnd=$scope.pageSize;
-
-
-                    // APPLY QUERY VIA URL
-                    /*$scope.query = '';
-                    $scope.searchTitle = false;
-                    var href = $window.location.href;
-                    if (href.indexOf('?title=') > -1) {
-                        $scope.query = href.substring(href.indexOf('?title=')+7);
-                        $scope.query = decodeURI($scope.query);
-                        $scope.searchTitle = true;
-                        $timeout(function() {
-                            angular.element('button#policy-search').triggerHandler('click');
-                        }, 0);
-                    }else if (href.indexOf('?search=') > -1) {
-                        $scope.query = href.substring(href.indexOf('?search=')+8);
-                        $scope.query = decodeURI($scope.query);
-                        $timeout(function() {
-                            angular.element('button#policy-search').triggerHandler('click');
-                        }, 0);
-                    }*/
                     
 
                     /**
@@ -213,7 +193,7 @@ define(function (require) {
                         $log.debug('searchInput free text: ' + searchInput);
 
                         var queryFunction = dataService[$attrs.searchQuery];
-                        if ($scope.searchTitle) {
+                        /*if ($scope.searchTitle) {
                             $scope.searchTitle = false;
                             queryFunction = dataService[$attrs.titleQuery];
                         }else if ($scope.query != '') { // Change URL
@@ -224,7 +204,7 @@ define(function (require) {
                             href = href + '?search=' + $scope.query;
                             href = encodeURI(href);
                             window.location.href = href;
-                        }
+                        }*/
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
@@ -294,14 +274,14 @@ define(function (require) {
                         $scope.search();
                         $scope.currentPage = 0;
 
-                        var href = $window.location.href;
+                        /*var href = $window.location.href;
                         if (href.indexOf('?title=') > -1) {
                             href = href.substring(0, href.indexOf('?title='));
                             window.location.href = href;
                         } else if (href.indexOf('?search=') > -1) {
                             href = href.substring(0, href.indexOf('?search='));
                             window.location.href = href;
-                        }
+                        }*/
 
                       //  $state.transitionTo($attrs.searchState, { }, {notify: false});
 
