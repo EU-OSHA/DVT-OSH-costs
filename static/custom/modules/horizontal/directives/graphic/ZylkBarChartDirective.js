@@ -344,7 +344,7 @@ define(function (require) {
                         label_top: scope.labelTop,
                         legend: attributes.legend === 'true' || false,
                         legendClickMode: attributes.legendClickMode || 'toggleVisible',
-                        legendFont: attributes.legendFont || 'normal 12px "Open Sans"',
+                        legendFont: attributes.legendFont || 'normal 14px "Open Sans"',
                         legendPosition: attributes.legendPos || 'bottom',
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
