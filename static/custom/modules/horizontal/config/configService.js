@@ -24,14 +24,22 @@ define(function (require) {
     var i18n = require('json!horizontal/model/literals');
 
     /*gtranslator info*/
-    var gtranslatorinfo = jQuery(".gtranslator-info");
+    var gtranslatorinfo = $(".gtranslator-info");
     var gtranslatorinfo = gtranslatorinfo.offset();
-    
-    jQuery(".gtranslator-info").mouseover(function(){
-        jQuery("#gTranslate-modal").fadeIn('fast');
+
+    $(document).click(function(e) {
+        if(!$(e.target).closest('#gTranslate-modal').length && !$(e.target).is($('#gTranslate-modal-link'))) {
+            if (!$(e.target).is($('span.gtranslator-info'))) {
+                $("#gTranslate-modal").fadeOut('fast');
+            }
+        }
     });
-    jQuery("#gTranslate-modal").mouseleave(function(){
-        jQuery("#gTranslate-modal").fadeOut('fast');
+    
+    $(".gtranslator-info").mouseover(function(){
+        $("#gTranslate-modal").fadeIn('fast');
+    });
+    $("#gTranslate-modal").mouseleave(function(){
+        $("#gTranslate-modal").fadeOut('fast');
     });
     /*end gtranslator*/
 
