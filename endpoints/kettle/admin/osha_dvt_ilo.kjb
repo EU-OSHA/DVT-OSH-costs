@@ -78,7 +78,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
+      <xloc>80</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -111,7 +111,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>400</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -127,7 +127,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>208</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -158,16 +158,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>624</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
-      <name>Transformation&#x3a; Access Literals to JSON</name>
+      <name>Literals to JSON</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;access_literals_to_json.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;access_literals_to_json_2.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -191,8 +191,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>368</yloc>
+      <xloc>816</xloc>
+      <yloc>256</yloc>
       </entry>
   </entries>
   <hops>
@@ -224,13 +224,13 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Transformation&#x3a; Access Literals to JSON</to>
+      <from>Job&#x3a; Normalize facts_figures</from>
+      <to>Literals to JSON</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

@@ -53,6 +53,17 @@ define(function (require) {
                     $scope.elementsStart=1;
                     $scope.elementsEnd=$scope.pageSize;
                     
+                    $scope.query = '';
+                    var href = $window.location.href;
+                    if (href.indexOf('?term=') > -1) {
+                        $scope.query = href.substring(href.indexOf('?term=')+6);
+                        $scope.query = decodeURI($scope.query);
+                        $scope.searchTitle = true;
+                        $timeout (function() {
+                            angular.element('button#policy-search').triggerHandler('click');
+                        }, 0);
+                    }
+                    
 
                     /**
                      * @ngdoc method
@@ -193,18 +204,10 @@ define(function (require) {
                         $log.debug('searchInput free text: ' + searchInput);
 
                         var queryFunction = dataService[$attrs.searchQuery];
-                        /*if ($scope.searchTitle) {
+                        if ($scope.searchTitle) {
                             $scope.searchTitle = false;
                             queryFunction = dataService[$attrs.titleQuery];
-                        }else if ($scope.query != '') { // Change URL
-                            var href = window.location.href;
-                            if (href.indexOf('?search=') > -1){
-                                href = href.substring(0, href.indexOf('?search='));
-                            }
-                            href = href + '?search=' + $scope.query;
-                            href = encodeURI(href);
-                            window.location.href = href;
-                        }*/
+                        }
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
