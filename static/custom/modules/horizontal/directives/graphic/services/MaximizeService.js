@@ -44,12 +44,7 @@ define(function () {
                         bodyRef.removeClass('ovh');
                     });
 
-                    console.log("DAVID DEV");
-                    console.log(modalInstance);
-
                     $rootScope.$on('$stateChangeStart', function() {
-                        console.log("DAVID DEV");
-                        console.log("STATE CHANGE");
                         modalInstance.close();
                     });
                 };
