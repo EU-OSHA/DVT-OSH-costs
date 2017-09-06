@@ -6,7 +6,7 @@
  */
 define(function () {
 
-    var MaximizeService = function (dvtUtils, $document, $modal, $log, configService, exportService) {
+    var MaximizeService = function (dvtUtils, $document, $modal, $log, configService, exportService, $rootScope) {
 
         var colors = require('json!horizontal/model/colors');
 
@@ -43,6 +43,15 @@ define(function () {
                     //    // Remove "no scroll on background" on dismissal
                         bodyRef.removeClass('ovh');
                     });
+
+                    console.log("DAVID DEV");
+                    console.log(modalInstance);
+
+                    $rootScope.$on('$stateChangeStart', function() {
+                        console.log("DAVID DEV");
+                        console.log("STATE CHANGE");
+                        modalInstance.close();
+                    });
                 };
                 return dvtModal;
             },
@@ -52,7 +61,7 @@ define(function () {
         }
     };
 
-    MaximizeService.$inject = ['dvtUtils', '$document','$modal','$log', 'configService','exportService'];
+    MaximizeService.$inject = ['dvtUtils', '$document','$modal','$log', 'configService','exportService', '$rootScope'];
 
     return MaximizeService;
 })
