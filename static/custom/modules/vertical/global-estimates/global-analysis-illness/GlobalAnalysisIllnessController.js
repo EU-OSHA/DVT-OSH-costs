@@ -68,15 +68,17 @@ define(function (require) {
         $('div#modalChart').click(function() {
             $('div#modalChart').modal('hide');
         }).children().click(function(e){
-            if (!$(e.target).is('button') && !$(e.target).is('font')) {
-                if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
-                    return false;
-                }
-            }else {
-                if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
-                    return false;
-                }
-            } 
+            if (!$(e.target).is('a')) {
+                if (!$(e.target).is('button') && !$(e.target).is('font')) {
+                    if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                        return false;
+                    }
+                }else {
+                    if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
+                        return false;
+                    }
+                }     
+            }            
         });
 
         $scope.to_trusted = function(html_code) {
