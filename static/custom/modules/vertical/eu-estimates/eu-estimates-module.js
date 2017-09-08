@@ -36,6 +36,24 @@ define(function (require) {
             }
         });
 
+        $stateProvider.state('daly-comparison', {
+            url: "/daly-comparison",
+            params: {
+
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("eu-estimates/daly-comparison", "daly-comparison"),
+                    controller: 'DalyComparisonController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/daly-comparison/DalyComparisonController', 'daly-comparison', 'DalyComparisonController')
+                }
+            },
+            metaTags: {
+                title: i18n.L3 +  " - " + i18n.L135,
+                description: i18n.L60,
+            }
+        });
+
         $stateProvider.state('eu-analysis-illness', {
             url: "/eu-analysis-illness",
             params: {
@@ -57,6 +75,7 @@ define(function (require) {
     });
 
     module.factory('countriesComparisonService', require('vertical/countries-comparison/services/CountriesComparisonService'));
+    module.factory('DalyComparisonService', require('vertical/daly-comparison/services/DalyComparisonService'));
     module.factory('pieChartLegendService', require('vertical/eu-analysis-illness/services/PieChartLegendService'));
 
     return module;

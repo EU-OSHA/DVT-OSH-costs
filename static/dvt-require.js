@@ -167,6 +167,10 @@
     requirePaths['vertical/countries-comparison/CountriesComparisonController'] = verticalModules + '/eu-estimates/countries-comparison/CountriesComparisonController' + suffix;
     requirePaths['vertical/countries-comparison/services/CountriesComparisonService'] = verticalModules + '/eu-estimates/countries-comparison/services/CountriesComparisonService' + suffix;
 
+    /* DALY COMPARISON */
+    requirePaths['vertical/daly-comparison/DalyComparisonController'] = verticalModules + '/eu-estimates/daly-comparison/DalyComparisonController' + suffix;
+    requirePaths['vertical/daly-comparison/services/DalyComparisonService'] = verticalModules + '/eu-estimates/daly-comparison/services/DalyComparisonService' + suffix;
+
     /* EU ANALYSIS ILLNESS */
     requirePaths['vertical/eu-analysis-illness/EuAnalysisIllnessController'] = verticalModules + '/eu-estimates/eu-analysis-illness/EuAnalysisIllnessController' + suffix;
     requirePaths['vertical/eu-analysis-illness/services/PieChartLegendService'] = verticalModules + '/eu-estimates/eu-analysis-illness/services/PieChartLegendService' + suffix;

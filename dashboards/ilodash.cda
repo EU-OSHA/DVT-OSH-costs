@@ -22,6 +22,24 @@
        </Query>
    </DataAccess>
 
+   <!-- GET INDICATOR DATA BY SPLIT -->
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataBySplit" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+           <Parameter default="All" name="pSplit" type="String" />
+       </Parameters>
+       <Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+           FROM fact_figures ff
+           INNER JOIN indicators i
+           ON i.INDICATOR_ID = ff.INDICATOR_ID
+           WHERE ff.INDICATOR_ID = ${pIndicator}
+           AND ff.SPLIT_1 = ${pSplit}
+           ORDER BY Measure ASC
+       </Query>
+   </DataAccess>
+
    <!-- GET INDICATOR DATA FOR REGIONS -->
    <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegion" type="sql">
        <Cache duration="3600" enabled="true"/>

@@ -11,8 +11,9 @@
     "global-regions":"Global Estimates >> <span>Global Regions</span>",
     "global-analysis-illness":"Global Estimates >> <span>Analysis by illness",
     "_SECCTION-EU-ESTIMATES": null,
-    "countries-comparison": "EU estimates >> <span>EU countries comparison<span>",
-    "eu-analysis-illness": "EU estimates >> <span>Analysis by illness<span>",
+    "countries-comparison": "EU estimates >> <span>EU countries comparison</span>",
+    "daly-comparison": "EU estimates >> <span>Comparison of the DALY</span>",
+    "eu-analysis-illness": "EU estimates >> <span>Analysis by illness</span>",
 
     "_SECCTION-ABOUT-TOOL": null,
     "about-estimates": "<span>About the estimates</span>",
