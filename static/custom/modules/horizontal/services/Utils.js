@@ -59,19 +59,7 @@ define(function (require) {
              getChartSecondaryColor: function() {
                 return colors.chartSecondaryColor;
              },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.configService#executeFunctionByName
-             * @param {string} carl is awesome
-             * @methodOf dvt.configModule.configService
-             * @description
-             * My Description rules
-             */
-             getChartPinkColor: function() {
-                return colors.chartPink;
-             },
-
+             
             /**
              * @ngdoc method
              * @name dvt.configModule.configService#executeFunctionByName
