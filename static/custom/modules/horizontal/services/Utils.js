@@ -72,6 +72,18 @@ define(function (require) {
                 return colors.chartYellow;
              },
 
+             /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
+             getChartLightYellowColor: function() {
+                return colors.chartLightYellow;
+             },
+
             /**
              * @ngdoc method
              * @name dvt.configModule.configService#executeFunctionByName

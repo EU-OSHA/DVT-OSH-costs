@@ -27,6 +27,7 @@
 
     "chartSecondaryColor":"#A6D0D0",
     "chartYellow":"#FFE300",
+    "chartLightYellow":"FFFF50",
 
     "illnessColors": {
       "Cancer": "#449FA2",

@@ -38,6 +38,35 @@ define(function (require) {
             $scope.countries = countries;
         });
 
+        // Behaviour when Countries Select value changes
+        var color = dvtUtils.getChartYellowColor();
+        var lightColor = dvtUtils.getChartLightYellowColor();
+        var lightBar;
+
+        $scope.selectChange = function() {
+            var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
+            $('rect.label-country').attr('style','');
+
+            $('text.label-country').attr('class','');
+            $('rect.label-country').attr('class','');
+            for (var i = 0; i < labels.length; i++) {
+                if ($(labels[i]).text() == $scope.country.region) {
+                    $(labels[i]).attr('class', 'label-country');
+
+                    if (i < 8) {
+                        console.log($('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').size());
+                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill',color);
+                        lightBar = $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[0];
+                        $(lightBar).css('fill', lightColor);
+                        lightBar = $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[4];
+                        $(lightBar).css('fill', lightColor);
+                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
+                    }
+                }
+            }
+        }
+
+
         // Splits when the indicator has more than 1 split
         $scope.splits = [
             {
