@@ -208,6 +208,12 @@ define(function (require) {
                             $scope.searchTitle = false;
                             queryFunction = dataService[$attrs.titleQuery];
                         }
+                        if (searchInput.indexOf('(') > -1) {
+                            searchInput = searchInput.replace('(', '\\(');
+                        }
+                        if (searchInput.indexOf(')') > -1) {
+                            searchInput = searchInput.replace(')', '\\)');
+                        }
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
