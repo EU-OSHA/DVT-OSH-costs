@@ -6,13 +6,9 @@
       position: relative;
       background: #FFF!important;
       padding: 20px !important;
-      border: 1px solid #EAEAEA;
       border-radius: 8px;
       margin:auto;
       overflow: hidden;
-      -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
-      -moz-box-shadow: 0px 1px 2px 1px #cccccc;
-      box-shadow: 0px 1px 2px 1px #cccccc;
     h2{
       text-align: center;
       width: 100%;
@@ -124,22 +120,23 @@
       top:100px;
       width: 100%;
       height:auto;
+      height: 240px;
       z-index: 9;
       overflow: hidden;
       background:$colorWhite;
       padding:20px 0 0 0 !important;
+      -webkit-box-shadow: 0px 0px 10px 1px #cccccc;
+      -moz-box-shadow: 0px 0px 10px 1px #cccccc;
+      box-shadow: 0px 0px 10px 1px #cccccc;
+      border-width: 0 0 1px 0;
+      border-bottom: 1px solid $border;
 
       .chart-analysis-illnesses-box{
         top:0;
         width:100%;
         border-radius: 0;
-        -webkit-box-shadow: 0px 0px 0px 0px #cccccc;
-        -moz-box-shadow: 0px 0px 0px 0px #cccccc;
-        box-shadow: 0px 0px 0px 0px #cccccc;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        border-width: 0 0 1px 0;
-        border-bottom: 1px solid $border;
         -webkit-transition: width 0.4s;
         transition: width 0.4s;
         .zylk-chart {
@@ -151,6 +148,10 @@
             background: transparent !important;
           }
           .backGraps{
+            div[id*=protovis]{
+              top: -30px !important;
+              position: relative;
+            }
             svg{
               //zoom: 0.75;
               -moz-transform: scale(0.75);
@@ -214,6 +215,12 @@
         -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
         -moz-box-shadow: 0px 1px 2px 1px #cccccc;
         box-shadow: 0px 1px 2px 1px #cccccc;
+        &.selected{
+          border: 1px solid #449FA2 !important;
+          -webkit-box-shadow: 0px 1px 2px 1px #449FA2 !important;
+          -moz-box-shadow: 0px 1px 2px 1px #449FA2 !important;
+          box-shadow: 0px 1px 2px 1px #449FA2 !important;
+        }
         .country-chart{
           padding:0;
         }
@@ -318,10 +325,10 @@
   }
 }
 .chart-analysis-illnesses.affix ~ .compare-buttons{
-  //margin-top: 220px;
+  margin-top: 29rem;
 }
 .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
-  margin-top: 37rem;
+  margin-top: 0rem;
 }
 
 .chart-analysis-illnesses.affix {
