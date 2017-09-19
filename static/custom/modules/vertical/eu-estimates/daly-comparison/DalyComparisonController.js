@@ -79,7 +79,7 @@ define(function (require) {
         ];
 
         $scope.graphWidth = $('li.item.active').width() - 30;
-        $scope.graphHeight = $scope.graphWidth*2/5 < 330? 330: $scope.graphWidth*2/5;
+        $scope.graphHeight = $scope.graphWidth*2/5 < 330? 530: $scope.graphWidth*2/5;
 
         $scope.orientation = $(window).width() > 425? "vertical" : "horizontal";
 
