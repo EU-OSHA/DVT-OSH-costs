@@ -82,8 +82,13 @@ define(function (require) {
         $scope.graphHeight = $scope.graphWidth*2/5 < 330? 330: $scope.graphWidth*2/5;
 
         $scope.orientation = $(window).width() > 425? "vertical" : "horizontal";
-        console.log("DAVID DEV");
-        console.log($scope.orientation);
+
+        $scope.step = {
+            chart1: $(window).width() > 425 ? 1000 : 2500,
+            chart2: $(window).width() > 425 ? 200 : 800,
+            chart3: $(window).width() > 425 ? 200 : 400,
+            chart4: $(window).width() > 425 ? 100 : 200
+        }
 
         var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {
