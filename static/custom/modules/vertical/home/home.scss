@@ -140,23 +140,39 @@
     font-size: 2.8rem;
   }
   .chart1-section-first{
+    /*text-align: center;
+    padding: 2rem 0 2rem 0;
+    background: #FFF;
+    width: 100%;
+    margin: auto;
+    border-radius: 8px 8px 0 0;*/
     text-align: center;
     padding: 2rem 0 2rem 0;
     background: #FFF;
-    width: 60%;
+    width: 50%;
     margin: auto;
     border-radius: 8px 8px 0 0;
+    display: inline-block;
+    float: left;
     p{
       margin: 0;
     }
   }
   .chart2-section-first{
-    text-align: center;
+   /* text-align: center;
     background: #FFF;
     padding: 7rem 0 2rem;
-    width: 60%;
+    width: 100%;
     margin: auto;
-    border-radius:0 0  8px 8px ;
+    border-radius:0 0  8px 8px ;*/
+    text-align: center;
+    background: #FFF;
+    padding: 2rem 0 2rem;
+    width: 50%;
+    margin: auto;
+    border-radius: 0 0 8px 8px;
+    display: inline-block;
+    /* float: left; */
     p{
       margin: 0;
     }

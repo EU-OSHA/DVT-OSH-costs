@@ -27,14 +27,26 @@
     "imageModal":"carrousel-illnesses-injuries-daly-modal.svg",
     "related": "L23"
   },
+  "chartDeathGlobal": {
+    "title": "L26",
+    "message": "L29",
+    "image": "illnesses-injuries-death-global.svg",
+    "imageModal":"illnesses-injuries-death-global-modal.svg"
+  },
+  "chartDalyGlobal": {
+    "title": "L30",
+    "message": "L33",
+    "image": "illnesses-injuries-daly-global.svg",
+    "imageModal":"illnesses-injuries-daly-global-modal.svg"
+  },
     "chartDeath": {
-    "title": "L28",
+    "title": "L27",
     "message": "L29",
     "image": "illnesses-injuries-death.svg",
     "imageModal":"illnesses-injuries-death-modal.svg"
   },
     "chartDaly": {
-    "title": "L32",
+    "title": "L31",
     "message": "L33",
     "image": "illnesses-injuries-daly.svg",
     "imageModal":"illnesses-injuries-daly-modal.svg"

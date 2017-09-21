@@ -73,6 +73,18 @@ define(function (require) {
         });
 
         // Charts
+        $scope.chartDeathGlobal = {
+            title: i18n[i18n_home.chartDeathGlobal.title],
+            text: i18n[i18n_home.chartDeathGlobal.message],
+            image: configService.getImagesPath()+ i18n_home.chartDeathGlobal.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal
+        };
+        $scope.chartDalyGlobal = {
+            title: i18n[i18n_home.chartDalyGlobal.title],
+            text: i18n[i18n_home.chartDalyGlobal.message],
+            image: configService.getImagesPath()+ i18n_home.chartDalyGlobal.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal
+        };
         $scope.chartDeath = {
             title: i18n[i18n_home.chartDeath.title], 
             text: i18n[i18n_home.chartDeath.message], 
@@ -98,8 +110,12 @@ define(function (require) {
             switch (type){
                 case 'chart':
                     if (index == 1){
-                        $scope.modalData = $scope.chartDeath;
+                        $scope.modalData = $scope.chartDeathGlobal;
                     }else if (index == 2) { 
+                        $scope.modalData = $scope.chartDalyGlobal;
+                    }else if (index == 3) {
+                        $scope.modalData = $scope.chartDeath;
+                    }else if (index == 4) {
                         $scope.modalData = $scope.chartDaly;
                     }
                     $scope.modalData.image2 = $scope.modalData.imageModal;
