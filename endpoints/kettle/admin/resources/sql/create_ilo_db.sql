@@ -80,7 +80,10 @@ DROP TABLE IF EXISTS `glossary`;
 CREATE TABLE IF NOT EXISTS `glossary` (
   `TERM_ID` double DEFAULT NULL,
   `TERM_NAME` varchar(255) DEFAULT NULL,
-  `DESCRIPTION` mediumtext
+  `DESCRIPTION` mediumtext,
+  `SYNONYMOUS_1` varchar(255) DEFAULT '',
+  `SYNONYMOUS_2` varchar(255) DEFAULT '',
+  `SYNONYMOUS_3` varchar(255) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
