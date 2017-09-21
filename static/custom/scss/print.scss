@@ -264,4 +264,15 @@
     }
   }
 
+  .backGraps {
+    div[id*=protovis] {
+      left: -50px !important;
+      position: relative;
+    }
+  }
+  .osha-global-estimates-wrapper .carousel-countries .global-estimates-countries-regions p.countries-regions-text {
+    width: 100%;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+  }
 }

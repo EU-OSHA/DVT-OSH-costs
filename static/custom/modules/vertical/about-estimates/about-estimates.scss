@@ -1,0 +1,74 @@
+.about-estimates{
+  margin-bottom: 4rem;
+  h2{
+    margin: 4rem 0 2rem;
+    color: #449FA2;
+    font-size: 3.2rem;
+  }
+  h3{
+    margin: 4rem 0rem 2rem;
+  }
+  sub{
+    bottom: -0.45rem;
+    font-size: 1.1rem;
+  }
+  sup {
+    top: -0.55em;
+    font-size: 1.1rem;
+  }
+  dl{
+    margin: 4rem 2rem;
+    dt{
+      display: inline-block;
+      width: 15%;
+      font-weight: normal;
+    }
+    dd {
+      display: inline-block;
+      width: 84%;
+      margin-bottom: 4rem;
+      vertical-align: text-top;
+    }
+  }
+  .highlight-paragraph{
+    text-align: center;
+    line-height: 3rem;
+    margin: 4rem 0 0;
+  }
+  .without-points{
+    list-style-type: none;
+    padding:0;
+    li{
+      margin:1rem 0;
+      sup{
+        margin-right:0.5rem;
+        &:before{
+          content: '(';
+        }
+        &:after{
+          content: ')';
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 767px) {
+  .about-estimates{
+    dl{
+      margin: 4rem 0rem;
+      dt{
+        display: block;
+        width: 100%;
+        font-weight: bold;
+        padding: 15px 0;
+      }
+      dd {
+        display: block;
+        width: 100%;
+        margin-bottom: 4rem;
+        vertical-align: text-top;
+      }
+    }
+  }
+}
