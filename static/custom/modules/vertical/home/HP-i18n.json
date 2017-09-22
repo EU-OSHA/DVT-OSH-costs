@@ -29,7 +29,7 @@
   },
   "chartDeathGlobal": {
     "title": "L26",
-    "message": "L29",
+    "message": "L33",
     "image": "illnesses-injuries-death-global.svg",
     "imageModal":"illnesses-injuries-death-global-modal.svg"
   },
@@ -41,7 +41,7 @@
   },
     "chartDeath": {
     "title": "L27",
-    "message": "L29",
+    "message": "L33",
     "image": "illnesses-injuries-death.svg",
     "imageModal":"illnesses-injuries-death-modal.svg"
   },
