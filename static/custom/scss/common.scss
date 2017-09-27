@@ -128,6 +128,13 @@ body.hasCookies{
     float: right;
     right:2.8rem;
   }
+  span.google_translate_span {
+    width: 135px;
+    left: 0px !important;
+  }
+  span.gtranslator-info {
+    right: -3em !important;
+  }
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
