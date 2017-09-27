@@ -60,6 +60,7 @@ define(function (require) {
                         $scope.query = decodeURI($scope.query);
                         $scope.searchTitle = true;
                         $timeout (function() {
+                            $scope.searchTitle = true;
                             angular.element('button#policy-search').triggerHandler('click');
                         }, 0);
                     }
