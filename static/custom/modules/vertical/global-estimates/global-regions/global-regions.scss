@@ -200,6 +200,10 @@
 					-webkit-transform: translate(0px,-9px) !important;
 					-ms-transform: translate(0px,-9px) !important;
 				}
+				text.label-country{
+					font-weight: bold !important;
+					fill: #000 !important;
+				}
 			}
 			&.active{
 				width: 100% !important;
@@ -347,7 +351,8 @@
 		.carousel-indicators {
 			min-height: 72px;
 			li {
-				width: 100% !important;
+				width: 90% !important;
+				margin: 10px 0px;
 			}
 		}
 	}
