@@ -417,5 +417,9 @@
 .carousel-inner > .prev.left, .carousel-inner > .prev.left {
 	top:0px;
 }
-
-
+g[transform="translate(5,5)"] > g:nth-child(1) {
+	transform: translate(0px,0px) !important;
+}
+g[transform="translate(5,5)"] > g:nth-child(2) {
+	transform: translate(0px,30px) !important;
+}

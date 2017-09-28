@@ -135,6 +135,9 @@ body.hasCookies{
   span.gtranslator-info {
     right: -3em !important;
   }
+  .gtranslator-msg {
+    top: 199px;
+  }
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
@@ -557,7 +560,7 @@ div.blockUIDefaultImg:before {
   width: 100%;
   padding:1.5em;
   overflow: auto;
-  z-index:1000001;
+  z-index:10000000;
   top: 0;
   position: fixed;
   color: #666;
@@ -661,10 +664,10 @@ p {
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
   background-color: transparent;
-}font-size
+}
 
 .cursor-pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 /** tooltip charts **/
 .tipsy-inner {
