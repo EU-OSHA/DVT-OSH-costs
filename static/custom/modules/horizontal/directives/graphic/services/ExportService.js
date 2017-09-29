@@ -95,6 +95,7 @@ define(function(require){
                      $(".dropdown").show();
                      $("#svg2image").remove();
                      angular.element(".modal svg").removeAttr("style");
+                     angular.element(".legend-info").removeAttr("style");
                  });
              }, function(error) {
 
