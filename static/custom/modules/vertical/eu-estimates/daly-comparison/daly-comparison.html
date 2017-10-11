@@ -24,7 +24,7 @@
                     <li class="item active newClass" data-name="all-work-related-illnesses">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataBySplit" cda="{{::cda }}"
+                                query="{{query}}" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
                                 orientation="{{orientation}}"
                                 axis-fixed-max="5000" step="{{step.chart1}}"
@@ -45,7 +45,7 @@
                     <li class="item newClass"  data-name="cancer">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataBySplit" cda="{{::cda }}"
+                                query="{{query}}" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
                                 orientation="{{orientation}}"
                                 axis-fixed-max="1400" step="{{step.chart2}}"
@@ -66,7 +66,7 @@
                     <li class="item newClass" data-name="msd">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataBySplit" cda="{{::cda }}"
+                                query="{{query}}" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
                                 orientation="{{orientation}}"
                                 axis-fixed-max="1200" step="{{step.chart3}}"
@@ -87,7 +87,7 @@
                     <li class="item newClass" data-name="circulatory">
                         <zylk-bar-chart
                                 data-ng-cloak
-                                query="getIndicatorDataBySplit" cda="{{::cda }}"
+                                query="{{query}}" cda="{{::cda }}"
                                 angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
                                 orientation="{{orientation}}"
                                 axis-fixed-max="800" step="{{step.chart4}}"

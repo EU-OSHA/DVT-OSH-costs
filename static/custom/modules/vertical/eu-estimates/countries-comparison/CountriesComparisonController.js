@@ -60,6 +60,7 @@ define(function (require) {
         $scope.graphHeight = $scope.graphWidth*2/5 < 530? 330: $scope.graphWidth*2/5;
 
         $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
+        $scope.query = $(window).width() > 425 ? "getIndicatorData" : "getIndicatorDataDesc";
 
         var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {

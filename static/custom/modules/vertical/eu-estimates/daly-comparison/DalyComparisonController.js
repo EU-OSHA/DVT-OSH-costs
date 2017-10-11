@@ -82,6 +82,7 @@ define(function (require) {
         $scope.graphHeight = $scope.graphWidth*2/5 < 330? 530: $scope.graphWidth*2/5;
 
         $scope.orientation = $(window).width() > 425? "vertical" : "horizontal";
+        $scope.query = $(window).width() > 425? "getIndicatorDataBySplit" : "getIndicatorDataBySplitDesc";
 
         $scope.step = {
             chart1: $(window).width() > 425 ? 1000 : 2500,
