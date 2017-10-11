@@ -5,9 +5,11 @@
     "image": "carrousel-illnesses-injuries-cost-dollar.svg",
     "image2": "carrousel-illnesses-injuries-cost-dollar-x2.svg",
     "imageModal" : "carrousel-illnesses-injuries-cost-dollar-modal.svg",
+    "image2Modal" : "carrousel-illnesses-injuries-cost-dollar-x2-modal.svg",
     "imageEuro": "carrousel-illnesses-injuries-cost-euros.svg",
     "imageEuro2": "carrousel-illnesses-injuries-cost-euros-x2.svg",
     "imageEuroModal":"carrousel-illnesses-injuries-cost-euros-modal.svg",
+    "imageEuro2Modal":"carrousel-illnesses-injuries-cost-euros-x2-modal.svg",
     "related": "L16",
     "relatedEuro": "L17"
   },
@@ -17,6 +19,7 @@
     "image": "carrousel-illnesses-injuries-death.svg",
     "image2": "carrousel-illnesses-injuries-death-x2.svg",
     "imageModal":"carrousel-illnesses-injuries-death-modal.svg",
+    "image2Modal":"carrousel-illnesses-injuries-death-x2-modal.svg",
     "related": "L20"
   },
   "slider3": {
@@ -25,6 +28,7 @@
     "image": "carrousel-illnesses-injuries-daly.svg",
     "image2": "carrousel-illnesses-injuries-daly-x2.svg",
     "imageModal":"carrousel-illnesses-injuries-daly-modal.svg",
+    "image2Modal":"carrousel-illnesses-injuries-daly-x2-modal.svg",
     "related": "L23"
   },
   "chartDeathGlobal": {

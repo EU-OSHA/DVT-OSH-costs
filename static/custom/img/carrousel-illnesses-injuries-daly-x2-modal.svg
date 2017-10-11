@@ -1047,9 +1047,4 @@
 		</g>
 	</g>
 </g>
-<g id="more">
-	<circle id="more3" fill="none" stroke="#67ABAD" stroke-miterlimit="10" cx="268.453" cy="24.697" r="9.439"/>
-	<rect id="more2" x="267.754" y="20.666" fill="#67ABAD" width="1.291" height="8.121"/>
-	<rect id="more1" x="264.338" y="24.08" fill="#67ABAD" width="8.123" height="1.292"/>
-</g>
 </svg>

@@ -1162,9 +1162,4 @@
 		<path d="M157.842,440.96v-1.188h7.602v1.03l-4.672,10.392h-1.438l4.733-10.234H157.842z"/>
 	</g>
 </g>
-<g id="more">
-	<circle id="more3" fill="none" stroke="#67ABAD" stroke-miterlimit="10" cx="268.453" cy="38.697" r="9.439"/>
-	<rect id="more2" x="267.754" y="34.666" fill="#67ABAD" width="1.291" height="8.121"/>
-	<rect id="more1" x="264.338" y="38.08" fill="#67ABAD" width="8.123" height="1.292"/>
-</g>
 </svg>

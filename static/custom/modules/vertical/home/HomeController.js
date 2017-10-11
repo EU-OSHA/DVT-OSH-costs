@@ -32,7 +32,7 @@ define(function (require) {
                 text: i18n[i18n_home.slider1.relatedEuro],
                 image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
                 image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2,
-                imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,               
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
             },{
                 id: '2',
                 label: i18n.L113,
