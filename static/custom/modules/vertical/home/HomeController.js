@@ -33,13 +33,14 @@ define(function (require) {
                 image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
                 image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2,
                 imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
-            },{
+                image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal,
                 id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
                 image: configService.getImagesPath()+ i18n_home.slider1.image,
                 image2: configService.getImagesPath()+ i18n_home.slider1.image2,
-                imageModal: configService.getImagesPath() + i18n_home.slider1.imageModal
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider1.image2Modal
             }
         ];
 
@@ -52,19 +53,22 @@ define(function (require) {
                 text: $scope.currency.text, 
                 image: $scope.currency.image, 
                 image2: $scope.currency.image2,
-                imageModal: $scope.currency.imageModal
+                imageModal: $scope.currency.imageModal,
+                image2Modal: $scope.currency.image2Modal
             },{
                 title: i18n[i18n_home.slider2.title], 
                 text: i18n[i18n_home.slider2.related], 
                 image: configService.getImagesPath()+ i18n_home.slider2.image, 
                 image2: configService.getImagesPath()+ i18n_home.slider2.image2,
-                imageModal: configService.getImagesPath() + i18n_home.slider2.imageModal
+                imageModal: configService.getImagesPath() + i18n_home.slider2.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider2.image2Modal
             },{
                 title: i18n[i18n_home.slider3.title], 
                 text: i18n[i18n_home.slider3.related], 
                 image: configService.getImagesPath()+ i18n_home.slider3.image, 
                 image2: configService.getImagesPath()+ i18n_home.slider3.image2,
-                imageModal: configService.getImagesPath() + i18n_home.slider3.imageModal
+                imageModal: configService.getImagesPath() + i18n_home.slider3.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider3.image2Modal
             }
         ];
 
@@ -77,25 +81,29 @@ define(function (require) {
             title: i18n[i18n_home.chartDeathGlobal.title],
             text: i18n[i18n_home.chartDeathGlobal.message],
             image: configService.getImagesPath()+ i18n_home.chartDeathGlobal.image,
-            imageModal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal
+            imageModal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal
         };
         $scope.chartDalyGlobal = {
             title: i18n[i18n_home.chartDalyGlobal.title],
             text: i18n[i18n_home.chartDalyGlobal.message],
             image: configService.getImagesPath()+ i18n_home.chartDalyGlobal.image,
-            imageModal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal
+            imageModal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal
         };
         $scope.chartDeath = {
             title: i18n[i18n_home.chartDeath.title], 
             text: i18n[i18n_home.chartDeath.message], 
             image: configService.getImagesPath()+ i18n_home.chartDeath.image,
-            imageModal: configService.getImagesPath() + i18n_home.chartDeath.imageModal
+            imageModal: configService.getImagesPath() + i18n_home.chartDeath.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDeath.imageModal
         };
         $scope.chartDaly = {
             title: i18n[i18n_home.chartDaly.title], 
             text: i18n[i18n_home.chartDaly.message], 
             image: configService.getImagesPath()+ i18n_home.chartDaly.image,
-            imageModal: configService.getImagesPath() + i18n_home.chartDaly.imageModal
+            imageModal: configService.getImagesPath() + i18n_home.chartDaly.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDaly.imageModal
         };
 
         $scope.update = function() {
