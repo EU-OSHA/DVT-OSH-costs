@@ -2,8 +2,8 @@
 <zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
     <section class="container-full back-color ">
         <div class="main-text-eu-estimates container">
-            <p data-ng-bind-html="i18n.L60"></p>
-            <p class="see-more"><a ui-sref="about-estimates" data-ng-bind-html="i18n.L61"></a></p>
+            <p data-ng-bind-html="to_trusted(i18n.L60)"></p>
+            <p class="see-more"><a ui-sref="about-estimates" data-ng-bind-html="to_trusted(i18n.L61)"></a></p>
         </div>
     </section>
 
@@ -14,22 +14,22 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators container eu-estimates-indicators">
                     <li data-target="#carouselCountries" data-slide-to="0" class="active">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L62"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L62)"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="1">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L63"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L63)"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="2">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L64"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L64)"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="3">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L65"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L65)"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="4">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L66"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L66)"></span>
                     </li>
                     <li data-target="#carouselCountries" data-slide-to="5">
-                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="i18n.L67"></span>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L67)"></span>
                     </li>
                 </ol>
                 <!-- Wrapper for slides -->
@@ -51,7 +51,7 @@
                                 plots="stories[0].plots"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L72"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L72)"></p>
                         </div>
                     </li>
                     <li class="item"  data-name="years-lived-disability">
@@ -71,7 +71,7 @@
                                 plots="stories[0].plots1"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L75"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L75)"></p>
                         </div>
                     </li>
                     <li class="item" data-name="total-year-lost">
@@ -91,7 +91,7 @@
                                 plots="stories[0].plots2"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L78"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L78)"></p>
                         </div>
                     </li>
                     <li class="item" data-name="total-workforce-lost">
@@ -112,7 +112,7 @@
                                 plots="stories[0].plots3"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L81"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L81)"></p>
                         </div>
                     </li>
                     <li class="item" data-name="work-related-illnesses">
@@ -133,7 +133,7 @@
                             plots="stories[0].plots4"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L84"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L84)"></p>
                         </div>
                     </li>
                     <li class="item" data-name="occupational-injuries">
@@ -154,7 +154,7 @@
                             plots="stories[0].plots5"
                         ></zylk-bar-chart>
                         <div class="chart-legend">
-                            <p data-ng-bind-html="i18n.L87"></p>
+                            <p data-ng-bind-html="to_trusted(i18n.L87)"></p>
                         </div>
                     </li>
                 </ul>
@@ -173,8 +173,8 @@
 
     <section class="compare-buttons">
         <ul class="compare-buttons-list  list-inline container">
-            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind-html="i18n.L68"></a></li>
-            <li><a data-ui-sref="about-estimates" data-ng-bind-html="i18n.L69"></a></li>
+            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind-html="to_trusted(i18n.L68)"></a></li>
+            <li><a data-ui-sref="about-estimates" data-ng-bind-html="to_trusted(i18n.L69)"></a></li>
         </ul>
     </section>
 

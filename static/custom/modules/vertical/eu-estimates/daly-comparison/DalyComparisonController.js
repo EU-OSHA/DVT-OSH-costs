@@ -25,6 +25,11 @@ define(function (require) {
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
 
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
+
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
         if ($window.location.href.indexOf('daly-comparison') > -1){

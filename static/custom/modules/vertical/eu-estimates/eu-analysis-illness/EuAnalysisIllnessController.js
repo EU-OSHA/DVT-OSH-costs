@@ -16,13 +16,18 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, plotsProvider, mapProvider, $log,configService, $document, $compile) {
+    function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, plotsProvider, mapProvider, $log,configService, $document, $compile, $sce) {
         // CDA
         $scope.cda =  configService.getIloCda();
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
         $scope.i18n_illness = require('json!vertical/eu-estimates/eu-analysis-illness/i18n');
+
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
 
         $scope.dashboard = {
             promises: $scope.promises,
@@ -60,7 +65,7 @@ define(function (require) {
 
     }
     
-    controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile'];
+    controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile', '$sce'];
     return controller;
     
 });

@@ -26,6 +26,11 @@ define(function (require) {
         $scope.i18n = configService.getLiterals();
         $scope.i18n_global = require('json!vertical/global-analysis-illness/i18n');
 
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
+
         // Get chart colors
         $scope.illnessColors = dvtUtils.getIllnessColors();
 
@@ -91,10 +96,6 @@ define(function (require) {
                 }     
             }            
         });
-
-        $scope.to_trusted = function(html_code) {
-            return $sce.trustAsHtml(html_code);
-        }
     }
     
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'globalAnalysisIllnessService', 'plotsProvider', '$document', 'configService', '$sce'];

@@ -26,6 +26,10 @@ define(function (require) {
         $scope.i18n = configService.getLiterals();
 
         $scope.status = 'ready';
+
+        $document.ready(function() {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+        });
     }
     
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];

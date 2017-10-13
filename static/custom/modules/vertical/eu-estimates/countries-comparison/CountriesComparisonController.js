@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
     
-    function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, dvtUtils, dataService, plotsProvider, $document, configService) {
+    function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Countries Comparison";
 
         // CDA
@@ -24,6 +24,11 @@ define(function (require) {
 
         // Literals / i18n
         $scope.i18n = configService.getLiterals();
+
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
 
@@ -106,7 +111,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
     
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'countriesComparisonService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService'];
+    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'countriesComparisonService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
     
 });

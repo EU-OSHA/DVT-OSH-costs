@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
     
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, $sce) {
 
     
         // Literals / i18n
@@ -19,6 +19,11 @@ define(function (require) {
         $scope.i18n = i18n;
         var i18n_home = require('json!vertical/home/i18n');
         $scope.i18n_home = i18n_home;
+
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
         
         $scope.goto = function (estado) {
             $state.go(estado, {});
@@ -151,9 +156,10 @@ define(function (require) {
                 }
             }            
         });
+
        $scope.status = 'ready';
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', '$sce'];
     return controller;
 });

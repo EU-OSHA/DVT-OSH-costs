@@ -26,6 +26,11 @@ define(function (require) {
         $scope.i18n = configService.getLiterals();
         $scope.i18n_global = require('json!vertical/global-regions/i18n');
 
+        $scope.to_trusted = function(html_code) {
+            angular.element('[data-toggle="tooltip"]').tooltip();
+            return $sce.trustAsHtml(html_code);
+        }
+
         // Countries Select
         dataService.getCountriesRegion().then(function(dataset) {
             var countries = {};
@@ -190,10 +195,6 @@ define(function (require) {
                 }     
             }            
         });
-
-        $scope.to_trusted = function(html_code) {
-            return $sce.trustAsHtml(html_code);
-        }
 
         $scope.status = 'ready';
     }
