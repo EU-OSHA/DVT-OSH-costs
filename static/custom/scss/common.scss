@@ -724,3 +724,15 @@ p {
     }
   }
 }
+.tooltip.fade{
+  position: fixed;
+  z-index: 999999999999999999999 !important;
+  min-width: 280px !important;
+  width: 280px !important;
+  .tooltip-inner{
+    text-align: center;
+    border:2px soldi #f00 !important;
+    min-width: 280px !important;
+    max-width: 100% !important;
+  }
+}
