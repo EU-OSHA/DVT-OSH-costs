@@ -15,7 +15,7 @@
  */
 define(function (require) {
     'use strict';
-    
+
     function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, DalyComparisonService, plotsProvider, $document, configService, $sce) {
         $scope.title ="DALY Comparison";
 
@@ -27,6 +27,13 @@ define(function (require) {
 
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="tooltip"]').tooltip();
+                $("a[data-toggle=tooltip]").mouseover(function() {
+                    $('ul.carousel-inner').css('overflow','visible');
+                });
+                $('a[data-toggle=tooltip]').mouseout(function() {
+                    $('ul.carousel-inner').css('overflow','hidden');
+
+                });
             return $sce.trustAsHtml(html_code);
         }
 
@@ -123,7 +130,7 @@ define(function (require) {
 
         $scope.status = 'ready';
     }
-    
+
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'DalyComparisonService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
     

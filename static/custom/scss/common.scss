@@ -710,8 +710,18 @@ p {
   margin: 2em 0 1.5em;
   padding: 1em;
 }
-
-.section-carrousel{
+.tooltip.fade{
+  min-width: 280px !important;
+  width: 280px !important;
+  z-index: 9999999999999 !important;
+  .tooltip-inner{
+    text-align: left !important;
+    min-width: 280px !important;
+    max-width: 100% !important;
+    padding: 1rem;
+  }
+}
+.section-carrousel, #carouselCountries{
   .tooltip.fade{
     position: fixed;
     z-index: 999999999999999999999 !important;
@@ -723,12 +733,15 @@ p {
     }
   }
 }
-.tooltip.fade{
-  min-width: 280px !important;
-  width: 280px !important;
-  .tooltip-inner{
-    text-align: center;
-    min-width: 280px !important;
-    max-width: 100% !important;
+
+a[data-toggle="tooltip"]{
+  color: #449FA2 !important;
+  border-bottom: 1px dotted #449FA2;
+  text-decoration: none;
+  cursor: help;
+  &:hover{
+    color: #449FA2 !important;
+    border-bottom: none;
+    text-decoration: none;
   }
 }
