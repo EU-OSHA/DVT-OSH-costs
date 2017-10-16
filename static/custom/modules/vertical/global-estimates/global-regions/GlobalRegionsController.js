@@ -28,6 +28,15 @@ define(function (require) {
 
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="tooltip"]').tooltip();
+
+
+            $("a[data-toggle=tooltip]").mouseover(function() {
+                $('ul.carousel-inner').css('overflow','visible');
+            });
+            $('a[data-toggle=tooltip]').mouseout(function() {
+                $('ul.carousel-inner').css('overflow','hidden');
+            });
+
             return $sce.trustAsHtml(html_code);
         }
 

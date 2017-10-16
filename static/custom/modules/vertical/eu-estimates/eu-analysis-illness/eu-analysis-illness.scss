@@ -109,9 +109,12 @@
       .chart-description{
         > p{
           position: relative;
+          margin-top: 14%;
+          /*
           transform: translateY(60%);
           -webkit-transform: translateY(60%);
           -ms-transform: translateY(60%);
+          */
         }
       }
     }
