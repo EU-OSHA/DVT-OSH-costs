@@ -713,7 +713,7 @@ p {
 .tooltip.fade{
   min-width: 280px !important;
   width: 280px !important;
-  z-index: 9999999999999 !important;
+  z-index: 999999999999999999999 !important;
   .tooltip-inner{
     text-align: left !important;
     min-width: 280px !important;
@@ -721,7 +721,7 @@ p {
     padding: 1rem;
   }
 }
-.section-carrousel, #carouselCountries{
+.section-carrousel, #carouselCountries, .chart-analysis-illnesses-box{
   .tooltip.fade{
     position: fixed;
     z-index: 999999999999999999999 !important;
