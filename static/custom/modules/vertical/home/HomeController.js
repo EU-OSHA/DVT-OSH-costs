@@ -38,7 +38,8 @@ define(function (require) {
                 image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
                 image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2,
                 imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
-                image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal
+            },{
                 id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
