@@ -219,7 +219,7 @@ define(function (require) {
             + '</div>'
             + '<div class="legend-info" ng-if="isMaximized && legendClickMode" data-ng-bind="i18n.L134"></div>'
             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
-            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
+            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="to_trusted(functionalLegend)"></div>'
             + '</div>';
 
 

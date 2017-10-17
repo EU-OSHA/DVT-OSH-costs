@@ -1,6 +1,6 @@
 define(function () {
 
-    var PlotsProvider = function (dvtUtils, $document, $modal, $log) {
+    var PlotsProvider = function (dvtUtils, $document, $modal, $log, $sce) {
 
         var colors = require('json!horizontal/model/colors');
 
@@ -223,6 +223,11 @@ define(function () {
                         scope.functionalLegend = !attributes.maxFunctionalLegend
                             ?''/*setContainerLegendComposition(officialName, source, year, notes, eucomments, scope.functionalLegend)*/
                             :attributes.maxFunctionalLegend;
+
+                    scope.to_trusted = function(html_code) {
+                        angular.element('[data-toggle="tooltip"]').tooltip();
+                        return $sce.trustAsHtml(html_code);
+                    }
                     definition ['functLegen'] = scope.functionalLegend;
                 }
 
@@ -372,7 +377,7 @@ define(function () {
         }
     };
 
-    PlotsProvider.$inject = ['dvtUtils', '$document','$modal','$log'];
+    PlotsProvider.$inject = ['dvtUtils', '$document','$modal','$log','$sce'];
 
     return PlotsProvider;
 });
