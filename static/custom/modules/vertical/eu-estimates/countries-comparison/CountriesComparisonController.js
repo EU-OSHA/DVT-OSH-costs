@@ -61,11 +61,11 @@ define(function (require) {
             }
         };
 
-        $scope.graphWidth = jQuery('li.item.active').width() - 30;
+        $scope.graphWidth = angular.element('li.item.active').width() - 30;
         $scope.graphHeight = $scope.graphWidth*2/5 < 530? 330: $scope.graphWidth*2/5;
 
-        $scope.orientation = jQuery(window).width() > 425? "vertical" : "horizontal";
-        $scope.query = $(window).width() > 425 ? "getIndicatorData" : "getIndicatorDataDesc";
+        $scope.orientation = angular.element(window).width() > 425? "vertical" : "horizontal";
+        $scope.query = angular.element(window).width() > 425 ? "getIndicatorData" : "getIndicatorDataDesc";
 
         var width = angular.element($window).width();
         angular.element($window).bind('resize', function() {
@@ -94,18 +94,17 @@ define(function (require) {
             }
         ];
 
-        jQuery('#carouselCountries').on('slid.bs.carousel', function () {
+        angular.element('#carouselCountries').on('slid.bs.carousel', function () {
             // Update location based on slide
             var item = jQuery(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
             // Prevent carousel from sliding automatically
-            jQuery('#carouselCountries').carousel('pause');
+            angular.element('#carouselCountries').carousel('pause');
         })
 
 
-        $('.eu-estimates-indicators li').click(function() {
-            $('.eu-estimates-indicators li').toggleClass('item-block');
-
+        angular.element('.eu-estimates-indicators li').click(function() {
+            angular.element('.eu-estimates-indicators li').toggleClass('item-block');
         })
 
         $scope.status = 'ready';

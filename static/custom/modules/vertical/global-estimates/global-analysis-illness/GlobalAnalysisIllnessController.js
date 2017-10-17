@@ -48,11 +48,11 @@ define(function (require) {
 
         // Behaviour when Countries Select value changes
         $scope.selectChange = function() {
-            var sections = $('div.country-wrapper');
-            $('div.country-wrapper').removeClass('selected');
+            var sections = angular.element('div.country-wrapper');
+            angular.element('div.country-wrapper').removeClass('selected');
             for (var i = 0; i < sections.length; i++) {
-                if($(' h3', sections[i]).text() == $scope.country.region) {
-                    $(sections[i]).addClass('selected');
+                if(angular.element(' h3', sections[i]).text() == $scope.country.region) {
+                    angular.element(sections[i]).addClass('selected');
                 }                
             }
         }
@@ -81,8 +81,8 @@ define(function (require) {
             $log.warn("getAllLegenddata request fail!");
         });
 
-        $('div#modalChart').click(function() {
-            $('div#modalChart').modal('hide');
+        angular.element('div#modalChart').click(function() {
+            angular.element('div#modalChart').modal('hide');
         }).children().click(function(e){
             if (!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {

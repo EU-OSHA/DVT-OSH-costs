@@ -30,11 +30,11 @@ define(function (require) {
             angular.element('[data-toggle="tooltip"]').tooltip();
 
 
-            $("a[data-toggle=tooltip]").mouseover(function() {
-                $('ul.carousel-inner').css('overflow','visible');
+            angular.element("a[data-toggle=tooltip]").mouseover(function() {
+                angular.element('ul.carousel-inner').css('overflow','visible');
             });
-            $('a[data-toggle=tooltip]').mouseout(function() {
-                $('ul.carousel-inner').css('overflow','hidden');
+            angular.element('a[data-toggle=tooltip]').mouseout(function() {
+                angular.element('ul.carousel-inner').css('overflow','hidden');
             });
 
             return $sce.trustAsHtml(html_code);
@@ -58,23 +58,22 @@ define(function (require) {
         var lightBar;
 
         $scope.selectChange = function() {
-            var labels = $('svg > g g:nth-child(2) > g g:nth-child(4) text');
-            $('rect.label-country').attr('style','');
+            var labels = angular.element('svg > g g:nth-child(2) > g g:nth-child(4) text');
+            angular.element('rect.label-country').attr('style','');
 
-            $('text.label-country').attr('class','');
-            $('rect.label-country').attr('class','');
+            angular.element('text.label-country').attr('class','');
+            angular.element('rect.label-country').attr('class','');
             for (var i = 0; i < labels.length; i++) {
-                if ($(labels[i]).text() == $scope.country.region) {
-                    $(labels[i]).attr('class', 'label-country');
+                if (angular.element(labels[i]).text() == $scope.country.region) {
+                    angular.element(labels[i]).attr('class', 'label-country');
 
                     if (i < 8) {
-                        console.log($('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').size());
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill',color);
-                        lightBar = $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[0];
-                        $(lightBar).css('fill', lightColor);
-                        lightBar = $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[4];
-                        $(lightBar).css('fill', lightColor);
-                        $('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
+                        angular.element('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').css('fill',color);
+                        lightBar = angular.element('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[0];
+                        angular.element(lightBar).css('fill', lightColor);
+                        lightBar = angular.element('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')')[4];
+                        angular.element(lightBar).css('fill', lightColor);
+                        angular.element('svg > g g:nth-child(2) > g g:nth-child(3) > g > g > g > g > rect:nth-child('+(i+1)+')').attr('class','label-country');
                     }
                 }
             }
@@ -95,7 +94,7 @@ define(function (require) {
 
         $scope.step = {
             chart1: 20,
-            chart2: $(window).width() > 425 ? 500 : 1000,
+            chart2: angular.element($window).width() > 425 ? 500 : 1000,
             chart3: 20,
             chart4: 1000,
             chart5: 1
@@ -114,11 +113,11 @@ define(function (require) {
 
             href = href.replace(href.substr(href.indexOf('global-regions#')),'global-regions');
 
-            var items = $('#carouselCountries ul.carousel-inner li.item');
+            var items = angular.element('#carouselCountries ul.carousel-inner li.item');
 
             for (var i = 0; i < items.length; i++) {
-                if ($(items[i]).attr("data-name") == selected) {
-                    $('#carouselCountries').carousel(i).carousel('pause');
+                if (angular.element(items[i]).attr("data-name") == selected) {
+                    angular.element('#carouselCountries').carousel(i).carousel('pause');
                     break;
                 }
             }
@@ -159,9 +158,9 @@ define(function (require) {
             }
         ];
 
-        $scope.graphWidth = $('li.item.active').width() - 30;
+        $scope.graphWidth = angular.element('li.item.active').width() - 30;
         
-        $scope.lastGraphWidth = $(window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
+        $scope.lastGraphWidth = angular.element($window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
 
         var width = angular.element($window).width();
@@ -172,25 +171,25 @@ define(function (require) {
             }
         });
 
-        $('#carouselCountries').on('slid.bs.carousel', function () {
-            $('#carouselCountries li.item').removeClass('newClass');
+        angular.element('#carouselCountries').on('slid.bs.carousel', function () {
+            angular.element('#carouselCountries li.item').removeClass('newClass');
             
             // Update location based on slide
-            var item = $(this).find('.item.active').data('name');
+            var item = angular.element(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
             
             // Prevent carousel from sliding automatically
-            $('#carouselCountries').carousel('pause');
+            angular.element('#carouselCountries').carousel('pause');
 
         });
 
-        $('.global-estimates-indicators li').click(function() {
-            $('.global-estimates-indicators li').toggleClass('item-block');
+        angular.element('.global-estimates-indicators li').click(function() {
+            angular.element('.global-estimates-indicators li').toggleClass('item-block');
 
         });
 
-        $('div#modalChart').click(function() {
-            $('div#modalChart').modal('hide');
+        angular.element('div#modalChart').click(function() {
+            angular.element('div#modalChart').modal('hide');
         }).children().click(function(e){
             if (!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {

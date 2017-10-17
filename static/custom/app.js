@@ -47,6 +47,26 @@ define(function (require) {
                                      '720kb.socialshare'
                                     ]);
 
+    /*gtranslator info*/
+    var gtranslatorinfo = angular.element(".gtranslator-info");
+    var gtranslatorinfo = gtranslatorinfo.offset();
+
+    angular.element(document).click(function(e) {
+        if(!$(e.target).closest('#gTranslate-modal').length && !$(e.target).is(angular.element('#gTranslate-modal-link'))) {
+            if (!$(e.target).is($('span.gtranslator-info'))) {
+                $("#gTranslate-modal").fadeOut('fast');
+            }
+        }
+    });
+    
+    angular.element(".gtranslator-info").mouseover(function(){
+        angular.element("#gTranslate-modal").fadeIn('fast');
+    });
+    angular.element("#gTranslate-modal").mouseleave(function(){
+        angular.element("#gTranslate-modal").fadeOut('fast');
+    });
+    /*end gtranslator*/
+
 
     /**
      * @ndoc function

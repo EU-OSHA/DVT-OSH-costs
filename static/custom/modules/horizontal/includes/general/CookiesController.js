@@ -27,8 +27,8 @@ define(function (require) {
                     }else {
                         $scope.showwidthdisclaimer = false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
-                        if ($('body').hasClass('hasCookies')) {
-                            $('body').removeClass('hasCookies');
+                        if (angular.element('body').hasClass('hasCookies')) {
+                            angular.element('body').removeClass('hasCookies');
                         }
                     }
                     $scope.widthAgree= function () {
@@ -38,15 +38,15 @@ define(function (require) {
                         $cookies.put(cookieName,false,{expires:cookieLife});
                     };
                     $scope.consentAgree = function() {
-                        if ($('body').hasClass('hasCookies')) {
-                            $('body').removeClass('hasCookies');                            
+                        if (angular.element('body').hasClass('hasCookies')) {
+                            angular.element('body').removeClass('hasCookies');                            
                         }
                     }
 
                     if ($cookies.get('disclaimerCookie') != "false" && !$scope.showwidthdisclaimer) {
-                        $('body').addClass('hasCookies');
+                        angular.element('body').addClass('hasCookies');
                     } else if (!$cookies.get('angular-consent.global')) {
-                        $('body').addClass('hasCookies');
+                        angular.element('body').addClass('hasCookies');
                     }
 
                 });

@@ -9,13 +9,13 @@
  *
  */
     function zoomSmall(){
-        $('html').css('font-size','8px');
+        angular.element('html').css('font-size','8px');
     }
     function zoomMedium(){
-        $('html').css('font-size','10px');
+        angular.element('html').css('font-size','10px');
     }
     function zoomBig(){
-        $('html').css('font-size','12px');
+        angular.element('html').css('font-size','12px');
     }
 
 define(function (require) {
@@ -210,13 +210,13 @@ define(function (require) {
                     });
 
                     // Hide Social Menu if it is displayed
-                    $('div.submenu-icon').click(function(e) {
+                    angular.element('div.submenu-icon').click(function(e) {
                         e.stopPropagation();
                     });
 
-                    $(document).click(function() {
-                        if ($('ul#osha-menu-social').hasClass('indvt')) {
-                            $('ul#osha-menu-social').removeClass('indvt');
+                    angular.element(document).click(function() {
+                        if (angular.element('ul#osha-menu-social').hasClass('indvt')) {
+                            angular.element('ul#osha-menu-social').removeClass('indvt');
                         }
                     });
 

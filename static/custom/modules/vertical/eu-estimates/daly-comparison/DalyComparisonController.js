@@ -28,11 +28,11 @@ define(function (require) {
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="tooltip"]').tooltip();
 
-            $("a[data-toggle=tooltip]").mouseover(function() {
-                $('ul.carousel-inner').css('overflow','visible');
+            angular.element("a[data-toggle=tooltip]").mouseover(function() {
+                angular.element('ul.carousel-inner').css('overflow','visible');
             });
-            $('a[data-toggle=tooltip]').mouseout(function() {
-                $('ul.carousel-inner').css('overflow','hidden');
+            angular.element('a[data-toggle=tooltip]').mouseout(function() {
+                angular.element('ul.carousel-inner').css('overflow','hidden');
             });
             return $sce.trustAsHtml(html_code);
         }
@@ -50,11 +50,11 @@ define(function (require) {
 
             href = href.replace(href.substr(href.indexOf('daly-comparison#')),'daly-comparison');
 
-            var items = $('#carouselCountries ul.carousel-inner li.item');
+            var items = angular.element('#carouselCountries ul.carousel-inner li.item');
 
             for (var i = 0; i < items.length; i++) {
-                if ($(items[i]).attr("data-name") == selected) {
-                    $('#carouselCountries').carousel(i).carousel('pause');
+                if (angular.element(items[i]).attr("data-name") == selected) {
+                    angular.element('#carouselCountries').carousel(i).carousel('pause');
                     break;
                 }
             }
@@ -90,17 +90,17 @@ define(function (require) {
             }
         ];
 
-        $scope.graphWidth = $('li.item.active').width() - 30;
+        $scope.graphWidth = angular.element('li.item.active').width() - 30;
         $scope.graphHeight = $scope.graphWidth*2/5 < 330? 530: $scope.graphWidth*2/5;
 
-        $scope.orientation = $(window).width() > 425? "vertical" : "horizontal";
-        $scope.query = $(window).width() > 425? "getIndicatorDataBySplit" : "getIndicatorDataBySplitDesc";
+        $scope.orientation = angular.element($window).width() > 425? "vertical" : "horizontal";
+        $scope.query = angular.element($window).width() > 425? "getIndicatorDataBySplit" : "getIndicatorDataBySplitDesc";
 
         $scope.step = {
-            chart1: $(window).width() > 425 ? 1000 : 2500,
-            chart2: $(window).width() > 425 ? 200 : 800,
-            chart3: $(window).width() > 425 ? 200 : 400,
-            chart4: $(window).width() > 425 ? 100 : 200
+            chart1: angular.element($window).width() > 425 ? 1000 : 2500,
+            chart2: angular.element($window).width() > 425 ? 200 : 800,
+            chart3: angular.element($window).width() > 425 ? 200 : 400,
+            chart4: angular.element($window).width() > 425 ? 100 : 200
         }
 
         var width = angular.element($window).width();
@@ -111,20 +111,20 @@ define(function (require) {
             }
         });
 
-        $('#carouselCountries').on('slid.bs.carousel', function () {
-            $('#carouselCountries li.item').removeClass('newClass');
+        angular.element('#carouselCountries').on('slid.bs.carousel', function () {
+            angular.element('#carouselCountries li.item').removeClass('newClass');
             
             // Update location based on slide
-            var item = $(this).find('.item.active').data('name');
+            var item = angular.element(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
             
             // Prevent carousel from sliding automatically
-            $('#carouselCountries').carousel('pause');
+            angular.element('#carouselCountries').carousel('pause');
 
         });
 
-        $('.global-estimates-indicators li').click(function() {
-            $('.global-estimates-indicators li').toggleClass('item-block');
+        angular.element('.global-estimates-indicators li').click(function() {
+            angular.element('.global-estimates-indicators li').toggleClass('item-block');
 
         });
 
