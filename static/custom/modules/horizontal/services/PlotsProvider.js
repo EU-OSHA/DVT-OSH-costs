@@ -226,6 +226,17 @@ define(function () {
 
                     scope.to_trusted = function(html_code) {
                         angular.element('[data-toggle="tooltip"]').tooltip();
+                        angular.element("a[data-toggle=tooltip]").mouseover(function() {
+                            angular.element('.modal-wrapper').css('overflow','visible');
+                            angular.element('.dvt-modal .dvt-chart').css('overflow','visible');
+                            angular.element('.dvt-modal').css('overflow','auto');
+
+                        });
+                        angular.element('a[data-toggle=tooltip]').mouseout(function() {
+                            angular.element('.modal-wrapper').css('overflow','auto');
+                            angular.element('.dvt-modal .dvt-chart').css('overflow','hidden');
+                            angular.element('.dvt-modal').css('overflow','auto');
+                        });
                         return $sce.trustAsHtml(html_code);
                     }
                     definition ['functLegen'] = scope.functionalLegend;

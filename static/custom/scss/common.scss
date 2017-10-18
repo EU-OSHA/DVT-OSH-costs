@@ -721,12 +721,13 @@ p {
     padding: 1rem;
   }
 }
-.section-carrousel, #carouselCountries, .chart-analysis-illnesses-box{
+.section-carrousel, #carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
   .tooltip.fade{
     position: fixed;
     z-index: 999999999999999999999 !important;
     min-width: 280px !important;
     width: 280px !important;
+    display: block;
     .tooltip-inner{
         min-width: 280px !important;
         max-width: 100% !important;
