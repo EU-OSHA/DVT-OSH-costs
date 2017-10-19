@@ -33,9 +33,9 @@
         "tabindex":"3",
         "levels":[
             {
-                "id": "eu-countries-comparison",
+                "id": "countries-comparison",
                 "name":"L3",
-                "sref": "eu-countries-comparison",
+                "sref": "countries-comparison",
                 "accesskey": "C"
             },
             {
