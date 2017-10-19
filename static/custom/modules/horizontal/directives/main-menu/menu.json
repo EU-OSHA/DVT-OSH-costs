@@ -33,6 +33,12 @@
         "tabindex":"3",
         "levels":[
             {
+                "id": "eu-countries-comparison",
+                "name":"L3",
+                "sref": "eu-countries-comparison",
+                "accesskey": "C"
+            },
+            {
                 "id": "eu-analysis-illness",
                 "name":"L4",
                 "sref": "eu-analysis-illness",

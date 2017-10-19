@@ -18,7 +18,7 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        /*$stateProvider.state('countries-comparison', {
+        $stateProvider.state('countries-comparison', {
             url: "/countries-comparison",
             params: {
 
@@ -34,7 +34,7 @@ define(function (require) {
                 title: i18n.L3 +  " - " + i18n.L135,
                 description: i18n.L60,
             }
-        });*/
+        });
 
         $stateProvider.state('daly-comparison', {
             url: "/daly-comparison",
