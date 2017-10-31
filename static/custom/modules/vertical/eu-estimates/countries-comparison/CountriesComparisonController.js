@@ -64,6 +64,15 @@ define(function (require) {
         $scope.graphWidth = angular.element('li.item.active').width() - 30;
         $scope.graphHeight = $scope.graphWidth*2/5 < 530? 330: $scope.graphWidth*2/5;
 
+        $scope.step = {
+            chart1: angular.element($window).width() > 425 ? 500 : 1000,
+            chart2: angular.element($window).width() > 425 ? 500 : 2500,
+            chart3: angular.element($window).width() > 425 ? 500 : 2000,
+            chart4: 1,
+            chart5: 0.2,
+            chart6: 1
+        }
+
         $scope.orientation = angular.element(window).width() > 425? "vertical" : "horizontal";
         $scope.query = angular.element(window).width() > 425 ? "getIndicatorData" : "getIndicatorDataDesc";
 
