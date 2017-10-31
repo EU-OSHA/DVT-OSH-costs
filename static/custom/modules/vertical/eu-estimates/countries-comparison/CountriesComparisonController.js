@@ -89,6 +89,7 @@ define(function (require) {
         $scope.stories = [
             //0
             {
+                color: dvtUtils.getColorCountry(-1),
                 plots: CountriesComparisonService.getStoryMainPlots(dvtUtils.getColorCountry(-1)),
                 color1: dvtUtils.getIllnessColors(2),
                 plots1: CountriesComparisonService.getStoryMainPlots(dvtUtils.getIllnessColors(2)),
