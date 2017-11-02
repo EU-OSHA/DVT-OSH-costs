@@ -58,7 +58,9 @@ define(function (require) {
                     });
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
+                    $scope.breadCrumbStructure = breadCrumbStructure;
                     var titleStructure = require('json!dvt/directives/title-items');
+                    $scope.titleStructure = titleStructure;
 
                     path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
                     $http.get(path, { data: "", headers: {"Content-Type": "application/json"}}).success(function (menuStructure) {
@@ -92,8 +94,8 @@ define(function (require) {
 
                     $scope.isCurrentSection = function (id) {
                         var lPath = $location.path().split("/");
-                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + breadCrumbStructure['sections'][lPath[1]]);
-                        return (id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
+                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + $scope.breadCrumbStructure['sections'][lPath[1]]);
+                        return (id.replace(/\s+/g, '-') === $scope.breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
@@ -106,18 +108,18 @@ define(function (require) {
                             var cadena = "";
 
 
-                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
+                            $scope.breadCrumb = $scope.breadCrumbStructure[$state.current.name];
                             $scope.titleHeader = $scope.i18n_menu.Header;
 
                             if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
-                                $scope.title = titleStructure[$state.current.name];
+                                $scope.title = $scope.titleStructure[$state.current.name];
                             } else {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 var setBreadCrumbs=function() {
-                                    $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-                                    $scope.title = titleStructure[$state.current.name];
+                                    $scope.breadCrumb = $scope.breadCrumbStructure[$state.current.name];
+                                    $scope.title = $scope.titleStructure[$state.current.name];
                                     $scope.isHome = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
@@ -217,6 +219,15 @@ define(function (require) {
                     angular.element(document).click(function() {
                         if (angular.element('ul#osha-menu-social').hasClass('indvt')) {
                             angular.element('ul#osha-menu-social').removeClass('indvt');
+                        }
+                    });
+
+                    angular.element(document).ready(function() {
+                        if (!$scope.isHome && $state.current.name == '') {
+                            $scope.anchorPath = $location.path().split("/")[1];
+                            $scope.breadCrumb = $scope.breadCrumbStructure[$scope.anchorPath];
+                            $scope.title = $scope.titleStructure[$scope.anchorPath];
+                            $scope.isHome = false;
                         }
                     });
 
