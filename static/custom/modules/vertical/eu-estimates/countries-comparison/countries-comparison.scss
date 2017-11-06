@@ -59,7 +59,7 @@
     float: left;
     width:100%;
     padding:0;
-    max-height: 620px;
+    max-height: 660px;
     min-height: auto;
     margin-bottom: 0;
     > .item{
@@ -91,9 +91,9 @@
           background: transparent !important;
           margin: 0em auto 0;
           svg > g > g > g > g:nth-last-child(2){
-            -ms-transform: translate(-12px,6px) !important;
-            -webkit-transform: translate(-12px,6px) !important;
-            transform: translate(-12px,6px) !important;
+            -ms-transform: translate(-12px,0px) !important;
+            -webkit-transform: translate(-12px,0px) !important;
+            transform: translate(-12px,0px) !important;
           }
         }
         .header{
@@ -184,6 +184,29 @@
 }
 
 @media screen and (max-width:767px) {
+  .countries-comparison{
+    .osha-eu-estimates-wrapper {
+      .carousel-inner {
+        max-height: 720px;
+        min-height: auto;
+        margin-bottom: 1rem;
+        li {
+          .dvt-chart {
+            padding: 0 10px 0 !important;
+          }
+        }
+      }
+      .carousel-control.right{
+        left: 93%;
+        i{
+          top: 360px;
+        }
+      }
+      .carousel-control.left i {
+        top: 360px;
+      }
+    }
+  }
 
   .eu-estimates-indicators {
     li {
