@@ -735,6 +735,29 @@ p {
   }
 }
 
+.dvt-modal::-webkit-scrollbar-track,
+.dvt-modal::-moz-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0);
+  border-radius: 10px;
+  background-color: transparent !important;
+}
+
+.dvt-modal::-webkit-scrollbar,
+.dvt-modal::-moz-scrollbar
+{
+  width: 12px;
+  background-color: transparent !important;
+}
+
+.dvt-modal::-webkit-scrollbar-thumb,
+.dvt-modal::-moz-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: transparent !important;
+}
+
 a[data-toggle="tooltip"]{
   color: #449FA2 !important;
   border-bottom: 1px dotted #449FA2;
