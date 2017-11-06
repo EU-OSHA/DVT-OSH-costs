@@ -63,8 +63,6 @@ define(function (require) {
 
         $scope.graphWidth = angular.element('li.item.active').width() - 30;
         $scope.graphHeight = $scope.graphWidth*2/5 < 330? 530: $scope.graphWidth*2/5;
-        console.log("DAVID DEV");
-        console.log($scope.graphHeight);
 
         $scope.step = {
             chart1: angular.element($window).width() > 425 ? 500 : 1000,
