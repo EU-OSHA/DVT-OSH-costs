@@ -84,7 +84,7 @@
             img{
               width: 100%;
               &:hover{
-                cursor: pointer;
+                  cursor: zoom-in;
               }
             }
           }
@@ -187,7 +187,7 @@
     }
   }
   img:hover{
-    cursor: pointer;
+    cursor: zoom-in;
   }
   .content-section-first{
     margin: 5rem auto 0;
@@ -210,7 +210,7 @@
     margin-top: 4rem;
   }
   img:hover{
-    cursor: pointer;
+    cursor: zoom-in;
   }
   .content-section-second{
     p{
