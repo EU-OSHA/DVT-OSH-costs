@@ -18,24 +18,6 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        $stateProvider.state('countries-comparison', {
-            url: "/countries-comparison",
-            params: {
-
-            },
-            views: {
-                "content-main": {
-                    templateUrl: configService.getVerticalTplPath("eu-estimates/countries-comparison", "countries-comparison"),
-                    controller: 'CountriesComparisonController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/countries-comparison/CountriesComparisonController', 'countries-comparison', 'CountriesComparisonController')
-                }
-            },
-            metaTags: {
-                title: i18n.L3 +  " - " + i18n.L135,
-                description: i18n.L60,
-            }
-        });
-
         $stateProvider.state('daly-comparison', {
             url: "/daly-comparison",
             params: {
