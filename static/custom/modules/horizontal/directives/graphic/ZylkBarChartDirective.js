@@ -658,15 +658,15 @@ define(function (require) {
 
                         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
                             // You use IE. That´s no good.
-                            [['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else if (!configService.isMobile())  {
-                            [['Export as image', 'exportImage'], ['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else {
-                            [['Export as image', 'exportImage'], ['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
