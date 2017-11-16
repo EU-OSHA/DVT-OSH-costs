@@ -21,9 +21,25 @@ define(function (require) {
         $scope.i18n_home = i18n_home;
 
         $scope.to_trusted = function(html_code) {
-            angular.element('[data-toggle="tooltip"]').tooltip();
+            angular.element('[data-toggle="popover"]').popover();
             return $sce.trustAsHtml(html_code);
         }
+
+        angular.element(document).on('click', function(e) {
+            angular.element('[data-toggle=popover]').each(function () {
+                if (!angular.element(e.target).is('[data-toggle=popover]') && angular.element(e.target).parents('div.popover').length == 0) {
+                    angular.element(this).popover('hide');
+                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
+                    angular.element(this).addClass('popover-hidden');
+                    angular.element(this).popover('hide');
+                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
+                    if (angular.element(this).hasClass('popover-hidden')) {
+                        console.log("SEND EVENT PIWIK");
+                        angular.element(this).removeClass('popover-hidden');
+                    }
+                }
+            });
+        });
         
         $scope.goto = function (estado) {
             $state.go(estado, {});
