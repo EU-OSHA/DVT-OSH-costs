@@ -78,9 +78,7 @@ define(function (require) {
             }
         ];
 
-        angular.element('#carouselHome').carousel({
-            interval: 1000 * 20
-        });
+        angular.element('#carouselHome').carousel('pause');
 
         // Charts
         $scope.chartDeathGlobal = {
@@ -136,14 +134,12 @@ define(function (require) {
                     break;
                 case 'slide':
                     $scope.modalData = $scope.slides[index];
-                    angular.element('#carouselHome').carousel('pause');
                     break;
             }
         }
 
         angular.element('div#modalChart').click(function() {
             angular.element('div#modalChart').modal('hide');
-            angular.element('#carouselHome').carousel();
         }).children().click(function(e){
             if(!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {
