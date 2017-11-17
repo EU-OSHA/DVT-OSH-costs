@@ -28,12 +28,21 @@ define(function (require) {
         $scope.status = 'ready';
 
         $document.ready(function() {
-            angular.element('[data-toggle="popover"]').popover();
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
         });
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if (!angular.element(e.target).is('[data-toggle=popover]') && angular.element(e.target).parents('div.popover').length == 0) {
+                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                    && angular.element(e.target).parents('div.popover').length == 0)
+                    || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
                 } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
                     angular.element(this).addClass('popover-hidden');
