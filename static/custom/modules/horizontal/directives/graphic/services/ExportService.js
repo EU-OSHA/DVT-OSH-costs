@@ -6,12 +6,6 @@
  */
 define(function(require){
     
-   // var PromiseR = require('common-exporting/es6-promise-polyfill'); //para el explorer
-
-
-    // PromiseR.Promise;
-    // $log.info(PromiseR.Promise);
-    // PromiseR.polyfill();
     var html2canvas = require('common-exporting/html2canvas');
 
     var ExportService = function($log, $q) {
@@ -24,38 +18,13 @@ define(function(require){
     var exportImage = function (scope) {
 
             var node = $('#' + scope.id).parents('.dvt-chart')[0];
-            /*
-            var nodeSvg = $(node).find('svg')[0];
-            var nodeSvgHtml = nodeSvg.outerHTML;
-            */
-
-            //---------------------------------
-            // 2
-            //---------------------------------
-            // var html2canvas = require('common-exporting/html2canvas');
-            // html2canvas(node)
-            // .then(function(canvas) {
-            //
-            //     canvas.toBlob(function(blob){
-            //         if(scope.title=="undefined" || scope.title==undefined) {
-            //             //anterior h2 que haya....
-            //             scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
-            //             var filename = scope.titleH2 + '.png';
-            //         } else {
-            //             var filename = scope.title + '.png';
-            //         }
-            //         saveAs(blob,filename);
-            //     });
-            // });
-
 
             //---------------------------------
             // 1 dom-to-image
-            //convierto el svg a imagen...
+            // Convert SVG to Image...
             var svg = document.querySelector('.modal svg');
-            var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
+            var xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
 
-            //console.log(xml);
             var svg64 = btoa(xml);
 
             var b64Start = "data:image/svg+xml;base64,";
@@ -66,15 +35,9 @@ define(function(require){
             var img = document.getElementById('svg2image');
             img.src = image64;
             angular.element(".modal svg").attr("style","display:none");
-            
-           // var node = $('#' + scope.id).parents('.dvt-chart')[0];
+
             $(".dropdown").hide();
             angular.element(".legend-info").attr("style","display:none");
-
-
-            //$log.info(PromiseR);
-            //$log.info(PromiseR.Promise());
-            //var Promise=PromiseR.Promise;
 
             var Promise = require('es6-promise').Promise;
 
@@ -97,120 +60,8 @@ define(function(require){
                      angular.element(".modal svg").removeAttr("style");
                      angular.element(".legend-info").removeAttr("style");
                  });
-             }, function(error) {
-
-                 /*if (window.navigator.userAgent.indexOf('MSIE') > -1) {
-                     if ($('#svg2image')) {
-                        /*if(scope.title=="undefined" || scope.title==undefined) {
-                            //anterior h2 que haya....
-                            scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
-                            var filename = scope.titleH2 + '.png';
-                        } else {
-                            var filename = scope.title + '.png';
-                        }
-
-                        //var filename="graph.png";
-
-                        var img = new Image();
-                        img.setAttribute('crossOrigin','Anonymous');
-                        img.src = $('#svg2image').attr('src');
-
-                        var blob = $('#svg2image').attr('src');
-
-                        var canvas = document.createElement( "canvas" );
-                        console.log("AAA");
-                        var ctx = canvas.getContext( "2d" );
-                        console.log("BBB");
-
-                        var image = document.getElementById('svg2image');
-
-                        ctx.drawImage(image, 0,0);
-
-                        debugger;
-
-                        
-
-                        console.log(canvas);
-
-
-
-                        console.log( canvas.toDataURL( "image/png" ));
-                        console.log("CCC");
-
-                        
-
-                        /*console.log(blob);
-                        blob = blob.substring(blob.indexOf('base64,') + 7);
-
-                        blob = atob(blob);
-                        var byteNumbers = new Array(blob.length);
-                        for (var i = 0; i < blob.length; i++) {
-                            byteNumbers[i] = blob.charCodeAt(i);
-                        }
-                        var byteArray = new Uint8Array(byteNumbers);
-                        blob = new Blob([byteArray], {type: 'image/png'});
-                        saveAs(blob, filename);
-                        /*$('#svg2image').remove();
-                        angular.element(".modal svg").removeAttr("style");
-                     }
-                     $(".dropdown").show();
-                 //}  */               
+             }, function(error) {              
              });
-
-        
-            //---------------------------------
-/*
-            require('common-exporting/dom-to-image');
-            domtoimage.toBlob(node, {
-                filter:function(node){
-                    return (node.className !== 'contextual-menu')
-                }
-            }).then(function(blob){
-                if(scope.title=="undefined" || scope.title==undefined) {
-                    //anterior h2 que haya....
-                    scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text();
-                    var filename = scope.titleH2 + '.png';
-                } else {
-                    var filename = scope.title + '.png';
-                }
-
-                saveAs(blob,filename);
-               // angular.element(".modal svg").show();
-                //angular.element('#svg2image').remove();
-            });
-*/
-
-
-            //---------------------------------
-            // 3 (canvg + dom-to-image)
-            //---------------------------------
-
-            // require('common-exporting/canvg');
-            // require('common-exporting/rgbcolor');
-            // var canvas =  document.createElement('canvas');
-            // canvas.setAttribute('width','500px');
-            // canvas.setAttribute('height','500px');
-            // canvg(canvas,nodeSvgHtml);
-            //
-            //
-            // $(nodeSvg).replaceWith(canvas);
-            //
-            // require('common-exporting/dom-to-image');
-            // domtoimage.toBlob(node, {
-            //     filter:function(node){
-            //         return (node.className !== 'contextual-menu')
-            //     }
-            // }).then(function(blob){
-            //     if(scope.title=="undefined" || scope.title==undefined) {
-            //         //anterior h2 que haya....
-            //         scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
-            //         var filename = scope.titleH2 + '.png';
-            //     } else {
-            //         var filename = scope.title + '.png';
-            //     }
-            //
-            //     saveAs(blob,filename);
-            // });
         };
 
         /**
@@ -316,14 +167,12 @@ define(function(require){
             var downloadCSV = function() {
                 var BOM = "\uFEFF";
                 var csv = BOM + columns+"\n"+data;
-               // var csv =columns+"\n"+data;
 
                 var blob = new Blob([ csv ], { type: "text/csv;charset=UTF-8" });
                 saveAs(blob, title+".csv");
             };
 
             downloadCSV();
-           //exportComponent.exportData();
         };
 
         return{
