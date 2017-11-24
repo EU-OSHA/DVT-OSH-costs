@@ -12,6 +12,20 @@
 @import '../modules/horizontal/directives/search/search.scss';
 @import '../css/mapglyphs/mapglyphs.css';
 @import 'maps/maps.scss';
+/*****  VERTICAL  ****/
+
+/* Home */
+@import '../modules/vertical/home/home.scss';
+
+
+/* Footer Pages*/
+@import '../modules/vertical/footer-pages/footer-pages.scss';
+
+/*General Responsive*/
+@import 'responsive.scss';
+
+/*General Print*/
+@import 'print.scss';
 
 /*****  HORIZONTAL  ****/
 
@@ -79,19 +93,3 @@
 @include no-padding("top");
 @include no-padding("bottom");
 @include no-padding("all");
-
-
-/*****  VERTICAL  ****/
-
-/* Home */
-@import '../modules/vertical/home/home.scss';
-
-
-/* Footer Pages*/
-@import '../modules/vertical/footer-pages/footer-pages.scss';
-
-/*General Responsive*/
-@import 'responsive.scss';
-
-/*General Print*/
-@import 'print.scss';

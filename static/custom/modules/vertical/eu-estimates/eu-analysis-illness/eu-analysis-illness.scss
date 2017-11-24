@@ -1,4 +1,35 @@
 .osha-analysis-illnesses{
+  .compare-buttons{
+    background: #FFF;
+    padding: 40px 0;
+    .compare-buttons-list{
+      text-align: center;
+      li{
+        margin-right: 30px;
+        width:100%;
+        a{
+          font-family: Oswald-Light,sans-serif!important;
+          font-size: 1.8rem;
+          display: inline-block;
+          background:#449FA2;
+          color: #FFF;
+          padding: 15px 40px;
+          border-radius: 4px;
+          margin: auto;
+          width:98%;
+          cursor: pointer;
+          &:hover{
+            background: $plt-eu02;
+            text-decoration: none;
+          }
+        }
+        &:last-child{
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
   .chart-analysis-illnesses{
     background:#F9F9F9;
     padding: 20px 0 20px;
