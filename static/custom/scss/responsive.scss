@@ -23,7 +23,7 @@
       background-size: cover;
       height: 10.1rem;
       clear: both;
-      p.title-banner {
+      h1.title-banner {
         text-shadow: 0px 1px 5px black;
       }
     }
@@ -61,7 +61,7 @@
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
   .ilo-header{
     #home-cover {
-      p.title-banner {
+      h1.title-banner {
         width:100%;
         margin-top: 67px;
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
@@ -118,7 +118,7 @@
     margin-top: 5px !important;
     background-size: cover !important;
     height: 9.1rem !important;
-    p.title-banner {
+    h1.title-banner {
       text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
     }
   }
@@ -212,18 +212,19 @@
     padding-top: 80px;
   }
   .ilo-header{
-    #home-cover {
-      p.title-banner {
-        width:100%;
-        margin-top: 67px;
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
+
     #not-home-cover {
       margin-top: 5px !important;
       background-size: cover;
       height: 9.1rem;
-      p.title-banner {
+      h1.title-banner {
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+      }
+    }
+    #home-cover {
+      h1.title-banner {
+        width:100%;
+        margin-top: 67px;
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
       }
     }
@@ -450,17 +451,18 @@
     margin: 6rem auto 0;
   }
   .ilo-header{
-    #home-cover {
-      background-size: cover;
-      //height: 135px;
-    }
+
     #not-home-cover {
       margin-top: 5px !important;
       background-size: cover;
       height: 9.1rem;
-      p.title-banner {
+      h1.title-banner {
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
       }
+    }
+    #home-cover {
+      background-size: cover;
+      //height: 135px;
     }
     #containerMenu {
       min-height: 105px;
@@ -781,7 +783,7 @@
   .ilo-header {
     #home-cover{
       height: 23.1rem !important;
-      p.title-banner{
+      h1.title-banner{
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
         width: auto;
       }
@@ -790,7 +792,7 @@
       margin-top: 5px !important;
       background-size: cover !important;
       height: 17.1rem !important;
-      p.title-banner {
+      h1.title-banner {
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
       }
     }

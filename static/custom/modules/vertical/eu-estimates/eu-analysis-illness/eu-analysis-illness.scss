@@ -153,9 +153,11 @@
     }
     &.affix{
       top:100px;
-      width: 100%;
+      /*width: 100%;*/
+      width: 20%;
       height:auto;
-      height: 240px;
+      /*height: 240px;*/
+      height: 100%;
       z-index: 9;
       overflow: hidden;
       background:$colorWhite;
@@ -175,7 +177,7 @@
         -webkit-transition: width 0.4s;
         transition: width 0.4s;
         .zylk-chart {
-          width: 20%;
+          /*width: 20%;*/
           float: left;
           text-align: right;
           .zylk-bar-chart, .dvt-chart {
@@ -204,8 +206,8 @@
           }
         }
         h2{
-          width: 80%;
-          float: right;
+          width: 100%;
+          /*float: right;*/
           text-align: left;
           padding-left: 15px;
         }
@@ -222,6 +224,7 @@
           li{
             display: inline-block;
             margin-right: 0.5rem;
+            width: 100%;
             .legend-name {
               font-size: 1.4rem;
             }
@@ -362,10 +365,12 @@
   }
 }
 .chart-analysis-illnesses.affix ~ .compare-buttons{
-  margin-top: 29rem;
+  margin-top: 2rem;
+  margin-left: 20rem;
 }
 .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
   margin-top: 0rem;
+  margin-left: 34.8rem;
 }
 
 .chart-analysis-illnesses.affix {
