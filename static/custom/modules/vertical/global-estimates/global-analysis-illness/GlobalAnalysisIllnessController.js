@@ -15,7 +15,7 @@
  */
 define(function (require) {
     'use strict';
-    
+
     function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, globalAnalysisIllnessService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Global Analysis by Illness";
 
@@ -29,7 +29,7 @@ define(function (require) {
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
-                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
@@ -40,7 +40,7 @@ define(function (require) {
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
                     && angular.element(e.target).parents('div.popover').length == 0)
                     || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
@@ -82,14 +82,14 @@ define(function (require) {
                     if (angular.element($window).width() > 767) {
                         top = angular.element('div#containerMenu').height();
                         top = top + angular.element('section.chart-analysis-illnesses').height();
-                        top = angular.element(sections[i]).offset().top - top - 35;                        
+                        top = angular.element(sections[i]).offset().top - top - 35;
                     } else {
                         top = angular.element('div#containerMenu').height();
-                        top = angular.element(sections[i]).offset().top - top - 15; 
+                        top = angular.element(sections[i]).offset().top - top - 15;
                     }
                     angular.element('html, body').animate({
                         scrollTop: top
-                    }, 1000);                    
+                    }, 1000);
                 }
             }
         }
@@ -130,12 +130,12 @@ define(function (require) {
                     if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
                         return false;
                     }
-                }     
-            }            
+                }
+            }
         });
     }
-    
+
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'globalAnalysisIllnessService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
-    
+
 });

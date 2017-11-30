@@ -15,7 +15,7 @@
  */
 define(function (require) {
     'use strict';
-    
+
     function controller($scope, $window, $stateParams, $state, $log, CountriesComparisonService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Countries Comparison";
 
@@ -28,7 +28,7 @@ define(function (require) {
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
-                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
@@ -39,7 +39,7 @@ define(function (require) {
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
                     && angular.element(e.target).parents('div.popover').length == 0)
                     || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
@@ -59,7 +59,7 @@ define(function (require) {
 
         if ($window.location.href.indexOf('countries-comparison') > -1){
             href = $window.location.href;
-        }        
+        }
 
         // Some graphic is set
         if (href.indexOf('countries-comparison#') > -1) {
@@ -108,7 +108,7 @@ define(function (require) {
                 $state.reload();
 
                 $scope.number = 1;
-            }            
+            }
         });
 
         $scope.stories = [
@@ -144,8 +144,8 @@ define(function (require) {
 
         $scope.status = 'ready';
     }
-    
+
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'countriesComparisonService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
-    
+
 });

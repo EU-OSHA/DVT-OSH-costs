@@ -118,6 +118,7 @@
           // MSD
           &:nth-child(2) .legend-data{
             background:$plt-eu02 !important;
+            color:#333 !important;
           }
           // INJURIES
           &:nth-child(3) .legend-data{
@@ -328,6 +329,8 @@
               }
               &:nth-child(2) .legend-data{
                 background:$plt-eu02 !important;
+                color:#333 !important;
+
               }
               &:nth-child(3) .legend-data{
                 background:$plt-eu03 !important;

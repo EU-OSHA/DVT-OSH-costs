@@ -10,10 +10,10 @@
  */
 define(function (require) {
     'use strict';
-    
+
     function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, $sce) {
 
-    
+
         // Literals / i18n
         var i18n = configService.getLiterals();
         $scope.i18n = i18n;
@@ -23,7 +23,7 @@ define(function (require) {
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
-                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
@@ -34,7 +34,7 @@ define(function (require) {
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
                     && angular.element(e.target).parents('div.popover').length == 0)
                     || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
@@ -49,7 +49,7 @@ define(function (require) {
                 }
             });
         });
-        
+
         $scope.goto = function (estado) {
             $state.go(estado, {});
         };
@@ -76,27 +76,27 @@ define(function (require) {
         ];
 
         $scope.currency = $scope.select[0];
-    
+
         // Carrousel slides
         $scope.slides = [
             {
-                title: i18n[i18n_home.slider1.title], 
-                text: $scope.currency.text, 
-                image: $scope.currency.image, 
+                title: i18n[i18n_home.slider1.title],
+                text: $scope.currency.text,
+                image: $scope.currency.image,
                 image2: $scope.currency.image2,
                 imageModal: $scope.currency.imageModal,
                 image2Modal: $scope.currency.image2Modal
             },{
-                title: i18n[i18n_home.slider2.title], 
-                text: i18n[i18n_home.slider2.related], 
-                image: configService.getImagesPath()+ i18n_home.slider2.image, 
+                title: i18n[i18n_home.slider2.title],
+                text: i18n[i18n_home.slider2.related],
+                image: configService.getImagesPath()+ i18n_home.slider2.image,
                 image2: configService.getImagesPath()+ i18n_home.slider2.image2,
                 imageModal: configService.getImagesPath() + i18n_home.slider2.imageModal,
                 image2Modal: configService.getImagesPath() + i18n_home.slider2.image2Modal
             },{
-                title: i18n[i18n_home.slider3.title], 
-                text: i18n[i18n_home.slider3.related], 
-                image: configService.getImagesPath()+ i18n_home.slider3.image, 
+                title: i18n[i18n_home.slider3.title],
+                text: i18n[i18n_home.slider3.related],
+                image: configService.getImagesPath()+ i18n_home.slider3.image,
                 image2: configService.getImagesPath()+ i18n_home.slider3.image2,
                 imageModal: configService.getImagesPath() + i18n_home.slider3.imageModal,
                 image2Modal: configService.getImagesPath() + i18n_home.slider3.image2Modal
@@ -121,15 +121,15 @@ define(function (require) {
             image2Modal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal
         };
         $scope.chartDeath = {
-            title: i18n[i18n_home.chartDeath.title], 
-            text: i18n[i18n_home.chartDeath.message], 
+            title: i18n[i18n_home.chartDeath.title],
+            text: i18n[i18n_home.chartDeath.message],
             image: configService.getImagesPath()+ i18n_home.chartDeath.image,
             imageModal: configService.getImagesPath() + i18n_home.chartDeath.imageModal,
             image2Modal: configService.getImagesPath() + i18n_home.chartDeath.imageModal
         };
         $scope.chartDaly = {
-            title: i18n[i18n_home.chartDaly.title], 
-            text: i18n[i18n_home.chartDaly.message], 
+            title: i18n[i18n_home.chartDaly.title],
+            text: i18n[i18n_home.chartDaly.message],
             image: configService.getImagesPath()+ i18n_home.chartDaly.image,
             imageModal: configService.getImagesPath() + i18n_home.chartDaly.imageModal,
             image2Modal: configService.getImagesPath() + i18n_home.chartDaly.imageModal
@@ -148,7 +148,7 @@ define(function (require) {
                 case 'chart':
                     if (index == 1){
                         $scope.modalData = $scope.chartDeathGlobal;
-                    }else if (index == 2) { 
+                    }else if (index == 2) {
                         $scope.modalData = $scope.chartDalyGlobal;
                     }else if (index == 3) {
                         $scope.modalData = $scope.chartDeath;
@@ -176,7 +176,7 @@ define(function (require) {
                         return false;
                     }
                 }
-            }            
+            }
         });
 
        $scope.status = 'ready';

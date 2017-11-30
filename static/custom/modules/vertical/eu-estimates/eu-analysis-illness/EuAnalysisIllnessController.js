@@ -27,7 +27,7 @@ define(function (require) {
         $scope.to_trusted = function(html_code) {
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
-                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
@@ -38,7 +38,7 @@ define(function (require) {
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
                     && angular.element(e.target).parents('div.popover').length == 0)
                     || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
@@ -89,8 +89,8 @@ define(function (require) {
 
 
     }
-    
+
     controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile', '$sce'];
     return controller;
-    
+
 });

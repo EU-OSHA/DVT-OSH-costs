@@ -15,7 +15,7 @@
  */
 define(function (require) {
     'use strict';
-    
+
     function controller($scope, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Global Regions";
 
@@ -30,7 +30,7 @@ define(function (require) {
 
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
-                template: '<div class="popover" role="tooltip"><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content"></div></div>',
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
@@ -49,7 +49,7 @@ define(function (require) {
 
         angular.element(document).on('click', function(e) {
             angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]') 
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
                     && angular.element(e.target).parents('div.popover').length == 0)
                     || angular.element(e.target).is('a.popover-close i')) {
                     angular.element(this).popover('hide');
@@ -184,7 +184,7 @@ define(function (require) {
         ];
 
         $scope.graphWidth = angular.element('li.item.active').width() - 30;
-        
+
         $scope.lastGraphWidth = angular.element($window).width() > 425? $scope.graphWidth/2 -15: $scope.graphWidth;
 
 
@@ -198,11 +198,11 @@ define(function (require) {
 
         angular.element('#carouselCountries').on('slid.bs.carousel', function () {
             angular.element('#carouselCountries li.item').removeClass('newClass');
-            
+
             // Update location based on slide
             var item = angular.element(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
-            
+
             // Prevent carousel from sliding automatically
             angular.element('#carouselCountries').carousel('pause');
 
@@ -225,14 +225,14 @@ define(function (require) {
                     if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
                         return false;
                     }
-                }     
-            }            
+                }
+            }
         });
 
         $scope.status = 'ready';
     }
-    
+
     controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
-    
+
 });

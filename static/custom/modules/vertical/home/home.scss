@@ -100,6 +100,8 @@
           font-family: OpenSans-bold;
           vertical-align: middle;
           margin-top: 11rem;
+
+
         }
       }
     }
@@ -365,4 +367,9 @@
 
 select::-ms-expand{
   display: none;
+}
+.tooltip .fa-close{
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+  color: #fff;
 }
