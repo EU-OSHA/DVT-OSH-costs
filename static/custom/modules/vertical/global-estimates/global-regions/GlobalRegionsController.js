@@ -58,7 +58,7 @@ define(function (require) {
                     angular.element(this).popover('hide');
                 } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
                     if (angular.element(this).hasClass('popover-hidden')) {
-                        console.log("SEND EVENT PIWIK");
+                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
                         angular.element(this).removeClass('popover-hidden');
                     }
                 }
