@@ -168,7 +168,10 @@ define(function (require) {
         }).children().click(function(e){
             if(!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {
-                    if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                    if (angular.element("div.fade.top.in").length) {
+                        angular.element("a.popover-hidden").popover('hide');
+                        return false;
+                    } else if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
                         return false;
                     }
                 }else {
@@ -176,6 +179,13 @@ define(function (require) {
                         return false;
                     }
                 }
+            } else {
+                if ($(e.target).attr('data-toggle') == 'popover') {
+                    if (angular.element("div.fade.top.in")) {
+                        angular.element("a.popover-hidden").not(e.target).popover('hide');
+                    }
+                    return false;
+                }               
             }
         });
 
