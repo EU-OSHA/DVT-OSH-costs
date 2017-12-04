@@ -131,6 +131,7 @@
           // OTHERS
           &:nth-child(5) .legend-data{
             background:$plt-eu05 !important;
+            color:#333 !important;
           }
           .legend-name{
             top: 1px;
@@ -333,7 +334,6 @@
               &:nth-child(2) .legend-data{
                 background:$plt-eu02 !important;
                 color:#333 !important;
-
               }
               &:nth-child(3) .legend-data{
                 background:$plt-eu03 !important;
@@ -343,6 +343,7 @@
               }
               &:nth-child(5) .legend-data{
                 background:$plt-eu05 !important;
+                color:#333 !important;
               }
               .legend-name{
 
