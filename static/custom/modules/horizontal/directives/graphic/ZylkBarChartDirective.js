@@ -353,6 +353,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
                         baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        axisTitleLabel_font: 'normal 12px "Open Sans"',
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
                         label_visible: scope.labelVisible,
