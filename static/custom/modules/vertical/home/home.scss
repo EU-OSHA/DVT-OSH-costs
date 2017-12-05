@@ -19,73 +19,11 @@
     .subject-section{
       text-align: center;
     }
-    .carousel-control {
-      background-image: none !important;
-      width: 40px;
-      .icon-prev, .icon-next, .prev, .next {
-        top:50%;
-        right:14px;
-        position: absolute;
-        color: $subheader;
-      }
-    }
-    .carousel-indicators {
-      position: static;
-      bottom: 0px;
-      margin: 15px auto;
-      z-index: 15;
-      width: 60%;
-      padding-left: 0;
-      list-style: none;
-      text-align: center;
-    }
-  }
-  .carousel-chart{
-    position: relative;
-    width: 93%;
-    overflow: auto;
-    margin: 3rem auto 2rem;
-    background: #FFF;
-    padding: 1.5rem 0rem;
-    border-radius: 8px;
-    //-webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-    //-moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-   //box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-    select{
-      border: none;
-      padding: 5px;
-      font-weight: bold;
-      background: transparent;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      cursor: pointer;
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/arrow-select.png) no-repeat right 50%;
-      padding-right: 18px;
-      &:focus{
-        outline: none;
-        color: $subheader;
-      }
-    }
-    picture{
-      width:60%;
-      float: left;
-      img{
-        width: 100%;
-        &:hover{
-            cursor: zoom-in;
-        }
-      }
-    }
   }
 
   #carouselHome{
     min-height: 620px;
     margin: 0px 0 0;
-    margin-top:2rem;
     .carousel-indicators{
       bottom: 0;
       li {
@@ -101,6 +39,12 @@
         }
       }
     }
+    .carousel-control-container {
+      background-color: #FFF;
+      margin-top: 3rem;
+      padding-bottom: 1rem;
+      border-radius: 20px;
+    }
     .carousel-inner{
       padding: 0 !important;
 
@@ -111,6 +55,46 @@
           color:$subheader;
           margin-top: 3rem;
           font-size: 3.2rem;
+        }
+
+        .carousel-chart {
+          position: relative;
+          width: 92%;
+          overflow: auto;
+          margin: 3rem auto 2rem;
+          background: #FFF;
+          padding: 1.5rem 3rem;
+          border-radius: 8px;
+
+          select {
+            border: none;
+            padding: 5px;
+            font-weight: bold;
+            background: transparent;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/arrow-select.png) no-repeat right 50%;
+            padding-right: 18px;
+            &:focus {
+              outline: none;
+              color: $subheader;
+            }
+          }
+          picture {
+            width: 60%;
+            float: left;
+            img {
+              width: 100%;
+              &:hover {
+                cursor: zoom-in;
+              }
+            }
+          }
         }
 
         p.carousel-note{
@@ -124,10 +108,34 @@
           font-family: OpenSans-bold;
           vertical-align: middle;
           margin-top: 11rem;
-
-
         }
       }
+    }
+    .carousel-control {
+      background-image: none !important;
+      width: 40px;
+      .icon-prev, .icon-next, .prev, .next {
+        top: 50%;
+        right: 14px;
+        position: absolute;
+        color: $subheader;
+      }
+    }
+    .carousel-control.left {
+      left: -50px;
+    }
+    .carousel-control.right {
+      right: -50px;
+    }
+    .carousel-indicators {
+      position: static;
+      bottom: 0px;
+      margin: 15px auto;
+      z-index: 15;
+      width: 60%;
+      padding-left: 0;
+      list-style: none;
+      text-align: center;
     }
 
   }
@@ -145,6 +153,24 @@
     color: $subheader;
     text-align: center;
     font-size: 2.8rem;
+  }
+  .button-link {
+    display: inline-block;
+    font-size: 1.8rem;
+    background-color: $subheader;
+    color: #FFF;
+    padding: 15px 40px;
+    border-radius: 4px;
+    margin: auto;
+    width: 70%;
+    font-family: Oswald-Light, sans-serif;
+    span:nth-child(2) {
+      float:right;
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: $plt-eu02;
+    }
   }
   .chart1-section-first{
     /*text-align: center;
