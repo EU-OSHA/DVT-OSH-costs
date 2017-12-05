@@ -103,7 +103,9 @@ define(function (require) {
             }
         ];
 
-        angular.element('#carouselHome').carousel('pause');
+        angular.element('#carouselHome').carousel({
+            interval: 1000 * 900
+        });
 
         // Charts
         $scope.chartDeathGlobal = {
