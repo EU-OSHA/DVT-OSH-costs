@@ -1,6 +1,6 @@
 <!-- home.html -->
 <zylk-dashboard promises="promises" parameters="dashboard.parameters">
-<div class="page-content">
+	<div class="page-content">
 		<!--HOME-->
 		<section class="section-carrousel">
 			<div class="ilo-container-carrousel container">
@@ -45,10 +45,10 @@
 
 		<section class="section-first-home">
 			<div class="container">
-				<a class="button-link" href="https://osha.europa.eu/en/tools-and-publications/publications/international-comparison-cost-work-related-accidents-and/view">
-					<span data-ng-bind="i18n_home.linkQuestion"></span>
-					<span data-ng-bind="i18n_home.linkAnswer"></span>
-				</a>
+				<p class="oshLink">
+					<span data-ng-bind-html="i18n_home.linkQuestion"></span>
+					<span data-ng-bind-html="to_trusted(i18n_home.linkAnswer)"></span>
+				</p>
 			</div>
 
 			<div class="container">
@@ -94,28 +94,28 @@
 				<li><a data-ui-sref='eu-analysis-illness' data-ng-bind-html="to_trusted(i18n.L68)"></a></li>
 			</ul>
 		</div>
-</div>
-<div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<p class="modal-title" data-ng-bind-html="to_trusted(modalData.title)"></p>
-			</div>
-			<div class="modal-body">
-				<picture>
-					<source data-ng-srcset="{{modalData.image2Modal}}" alt="{{modalData.title}}" media="(max-width: 600px)">
-					<source data-ng-srcset="{{modalData.imageModal}}" alt="{{modalData.title}}">
-					<img data-ng-src="{{modalData.imageModal}}" alt="{{modalData.title}}">
-				</picture>
-				<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>
-			</div>
-			<div class="modal-footer">
-				<p data-ng-bind-html="to_trusted(modalData.text)"></p>
+	</div>
+	<div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<p class="modal-title" data-ng-bind-html="to_trusted(modalData.title)"></p>
+				</div>
+				<div class="modal-body">
+					<picture>
+						<source data-ng-srcset="{{modalData.image2Modal}}" alt="{{modalData.title}}" media="(max-width: 600px)">
+						<source data-ng-srcset="{{modalData.imageModal}}" alt="{{modalData.title}}">
+						<img data-ng-src="{{modalData.imageModal}}" alt="{{modalData.title}}">
+					</picture>
+					<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>
+				</div>
+				<div class="modal-footer">
+					<p data-ng-bind-html="to_trusted(modalData.text)"></p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </zylk-dashboard>
