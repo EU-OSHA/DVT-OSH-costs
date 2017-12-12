@@ -35,7 +35,7 @@
     padding: 20px 0 20px;
     .chart-analysis-illnesses-box{
       position: relative;
-      background: #FFF!important;
+      background: #FFF;
       padding: 20px !important;
       border-radius: 8px;
       margin:auto;
@@ -154,20 +154,20 @@
     }
     &.affix{
       top:100px;
-      /*width: 100%;*/
-      width: 20%;
-      height:auto;
-      /*height: 240px;*/
+      //width: 100%;
+      width: 350px;
+      //height:auto;
+      //height: 240px;
       height: 100%;
       z-index: 9;
       overflow: hidden;
-      background:$colorWhite;
+      background:$lightgrey2;
       padding:20px 0 0 0 !important;
-      -webkit-box-shadow: 0px 0px 10px 1px #cccccc;
-      -moz-box-shadow: 0px 0px 10px 1px #cccccc;
-      box-shadow: 0px 0px 10px 1px #cccccc;
-      border-width: 0 0 1px 0;
-      border-bottom: 1px solid $border;
+      //-webkit-box-shadow: 0px 0px 10px 1px #cccccc;
+      //-moz-box-shadow: 0px 0px 10px 1px #cccccc;
+      //box-shadow: 0px 0px 10px 1px #cccccc;
+      //border-width: 0 0 1px 0;
+      //border-bottom: 1px solid $border;
 
       .chart-analysis-illnesses-box{
         top:0;
@@ -175,26 +175,30 @@
         border-radius: 0;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        -webkit-transition: width 0.4s;
-        transition: width 0.4s;
+        background:$lightgrey2;
+        //-webkit-transition: width 0.4s;
+        //transition: width 0.4s;
         .zylk-chart {
-          /*width: 20%;*/
-          float: left;
+          width: 100%;
+          float: none;
           text-align: right;
           .zylk-bar-chart, .dvt-chart {
             padding: 0 !important;
             background: transparent !important;
           }
           .backGraps{
+            div[id*=zylk_bar_chart]{
+              background:$lightgrey2;
+            }
             div[id*=protovis]{
-              top: -30px !important;
+              top: 0px !important;
               position: relative;
             }
             svg{
               //zoom: 0.75;
-              -moz-transform: scale(0.75);
-              -webkit-transform: scale(0.75);
-              transform: scale(0.75);
+              //-moz-transform: scale(0.75);
+              //-webkit-transform: scale(0.75);
+              //transform: scale(0.75);
             }
           }
           h2{
@@ -221,11 +225,12 @@
           -webkit-transform: none;
           -ms-transform: none;
           margin-top: 2rem;
-          width: 80%;
+          width: 100%;
+          padding: 0;
           li{
             display: inline-block;
-            margin-right: 0.5rem;
-            width: 100%;
+            margin-right: 0;
+            width: 49%;
             .legend-name {
               font-size: 1.4rem;
             }
@@ -245,15 +250,15 @@
     .country-analysis-by-illnesses{
       .country-wrapper{
         position: relative;
-        background: #FFF!important;
-        padding: 10px !important;
-        border: 1px solid $border;
-        border-radius: 8px;
-        margin: 0px auto 30px;
+        background: #FFF !important;
+        padding: 5px !important;
+        border: 1px solid #f1efef;
+        border-radius: 6px;
+        margin: 0px auto 20px;
         overflow: hidden;
-        -webkit-box-shadow: 0px 1px 2px 1px #cccccc;
-        -moz-box-shadow: 0px 1px 2px 1px #cccccc;
-        box-shadow: 0px 1px 2px 1px #cccccc;
+        -webkit-box-shadow: 0px 0px 6px 0px #f1efef;
+        -moz-box-shadow: 0px 0px 6px 0px #f1efef;
+        box-shadow: 0px 0px 6px 0px #f1efef;
         &.selected{
           border: 1px solid #449FA2 !important;
           -webkit-box-shadow: 0px 1px 2px 1px #449FA2 !important;
@@ -371,7 +376,7 @@
 }
 .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
   margin-top: 0rem;
-  margin-left: 34.8rem;
+  //margin-left: 34.8rem;
 }
 
 .chart-analysis-illnesses.affix {
