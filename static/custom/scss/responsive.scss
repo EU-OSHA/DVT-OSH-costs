@@ -10,8 +10,20 @@
   }
 }
 
-@media only screen  and (min-width : 1280px) and (max-width : $ful1650)  {
-
+@media only screen  and (min-width : 1367px) and (max-width : 1650px)  {
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
+    width: 77%;
+    margin-top: 11rem !important;
+    float: right;
+    div[id^='zylk_bar_chart'] {
+      margin-left: -4%;
+    }
+  }
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses.affix {
+      top: 90px !important;
+    }
+  }
 }
 /** end fluid 100% to 1650 px **/
 
@@ -111,6 +123,59 @@
         }
       }
     }
+  }
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses.affix{
+      top: 90px !important;
+      ul.legend-list {
+        width: 100% !important;
+        float: none;
+        padding:0;
+      }
+      h2{
+        margin-top: 0;
+        width: 100% !important;
+      }
+      .zylk-chart {
+        width: 100% !important;
+      }
+    }
+    .chart-analysis-illnesses {
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .chart-description > p {
+            position: relative;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
+    margin-top: 7rem;
+    width: 55%;
+    float: right;
+    .global-estimates-countries-regions{
+      p.countries-regions-text {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      .countries-regions-select {
+        width: 100%;
+        margin-top: 0px;
+        select {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    div[id^='zylk_bar_chart'] {
+      margin-left: -24%;
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .compare-buttons {
+    margin-top: 250px;
   }
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
@@ -241,8 +306,10 @@
       margin-left: -12% !important;
     }
   }
-}
-@media only screen and (max-width: 991px) {
+
+  .navbar-collapse.collapse{
+    padding: 0;
+  }
   #google_translate_element_wrapper {
     top: 0px;
     right:0;
@@ -264,7 +331,59 @@
       }
     }
   }
-
+  .osha-analysis-illnesses{
+    .chart-analysis-illnesses.affix{
+      top: 90px !important;
+      ul.legend-list {
+        width: 100% !important;
+        float: none;
+        padding:0;
+      }
+      h2{
+        margin-top: 0;
+        width: 100% !important;
+      }
+      .zylk-chart {
+        width: 100% !important;
+      }
+    }
+    .chart-analysis-illnesses {
+      .chart-analysis-illnesses-box{
+        .chart-wrapper{
+          .chart-description > p {
+            position: relative;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
+    margin-top: 7rem;
+    width: 55%;
+    float: right;
+    .global-estimates-countries-regions{
+      p.countries-regions-text {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      .countries-regions-select {
+        width: 100%;
+        margin-top: 0px;
+        select {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    div[id^='zylk_bar_chart'] {
+      margin-left: -24%;
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .compare-buttons {
+    margin-top: 250px;
+  }
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
   body{
@@ -417,12 +536,6 @@
           .chart-description > p {
             position: relative;
             margin-top: 30px;
-            /*
-            transform: translateY(0%);
-            -webkit-transform: translateY(0%);
-            -ms-transform: translateY(60%);
-            margin-top: 30px;
-            */
           }
         }
       }
@@ -512,6 +625,36 @@
     }
   }
 }
+@media only screen and (min-width : 1024px) and (max-width : 1366px){
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
+    width: 70%;
+    margin-top: 11rem !important;
+    float: right;
+    .col-lg-4{
+      width:50%;
+    }
+    div[id^='zylk_bar_chart'] {
+      margin-left: -12%;
+    }
+  }
+  .osha-analysis-illnesses{
+    .global-estimates-countries-regions{
+      p.countries-regions-text {
+        width: 39%;
+        display: inline-block;
+        padding: 1.5rem 3rem;
+      }
+      .countries-regions-select {
+        width: 60% !important;
+        display: inline-block;
+        position: relative;
+      }
+    }
+    .chart-analysis-illnesses.affix {
+      top: 90px !important;
+    }
+  }
+}
 @media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : landscape){
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     width: 75%;
@@ -527,7 +670,6 @@
     }
   }
 }
-
 @media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : portrait){
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     width: 67%;

@@ -161,8 +161,9 @@ header {
   width: 100%;
 }
 .mainBody {
-    overflow: auto;
+    overflow: initial;
     width: 100%;
+    display: flex;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

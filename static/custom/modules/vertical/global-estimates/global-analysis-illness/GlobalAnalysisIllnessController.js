@@ -118,6 +118,7 @@ define(function (require) {
             $log.warn("getAllLegenddata request fail!");
         });
 
+
         angular.element('div#modalChart').click(function() {
             angular.element('div#modalChart').modal('hide');
         }).children().click(function(e){
