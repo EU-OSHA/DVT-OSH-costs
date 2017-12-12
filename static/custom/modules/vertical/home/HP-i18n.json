@@ -61,7 +61,7 @@
   "largerImage": "View larger image",
 
   "linkQuestion":"Want to know more about what the data means?",
-  "linkAnswer":"Read article (pdf) about the economics of OSH",
+  "linkAnswer":"<a target='_blank' href='https://osha.europa.eu/en/tools-and-publications/publications/international-comparison-cost-work-related-accidents-and/view'>Read article</a> (pdf) about the economics of OSH",
 
   "WHO": "WHO Regions"
 }

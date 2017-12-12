@@ -154,22 +154,17 @@
     text-align: center;
     font-size: 2.8rem;
   }
-  .button-link {
+  p.oshLink {
     display: inline-block;
     font-size: 1.8rem;
-    background-color: $subheader;
-    color: #FFF;
     padding: 15px 40px;
     border-radius: 4px;
     margin: auto;
     width: 70%;
     font-family: Oswald-Light, sans-serif;
+    border: 2px solid $subheader;
     span:nth-child(2) {
-      float:right;
-    }
-    &:hover {
-      text-decoration: none;
-      background-color: $plt-eu02;
+      float: right;
     }
   }
   .chart1-section-first{
