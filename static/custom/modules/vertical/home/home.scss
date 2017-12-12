@@ -112,6 +112,7 @@
       }
     }
     .carousel-control {
+      font-size: 35px;
       background-image: none !important;
       width: 40px;
       .icon-prev, .icon-next, .prev, .next {
@@ -122,10 +123,10 @@
       }
     }
     .carousel-control.left {
-      left: -50px;
+      left: -40px;
     }
     .carousel-control.right {
-      right: -50px;
+      right: -60px;
     }
     .carousel-indicators {
       position: static;
@@ -140,9 +141,11 @@
 
   }
 }
+
 .section-first-home{
   background: #FAFAFA;
   padding: 40px 0;
+
   h4{
     margin-bottom: 3rem;
     font-size: 2.2rem;
