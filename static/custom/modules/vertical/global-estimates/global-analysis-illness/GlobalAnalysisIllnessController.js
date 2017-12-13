@@ -80,6 +80,16 @@ define(function (require) {
                     angular.element(sections[i]).addClass('selected');
                 }
             }
+
+            var top = angular.element('#' + $scope.country.region).position().top;
+            if (angular.element('section.chart-analysis-illnesses').hasClass('affix')) {
+                top = top - angular.element('div#containerMenu').height() - 15;
+            } else {
+                top = top - angular.element('div#containerMenu').height() - angular.element('section.chart-analysis-illnesses').height() + 30;
+            }
+            angular.element('html, body').animate({
+                scrollTop: top
+            }, 1000);
         }
 
         // 'Legends' logic
