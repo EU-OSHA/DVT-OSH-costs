@@ -79,7 +79,13 @@
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
       }
     }
+    #not-home-cover {
+      h1.title-banner {
+        margin-top: 3rem;
+      }
+    }
   }
+
   /** EU-ESTIMATES **/
   .countries-comparison{
     .osha-eu-estimates-wrapper{
@@ -175,9 +181,15 @@
     }
   }
   .chart-analysis-illnesses.affix ~ .compare-buttons {
-    margin-top: 250px;
+    width: 55%;
+    float: right;
+    margin-left: 0 !important;
+    .container{
+      width:100% !important;
+    }
   }
 }
+
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
   #not-home-cover {
     margin-top: 5px !important;
@@ -185,6 +197,7 @@
     height: 9.1rem !important;
     h1.title-banner {
       text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+      margin-top: 3rem;
     }
   }
   .navbar-collapse.collapse {
@@ -321,7 +334,7 @@
   .ilo-header {
     #containerMenu {
       .menu-tools-top {
-        padding: 50px 15px 0 !important;
+        padding: 22px 15px 0 !important;
         .social-network {
           padding-right: 0px;
           .zoom-text{
@@ -382,7 +395,12 @@
     }
   }
   .chart-analysis-illnesses.affix ~ .compare-buttons {
-    margin-top: 250px;
+    width: 55%;
+    float: right;
+    margin-left: 0 !important;
+    .container{
+      width:100% !important;
+    }
   }
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
@@ -393,17 +411,18 @@
 
     #not-home-cover {
       margin-top: 5px !important;
-      background-size: cover;
-      height: 9.1rem;
+      background-size: cover !important;
+      height: 9.1rem !important;
       h1.title-banner {
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1) !important;
+        margin-top: 3rem;
       }
     }
     #home-cover {
       h1.title-banner {
         width:100%;
         margin-top: 67px;
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1) !important;
       }
     }
     .path {
@@ -543,7 +562,7 @@
   }
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     margin-top: 7rem;
-    width: 55%;
+    width: 57%;
     float: right;
     .global-estimates-countries-regions{
       p.countries-regions-text {
@@ -561,11 +580,16 @@
       }
     }
     div[id^='zylk_bar_chart'] {
-      margin-left: -24%;
+      margin-left: -20%;
     }
   }
   .chart-analysis-illnesses.affix ~ .compare-buttons {
-    margin-top: 250px;
+    width: 57%;
+    float: right;
+    margin-left: 0 !important;
+    .container{
+      width:100% !important;
+    }
   }
   .ilo-container-footer{
     .logos{
@@ -608,33 +632,59 @@
       }
       .footer-social-network{
         margin: 30px auto 20px !important;
-        float: none;
+        float: none !important;
       }
     }
   }
 } /** end media query 768 - 1024 portrait **/
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
+  .page-content {
+    overflow-x: hidden;
+  }
   .osha-global-estimates-wrapper {
     .carousel-control{
       &.left {
         left: -33px !important;
       }
       &.right {
-        left: 98%;
+        left: 98% !important;
       }
+    }
+  }
+  .section-carrousel{
+    #carouselHome{
+      .carousel-control.left {
+        left: -10px;
+      }
+      .carousel-control.right {
+        right: -30px;
+      }
+    }
+  }
+  .section-first-home{
+    p.oshLink {
+      width: 100%;
+      display: block;
     }
   }
 }
 @media only screen and (min-width : 1024px) and (max-width : 1366px){
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     width: 70%;
-    margin-top: 11rem !important;
+    margin-top: 1rem !important;
     float: right;
     .col-lg-4{
       width:50%;
     }
     div[id^='zylk_bar_chart'] {
       margin-left: -12%;
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .compare-buttons {
+    width: 70%;
+    float: right;
+    .container{
+      width:100% !important;
     }
   }
   .osha-analysis-illnesses{
@@ -657,35 +707,53 @@
 }
 @media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : landscape){
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
-    width: 75%;
-    margin-top: 11rem !important;
+    width: 67%;
+    margin-top: 1rem !important;
     float: right;
     div[id^='zylk_bar_chart'] {
       margin-left: -4%;
     }
   }
+  .chart-analysis-illnesses.affix ~ .compare-buttons {
+    width: 67%;
+    float: right;
+    .container{
+      width:100% !important;
+    }
+  }
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix {
       top: 90px !important;
     }
   }
 }
-@media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : portrait){
+@media only screen and (min-width : 1024px) and (max-width : 1366px)  and (orientation : portrait){
   .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
     width: 67%;
-    margin-top: 11rem !important;
+    margin-top: 1rem !important;
     float: right;
     div[id^='zylk_bar_chart'] {
       margin-left: -12%;
     }
   }
+  .chart-analysis-illnesses.affix ~ .compare-buttons {
+    width: 67%;
+    float: right;
+    .container{
+      width:100% !important;
+    }
+  }
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix {
       top: 90px !important;
     }
   }
 }
-
+@media (min-width: 768px){
+  .navbar-collapse {
+    padding: 0;
+  }
+}
 @media screen and (max-width:767px){
   #google_translate_element_wrapper {
     top: 0px;
@@ -804,6 +872,8 @@
   .osha-analysis-illnesses{
     .chart-analysis-illnesses.affix ~ .compare-buttons {
       margin-top: 15px;
+      width: 100%;
+      margin-left: 0;
     }
     .chart-analysis-illnesses.affix {
       top: 95px;
@@ -1085,7 +1155,7 @@
       padding: 2rem 0;
       margin: 0;
       li {
-        width: 45%;
+        width: 45% !important;
         padding: 0;
         margin: 1rem 0;
       }
@@ -1151,7 +1221,7 @@
   .ilo-container-footer{
     .footer-logotypes{
       li {
-        width: 100%;
+        width: 100% !important;
       }
     }
   }
