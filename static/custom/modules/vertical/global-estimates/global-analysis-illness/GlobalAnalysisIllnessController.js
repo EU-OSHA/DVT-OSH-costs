@@ -71,6 +71,17 @@ define(function (require) {
             $scope.countriesSelect = countries;
         });
 
+        // Behaviour when Countries Select value changes
+        $scope.selectChange = function() {
+            var sections = angular.element('div.country-wrapper');
+            angular.element('div.country-wrapper').removeClass('selected');
+            for (var i = 0; i < sections.length; i++) {
+                if(angular.element(' h3', sections[i]).text() == $scope.country.region) {
+                    angular.element(sections[i]).addClass('selected');
+                }
+            }
+        }
+
         // 'Legends' logic
        globalAnalysisIllnessService.getDataSet_Country_Type_value().then(function (dataset) {
             var countries = {};
