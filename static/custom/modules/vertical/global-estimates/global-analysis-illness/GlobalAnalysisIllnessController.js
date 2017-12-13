@@ -71,29 +71,6 @@ define(function (require) {
             $scope.countriesSelect = countries;
         });
 
-        // Behaviour when Countries Select value changes
-        $scope.selectChange = function() {
-            var sections = angular.element('div.country-wrapper');
-            angular.element('div.country-wrapper').removeClass('selected');
-            var top = 0;
-            for (var i = 0; i < sections.length; i++) {
-                if(angular.element(' h3', sections[i]).text() == $scope.country.region) {
-                    angular.element(sections[i]).addClass('selected');
-                    if (angular.element($window).width() > 767) {
-                        top = angular.element('div#containerMenu').height();
-                        top = top + angular.element('section.chart-analysis-illnesses').height();
-                        top = angular.element(sections[i]).offset().top - top - 35;
-                    } else {
-                        top = angular.element('div#containerMenu').height();
-                        top = angular.element(sections[i]).offset().top - top - 15;
-                    }
-                    angular.element('html, body').animate({
-                        scrollTop: top
-                    }, 1000);
-                }
-            }
-        }
-
         // 'Legends' logic
        globalAnalysisIllnessService.getDataSet_Country_Type_value().then(function (dataset) {
             var countries = {};
