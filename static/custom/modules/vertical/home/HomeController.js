@@ -20,7 +20,16 @@ define(function (require) {
         var i18n_home = require('json!vertical/home/i18n');
         $scope.i18n_home = i18n_home;
 
-        $scope.to_trusted = function(html_code) {
+        $scope.to_trusted = function(html_code, pPlacement) {
+            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'bottom'
+            });
+
             angular.element('[data-toggle="popover"]').popover({
                 html: true,
                 template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
@@ -29,6 +38,7 @@ define(function (require) {
                 },
                 placement: 'top'
             });
+
             return $sce.trustAsHtml(html_code);
         }
 

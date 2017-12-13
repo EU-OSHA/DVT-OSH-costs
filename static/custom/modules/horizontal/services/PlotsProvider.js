@@ -225,14 +225,14 @@ define(function () {
                             :attributes.maxFunctionalLegend;
 
                     scope.to_trusted = function(html_code) {
-                        angular.element('[data-toggle="tooltip"]').tooltip();
-                        angular.element("a[data-toggle=tooltip]").mouseover(function() {
+                        angular.element('[data-toggle="popover"]').popover();
+                        angular.element("a[data-toggle=popover]").click(function() {
                             angular.element('.modal-wrapper').css('overflow','visible');
                             angular.element('.dvt-modal .dvt-chart').css('overflow','visible');
                             //angular.element('.dvt-modal').css('overflow','auto');
 
                         });
-                        angular.element('a[data-toggle=tooltip]').mouseout(function() {
+                        angular.element('a[data-toggle=popover]').mouseout(function() {
                             angular.element('.modal-wrapper').css('overflow','auto');
                             angular.element('.dvt-modal .dvt-chart').css('overflow','hidden');
                             //angular.element('.dvt-modal').css('overflow','auto');
