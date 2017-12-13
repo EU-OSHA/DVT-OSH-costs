@@ -9,7 +9,7 @@
     </url>
 
     <url>
-        <loc>https://visualisation.osha.europa.eu/osh-costs/#!/global-estimates</loc>
+        <loc>https://visualisation.osha.europa.eu/osh-costs/#!/global-regions</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -20,6 +20,11 @@
     </url>
     <url>
         <loc>https://visualisation.osha.europa.eu/osh-costs/#!/eu-analysis-illness</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://visualisation.osha.europa.eu/osh-costs#!/daly-comparison</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

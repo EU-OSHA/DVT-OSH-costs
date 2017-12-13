@@ -20,7 +20,7 @@
 										<source data-ng-srcset="{{slide.image}}" alt="{{slide.title}}">
 										<img data-ng-src="{{slide.image}}" title="{{i18n_home.largerImage}}" alt="{{slide.title}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
 									</picture>
-									<p class="carousel-note" data-ng-bind-html="to_trusted(slide.text)"></p>
+									<p class="carousel-note" data-ng-bind-html="to_trusted(slide.text, 'bottom')"></p>
 								</div>
 							</li>
 							<!-- Indicators -->
