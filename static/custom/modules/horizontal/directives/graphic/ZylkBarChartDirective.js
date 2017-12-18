@@ -193,6 +193,14 @@ define(function (require) {
             + '<div data-ng-if="!isMaximized && !haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">'
        // if(!configService.isMobile()) {
             _template+='<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic"  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
+            _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+                + '<i class="fa fa-download" title="Export"></i>'
+                + '</button>'
+                + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
+                + '</ul>'
+                + '</div>';
       //  }
         _template+= '</div>'
             + '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
@@ -652,7 +660,7 @@ define(function (require) {
                     if (!attributes.isMaximized && true){
                         scope.contextuals.push(['Maximize', 'maximize']);
                     }
-                    if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
+                    // if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
                         var ua = window.navigator.userAgent;
                         var msie = ua.indexOf("MSIE ");
 
@@ -670,7 +678,7 @@ define(function (require) {
                                 scope.contextuals.push(item);
                             });
                         }
-                    }
+                    // }
                 }
                 scope.showContextuals = (scope.contextuals && scope.contextuals.length > 0) || false;
                 if (scope.showContextuals){
@@ -708,7 +716,6 @@ define(function (require) {
                     }else{
                         definition['legendClickMode'] = 'none';
                     }
-
                 };
 
                 // only set maxim properties on normal view
