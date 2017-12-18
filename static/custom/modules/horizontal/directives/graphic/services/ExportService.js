@@ -64,16 +64,17 @@ define(function(require){
             }, function(error) {              
             });
         } else {
-            var node = $('#' + scope.id).parents('.dvt-chart')[0];
+            var node = $('#' + scope.id).parents('.export-chart')[0];
 
             // Check if chart is inside carousel slide
             if (angular.element(node).parents('li.active').length > 0) {
                 node = angular.element(node).parents('li.active');
+                console.log(node);
             }
 
             angular.element(node).css('background-color','white!important');
-            angular.element('img.logoGraphics').css('float','right').css('width','100px').css('display','block');
             angular.element('div.wrapper-contextual-menu').css('display','none');
+            angular.element('img.logoGraphics').css('float','right').css('width','100px').css('display','block');
 
             html2canvas(node).then(function(canvas) {
 

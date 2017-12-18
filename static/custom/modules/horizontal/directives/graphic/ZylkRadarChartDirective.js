@@ -68,7 +68,7 @@ define(function (require) {
             if(!navigator.userAgent.match('iPad')) {
                 template += '<div class="dropdown" ng-if="!isEnlarge==true">'
                     + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                    + '<i class="fa fa-download" title="Export"></i>'
+                    + '<i class="three-points-vertical" title="Export"></i>'
                     + '</button>'
                     + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                     + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
