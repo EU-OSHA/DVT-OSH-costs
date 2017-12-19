@@ -192,7 +192,6 @@ define(function (require) {
             + '</div>'
             + '<div data-ng-if="!isMaximized && !haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">'
        // if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic"  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
             _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
                 + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
                 + '<i class="three-points-vertical" title="Export"></i>'
