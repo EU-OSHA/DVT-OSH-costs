@@ -18,7 +18,7 @@ define(function(require){
     var exportImage = function (scope) {
 
         // Check if the chart is maximized or not
-        if (scope.isMaximized) {
+        //if (scope.isMaximized) {
             var node = $('#' + scope.id).parents('.dvt-chart')[0];
 
             //---------------------------------
@@ -63,20 +63,23 @@ define(function(require){
                 });
             }, function(error) {              
             });
-        } else {
+        /*} else {
             var node = $('#' + scope.id).parents('.export-chart')[0];
 
             // Check if chart is inside carousel slide
-            if (angular.element(node).parents('li.active').length > 0) {
+            /*if (angular.element(node).parents('li.active').length > 0) {
                 node = angular.element(node).parents('li.active');
-                console.log(node);
             }
 
-            angular.element(node).css('background-color','white!important');
+            /*angular.element(node).css('background-color','white!important');
             angular.element('div.wrapper-contextual-menu').css('display','none');
             angular.element('img.logoGraphics').css('float','right').css('width','100px').css('display','block');
 
             html2canvas(node).then(function(canvas) {
+
+                angular.element('div.wrapper-contextual-menu').removeAttr('style');
+                angular.element('img.logoGraphics').css('display','none');
+                angular.element(node).removeAttr('style');
 
                 canvas.toBlob(function(blob){
 
@@ -88,15 +91,11 @@ define(function(require){
                         var filename = scope.title + '.png';
                     }
 
-                    saveAs(blob,filename);
-
-                    angular.element('div.wrapper-contextual-menu').removeAttr('style');
-                    angular.element('img.logoGraphics').css('display','none');
-                    angular.element(node).removeAttr('style');
+                    saveAs(blob,filename);                    
                 });
             }, function(error) {
             });
-        }
+        }*/
     };
 
     /**

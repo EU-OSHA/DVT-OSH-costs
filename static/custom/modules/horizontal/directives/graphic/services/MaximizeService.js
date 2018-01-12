@@ -17,6 +17,7 @@ define(function () {
                 var bodyRef = angular.element('body');
 
                 var dvtModal = function (action, controller, parameters) {
+
                     bodyRef.addClass('ovh');
                     $log.debug("action: " + action);
                     $log.debug("parameters");
@@ -50,8 +51,15 @@ define(function () {
                 };
                 return dvtModal;
             },
-            doMaximize: function(dvtModal, definition, action, controller) {
-                    dvtModal(action, controller, JSON.stringify(definition));
+            doMaximize: function(dvtModal, definition, action, controller, pIsZoom) {
+
+                if (pIsZoom) {
+                    definition.chartDefinition.isZoom = pIsZoom;    
+                } else {
+                    definition.chartDefinition.isZoom = '';
+                }          
+
+                dvtModal(action, controller, JSON.stringify(definition));
             }
         }
     };

@@ -207,15 +207,10 @@ define(function (require) {
             _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>'
      //   }
         _template+='</div>'
-            + '<div data-ng-if="isMaximized && isEnlarged==undefined" class="pull-right contextual-menu">';
+            + '<div data-ng-if="isMaximized && isEnlarged==undefined && isZoom" class="pull-right contextual-menu">';
         if(!navigator.userAgent.match('iPad')) {
             _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                + '<span class="glyphicon glyphicon-option-vertical" title="Export"></span>'
-                + '</button>'
-                + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
-                + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
-                + '</ul>'
+                + '<a data-ng-click="open(\'exportImageLink\')" role="button">Export as Image</a>'
                 + '</div>';
         }
         _template +='</div>'
@@ -281,6 +276,7 @@ define(function (require) {
                 }
                 scope.i18n = i18n;
                 scope.isMaximized = !!attributes.isMaximized;
+                scope.isZoom = !!attributes.isZoom;
                 scope.titleH3 = !!attributes.titleH3;
                 //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
@@ -728,7 +724,6 @@ define(function (require) {
                 /* pass definition to modal */
                 var dvtModal = maximize.setModal(definition);
 
-
                 /* modal open action function */
                 scope.open = function (action) {
 
@@ -747,9 +742,12 @@ define(function (require) {
                             //dvtModal("HLYvsLE", 'HistoricalController', JSON.stringify(definition));
                             break;
                         case "maximize":
-                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController");
+                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController", false);
                             break;
                         case "exportImage":
+                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController", true);
+                            break;
+                        case "exportImageLink":
                             exportService.exportImageAction(scope);
                             break;
                         case "exportData":

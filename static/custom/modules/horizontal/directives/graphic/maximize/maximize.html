@@ -6,6 +6,7 @@
             <zylk-bar-chart
                     data-ng-cloack
                     is-maximized="true"
+                    is-zoom="{{ parameters.chartDefinition.isZoom }}"
                     id="{{ parameters.id }}"
                     title="{{ parameters.title }}"
                     long-title="{{ parameters.longTitle }}"
@@ -26,7 +27,8 @@
                     color-role="{{ parameters.chartDefinition.colorRole }}"
                     colors="parameters.chartDefinition.colors" colors2="parameters.chartDefinition.colors"
                     color2-axis-colors="parameters.chartDefinition.color2AxisColors"
-                    listen-to="parameters.listeners" params="parameters.parameters"
+                    listen-to="parameters.listeners" 
+                    params="parameters.parameters"
                     plots="parameters.chartDefinition.plots" calculations="parameters.chartDefinition.calculations"
                     dimensions="parameters.chartDefinition.dimensions" readers="parameters.chartDefinition.readers"
                     post-fetch="parameters.postFetch"
