@@ -181,7 +181,7 @@ header {
     opacity:1 !important;
   }
   > img{
-    display: none;
+
   }
 }
 div.contextual-menu > div.dropdown {
@@ -233,6 +233,20 @@ div.contextual-menu > div.dropdown {
       opacity: 1;
       position: relative;
       top: -3px;
+      /*
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point-vertical.svg) 4px 5px no-repeat;
+        background-size: 30px 30px;
+        width: 27px;
+        height: 27px;
+        display: inline-block;
+        opacity: 1;
+        position: relative;
+        top: -3px;
+        border: 1px solid #ccc;
+        border-radius: 180px;
+        width: 40px;
+        height: 40px;
+       */
     }
   }
 }

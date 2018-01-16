@@ -1191,6 +1191,10 @@
   }
 }
 @media screen and (max-width:440px) {
+  #google_translate_element_wrapper {
+    margin: 0 5px !important;
+    top: 5px !important;
+  }
   #carouselHome {
     .carousel-chart {
       picture {
@@ -1200,7 +1204,13 @@
       }
     }
   }
-
+  .section-carrousel{
+    #carouselHome{
+      .carousel-control.left {
+        left: 20px;
+      }
+    }
+  }
   .osha-global-estimates-wrapper .carousel-control.right {
     left: 93.5%;
   }
