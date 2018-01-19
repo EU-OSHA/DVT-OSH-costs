@@ -210,7 +210,7 @@ define(function (require) {
             + '<div data-ng-if="isMaximized && isEnlarged==undefined && isZoom" class="pull-right contextual-menu">';
         if(!navigator.userAgent.match('iPad')) {
             _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                + '<a data-ng-click="open(\'exportImageLink\')" role="button">Export as Image</a>'
+                + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
                 + '</div>';
         }
         _template +='</div>'

@@ -268,6 +268,48 @@ li.active{
   margin-bottom: 2rem;
 }
 
+.dvt-modal.in{
+  .dvt-chart{
+    .header{
+      h2 {
+        margin-bottom: 1rem !important;
+      }
+      .contextual-menu{
+        > div.dropdown{
+          background: #FFF !important;
+          border-radius: 4px 4px 0 0 !important;
+          width: auto !important;
+          float: right !important;
+          margin-right: 0 !important;
+          top:1px;
+          z-index:0 !important;
+          text-align: center;
+          font-size: 1.4rem;
+          -webkit-box-shadow: -2px -2px 2px 0px #AAA;
+          -moz-box-shadow: -2px -2px 2px 0px #AAA;
+          box-shadow: -2px -2px 2px 0px #AAA;
+          &:hover{
+            -webkit-box-shadow: 2px -2px 2px 0px #AAA;
+            -moz-box-shadow: 2px -2px 2px 0px #AAA;
+            box-shadow: 2px -2px 2px 0px #AAA;
+          }
+          a{
+            color: #666 !important;
+            display: block;
+            padding: 0.5rem 1rem !important;
+            &:hover{
+              color: $colorB !important;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .backGraps {
+     margin: 0em auto 0 !important;
+    }
+  }
+}
 
 
 /****** GRÃƒÂFICAS GENERALES *****/
