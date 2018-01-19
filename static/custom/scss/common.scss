@@ -276,29 +276,31 @@ li.active{
       }
       .contextual-menu{
         > div.dropdown{
-          background: #FFF !important;
-          border-radius: 4px 4px 0 0 !important;
+          background: #449fa2 !important;
+          border-radius: 0 !important;
           width: auto !important;
           float: right !important;
           margin-right: 0 !important;
-          top:1px;
-          z-index:0 !important;
+          margin-bottom: 0.5rem;
+          top: 50px;
+          right: 10px;
+          z-index: 9999 !important;
           text-align: center;
           font-size: 1.4rem;
           -webkit-box-shadow: -2px -2px 2px 0px #AAA;
           -moz-box-shadow: -2px -2px 2px 0px #AAA;
-          box-shadow: -2px -2px 2px 0px #AAA;
+          box-shadow: 0px 0px 2px 0px #AAA;
           &:hover{
             -webkit-box-shadow: 2px -2px 2px 0px #AAA;
             -moz-box-shadow: 2px -2px 2px 0px #AAA;
             box-shadow: 2px -2px 2px 0px #AAA;
           }
           a{
-            color: #666 !important;
+            color: #FFF !important;
             display: block;
             padding: 0.5rem 1rem !important;
             &:hover{
-              color: $colorB !important;
+              color:#FFF !important;
               text-decoration: none;
             }
           }
