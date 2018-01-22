@@ -32,7 +32,7 @@
             }
             .social-network {
                 margin: 0 15px 0 0;
-                padding-right: 168px;
+                padding-right: 312px;
                 li{
                     padding-right: 7px;
                     a{
@@ -112,15 +112,6 @@
             line-height: 3.6rem;
             margin-top: 1.2rem;
         }
-      /*  h1.title-banner {
-            color:  $colorWhite;
-            font-weight: 500;
-            line-height: 3.6rem;
-            font-family: "Oswald", sans-serif;
-            width: 35rem;
-            margin-top: 3rem;
-            text-shadow: 0px 0px 0px black;
-        }*/
         h1.title-banner {
             text-shadow: 0px 1px 1px black;
         }
@@ -357,18 +348,22 @@ ul.navbar-nav {
     /*google gadget*/
 
 #google_translate_element_wrapper {
+
     text-align: right;
     z-index: 100000 !important;
     margin: 0px 3rem 0em 0;
     position: fixed;
     right: 0px;
-    top:1.45rem;
+    top: 1.45rem;
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
-    filter: grayscale(100%); /* Para cuando es estándar funcione en todos */
-    filter: Gray(); /* IE4-8 and 9 */
+    filter: grayscale(100%);
+    filter: Gray();
+    border-left: 1px solid #CCC;
+    padding-left: 10px;
+
     #google_translate_element {
         display: inline-block;
         .goog-te-gadget-simple {
@@ -379,19 +374,18 @@ ul.navbar-nav {
             .goog-te-menu-value > span {
                 //display: none;
                 text-decoration: none;
-                top: -4px;
+                top:0px;
                 position: relative;
             }
         }
     }
     .google_translate_span{
         font-size: 11px;
-        position: absolute;
-        left: 27px;
-        top: 22px;
+        top: -1px;
+        position: relative;
     }
     .gtranslator-info {
-        width: 15px;
+        width: 20px;
         height: 15px;
         overflow: hidden;
         display: inline-block;
@@ -401,8 +395,8 @@ ul.navbar-nav {
         margin-left: 5px;
         cursor: pointer;
         right: 0;
-        top: 22px;
-        position: absolute;
+        top: -7px;
+        position: relative;
        &:before {
             content: "\f059";
             font-family: "FontAwesome";
@@ -453,7 +447,7 @@ ul.navbar-nav {
 }
 /* FIN MENU.SCSS */
 
-@media (max-width: 991px) {
+@media screen and  (max-width: 991px) {
     .eu-osha-logo{
         margin-left: 60px;
         padding-top: 9px;
@@ -519,6 +513,7 @@ ul.navbar-nav {
     .navbar-nav {
         float: none!important;
         margin-top: 7.5px;
+
         &>li {
             float: none;
         }
@@ -551,13 +546,17 @@ ul.navbar-nav {
 
 }
 
-@media (max-width: 767px) {
+@media screen and  (min-width:240px) and  (max-width:767px) {
+    #google_translate_element_wrapper{
+        border:none;
+    }
     .ilo-header {
         #containerMenu {
             .menu-tools-top {
                 padding: 15px 15px 0;
+                display: none !important;
                 .submenu-icon {
-                    display: block;
+                    //display: block;
                     .three-points{
                         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point.svg) no-repeat;
                         background-size: 40px 40px;
@@ -569,8 +568,8 @@ ul.navbar-nav {
                         top: -3px;
                     }
                 }
-                .social-network {
-                    display: none;
+                .social-network, .navbar-right {
+                    display: none !important;
                     margin: 0 15px 0 0;
                     padding-right: 35px;
                     li {
@@ -585,6 +584,9 @@ ul.navbar-nav {
                 }
             }
         }
+        h1.title-banner {
+            text-shadow: 0px 1px 5px rgba(0, 0, 0, 1) !important;
+        }
     }
     .path {
         font-size: 1.1rem;
@@ -595,7 +597,18 @@ ul.navbar-nav {
         padding: 0 1rem 0 0;
         float: right !important;
         margin: 1rem 0 0 0;
-        display: block;
         clear: both;
+    }
+}
+
+@media screen and (max-width:672px){
+    #google_translate_element_wrapper{
+        right: 7%;
+    }
+}
+
+@media screen and (max-width:400px){
+    #google_translate_element_wrapper{
+        right: 0%;
     }
 }
