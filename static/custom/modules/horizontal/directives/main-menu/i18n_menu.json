@@ -7,12 +7,10 @@
 	"Submenu":"Submenu social networks and print",
 	"SocialMenu":"Social networks menu",
 
-	"OSHATwitter":"EU OSHA in Twitter",
-	"OSHAFacebook":"EU OSHA Facebook Page",
-	"OSHALinkedin":"Follow EU OSHA in LinkedIn",
-	"OSHAGoogle":"EU OSHA channel on Google +",
-	"OSHAFlickr":"EU OSHA Flickr",
-	"OSHABlog":"EU OSHA Blog",
+	"OSHATwitter":"Share this on Twitter",
+	"OSHAFacebook":"Share this on Facebook",
+	"OSHALinkedin":"Share this on LinkedIn",
+	"OSHAGoogle":"Share this on Google +",
 
 	"PrintPage":"Print page",
 	"Print":"Print",
