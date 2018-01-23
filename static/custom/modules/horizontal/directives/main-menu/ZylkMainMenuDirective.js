@@ -96,7 +96,7 @@ define(function (require) {
                         var lPath = $location.path().split("/");
                         $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + $scope.breadCrumbStructure['sections'][lPath[1]]);
                         $scope.pathURLDVT=$location.absUrl();
-                        $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
+                        $scope.pathURLDVTGoogle = "https://plus.google.com/share?url=" + $scope.pathURLDVT;
                         return (id.replace(/\s+/g, '-') === $scope.breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
