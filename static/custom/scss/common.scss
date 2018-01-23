@@ -125,16 +125,16 @@ body.hasCookies{
   #google_translate_element_wrapper{
     top: 4rem;
     position: relative;
-    width: 125px;
+    width: auto;
     float: right;
-    right:2.8rem;
+    right: 0;
   }
   span.google_translate_span {
     width: 135px;
     left: 0px !important;
   }
   span.gtranslator-info {
-    right: -3em !important;
+    right:0em !important;
   }
   .gtranslator-msg {
     top: 199px;
