@@ -95,6 +95,7 @@ define(function (require) {
                     $scope.isCurrentSection = function (id) {
                         var lPath = $location.path().split("/");
                         $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + $scope.breadCrumbStructure['sections'][lPath[1]]);
+                        $scope.pathURLDVT=$location.absUrl();
                         return (id.replace(/\s+/g, '-') === $scope.breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
