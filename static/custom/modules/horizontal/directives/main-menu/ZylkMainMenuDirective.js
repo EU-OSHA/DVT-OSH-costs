@@ -96,10 +96,12 @@ define(function (require) {
                         var lPath = $location.path().split("/");
                         $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + $scope.breadCrumbStructure['sections'][lPath[1]]);
                         $scope.pathURLDVT=$location.absUrl();
+                        $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
                         return (id.replace(/\s+/g, '-') === $scope.breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
+                    $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
 
                     $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
                             $log.debug('Loading $viewContentLoading');
