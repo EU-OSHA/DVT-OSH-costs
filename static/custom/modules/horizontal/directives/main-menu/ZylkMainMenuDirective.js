@@ -101,7 +101,7 @@ define(function (require) {
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
-                    $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
+                    $scope.pathURLDVTGoogle = "https://plus.google.com/share?url=" + $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
 
                     $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
                             $log.debug('Loading $viewContentLoading');
