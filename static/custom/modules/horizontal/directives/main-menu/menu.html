@@ -5,7 +5,7 @@
                 <picture>
                     <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en-respx2.png" media="(max-width: 440px)">
                     <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en-resp.png" media="(max-width: 991px)">
-                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png">
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en-resp.png" media="(max-width: 1024px)">
                     <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" alt="{{i18n_menu.OSHA}}">
                 </picture>
             </a>
@@ -109,30 +109,32 @@
     </div>
 
     <div class="col-xs-12 col-md-12  titleAndWidget">
-        <p class="path col-xs-12 col-sm-9 col-md-9 col-lg-9" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
-        <ul class="social-network list-inline navbar-right col-md-3" id="osha-menu-social">
+        <p class="path col-xs-12 col-sm-8 col-md-8 col-lg-8" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
+        <ul class="social-network list-inline navbar-right col-md-4" id="osha-menu-social">
             <li>
-                <span data-ng-bind="i18n_menu.Share"></span>
-            </li>
-            <li>
-                <a target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_menu.OSHATwitter}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
-                    <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_menu.OSHAFacebook}}" socialshare-url="{{pathURLDVT}}">
-                    <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_menu.OSHALinkedin}}" socialshare-url="{{pathURLDVT}}">
-                    <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
-                    <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
-                </a>
+                <span data-ng-bind="i18n_menu.Share" class="text-share"></span>
+                <ul>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_menu.OSHATwitter}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_menu.OSHAFacebook}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_menu.OSHALinkedin}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
+                            <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
 
