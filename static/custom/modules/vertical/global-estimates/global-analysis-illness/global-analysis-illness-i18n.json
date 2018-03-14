@@ -18,5 +18,10 @@
 
   "Select": "Select the country",
   "Region": "Region",
-  "Info":"Info"
+  "Info":"Info",
+
+  "RegionCode": "Region code",
+  "RegionTableTitle":"WHO regions and World Bank income categories",
+  "RegionText":"More information about ",
+  "RegionLink":"WHO Regions"
 }
