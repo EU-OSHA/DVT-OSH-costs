@@ -12,6 +12,9 @@ define(function(require){
 
     var ExportPopupComponent = require('cde/components/ExportPopupComponent');
 
+    var configService = require('horizontal/config/configService');
+    var i18n = configService.getLiterals();
+
     // expose saveAs
     require('common-exporting/file-saver');
 
@@ -200,6 +203,10 @@ define(function(require){
             }
             data=data.substring(0, data.length - 1)+"\n";
         }
+
+        // Insert empty line and line with how to visualize it in Excel
+        data += "\n\n";
+        data += i18n.L148;
 
         var downloadCSV = function() {
             var BOM = "\uFEFF";
