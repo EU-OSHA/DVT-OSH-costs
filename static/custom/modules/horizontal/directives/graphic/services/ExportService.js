@@ -157,7 +157,15 @@ define(function(require){
     }
 
     var exportData = function(scope, dashboard){
-        var title=(scope.title);
+        var title = "chart-data";
+        if (scope.title != "")
+        {
+            title = (scope.title);
+        } 
+        else if (scope.longTitle != "")
+        {
+            title = (scope.longTitle);
+        }
         title=title.replace(/;/g," ").replace(/,/g, " ").replace(/ +/g, "_");
         var exportDefinition = {
             type: "ExportPopupComponent",
