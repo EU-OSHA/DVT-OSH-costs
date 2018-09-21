@@ -205,7 +205,6 @@ define(function (require) {
 
             // Prevent carousel from sliding automatically
             angular.element('#carouselCountries').carousel('pause');
-
         });
 
         angular.element('.global-estimates-indicators li').click(function() {

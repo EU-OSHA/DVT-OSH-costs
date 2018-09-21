@@ -113,10 +113,6 @@ define(function (require) {
             }
         ];
 
-        angular.element('#carouselHome').carousel({
-            interval: 1000 * 900
-        });
-
         // Charts
         $scope.chartDeathGlobal = {
             title: i18n[i18n_home.chartDeathGlobal.title],
@@ -199,6 +195,10 @@ define(function (require) {
                     return false;
                 }               
             }
+        });
+
+        angular.element('#carouselHome').carousel({
+            interval: 1000 * 900
         });
 
        $scope.status = 'ready';
