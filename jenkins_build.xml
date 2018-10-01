@@ -35,6 +35,9 @@
         <istrue value="${do_db}"/>
     </condition>
 
+	<condition property="wipe_libraries_prop" value="true">
+        <istrue value="${wipeLibraries}"/>
+    </condition>
     <echo>jenkins-environment: ${jenkins-environment}</echo>
     <echo>do_db: ${do_db}</echo>
     <echo>do_track: ${do_track}</echo>
@@ -78,11 +81,11 @@
         </delete>
     </target>
 
-    <target name="clean-modules" if="${wipeLibraries}">
+    <target name="clean-modules" if="wipe_libraries_prop">
         <delete dir="node_modules"/>
     </target>
 
-    <target name="setup-modules" if="${wipeLibraries}">
+    <target name="setup-modules" if="wipe_libraries_prop">
         <exec executable="node" spawn="false">
             <arg value="-v"/>
         </exec>
