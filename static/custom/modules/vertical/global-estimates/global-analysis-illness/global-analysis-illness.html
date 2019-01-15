@@ -11,7 +11,7 @@
                                         query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                         width="250"
                                         orientation="horizontal"
-                                        params="[['pIndicator','28'], ['pRegion', 'GLOBAL_ESTIMATE']]"
+                                        params="[['pIndicator','26'], ['pRegion', 'GLOBAL']]"
                                         p-x-labels="1"
                                         p-y-labels="0"
                                         colors="[illnessColors.Cancer, illnessColors.MSD,illnessColors.Circulatory,  illnessColors.Injuries, illnessColors.Others]"
@@ -27,11 +27,11 @@
                         ></zylk-bar-chart>
                     </div>
                     <ul class="legend-list col-sm-7 col-md-4">
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Cancer']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Cancer]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['MSD']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.MSD]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Circulatory']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Circulatory]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Injuries']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Injuries]"></span></li>
-                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL_ESTIMATE']['Others']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Others]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Cancer']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Cancer]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['MSD']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.MSD]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Circulatory']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Circulatory]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Injuries']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Injuries]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Others']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Others]"></span></li>
                     </ul>
                     <div class="chart-description col-sm-12  col-md-5">
                         <p data-ng-bind-html="to_trusted(i18n.L140)"></p>
@@ -63,7 +63,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'EU28']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'EU28']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -98,7 +98,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'HIGH']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'HIGH']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -133,7 +133,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'AFRO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'AFRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -168,7 +168,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'AMRO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'AMRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -203,7 +203,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'EMRO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'EMRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -238,7 +238,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'EURO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'EURO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -273,7 +273,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'SEARO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'SEARO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
@@ -308,7 +308,7 @@
                             <zylk-bar-chart data-ng-cloak class="text-center"
                                             query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
                                             orientation="horizontal"
-                                            params="[['pIndicator','28'], ['pRegion', 'WPRO']]"
+                                            params="[['pIndicator','26'], ['pRegion', 'WPRO']]"
                                             p-x-labels="1"
                                             p-y-labels="0"
                                             colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
