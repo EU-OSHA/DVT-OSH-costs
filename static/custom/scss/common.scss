@@ -679,12 +679,14 @@ div.blockUIDefaultImg:before {
   top: 0;
   position: fixed;
   color: #666;
+  min-height: 8rem;
   .text {
     float:left;
-    width:70%
+    width:60%;
   }
   .buttons {
-
+    float:right;
+    width:40%;
   }
   button {
     color:$colorWhite;

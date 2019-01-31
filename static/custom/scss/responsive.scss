@@ -29,6 +29,22 @@
 
 
 @media screen and (max-width: 1200px) {
+
+  #cookiesConsent {
+    min-height: 8rem;
+    .text {
+      float:none;
+      width:100%;
+    }
+    .buttons {
+      float:none;
+      width:100%;
+      text-align: center;
+      button{
+        float: none;
+      }
+    }
+  }
   .ilo-header{
     #not-home-cover {
       background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png) #529FA2 no-repeat right top;
@@ -1130,6 +1146,17 @@
 
 
 @media screen and (max-width:667px) {
+  #cookiesConsent {
+    .text {
+    }
+    .buttons {
+      button{
+        float: none;
+        width:100%;
+        margin: 0.5rem 0;
+      }
+    }
+  }
   .gtranslator-msg {
     width: 100%;
     top: 28px;
@@ -1234,6 +1261,7 @@
   }
 }
 @media screen and (max-width:440px) {
+
   #google_translate_element_wrapper {
     margin: 0 5px !important;
     top: 5px !important;
