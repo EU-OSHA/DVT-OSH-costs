@@ -14,7 +14,7 @@ define(function (require) {
         generateController: function (module, ctrlName) {
 
             return angular.module(module)
-                .controller(ctrlName, function ($scope, $rootScope, $log, $window, $cookies) {
+                .controller(ctrlName, function ($scope, $rootScope, $log, $window, $cookies, configService) {
 
                     angular.element("#google_translate_element a.goog-te-menu-value" ).on('click', function() {
 
@@ -49,6 +49,7 @@ define(function (require) {
                     $scope.cookiesDecline = function() 
                     {
                         $rootScope.declinedCookies = true;
+                        configService.tooglePiwik(true);
                         if (angular.element('body').hasClass('hasCookies')) 
                         {
                             angular.element('body').removeClass('hasCookies');                            
@@ -57,6 +58,7 @@ define(function (require) {
                     $scope.consentAgree = function() 
                     {
                         $rootScope.hasAgreedCookies = true;
+                        configService.tooglePiwik(false);
                         if (angular.element('body').hasClass('hasCookies')) 
                         {
                             angular.element('body').removeClass('hasCookies');                            
