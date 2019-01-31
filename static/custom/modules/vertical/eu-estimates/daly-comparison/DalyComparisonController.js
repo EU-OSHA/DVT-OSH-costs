@@ -16,9 +16,8 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, DalyComparisonService, plotsProvider, $document, configService, $sce) {
+    function controller($scope, $rootScope, $window, $stateParams, $state, $log, dvtUtils, dataService, DalyComparisonService, plotsProvider, $document, configService, $sce) {
         $scope.title ="DALY Comparison";
-
         // CDA
         $scope.cda =  configService.getIloCda();
 
@@ -45,21 +44,7 @@ define(function (require) {
         }
 
         angular.element(document).on('click', function(e) {
-            angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]')
-                    && angular.element(e.target).parents('div.popover').length == 0)
-                    || angular.element(e.target).is('a.popover-close i')) {
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
-                    angular.element(this).addClass('popover-hidden');
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
-                    if (angular.element(this).hasClass('popover-hidden')) {
-                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
-                        angular.element(this).removeClass('popover-hidden');
-                    }
-                }
-            });
+            configService.termClick(e, $rootScope.hasAgreedCookies);
         });
 
         var href = $window.location.origin+$window.location.pathname+'#!'+$state.current.name;
@@ -156,7 +141,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
 
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'DalyComparisonService', 'plotsProvider', '$document', 'configService', '$sce'];
+    controller.$inject = ['$scope', '$rootScope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'DalyComparisonService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
 
 });

@@ -11,8 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, $sce) {
-
+    function controller(configService, dvtUtils, $scope, $rootScope, $stateParams, $state, $document, $log, $sce) {
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -43,21 +42,7 @@ define(function (require) {
         }
 
         angular.element(document).on('click', function(e) {
-            angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]')
-                    && angular.element(e.target).parents('div.popover').length == 0)
-                    || angular.element(e.target).is('a.popover-close i')) {
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
-                    angular.element(this).addClass('popover-hidden');
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
-                    if (angular.element(this).hasClass('popover-hidden')) {
-                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
-                        angular.element(this).removeClass('popover-hidden');
-                    }
-                }
-            });
+            configService.termClick(e, $rootScope.hasAgreedCookies);
         });
 
         $scope.goto = function (estado) {
@@ -204,6 +189,6 @@ define(function (require) {
        $scope.status = 'ready';
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', '$sce'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$rootScope', '$stateParams', '$state','$document', '$log', '$sce'];
     return controller;
 });

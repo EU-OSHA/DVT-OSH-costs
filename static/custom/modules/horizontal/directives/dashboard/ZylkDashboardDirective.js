@@ -37,8 +37,8 @@ define(function (require) {
                 parameters: '='
                 , promises: '='
             }
-            , controller: ['$scope',function ($scope) {
-
+            , controller: ['$scope','$rootScope', function ($scope, $rootScope) {
+                
                 $scope.components = [];
                 if (!$scope.dashboard) {
                     if(!this.dashboard)this.dashboard = new Dashboard();
