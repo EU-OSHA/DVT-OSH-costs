@@ -247,9 +247,11 @@
 		z-index: 15;
 		&.right{
 			background-image: none;
-			left: 99.5%;
+			left:auto;
+			right: -36px;
 			i{
 				top: 45%;
+				right:0;
 				position: absolute;
 				color: $subheader;
 			}
@@ -262,6 +264,7 @@
 			left: -42px;
 			i{
 				top: 45%;
+				left: 0;
 				position: absolute;
 				color: $subheader;
 			}

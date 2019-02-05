@@ -838,9 +838,10 @@
   }
   .modal-dialog {
     width: 98%;
-    height:auto;
+    height:99%;
     padding: 1%;
     margin: 1%;
+    overflow-y: scroll;
   }
   .page-header-wrapper .page-header {
     margin: 6rem auto 0;
@@ -889,7 +890,8 @@
             margin: auto;
             padding: 15px 0px;
             img{
-              width:100%;
+              width: 80%;
+              margin-top: 3rem;
             }
           }
           picture {
@@ -940,10 +942,11 @@
   .osha-global-estimates-wrapper {
     .carousel-control{
       &.left {
-        left: -33px !important;
+        left:0px !important;
       }
       &.right {
-        left: 98% !important;
+        left: auto !important;
+        right: 0 !important;
       }
     }
   }
@@ -1200,10 +1203,11 @@
   .osha-global-estimates-wrapper{
     .carousel-control{
       &.left{
-        left: -27px !important;
+        left: 0px !important;
       }
       &.right {
-        left: 96% !important;
+        left: auto !important;
+        right: 0px !important;
       }
     }
     .carousel-countries{
