@@ -386,12 +386,12 @@
   /*overflow-y: auto;*/
 }
 .modal.in .modal-dialog::-webkit-scrollbar {
-  width:8px;
+  width:4px;
   background-color: #F5F5F5;
 }
 
 .modal.in .modal-dialog::-webkit-scrollbar-thumb {
-  background-color: #000000;
+  background-color: #666;
 }
 
 select::-ms-expand{
