@@ -186,7 +186,7 @@ header {
 }
 div.contextual-menu > div.dropdown {
   background:transparent !important;
-  padding: 4px 5px;
+  padding: 4px 0 0;
   border-radius: 4px;
   width: 30px;
   float: right;
@@ -226,27 +226,13 @@ div.contextual-menu > div.dropdown {
     }
     .three-points-vertical{
       background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point-vertical.svg) no-repeat;
-      background-size: 12px 27px;
-      width: 27px;
-      height: 27px;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
       display: inline-block;
       opacity: 1;
       position: relative;
-      top: -3px;
-      /*
-        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point-vertical.svg) 4px 5px no-repeat;
-        background-size: 30px 30px;
-        width: 27px;
-        height: 27px;
-        display: inline-block;
-        opacity: 1;
-        position: relative;
-        top: -3px;
-        border: 1px solid #ccc;
-        border-radius: 180px;
-        width: 40px;
-        height: 40px;
-       */
+      top:0px;
     }
   }
 }
@@ -373,7 +359,7 @@ li.active{
   clear:both;
 }
 .dvt-modal .backGraps {
-  overflow: auto;
+  overflow: hidden;
   margin: 1em auto 0;
   min-height:1em;
 }
@@ -494,9 +480,10 @@ li.active{
 .dvt-modal {
   .modal-wrapper {
     height: auto;
+    height: 95%;
     overflow: auto;
     &::-webkit-scrollbar {
-      width: 6px;
+      width: 4px;
       background-color: #F5F5F5;
     }
     &::-webkit-scrollbar-track {
@@ -504,10 +491,12 @@ li.active{
       background-color: #F5F5F5;
     }
     &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
       background-color: #666;
     }
     .modal-body {
       height: 100%;
+      height:auto;
     }
   }
   .dvt-chart {
@@ -593,7 +582,7 @@ li.active{
     border-radius: .5em;
     margin-bottom: 2em;
     z-index: 9999999 !important;
-    overflow: auto;
+    overflow: visible;
 }
 
 @media screen and (max-width: 1280px) {
@@ -601,21 +590,21 @@ li.active{
     width:26.5%;
   }
   .dvt-modal{
-    width: 90% !important;
-    left: 5%;
+    width: 80% !important;
+    left: 10%;
   }
 
 }
 @media screen and (min-width : 1281px) and (max-width : 1650px) {
   .dvt-modal{
     width: 75% !important;
-    left:12.5%;
+    left: 12.5%;
   }
 }
 @media screen and (min-width : 1650px) {
   .dvt-modal{
     width: 60% !important;
-    left:20%;
+    left: 20%;
   }
 }
 
@@ -857,21 +846,21 @@ p {
 .dvt-modal::-moz-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0);
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: transparent !important;
 }
 
 .dvt-modal::-webkit-scrollbar,
 .dvt-modal::-moz-scrollbar
 {
-  width: 12px;
+  width: 6px;
   background-color: transparent !important;
 }
 
 .dvt-modal::-webkit-scrollbar-thumb,
 .dvt-modal::-moz-scrollbar-thumb
 {
-  border-radius: 10px;
+  border-radius: 6px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
   background-color: transparent !important;
 }

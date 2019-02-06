@@ -329,12 +329,24 @@
   background: #FFF;
   padding: 1rem;
   border-radius: 8px;
+  height: 95%;
   .modal-content{
     margin:1rem;
     background: $backGraps;
     -webkit-box-shadow: none;
     box-shadow: none;
     border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 98%;
+    &::-webkit-scrollbar {
+      width:6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+      border-radius: 6px;
+    }
     .modal-header{
       padding: 10px 20px;
       border-bottom: none;
@@ -383,22 +395,29 @@
 }
 
 .modal.in .modal-dialog {
-  /*overflow-y: auto;*/
+ /* overflow-y: auto;
+  overflow-x: hidden;
+  height: 95%;*/
 }
 .modal.in .modal-dialog::-webkit-scrollbar {
-  width:4px;
+  width:6px;
   background-color: #F5F5F5;
 }
 
 .modal.in .modal-dialog::-webkit-scrollbar-thumb {
+  border-radius: 6px;
   background-color: #666;
 }
 
 select::-ms-expand{
   display: none;
 }
-.tooltip .fa-close{
-  padding-top: 0.5em;
-  padding-right: 0.5em;
-  color: #fff;
+.tooltip{
+  position: fixed;
+  position: -ms-page;
+  .fa-close{
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    color: #fff;
+  }
 }

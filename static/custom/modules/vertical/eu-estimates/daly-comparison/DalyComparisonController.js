@@ -124,6 +124,8 @@ define(function (require) {
         angular.element('#carouselCountries').on('slid.bs.carousel', function () {
             angular.element('#carouselCountries li.item').removeClass('newClass');
 
+            angular.element('.carousel-inner').removeClass('overflowHidden');
+
             // Update location based on slide
             var item = angular.element(this).find('.item.active').data('name');
             if (item) window.location.href = href + '#' + item;
@@ -135,7 +137,10 @@ define(function (require) {
 
         angular.element('.global-estimates-indicators li').click(function() {
             angular.element('.global-estimates-indicators li').toggleClass('item-block');
-
+            angular.element('.carousel-inner').addClass('overflowHidden');
+        });
+        angular.element('.carousel-control').click(function() {
+            angular.element('.carousel-inner').addClass('overflowHidden');
         });
 
         $scope.status = 'ready';

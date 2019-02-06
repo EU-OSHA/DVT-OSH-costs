@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $rootScope, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
+    function controller($scope, $rootScope, $timeout, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
         $scope.title ="Global Regions";
 
         // CDA
@@ -37,12 +37,6 @@ define(function (require) {
                 placement: 'top'
             });
 
-            angular.element("a[data-toggle=tooltip]").mouseover(function() {
-                angular.element('ul.carousel-inner').css('overflow','visible');
-            });
-            angular.element('a[data-toggle=tooltip]').mouseout(function() {
-                angular.element('ul.carousel-inner').css('overflow','hidden');
-            });
 
             return $sce.trustAsHtml(html_code);
         }
@@ -184,6 +178,7 @@ define(function (require) {
 
         angular.element('#carouselCountries').on('slid.bs.carousel', function () {
             angular.element('#carouselCountries li.item').removeClass('newClass');
+            angular.element('.carousel-inner').removeClass('overflowHidden');
 
             // Update location based on slide
             var item = angular.element(this).find('.item.active').data('name');
@@ -195,7 +190,10 @@ define(function (require) {
 
         angular.element('.global-estimates-indicators li').click(function() {
             angular.element('.global-estimates-indicators li').toggleClass('item-block');
-
+            angular.element('.carousel-inner').addClass('overflowHidden');
+        });
+        angular.element('.carousel-control').click(function() {
+            angular.element('.carousel-inner').addClass('overflowHidden');
         });
 
         angular.element('div#modalChart').click(function() {
@@ -217,7 +215,7 @@ define(function (require) {
         $scope.status = 'ready';
     }
 
-    controller.$inject = ['$scope', '$rootScope', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
+    controller.$inject = ['$scope', '$rootScope', '$timeout', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
     return controller;
 
 });
