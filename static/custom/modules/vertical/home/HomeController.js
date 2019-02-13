@@ -52,6 +52,7 @@ define(function (require) {
         // Select Options
         $scope.select = [
             {
+                // Euro
                 id: '1',
                 label: i18n.L114,
                 text: i18n[i18n_home.slider1.relatedEuro],
@@ -60,6 +61,7 @@ define(function (require) {
                 imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
                 image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal
             },{
+                // Dollar
                 id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
@@ -134,6 +136,7 @@ define(function (require) {
             $scope.slides[0].image = $scope.currency.image;
             $scope.slides[0].image2 = $scope.currency.image2;
             $scope.slides[0].imageModal = $scope.currency.imageModal;
+            $scope.slides[0].image2Modal = $scope.currency.image2Modal;
         }
 
         $scope.modal = function(type, index) {
