@@ -831,8 +831,7 @@ p {
 }
 .section-carrousel, #carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
   .tooltip.fade{
-    position: fixed;
-    position: -ms-page;
+
     z-index: 999999999999999999999 !important;
     min-width: 280px !important;
     width: 280px !important;
@@ -841,6 +840,12 @@ p {
         min-width: 280px !important;
         max-width: 100% !important;
     }
+  }
+}
+.dvt-modal{
+  .tooltip.fade {
+    position: fixed !important;
+    position: -ms-page !important;
   }
 }
 

@@ -413,11 +413,15 @@ select::-ms-expand{
   display: none;
 }
 .tooltip{
+  position: absolute !important;
+  /*
   position: fixed;
   position: -ms-page;
+  */
   .fa-close{
     padding-top: 0.5em;
     padding-right: 0.5em;
     color: #fff;
+    cursor: pointer;
   }
 }
