@@ -669,7 +669,7 @@
 } /** end media query 768 - 1024 portrait **/
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
   .page-content {
-    overflow-x: hidden;
+    //overflow-x: hidden;
   }
   .ilo-header #not-home-cover {
     margin-top: 10px !important;
@@ -960,12 +960,12 @@
     .chart-analysis-illnesses.affix {
       top: 95px;
       width: 100% !important;
-      height: auto;
+      height: auto !important;
       z-index: 9;
-      overflow: hidden;
+      overflow: auto !important;
       background:$colorWhite !important;
       padding: 20px 0 0 0 !important;
-      position: initial;
+      position: static;
       .chart-analysis-illnesses-box {
         background:$colorWhite !important;
         border-bottom: 0 !important;
@@ -1014,7 +1014,7 @@
           }
         }
         .chart-description {
-          display: block;
+          display: block !important;
         }
       }
 

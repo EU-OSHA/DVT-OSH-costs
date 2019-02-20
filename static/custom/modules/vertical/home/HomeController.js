@@ -26,7 +26,7 @@ define(function (require) {
                 content : function() {
                     return $(this).attr('data-original-title');
                 },
-                placement: 'bottom'
+                placement: 'top'
             });
 
             angular.element('[data-toggle="popover"]').popover({
@@ -40,6 +40,20 @@ define(function (require) {
 
             return $sce.trustAsHtml(html_code);
         }
+
+        angular.element('#carouselHome').on('slid.bs.carousel', function () {
+            angular.element('.carousel-inner').removeClass('overflowHidden');
+        });
+        angular.element('#carouselHome li').click(function() {
+             angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+        });
+        angular.element('#carouselHome .carousel-control').click(function() {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+        });
+
+        angular.element('#carouselHome .carousel-inner .carousel-note').click(function() {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowVisible');
+        });
 
         angular.element(document).on('click', function(e) {
             configService.termClick(e, $rootScope.hasAgreedCookies);

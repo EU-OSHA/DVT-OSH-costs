@@ -116,6 +116,7 @@ body {
   font-size: 1.6rem;
   color: #898989;
   padding-top: 100px;
+  overflow-x: hidden;
 }
 body.hasCookies{
   padding-top: 12rem;
@@ -156,15 +157,22 @@ header {
 }
 
 .page-content {
-  float: left;
+ /* float: left; */
   margin: 0;
   width: 100%;
 }
 .mainBody {
-    overflow: auto;
+    //overflow: auto;
     width: 100%;
-    //display: flex;
+    //display: flow-root;
+  &:before{
+    content: "";
+    clear: both;
+    display: table;
+  }
 }
+
+
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -829,9 +837,8 @@ p {
     padding: 1rem;
   }
 }
-.section-carrousel, #carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
+#carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
   .tooltip.fade{
-
     z-index: 999999999999999999999 !important;
     min-width: 280px !important;
     width: 280px !important;
@@ -840,6 +847,12 @@ p {
         min-width: 280px !important;
         max-width: 100% !important;
     }
+  }
+}
+.section-carrousel{
+  .tooltip.fade {
+    position: fixed !important;
+    position: -ms-page !important;
   }
 }
 .dvt-modal{

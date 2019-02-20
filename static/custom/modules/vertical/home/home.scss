@@ -47,7 +47,14 @@
     }
     .carousel-inner{
       padding: 0 !important;
-
+      overflow: auto;
+      display: table;
+      &.overflowHidden{
+        overflow: hidden !important;
+      }
+      &.overflowVisible{
+        overflow: visible !important;
+      }
       li.item{
         text-align: center;
         cursor: default;
