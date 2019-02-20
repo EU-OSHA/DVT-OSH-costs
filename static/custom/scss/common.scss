@@ -829,13 +829,18 @@ p {
 .tooltip.fade{
   min-width: 280px !important;
   width: 280px !important;
-  position: fixed!important;
+  position: absolute !important;
   z-index: 999999999999999999999 !important;
   .tooltip-inner{
     text-align: left !important;
     min-width: 280px !important;
     max-width: 100% !important;
     padding: 1rem;
+  }
+}
+.modal-content{
+  .tooltip.fade {
+    position: fixed !important;
   }
 }
 #carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
