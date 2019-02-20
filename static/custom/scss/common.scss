@@ -829,6 +829,7 @@ p {
 .tooltip.fade{
   min-width: 280px !important;
   width: 280px !important;
+  position: fixed!important;
   z-index: 999999999999999999999 !important;
   .tooltip-inner{
     text-align: left !important;
