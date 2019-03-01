@@ -31,7 +31,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L3 +  " - " + i18n.L135,
+                title: i18n.L95 +  " - " + i18n.L135,
                 description: i18n.L60,
             }
         });
