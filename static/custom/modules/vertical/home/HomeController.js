@@ -154,6 +154,7 @@ define(function (require) {
         }
 
         $scope.modal = function(type, index) {
+            angular.element('body').addClass('ovh');
             switch (type){
                 case 'chart':
                     if (index == 1){
@@ -175,6 +176,7 @@ define(function (require) {
 
         angular.element('div#modalChart').click(function() {
             angular.element('div#modalChart').modal('hide');
+            angular.element('body').removeClass('ovh');
         }).children().click(function(e){
             if(!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {
