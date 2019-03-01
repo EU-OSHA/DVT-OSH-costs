@@ -27,7 +27,7 @@
 
 						</ul>
 						<ol class="carousel-indicators">
-							<li ng-repeat="slide in slides" data-target="#carouselHome" data-slide-to="{{$index}}" ng-class="{'active': $index == 0 }"></li>
+							<li ng-repeat="slide in slides" data-target="#carouselHome" data-slide-to="{{$index}}" data-ng-click="overflowHidden()" ng-class="{'active': $index == 0 }"></li>
 						</ol>
 					</div>
 					<!-- Left and right controls -->
