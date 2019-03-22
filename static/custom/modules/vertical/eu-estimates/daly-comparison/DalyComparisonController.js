@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $rootScope, $window, $stateParams, $state, $log, dvtUtils, dataService, DalyComparisonService, plotsProvider, $document, configService, $sce) {
+    function controller($scope, $rootScope, $window, $stateParams, $state, $log, dvtUtils, dataService, DalyComparisonService, plotsProvider, $document, configService, $sce, $interval) {
         $scope.title ="DALY Comparison";
         // CDA
         $scope.cda =  configService.getIloCda();
@@ -25,15 +25,6 @@ define(function (require) {
         $scope.i18n = configService.getLiterals();
 
         $scope.to_trusted = function(html_code) {
-            angular.element('[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
-
             angular.element("a[data-toggle=tooltip]").mouseover(function() {
                 angular.element('ul.carousel-inner').css('overflow','visible');
             });
@@ -143,10 +134,42 @@ define(function (require) {
             angular.element('.carousel-inner').addClass('overflowHidden');
         });
 
+        $scope.pauseCarousel = function()
+        {
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('[data-toggle="popover"]').popover != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }
+
         $scope.status = 'ready';
     }
 
-    controller.$inject = ['$scope', '$rootScope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'DalyComparisonService', 'plotsProvider', '$document', 'configService', '$sce'];
+    controller.$inject = ['$scope', '$rootScope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'DalyComparisonService', 'plotsProvider', '$document', 'configService', '$sce', '$interval'];
     return controller;
 
 });

@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $rootScope, $stateParams, $state, $document, $log, $sce) {
+    function controller(configService, dvtUtils, $scope, $rootScope, $stateParams, $state, $document, $log, $sce, $interval) {
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -19,25 +19,9 @@ define(function (require) {
         var i18n_home = require('json!vertical/home/i18n');
         $scope.i18n_home = i18n_home;
 
+        $scope.carouselInterval = 7000;
+
         $scope.to_trusted = function(html_code, pPlacement) {
-            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
-
-            angular.element('[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
-
             return $sce.trustAsHtml(html_code);
         }
 
@@ -203,13 +187,54 @@ define(function (require) {
             }
         });
 
-        angular.element('#carouselHome').carousel({
-            interval: 1000 * 900
-        });
+        $scope.pauseCarousel = function()
+        {
+            /*angular.element('#carouselHome').carousel({
+                interval: 1000 * 900
+            });*/
 
-       $scope.status = 'ready';
+            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('#carouselHome').carousel != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }        
+
+        $scope.status = 'ready';
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$rootScope', '$stateParams', '$state','$document', '$log', '$sce'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$rootScope', '$stateParams', '$state','$document', '$log', '$sce', '$interval'];
     return controller;
 });
