@@ -27,19 +27,19 @@ define(function (require) {
 
         angular.element('#carouselHome').on('slid.bs.carousel', function () {
             angular.element('.carousel-inner').removeClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').removeClass('overflowHidden');
         });
 
         angular.element('#carouselHome .carousel-control').click(function() {
             angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
         });
 
         $scope.overflowHidden = function (estado) {
             angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
          };
 
-        angular.element('#carouselHome .carousel-inner .carousel-note').click(function() {
-            angular.element('#carouselHome .carousel-inner').addClass('overflowVisible');
-        });
 
         angular.element(document).on('click', function(e) {
             configService.termClick(e, $rootScope.hasAgreedCookies);

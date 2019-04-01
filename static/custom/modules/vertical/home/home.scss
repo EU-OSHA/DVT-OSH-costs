@@ -21,6 +21,13 @@
     }
   }
 
+  .overflowHidden{
+    overflow: hidden !important;
+  }
+  .overflowVisible{
+    overflow: visible !important;
+  }
+
   #carouselHome{
     min-height: 620px;
     margin: 0px 0 0;
