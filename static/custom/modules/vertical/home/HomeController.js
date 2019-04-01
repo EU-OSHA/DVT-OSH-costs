@@ -194,9 +194,7 @@ define(function (require) {
 
         $scope.pauseCarousel = function()
         {
-            /*angular.element('#carouselHome').carousel({
-                interval: 1000 * 900
-            });*/
+            angular.element('#carouselHome').carousel('pause');
 
             angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
                 html: true,
