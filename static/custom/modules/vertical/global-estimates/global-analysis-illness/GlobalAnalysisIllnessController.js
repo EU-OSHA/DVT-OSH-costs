@@ -27,6 +27,11 @@ define(function (require) {
         $scope.i18n_global = require('json!vertical/global-analysis-illness/i18n');
 
         $scope.to_trusted = function(html_code) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+
             return $sce.trustAsHtml(html_code);
         }
 

@@ -25,6 +25,11 @@ define(function (require) {
         $scope.i18n = configService.getLiterals();
 
         $scope.to_trusted = function(html_code) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+            
             angular.element("a[data-toggle=tooltip]").mouseover(function() {
                 angular.element('ul.carousel-inner').css('overflow','visible');
             });

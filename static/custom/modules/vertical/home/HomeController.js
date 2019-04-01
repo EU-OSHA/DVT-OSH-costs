@@ -22,6 +22,11 @@ define(function (require) {
         $scope.carouselInterval = 7000;
 
         $scope.to_trusted = function(html_code, pPlacement) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+
             return $sce.trustAsHtml(html_code);
         }
 

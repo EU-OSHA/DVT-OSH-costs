@@ -26,6 +26,11 @@ define(function (require) {
         $scope.i18n_illness = require('json!vertical/eu-estimates/eu-analysis-illness/i18n');
 
         $scope.to_trusted = function(html_code) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+            
             return $sce.trustAsHtml(html_code);
         }
 
