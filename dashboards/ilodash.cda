@@ -76,6 +76,7 @@
         ON t4.literal_id=l4.id
         WHERE i.id=${pIndicator}
         AND t3.text=${pSplit}
+        AND (t2.language="EN" OR t4.language="EN")
         ORDER BY Country ASC
        </Query>
        <!--<Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
@@ -126,6 +127,7 @@
         ON t4.literal_id=l4.id
         WHERE i.id=${pIndicator}
         AND t3.text=${pSplit}
+        AND (t2.language="EN" OR t4.language="EN")
         ORDER BY Country DESC
        </Query>
        <!--<Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
