@@ -250,6 +250,7 @@
           ON l.id=t.literal_id
           INNER JOIN country_group cg 
           ON ncg.country_group_id=cg.id
+          WHERE t.language="EN"
           ORDER BY Country ASC;
         </Query>
         <!--<Query>SELECT COUNTRY, REGION
