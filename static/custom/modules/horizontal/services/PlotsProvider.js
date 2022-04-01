@@ -226,17 +226,26 @@ define(function () {
 
                     scope.to_trusted = function(html_code) {
                         angular.element('[data-toggle="popover"]').popover();
+                        /*
                         angular.element("a[data-toggle=popover]").click(function() {
-                            angular.element('.modal-wrapper').css('overflow','visible');
-                            angular.element('.dvt-modal .dvt-chart').css('overflow','visible');
-                            //angular.element('.dvt-modal').css('overflow','auto');
+                            //angular.element('.modal-wrapper').css('overflow','visible');
+                            //angular.element('.dvt-modal .dvt-chart').css('overflow','visible');
+
+                            var elementHeight = document.getElementsByClassName("modal-wrapper")[0].clientHeight;
+                            var modalHeight = document.getElementsByClassName("dvt-modal")[0].clientHeight;
+                            if( window.innerWidth > 768 && elementHeight < modalHeight ){
+                                angular.element('.dvt-modal').css('overflow','visible');
+                            }
 
                         });
                         angular.element('a[data-toggle=popover]').mouseout(function() {
-                            angular.element('.modal-wrapper').css('overflow','auto');
-                            angular.element('.dvt-modal .dvt-chart').css('overflow','hidden');
+                            //angular.element('.modal-wrapper').css('overflow','auto');
+                            //angular.element('.dvt-modal .dvt-chart').css('overflow','hidden');
                             //angular.element('.dvt-modal').css('overflow','auto');
                         });
+                        */
+
+
                         return $sce.trustAsHtml(html_code);
                     }
                     definition ['functLegen'] = scope.functionalLegend;

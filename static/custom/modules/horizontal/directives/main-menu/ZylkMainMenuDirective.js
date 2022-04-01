@@ -37,9 +37,18 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', 'configService', '$http', '$log','dataService',
-                function ($rootScope, $scope, $state, configService, $http, $log, dataService) {
+            controller: ['$rootScope', '$scope', '$window', '$state', 'configService', '$http', '$log','dataService',
+                function ($rootScope, $scope, $window, $state, configService, $http, $log, dataService) {
 
+                    var prevScrollpos = $window.pageYOffset;
+                    $window.onscroll = function() {
+                        var currentScrollPos = $window.pageYOffset;
+                        var diff =  Math.abs(currentScrollPos - prevScrollpos);
+                        if ( diff > 150 ) {
+                            angular.element('.popover-close').click();
+                            prevScrollpos = currentScrollPos;
+                        }
+                    }
 
                     //hide print icon in mobile
                     if(configService.isMobile()) {
@@ -234,7 +243,7 @@ define(function (require) {
                         }
                     });
 
-            }],
+                }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
     }

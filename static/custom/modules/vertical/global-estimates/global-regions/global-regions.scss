@@ -149,6 +149,13 @@
 		margin-bottom: 4rem;
 		//max-height: 730px;
 		//min-height: 730px;
+		overflow: visible;
+		&.overflowHidden{
+			overflow: hidden !important;
+		}
+		&.overflowVisible{
+			overflow: visible;
+		}
 		> .item{
 			width: 100% !important;
 			min-height: 640px;
@@ -164,7 +171,10 @@
 				color:$subheader ;
 				background: #FFF;
 				border-bottom: none !important;
-				padding: 15px;
+				padding: 15px !important;
+			}
+			div.contextual-menu > div.dropdown {
+				padding: 17px 0 0;
 			}
 			.dvt-chart {
 				min-height: auto;
@@ -247,9 +257,11 @@
 		z-index: 15;
 		&.right{
 			background-image: none;
-			left: 99.5%;
+			left:auto;
+			right: -36px;
 			i{
 				top: 45%;
+				right:0;
 				position: absolute;
 				color: $subheader;
 			}
@@ -262,6 +274,7 @@
 			left: -42px;
 			i{
 				top: 45%;
+				left: 0;
 				position: absolute;
 				color: $subheader;
 			}

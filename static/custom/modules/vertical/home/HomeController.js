@@ -11,8 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, $sce) {
-
+    function controller(configService, dvtUtils, $scope, $rootScope, $stateParams, $state, $document, $log, $sce, $interval) {
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -20,44 +19,35 @@ define(function (require) {
         var i18n_home = require('json!vertical/home/i18n');
         $scope.i18n_home = i18n_home;
 
-        $scope.to_trusted = function(html_code, pPlacement) {
-            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'bottom'
-            });
+        $scope.carouselInterval = 7000;
 
-            angular.element('[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
+        $scope.to_trusted = function(html_code, pPlacement) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
 
             return $sce.trustAsHtml(html_code);
         }
 
+        angular.element('#carouselHome').on('slid.bs.carousel', function () {
+            angular.element('.carousel-inner').removeClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').removeClass('overflowHidden');
+        });
+
+        angular.element('#carouselHome .carousel-control').click(function() {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
+        });
+
+        $scope.overflowHidden = function (estado) {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
+         };
+
+
         angular.element(document).on('click', function(e) {
-            angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]')
-                    && angular.element(e.target).parents('div.popover').length == 0)
-                    || angular.element(e.target).is('a.popover-close i')) {
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
-                    angular.element(this).addClass('popover-hidden');
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
-                    if (angular.element(this).hasClass('popover-hidden')) {
-                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
-                        angular.element(this).removeClass('popover-hidden');
-                    }
-                }
-            });
+            configService.termClick(e, $rootScope.hasAgreedCookies);
         });
 
         $scope.goto = function (estado) {
@@ -67,6 +57,7 @@ define(function (require) {
         // Select Options
         $scope.select = [
             {
+                // Euro
                 id: '1',
                 label: i18n.L114,
                 text: i18n[i18n_home.slider1.relatedEuro],
@@ -75,6 +66,7 @@ define(function (require) {
                 imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
                 image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal
             },{
+                // Dollar
                 id: '2',
                 label: i18n.L113,
                 text: i18n[i18n_home.slider1.related],
@@ -149,9 +141,11 @@ define(function (require) {
             $scope.slides[0].image = $scope.currency.image;
             $scope.slides[0].image2 = $scope.currency.image2;
             $scope.slides[0].imageModal = $scope.currency.imageModal;
+            $scope.slides[0].image2Modal = $scope.currency.image2Modal;
         }
 
         $scope.modal = function(type, index) {
+            angular.element('body').addClass('ovh');
             switch (type){
                 case 'chart':
                     if (index == 1){
@@ -173,6 +167,7 @@ define(function (require) {
 
         angular.element('div#modalChart').click(function() {
             angular.element('div#modalChart').modal('hide');
+            angular.element('body').removeClass('ovh');
         }).children().click(function(e){
             if(!$(e.target).is('a')) {
                 if (!$(e.target).is('button') && !$(e.target).is('font')) {
@@ -197,13 +192,52 @@ define(function (require) {
             }
         });
 
-        angular.element('#carouselHome').carousel({
-            interval: 1000 * 900
-        });
+        $scope.pauseCarousel = function()
+        {
+            angular.element('#carouselHome').carousel('pause');
 
-       $scope.status = 'ready';
+            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('#carouselHome').carousel != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }        
+
+        $scope.status = 'ready';
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', '$sce'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$rootScope', '$stateParams', '$state','$document', '$log', '$sce', '$interval'];
     return controller;
 });

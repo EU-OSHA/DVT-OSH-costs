@@ -2,6 +2,7 @@
   position: absolute;
   z-index: 10;
   width: 100%;
+  overflow: auto;
   .logos{
     //background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-logos.png') #F0F0F0 no-repeat center top;
     text-align: center;

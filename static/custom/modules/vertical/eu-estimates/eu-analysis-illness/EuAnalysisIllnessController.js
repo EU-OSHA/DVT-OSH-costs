@@ -16,7 +16,8 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, plotsProvider, mapProvider, $log,configService, $document, $compile, $sce) {
+    function controller($scope, $rootScope, $stateParams, $state, PieChartLegendService, dvtUtils, dataService, plotsProvider, mapProvider, $log,configService, $document, $compile, $sce, $interval) {
+
         // CDA
         $scope.cda =  configService.getIloCda();
 
@@ -25,33 +26,16 @@ define(function (require) {
         $scope.i18n_illness = require('json!vertical/eu-estimates/eu-analysis-illness/i18n');
 
         $scope.to_trusted = function(html_code) {
-            angular.element('[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+            
             return $sce.trustAsHtml(html_code);
         }
 
         angular.element(document).on('click', function(e) {
-            angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]')
-                    && angular.element(e.target).parents('div.popover').length == 0)
-                    || angular.element(e.target).is('a.popover-close i')) {
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
-                    angular.element(this).addClass('popover-hidden');
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
-                    if (angular.element(this).hasClass('popover-hidden')) {
-                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
-                        angular.element(this).removeClass('popover-hidden');
-                    }
-                }
-            });
+            configService.termClick(e, $rootScope.hasAgreedCookies);
         });
 
         $scope.dashboard = {
@@ -87,10 +71,42 @@ define(function (require) {
             $log.warn("getAllLegenddata request fail!");
         });
 
+        $scope.pauseCarousel = function()
+        {
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('[data-toggle="popover"]').popover != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }
+
 
     }
 
-    controller.$inject = ['$scope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile', '$sce'];
+    controller.$inject = ['$scope', '$rootScope', '$stateParams', '$state', 'pieChartLegendService', 'dvtUtils', 'dataService', 'plotsProvider','mapProvider', '$log','configService','$document', '$compile', '$sce', '$interval'];
     return controller;
 
 });

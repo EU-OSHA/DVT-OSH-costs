@@ -16,7 +16,7 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce) {
+    function controller($scope, $rootScope, $timeout, $window, $stateParams, $state, $log, GlobalRegionsService, dvtUtils, dataService, plotsProvider, $document, configService, $sce, $interval) {
         $scope.title ="Global Regions";
 
         // CDA
@@ -27,42 +27,16 @@ define(function (require) {
         $scope.i18n_global = require('json!vertical/global-regions/i18n');
 
         $scope.to_trusted = function(html_code) {
-
-            angular.element('[data-toggle="popover"]').popover({
-                html: true,
-                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
-                content : function() {
-                    return $(this).attr('data-original-title');
-                },
-                placement: 'top'
-            });
-
-            angular.element("a[data-toggle=tooltip]").mouseover(function() {
-                angular.element('ul.carousel-inner').css('overflow','visible');
-            });
-            angular.element('a[data-toggle=tooltip]').mouseout(function() {
-                angular.element('ul.carousel-inner').css('overflow','hidden');
-            });
-
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+            
             return $sce.trustAsHtml(html_code);
         }
 
         angular.element(document).on('click', function(e) {
-            angular.element('[data-toggle=popover]').each(function () {
-                if ((!angular.element(e.target).is('[data-toggle=popover]')
-                    && angular.element(e.target).parents('div.popover').length == 0)
-                    || angular.element(e.target).is('a.popover-close i')) {
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
-                    angular.element(this).addClass('popover-hidden');
-                    angular.element(this).popover('hide');
-                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
-                    if (angular.element(this).hasClass('popover-hidden')) {
-                        _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);
-                        angular.element(this).removeClass('popover-hidden');
-                    }
-                }
-            });
+            configService.termClick(e, $rootScope.hasAgreedCookies);
         });
 
         // Countries Select
@@ -198,6 +172,7 @@ define(function (require) {
 
         angular.element('#carouselCountries').on('slid.bs.carousel', function () {
             angular.element('#carouselCountries li.item').removeClass('newClass');
+            angular.element('.carousel-inner').removeClass('overflowHidden');
 
             // Update location based on slide
             var item = angular.element(this).find('.item.active').data('name');
@@ -209,7 +184,10 @@ define(function (require) {
 
         angular.element('.global-estimates-indicators li').click(function() {
             angular.element('.global-estimates-indicators li').toggleClass('item-block');
-
+            angular.element('.carousel-inner').addClass('overflowHidden');
+        });
+        angular.element('.carousel-control').click(function() {
+            angular.element('.carousel-inner').addClass('overflowHidden');
         });
 
         angular.element('div#modalChart').click(function() {
@@ -228,10 +206,42 @@ define(function (require) {
             }
         });
 
+        $scope.pauseCarousel = function()
+        {
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('[data-toggle="popover"]').popover != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }
+
         $scope.status = 'ready';
     }
 
-    controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce'];
+    controller.$inject = ['$scope', '$rootScope', '$timeout', '$window', '$stateParams', '$state', '$log', 'globalRegionsService', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$sce', '$interval'];
     return controller;
 
 });

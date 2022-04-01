@@ -29,6 +29,24 @@
 
 
 @media screen and (max-width: 1200px) {
+
+  #cookiesConsent {
+    min-height: 8rem;
+    .text {
+      float:none;
+      width:100%;
+    }
+    .buttons {
+      float:none;
+      width:100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
+      button{
+        float: none;
+      }
+    }
+  }
   .ilo-header{
     #not-home-cover {
       background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/not-home-banner.png) #529FA2 no-repeat right top;
@@ -435,7 +453,7 @@
     #home-cover {
       h1.title-banner {
         width:100%;
-        margin-top: 67px;
+        margin-top: 3.5rem !important;
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 1) !important;
       }
     }
@@ -653,7 +671,7 @@
 } /** end media query 768 - 1024 portrait **/
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
   .page-content {
-    overflow-x: hidden;
+    //overflow-x: hidden;
   }
   .ilo-header #not-home-cover {
     margin-top: 10px !important;
@@ -822,9 +840,10 @@
   }
   .modal-dialog {
     width: 98%;
-    height:auto;
+    height:99%;
     padding: 1%;
     margin: 1%;
+    overflow-y: scroll;
   }
   .page-header-wrapper .page-header {
     margin: 6rem auto 0;
@@ -873,7 +892,8 @@
             margin: auto;
             padding: 15px 0px;
             img{
-              width:100%;
+              width: 80%;
+              margin-top: 3rem;
             }
           }
           picture {
@@ -924,10 +944,11 @@
   .osha-global-estimates-wrapper {
     .carousel-control{
       &.left {
-        left: -33px !important;
+        left:0px !important;
       }
       &.right {
-        left: 98% !important;
+        left: auto !important;
+        right: 0 !important;
       }
     }
   }
@@ -941,12 +962,12 @@
     .chart-analysis-illnesses.affix {
       top: 95px;
       width: 100% !important;
-      height: auto;
+      height: auto !important;
       z-index: 9;
-      overflow: hidden;
+      overflow: auto !important;
       background:$colorWhite !important;
       padding: 20px 0 0 0 !important;
-      position: initial;
+      position: static;
       .chart-analysis-illnesses-box {
         background:$colorWhite !important;
         border-bottom: 0 !important;
@@ -995,7 +1016,7 @@
           }
         }
         .chart-description {
-          display: block;
+          display: block !important;
         }
       }
 
@@ -1130,6 +1151,19 @@
 
 
 @media screen and (max-width:667px) {
+  #cookiesConsent {
+    .text {
+    }
+    .buttons {
+      flex-direction: column;
+      flex-direction: column-reverse;
+      button{
+        float: none;
+        width:100%;
+        margin: 0.5rem 0;
+      }
+    }
+  }
   .gtranslator-msg {
     width: 100%;
     top: 28px;
@@ -1173,10 +1207,11 @@
   .osha-global-estimates-wrapper{
     .carousel-control{
       &.left{
-        left: -27px !important;
+        left: 0px !important;
       }
       &.right {
-        left: 96% !important;
+        left: auto !important;
+        right: 0px !important;
       }
     }
     .carousel-countries{
@@ -1234,6 +1269,7 @@
   }
 }
 @media screen and (max-width:440px) {
+
   #google_translate_element_wrapper {
     margin: 0 5px !important;
     top: 5px !important;
