@@ -353,7 +353,7 @@
           LEFT OUTER JOIN literal l
           ON n.literal_id=l.id
           LEFT OUTER JOIN translation t
-          ON l.id=t.literal_id
+          ON l.id=t.literal_id AND t.language="EN"
           LEFT OUTER JOIN country_group cg
           ON p.country_group_id=cg.id
           INNER JOIN split_illness si
