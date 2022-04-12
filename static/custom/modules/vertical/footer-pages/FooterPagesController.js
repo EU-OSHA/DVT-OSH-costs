@@ -11,12 +11,15 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, $document, $http, configService, $cookies) {
+    function controller($scope, $rootScope, $stateParams, $state, $document, $http, configService, $cookies) {
+
+        // Literals / i18n
+        $scope.i18n_literals = configService.getLiterals();
 
         var i18n = require('json!vertical/footer-pages/i18n');
         $scope.i18n = i18n;
 
-       var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
+        var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
         $http.get(path).success(function (menuStructure) {
             $scope.structure = menuStructure;
         });
@@ -53,10 +56,12 @@ define(function (require) {
 
         $scope.oculta = function() {
 
-                var now = new Date(),
-                // this will set the expiration to 12 months
-                    exp = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+            var now = new Date(),
+            // this will set the expiration to 12 months
+                exp = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
 
+            if ($rootScope.hasAgreedCookies)
+            {
                 if ($scope.valueCheck == 1) {
                     configService.tooglePiwik(true);
                     $scope.valueCheck = 2;
@@ -77,14 +82,11 @@ define(function (require) {
                     });
 
                 }
-
-            //alert($cookies.get("piwikX"));
-
-            
+            }
         };
 
     }
 
-    controller.$inject= ['$scope', '$stateParams', '$state', '$document','$http','configService','$cookies'];
+    controller.$inject= ['$scope', '$rootScope', '$stateParams', '$state', '$document','$http','configService','$cookies'];
     return controller;
 });

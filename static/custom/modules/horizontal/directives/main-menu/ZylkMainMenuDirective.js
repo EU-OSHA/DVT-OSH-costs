@@ -8,6 +8,16 @@
  * A description of the directive
  *
  */
+    function zoomSmall(){
+        angular.element('html').css('font-size','8px');
+    }
+    function zoomMedium(){
+        angular.element('html').css('font-size','10px');
+    }
+    function zoomBig(){
+        angular.element('html').css('font-size','12px');
+    }
+
 define(function (require) {
     'use strict';
 
@@ -27,19 +37,41 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', 'configService', '$http', '$log','dataService',
-                function ($rootScope, $scope, $state, configService, $http, $log, dataService) {
+            controller: ['$rootScope', '$scope', '$window', '$state', 'configService', '$http', '$log','dataService',
+                function ($rootScope, $scope, $window, $state, configService, $http, $log, dataService) {
 
+                    var prevScrollpos = $window.pageYOffset;
+                    $window.onscroll = function() {
+                        var currentScrollPos = $window.pageYOffset;
+                        var diff =  Math.abs(currentScrollPos - prevScrollpos);
+                        if ( diff > 150 ) {
+                            angular.element('.popover-close').click();
+                            prevScrollpos = currentScrollPos;
+                        }
+                    }
 
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();
                     }
 
-                    var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
-                    var titleStructure = require('json!dvt/directives/title-items');
+                    // Literals / i18n
+                    var i18n_literals = configService.getLiterals();
+                    $scope.i18n_literals = i18n_literals;
 
-                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
+                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "i18n_menu");
+                    $http.get(path).success(function(i18n_menu) {
+                        $scope.i18n_menu = i18n_menu;
+                    }).error(function(data,error){
+                        //TODO process error
+                    });
+
+                    var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
+                    $scope.breadCrumbStructure = breadCrumbStructure;
+                    var titleStructure = require('json!dvt/directives/title-items');
+                    $scope.titleStructure = titleStructure;
+
+                    path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
                     $http.get(path, { data: "", headers: {"Content-Type": "application/json"}}).success(function (menuStructure) {
                         $scope.structure = menuStructure;
                     });
@@ -71,11 +103,14 @@ define(function (require) {
 
                     $scope.isCurrentSection = function (id) {
                         var lPath = $location.path().split("/");
-                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + breadCrumbStructure['sections'][lPath[1]]);
-                        return (id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
+                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + $scope.breadCrumbStructure['sections'][lPath[1]]);
+                        $scope.pathURLDVT=$location.absUrl();
+                        $scope.pathURLDVTGoogle = "https://plus.google.com/share?url=" + $scope.pathURLDVT;
+                        return (id.replace(/\s+/g, '-') === $scope.breadCrumbStructure['sections'][lPath[1]] ) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
+                    $scope.pathURLDVTGoogle = "https://plus.google.com/share?url=" + $scope.pathURLDVT.replace("#","?_escaped_fragment_=");
 
                     $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
                             $log.debug('Loading $viewContentLoading');
@@ -85,57 +120,23 @@ define(function (require) {
                             var cadena = "";
 
 
-                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-
+                            $scope.breadCrumb = $scope.breadCrumbStructure[$state.current.name];
+                            $scope.titleHeader = $scope.i18n_menu.Header;
 
                             if ($state.current.name == 'home') {
-                                $scope.isHome = true;
-                                $scope.titleHeader = titleStructure['default-title'];
-                                $scope.title = titleStructure[$state.current.name];
+                                $scope.isHome = true;                                
+                                $scope.title = $scope.titleStructure[$state.current.name];
                             } else {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 var setBreadCrumbs=function() {
-                                    $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-                                    $scope.title = titleStructure[$state.current.name];
+                                    $scope.breadCrumb = $scope.breadCrumbStructure[$state.current.name];
+                                    $scope.title = $scope.titleStructure[$state.current.name];
                                     $scope.isHome = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
-                                var setTitleHeaderHTML=function() {
-                                    if($scope.breadCrumb.indexOf(" >> ")!=-1) {
-                                        var trozos = $scope.breadCrumb.split(" >> ");
-                                        for (var i = trozos.length - 1; i > -1; i--) {
-                                            cadena += trozos[i] + " - ";
-                                        }
-                                        cadena = cadena.replace(/<[^>]*>?/g, '');
-                                    }
-                                    $scope.titleHeader = cadena + titleStructure['pages-title'];
-                                };
-
-                                dataService.structureCountries.then(function(dataset){
-                                    var country = dataService.dataMapper(dataset).filter(function(item) {
-                                        return item.Id == pathURL[2]
-                                    })[0];
-
-                                    if($state.current.name=='country-card') {
-                                        $scope.breadCrumb+="<span>"+ country.Description + "</span>";
-                                        $scope.title= country.Description;
-                                        setTitleHeaderHTML();
-                                    } else if ($state.current.name=='country-comparison') {
-                                        var country2 = dataService.dataMapper(dataset).filter(function(item) {
-                                            return item.Id == pathURL[3]
-                                        })[0];
-
-                                        $scope.breadCrumb+="<span>" + country.Description + " - " + country2.Description + "</span>";
-                                        $scope.title= country.Description + " - " + country2.Description;
-                                        setTitleHeaderHTML();
-                                    } else {
-                                        setBreadCrumbs();
-                                        setTitleHeaderHTML();
-                                    }
-                                });
-
+                                setBreadCrumbs();
                             }
 
                             if(collapse.hasClass( "indvt" ) == true) {
@@ -144,7 +145,7 @@ define(function (require) {
                             }
 
                             //lo pongo en el title
-                            angular.element("title").html($scope.titleHeader);
+                            //angular.element("title").html($scope.titleHeader);
 
                         }, $scope);
 
@@ -174,16 +175,27 @@ define(function (require) {
                     var toggle = angular.element( "button.navbar-toggle" );
                     var collapse = angular.element("#osha-menu-collapse");
 
+                    collapse.click(function() {
+                        if (toggle.hasClass('closeIcon')) {
+                            toggle.removeClass('closeIcon');
+                            toggle.addClass('openIcon');
+                        }
+                    });
 
                     toggle.click(function() {
                         if(collapse.hasClass( "indvt" ) == true){
                             collapse.removeClass("indvt");
-                            $log.debug('cerrado');
+                            //$log.debug('cerrado');
                             collapse.removeClass("in");
+                            toggle.addClass('openIcon');
+                            toggle.removeClass('closeIcon');
                         }else{
                             collapse.addClass("indvt");
-                            $log.debug('abierto');
+                            collapseSocial.removeClass("indvt");
+                            //$log.debug('abierto');
                             collapse.removeClass("in");
+                            toggle.addClass('closeIcon');
+                            toggle.removeClass('openIcon');
                         }
                     });
 
@@ -193,7 +205,45 @@ define(function (require) {
                         collapse.removeClass("in");
                     });
 
-            }],
+
+                    // Social network responsive menu
+                    var toggleSocial = angular.element( ".submenu-icon > a" );
+                    var collapseSocial = angular.element("#osha-menu-social");
+
+                    toggleSocial.click(function() {
+                        if(collapseSocial.hasClass( "indvt" ) == true){
+                            collapseSocial.removeClass("indvt");
+                            //$log.debug('cerrado');
+                            collapseSocial.removeClass("in");
+                        }else{
+                            collapseSocial.addClass("indvt");
+                            collapse.removeClass("indvt");
+                            //$log.debug('abierto');
+                            collapseSocial.removeClass("in");
+                        }
+                    });
+
+                    // Hide Social Menu if it is displayed
+                    angular.element('div.submenu-icon').click(function(e) {
+                        e.stopPropagation();
+                    });
+
+                    angular.element(document).click(function() {
+                        if (angular.element('ul#osha-menu-social').hasClass('indvt')) {
+                            angular.element('ul#osha-menu-social').removeClass('indvt');
+                        }
+                    });
+
+                    angular.element(document).ready(function() {
+                        if (!$scope.isHome && $state.current.name == '') {
+                            $scope.anchorPath = $location.path().split("/")[1];
+                            $scope.breadCrumb = $scope.breadCrumbStructure[$scope.anchorPath];
+                            $scope.title = $scope.titleStructure[$scope.anchorPath];
+                            $scope.isHome = false;
+                        }
+                    });
+
+                }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
     }

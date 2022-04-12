@@ -1,0 +1,73 @@
+.who-regions{
+  .countries-analysis-by-illnesses{
+    .global-estimates-countries-regions{
+      padding:1rem;
+      p.countries-regions-text {
+        width: 49%;
+        display: inline-block;
+        padding: 1.5rem 3rem;
+      }
+      .countries-regions-select {
+        width: 50%;
+        display: inline-block;
+        position: relative;
+        select{
+          padding: 0.5rem;
+          width: 250px;
+          border-radius: 0.6rem;
+          background: transparent;
+          font-family:'OpenSans-bold';
+          border: 1px solid #CCC;
+          option{
+            font-family:'Arial';
+          }
+          &:focus{
+            background:#FFF;
+            outline: none;
+          }
+        }
+        input{
+          padding: 5px;
+          width: 120px;
+          border-radius: 6px;
+          background: transparent;
+          border: 1px solid #CCC;
+          font-family: 'OpenSans-bold';
+          color: $subheader;
+          opacity:0.6;
+        }
+        .countries-regions-info{
+          display: inline-block;
+          //position: absolute;
+          vertical-align: middle;
+          margin-left: 1.5rem;
+          margin-top: 0.6rem;
+          //left: 30px;
+          width: 30px;
+          height: 30px;
+          //border: 1px solid #ccc;
+          -webkit-border-radius: 30px;
+          -moz-border-radius: 30px;
+          border-radius: 30px;
+          overflow: hidden;
+          a{
+            background: transparent;
+            padding:1px;
+            display: block;
+            color: #666;
+            &:hover{
+              background: #f2f2f2;
+              color: #FFFFFF;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses{
+    margin-top: 7rem;
+  }
+}
+
+

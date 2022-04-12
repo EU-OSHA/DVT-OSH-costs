@@ -1,0 +1,121 @@
+<!-- daly-comparison.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
+
+    <section class="container-full osha-global-estimates-wrapper ">
+        <div class="osha-global-estimates container">
+            <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators container global-estimates-indicators four-items">
+                    <li data-target="#carouselCountries" data-slide-to="0" class="active">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L96)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="1">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L97)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="2">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L98)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="3">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L99)"></span>
+                    </li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <ul class="carousel-inner">
+                    <li class="export-chart  item active newClass" data-name="all-work-related-illnesses">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="5000" step="{{step.chart1}}"
+                                params="[['pIndicator','24'],['pSplit','All']]"
+                                color-role="series" colors="[stories[0].color]"
+                                ortho-axis-title="{{i18n.L147}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L100}}" id="24"
+                                long-title="{{i18n.L101}}"
+                                max-functional-legend="{{i18n.L102}}"
+                                plots="stories[0].plots"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L102)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart  item newClass"  data-name="cancer">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="1400" step="{{step.chart2}}"
+                                params="[['pIndicator','24'],['pSplit','Cancer']]"
+                                color-role="series" colors="[stories[1].color]"
+                                ortho-axis-title="{{i18n.L147}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L103}}" id="24"
+                                long-title="{{i18n.L104}}"
+                                max-functional-legend="{{i18n.L105}}"
+                                plots="stories[1].plots"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L105)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart  item newClass" data-name="msd">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="1200" step="{{step.chart3}}"
+                                params="[['pIndicator','24'],['pSplit','MSD']]"
+                                color-role="series" colors="[stories[2].color]"
+                                ortho-axis-title="{{i18n.L147}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L106}}" id="24"
+                                long-title="{{i18n.L107}}"
+                                max-functional-legend="{{i18n.L108}}"
+                                plots="stories[2].plots"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L108)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart  item newClass" data-name="circulatory">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="800" step="{{step.chart4}}"
+                                params="[['pIndicator','24'],['pSplit','Circulatory']]"
+                                color-role="series" colors="[stories[3].color]"
+                                ortho-axis-title="{{i18n.L147}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L109}}" id="24"
+                                long-title="{{i18n.L110}}"
+                                max-functional-legend="{{i18n.L111}}"
+                                plots="stories[3].plots"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L111)"></p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carouselCountries" data-slide="prev" data-ng-non-bindable>
+                    <i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselCountries" data-slide="next" data-ng-non-bindable>
+                    <i class="fa fa-chevron-right next" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</zylk-dashboard>

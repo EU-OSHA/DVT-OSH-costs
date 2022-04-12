@@ -1,0 +1,429 @@
+.main-text-global-estimates{
+	p:first-child{
+		text-align: center;
+	}
+}
+.osha-global-estimates-wrapper{
+	background: #DBECED;
+	.carousel-countries{
+		float: left;
+		margin-top: 4rem;
+		width:100%;
+		z-index: 2;
+		cursor: default;
+		.global-estimates-countries-regions{
+			background: #F6F6F6;
+			border: 1px solid #EAEAEA;
+			border-bottom: none;
+			border-top: none;
+			padding:1rem 0;
+			p.countries-regions-text {
+				width: 49%;
+				display: inline-block;
+				padding: 1.5rem 3rem;
+			}
+			.countries-regions-select {
+				width: 50%;
+				display: inline-block;
+				position: relative;
+				select{
+					padding: 0.5rem;
+					width: 250px;
+					border-radius: 0.6rem;
+					background: transparent;
+					font-family:'OpenSans-bold';
+					border: 1px solid #CCC;
+					option{
+						font-family:'Arial';
+					}
+					&:focus{
+						background:#FFF;
+						outline: none;
+					}
+				}
+				input{
+					padding: 5px;
+					width: 120px;
+					border-radius: 6px;
+					background: transparent;
+					border: 1px solid #CCC;
+					font-family: 'OpenSans-bold';
+					color: $subheader;
+					opacity:0.6;
+				}
+				.countries-regions-info{
+					display: inline-block;
+					//position: absolute;
+					vertical-align: middle;
+					margin-left: 1.5rem;
+					margin-top: 0.6rem;
+					//left: 30px;
+					width: 30px;
+					height: 30px;
+					//border: 1px solid #ccc;
+					-webkit-border-radius: 30px;
+					-moz-border-radius: 30px;
+					border-radius: 30px;
+					overflow: hidden;
+					a{
+						background: transparent;
+						padding:1px;
+						display: block;
+						color: #666;
+						&:hover{
+							background: #f2f2f2;
+							color: #FFFFFF;
+						}
+					}
+
+				}
+			}
+		}
+	}
+	.carousel-indicators {
+		position: relative !important;
+		bottom: 0 !important;
+		left: 0;
+		z-index: 15;
+		width: 100%;
+		margin: 0;
+		padding: 10px 0 0;
+		list-style: none;
+		text-align: center;
+		background: #FFF;
+		border: 1px solid #EAEAEA;
+		li {
+			width: 20%;
+			height: 40px;
+			cursor: pointer;
+			margin: 10px 12px;
+			background-color: transparent;
+			border: 0px solid #fff;
+			border-radius: 0px;
+			text-indent: 0;
+			text-align: left;
+			float: left;
+			.fa {
+				margin: 0 15px;
+				font-size: 2.2rem;
+				min-height:5rem;
+				float: left;
+			}
+			&:hover{
+				background-color: transparent;
+				color: $subheader !important;
+				.fa-circle-o:before {
+					content: "\f05d";
+				}
+			}
+			&.active, &:focus, &:active {
+				background-color: transparent;
+				//font-family: "OpenSans-Bold";
+				color: $subheader !important;
+				.fa-circle-o:before {
+					content: "\f05d";
+				}
+			}
+
+			&:nth-child(1){
+				width: auto;
+			}
+			&:nth-child(2){
+				width: auto;
+			}
+			&:nth-child(3){
+				width: auto;
+			}
+			&:nth-child(4){
+				width:auto;
+			}
+
+		}
+	}
+	.carousel-inner {
+		float: left;
+		width:100%;
+		padding:0;
+		background: #FFF;
+		border-radius: 0 0 8px 8px;
+		margin-bottom: 4rem;
+		//max-height: 730px;
+		//min-height: 730px;
+		overflow: visible;
+		&.overflowHidden{
+			overflow: hidden !important;
+		}
+		&.overflowVisible{
+			overflow: visible;
+		}
+		> .item{
+			width: 100% !important;
+			min-height: 640px;
+		}
+		li {
+			float: left;
+			width: 100% !important;
+			h2{
+				margin: 0;
+				text-align: center;
+				width: 100%;
+				font-size: 2.6rem;
+				color:$subheader ;
+				background: #FFF;
+				border-bottom: none !important;
+				padding: 15px !important;
+			}
+			div.contextual-menu > div.dropdown {
+				padding: 17px 0 0;
+			}
+			.dvt-chart {
+				min-height: auto;
+				width: 100%;
+				background: #FFF !important;
+				padding: 0 20px 0 !important;
+				//border: 1px solid #EAEAEA;
+				border-radius: 0 0 8px 8px;
+				overflow: hidden;
+				//-webkit-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				//-moz-box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				//box-shadow: 0px 1px 2px 1px rgba(204,204,204,1);
+				.header{
+					h2{
+						margin: 0;
+						text-align: center;
+						width: 100%;
+						font-size:2.6rem;
+						color:$subheader ;
+					}
+				}
+				.backGraps {
+					background: transparent !important;
+					margin: 0em auto 0;
+				}
+				.header{
+					margin-top: 20px !important;
+				}
+				div[id^='zylk_bar_chart'] {
+				}
+				svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+					transform: translate(0px,-9px) !important;
+					-webkit-transform: translate(0px,-9px) !important;
+					-ms-transform: translate(0px,-9px) !important;
+				}
+				text.label-country{
+					font-weight: bold !important;
+					fill: #000 !important;
+				}
+			}
+			&.active{
+				width: 100% !important;
+			}
+			.chart-legend{
+				padding:20px 20px;;
+				width: 100%;
+				clear: both;
+			}
+		}
+		li:nth-child(4) {
+			.dvt-chart:nth-child(2) {
+				width: 50%;
+				border-right:0;
+				border-radius: 0 0 0 8px;
+				float: left;
+				min-height: 416px;
+				//box-shadow: 0px 2px 0px 0px #cccccc;
+			}
+			.dvt-chart:nth-child(3) {
+				width: 50%;
+				border-left:0;
+				border-radius: 0 0 8px 0;
+				float: left;
+				min-height: 416px;
+				//box-shadow: 0px 2px 0px 0px #cccccc;
+			}
+		}
+
+	}
+	.carousel-control{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 34px;
+		opacity: .5;
+		filter: alpha(opacity=50);
+		font-size: 2rem;
+		background-color: transparent;
+		z-index: 15;
+		&.right{
+			background-image: none;
+			left:auto;
+			right: -36px;
+			i{
+				top: 45%;
+				right:0;
+				position: absolute;
+				color: $subheader;
+			}
+		}
+		&.right:hover i{
+			color: #000;
+		}
+		&.left{
+			background-image: none;
+			left: -42px;
+			i{
+				top: 45%;
+				left: 0;
+				position: absolute;
+				color: $subheader;
+			}
+		}
+		&.left:hover i{
+			color: #666;
+		}
+	}
+}
+
+.countries-comparison{
+	.compare-buttons{
+		background: #FFF;
+		padding: 40px 0;
+		.compare-buttons-list{
+			text-align: center;
+			margin: 0 auto;
+			li{
+				margin-right: 30px;
+				width:50%;
+				a{
+					display: block;
+					border-radius: 4px;
+					border: 0px solid #ababab;
+					padding: 20px 20px;
+					padding: 10px 40px;
+					font-family: Oswald-Light,sans-serif!important;
+					font-size: 1.8rem;
+					color: #FFF;
+					&:hover{
+						background:$plt-eu02;
+						text-decoration: none;
+					}
+				}
+				&:last-child{
+					margin-right: 0px;
+				}
+			}
+		}
+	}
+}
+.modal {
+	.modal-body{
+		.zylk-chart[type="pie"]{
+			svg > g g:nth-child(2) > g g:nth-child(4) > g:nth-child(1){
+				transform: translate(0px,-11px) !important;
+				-webkit-transform: translate(0px,-11px) !important;
+				-ms-transform: translate(0px,-11px) !important;
+			}
+		}
+	}
+}
+
+
+
+@media screen and (max-width:991px){
+	.global-estimates-countries-regions {
+		p.countries-regions-text {
+			width: 30%;
+		}
+		.countries-regions-select {
+			width: 64%;
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 18px;
+			select {
+				option {
+				}
+				&:focus {
+				}
+			}
+			input {
+			}
+		}
+	}
+
+	.osha-global-estimates-wrapper{
+		.carousel-indicators {
+			min-height: 72px;
+			li {
+				width: 90% !important;
+				margin: 10px 0px;
+			}
+		}
+	}
+
+	.osha-global-estimates-wrapper {
+		.carousel-inner{
+			max-height: none !important;
+			li:nth-child(4) {
+				.dvt-chart{
+					width: 100% !important;
+				}
+			}
+
+		}
+	}
+	.global-estimates-indicators{
+		li{
+			display: none;
+			width: 100% !important;
+			&.active{
+				display: block;
+				&:after{
+					content: "\f078";
+					font: normal normal normal 14px/1 FontAwesome;
+					right: 15px;
+					top: 25px;
+					position: absolute;
+				}
+			}
+			&:hover{
+				display: block !important;
+			}
+			&.item-block{
+				display: block;
+			}
+		}
+	}
+}
+
+.osha-global-estimates-wrapper .carousel-inner{
+	position: relative;
+}
+.osha-global-estimates-wrapper .carousel-inner > .item{
+
+}
+.osha-global-estimates-wrapper .carousel-inner > .item.newClass{
+	display: block !important;
+	top:-999999px;
+	position: absolute;
+}
+.osha-global-estimates-wrapper .carousel-inner > .item.newClass.active{
+	top:0px;
+	position: relative;
+}
+.carousel-inner > .active.left {
+	left: -100%;
+}
+.carousel-inner > .left {
+	left: -100%;
+	top:0px;
+}
+.carousel-inner > .prev.left, .carousel-inner > .prev.left {
+	top:0px;
+}
+g[transform="translate(5,5)"] > g:nth-child(1) {
+	transform: translate(0px,0px) !important;
+}
+g[transform="translate(5,5)"] > g:nth-child(2) {
+	transform: translate(0px,30px) !important;
+}

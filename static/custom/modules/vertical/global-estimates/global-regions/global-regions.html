@@ -1,0 +1,200 @@
+<!-- global-regions.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
+    <section class="container-full back-color ">
+        <div class="main-text-global-estimates container">
+            <p data-ng-bind-html="to_trusted(i18n.L38)"></p>
+            <!--<p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>-->
+        </div>
+    </section>
+
+
+
+    <section class="container-full osha-global-estimates-wrapper ">
+        <div class="osha-global-estimates container">
+            <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators container global-estimates-indicators four-items">
+                    <li data-target="#carouselCountries" data-slide-to="0" class="active">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L40)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="1">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L41)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="2">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L42)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="3">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L43)"></span>
+                    </li>
+                </ol>
+                <div class="global-estimates-countries-regions">
+                    <p data-ng-bind-html="to_trusted(i18n.L44)" class="countries-regions-text"></p>
+                    <div class="countries-regions-select">
+                        <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countries" data-ng-change="selectChange()">
+                            <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+                        </select>
+                        <span>:</span>
+                        <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+                        <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
+                            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/regions-icon.svg" width="26" height="26" alt="region icon"><span class="sr-only">{{i18n_global.Info}}</span></a>
+                        </p>
+                    </div>
+
+                </div>
+                <!-- Wrapper for slides -->
+                <ul class="carousel-inner">
+                    <li class="export-chart item active newClass" data-name="mortality">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegionSplit" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="120" step="{{step.chart1}}"
+                                params="[['pIndicator','11'],['pSplit1',splits[0].split1],['pSplit2',splits[0].split2]]"
+                                color-role="series" colors="[stories[0].color1, stories[0].color2]"
+                                ortho-axis-title="{{i18n.L117}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L47}}" id="11"
+                                long-title="{{i18n.L48}}"
+                                max-functional-legend="{{i18n.L49}}"
+                                plots="stories[0].plots"
+                                legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L49)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart item newClass"  data-name="years-life-lost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegion" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="3000" step="{{step.chart2}}"
+                                params="[['pIndicator','12']]"
+                                color-role="series" colors="stories[1].color"
+                                ortho-axis-title="{{i18n.L118}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L50}}" id="12"
+                                long-title="{{i18n.L51}}"
+                                max-functional-legend="{{i18n.L52}}"
+                                plots="stories[1].plots"
+                                legend="true"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L52)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart item newClass" data-name="years-life-lost-vs-years-lived-disability">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegionSplit" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="100" step="{{step.chart3}}"
+                                params="[['pIndicator','13'],['pSplit1',splits[1].split1],['pSplit2',splits[1].split2]]"
+                                color-role="series" colors="[stories[2].color1, stories[2].color2]"
+                                ortho-axis-title-visible="true"
+                                axis-percent="1"
+                                title="{{i18n.L53}}" id="13"
+                                stacked="1"
+                                long-title="{{i18n.L54}}"
+                                max-functional-legend="{{i18n.L55}}"
+                                plots="stories[2].plots"
+                                legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L55)"></p>
+                        </div>
+                    </li>
+                    <li class="export-chart item newClass" data-name="total-cost">
+                        <h2 data-ng-bind-html="to_trusted(i18n.L56)"></h2>
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegion" cda="{{::cda }}"
+                                angle="1" width="{{lastGraphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="5000" step="{{step.chart4}}"
+                                params="[['pIndicator','14']]"
+                                color-role="series" colors="stories[3].color1"
+                                ortho-axis-title-visible="true"
+                                id="14"
+                                long-title="{{i18n.L57}}"
+                                max-functional-legend="{{i18n.L58}}"
+                                plots="stories[3].plots1"
+                                legend="true"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="getIndicatorDataRegion" cda="{{::cda }}"
+                                angle="1" width="{{lastGraphWidth}}" height="330"
+                                orientation="horizontal"
+                                axis-fixed-max="5" step="{{step.chart5}}"
+                                params="[['pIndicator','15']]"
+                                color-role="series" colors="stories[3].color2"
+                                ortho-axis-title-visible="true"
+                                axis-percent="1"
+                                id="15"
+                                long-title="{{i18n.L57}}"
+                                max-functional-legend="{{i18n.L58}}"
+                                plots="stories[3].plots2"
+                                legend="true"
+                                disable-max-legend="true"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L58)"></p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carouselCountries" data-slide="prev" data-ng-non-bindable>
+                    <i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselCountries" data-slide="next" data-ng-non-bindable>
+                    <i class="fa fa-chevron-right next" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="compare-buttons">
+        <ul class="compare-buttons-list  list-inline container">
+            <li><a data-ui-sref="global-analysis-illness" data-ng-bind-html="to_trusted(i18n.L46)"></a></li>
+        </ul>
+    </section>
+
+    <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind-html="modalData.title"></p>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
+                    <p>
+                        <span data-ng-bind-html="i18n_global.RegionCode"></span>
+                        <span data-ng-bind-html="i18n_global.RegionTableTitle"></span>
+                    </p>
+                    <p>
+                        <span data-ng-bind-html="i18n_global.RegionText"></span>
+                        <a class="external" target="_blank" href="http://www.who.int/healthinfo/global_burden_disease/definition_regions/en/" data-ng-bind="i18n_global.RegionLink"></a>
+                    </p>
+                    <div class="logoGraphics-wrapper">
+                        <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p data-ng-bind-html="modalData.text"></p>
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</zylk-dashboard>

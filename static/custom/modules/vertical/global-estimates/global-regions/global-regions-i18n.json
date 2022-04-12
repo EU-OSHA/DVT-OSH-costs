@@ -1,0 +1,19 @@
+{
+	"Select": "Select the country",
+	"Region": "Region",
+
+	"RegionCode": "Region code",
+	"RegionTableTitle":"WHO regions and World Bank income categories",
+	"RegionText":"More information about ",
+	"RegionLink":"WHO Regions",
+	"HIGH":"High income countries",
+	"AFRO":"Low -and middle- income countries of the African Region",
+	"AMRO":"Low -and middle- income countries of the Americas",
+	"EMRO":"Low -and middle- income countries of the Eastern Mediterranean Region",
+	"EURO":"Low -and middle- income countries of the European Region",
+	"SEARO":"Low -and middle- income countries of the South-East Asia Region",
+	"WPRO":"Low -and middle-income countries of the Western Pacific Region",
+
+	"Info":"Info",
+	"modalTitle":"Open Region Map"
+}

@@ -37,12 +37,12 @@ define(function (require) {
              + '<i class="fa fa-history fa-2x" alt="Show historical evolution" data-ng-click="open(items[1].action)" ng-controller="IssueController" title="Show historical evolution" aria-hidden="true"></i>'
              + '</div>'
              + '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">'
-             + '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>'
+             + '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>'
              + '</div>'
              + '</div>'
              +'<div class="col-xs-12">'
              + '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
              + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
              +'</div>'
              +'</div>';
@@ -59,7 +59,7 @@ define(function (require) {
                 + '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">';
 
            // if(!configService.isMobile()) {
-                template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
+                template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
           //  }
             
             template+='</div>'
@@ -68,7 +68,7 @@ define(function (require) {
             if(!navigator.userAgent.match('iPad')) {
                 template += '<div class="dropdown" ng-if="!isEnlarge==true">'
                     + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                    + '<i class="fa fa-download" title="Export"></i>'
+                    + '<i class="three-points-vertical" title="Export"></i>'
                     + '</button>'
                     + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                     + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
@@ -79,7 +79,7 @@ define(function (require) {
                 + '</div>'
                 +'<div class="col-xs-12">'
                 + '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-                + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+                + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
                 + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
                 +'</div>'
                 +'</div>';
@@ -678,7 +678,7 @@ define(function (require) {
                 //  title, functional legend
                 // TODO separar título de leyenda ya que la primera puede venir de la directiva y no de db (multi-indicador)
                 // =========================
-                if (!!attributes.id) {
+                /*if (!!attributes.id) {
                     var indicators = JSON.parse("["+attributes.id+ "]");
                     indicators.forEach(function (id,index,array) {
                         $log.debug("METADATA INDICATORS FOREACH---------------------------------->");
@@ -688,7 +688,7 @@ define(function (require) {
                             plotsProvider.showContextualData(dataset, definition, scope, attributes);
                         });
                     });
-                }
+                }*/
             var setMaximizeModeParameters = function() {
                 // New parameters to maximize mode
                 definition ['maxType'] = 'radar';

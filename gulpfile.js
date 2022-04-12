@@ -40,6 +40,7 @@ var do_track = getArg("--do_track");
 var packed = getArg("--packed");
 var documentation = getArg("--documentation");
 var seo = getArg("--seo");
+var seo_url = getArg("--seo_url");
 var cache = getArg("--cache");
 
 // Default Task
@@ -54,7 +55,7 @@ gulp.task('default', ['bower', 'bootstrap-sass', 'dvt-sass', 'setup-environment'
 //});
 
 gulp.task('dvt-sass', function () {
-    return gulp.src('static/custom/scss/allages.scss')
+    return gulp.src('static/custom/scss/ilo.scss')
         .pipe(sass().on('error', sass.logError))
         //.pipe(cleanCSS({compatibility: ''}))
         .pipe(concat('app.css'))
@@ -83,7 +84,7 @@ gulp.task('ci-environment', function () {
         .pipe(replace(/\"pentaho\":(.*?),/g, '"pentaho": "' + pentaho + '",'))
         .pipe(replace(/\"piwik\":(.*?),/g, '"piwik": "' + piwik + '",'))
         .pipe(replace(/\"do_track\":(.*?),/g, '"do_track": ' + do_track + ','))
-        .pipe(replace(/\"packed\":(.*?)\n/g, '"packed": ' + packed ))
+        .pipe(replace(/\"packed\":(.*?)\n/g, '"packed": ' + packed + '\n'))
         .pipe(gulp.dest(function(file) {
             return file.base;
         }));
@@ -121,7 +122,7 @@ gulp.task('setup-environment', function () {
 
 gulp.task('html-horizontal-templates', function () {
     var options = {
-        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/horizontal/',
+        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/horizontal/',
         module: 'horizontalTemplatesModule',
         filename: "templates.js",
         standalone: true,
@@ -139,13 +140,13 @@ gulp.task('html-horizontal-templates', function () {
 
 gulp.task('html-vertical-templates', function () {
     var options = {
-        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/vertical/',
+        root: '/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/vertical/',
         module: '',
         filename: "templates.js",
         htmlmin: true,
         templateHeader: "define(function (require) { 'use strict'; var angular = require('common-ui/angular');",
         templateBody: "angular.module('"
-        + "<%= url.replace('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/modules/vertical/','').replace(/\\/(.*?).html/g, '') %>'"
+        + "<%= url.replace('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/modules/vertical/','').replace(/\\/(.*?).html/g, '') %>'"
         + ").run(['$templateCache', function($templateCache) { $templateCache.put('<%= url %>','<%= contents %>'); }]);",
         templateFooter: "});"
     };
@@ -164,7 +165,7 @@ gulp.task('documentation', [], function () {
         styles: ["./build-res/dvt-documentation-styles.css"],
         html5Mode: true,
         startPage: '/api/dvt',
-        title: "DVT-Framework",
+        title: "osha-dvt-ilo",
         image: "./static/custom/img/EU-OSHA-en.png",
         imageLink: "/resources-ext/documentation/api",
         titleLink: "/resources-ext/documentation/api"
@@ -306,68 +307,19 @@ gulp.task('seo', function () {
     gulp.src('./static/custom/seo/sitemap.xml', {read: false})
     //TODO AUTOMATIZE PARSE THE SITEMAP URLS
         .pipe(gulpif((seo === 'true'), shell([
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/ home.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + ' home.html',     
 
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/key-issue/early-exit-labour-market key-issue_early-exit-labour-market.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/key-issue/labour-market-participation key-issue_labour-market-participation.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/key-issue/impact-work-health key-issue_impact-work-health.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/key-issue/health-inequalities key-issue_health-inequalities.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/key-issue/working-conditions key-issue_working-conditions.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'global-estimates global-estimates.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'global-analysis-illness global-analysis-illness.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'eu-analysis-illness eu-analysis-illness.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'about-estimates about-estimates.html',
 
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group1/description country-groups_group1_description.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group1/policies-iniciatives country-groups_group1_policies-iniciatives.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'glossary glossary.html',
 
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group2/description country-groups_group2_description.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group2/policies-iniciatives country-groups_group2_policies-iniciatives.html',
-
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group3/description country-groups_group3_description.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group3/policies-iniciatives country-groups_group3_policies-iniciatives.html',
-
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group4/description country-groups_group4_description.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-groups/group4/policies-iniciatives country-groups_group4_policies-iniciatives.html',
-
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/policies-strategies-programmes policies-strategies-programmes.html',
-
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-profiles country-profiles.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/AT country-card_AT.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/BE country-card_BE.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/BG country-card_BG.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/HR country-card_HR.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/CY country-card_CY.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/CZ country-card_CZ.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/DK country-card_DK.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/EE country-card_EE.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/FI country-card_FI.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/FR country-card_FR.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/DE country-card_DE.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/GR country-card_GR.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/HU country-card_HU.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/IS country-card_IS.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/IE country-card_IE.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/IT country-card_IT.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/LV country-card_LV.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/LT country-card_LT.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/LU country-card_LU.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/MT country-card_MT.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/NL country-card_NL.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/NO country-card_NO.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/PL country-card_PL.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/PT country-card_PT.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/RO country-card_RO.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/SK country-card_SK.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/SI country-card_SI.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/ES country-card_ES.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/SE country-card_SE.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/CH country-card_CH.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/country-card/GB country-card_GB.html',
-
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/infographics infographics.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/about-tool about-tool.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/glossary glossary.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/site-map site-map.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/accessibility accessibility.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/privacy-policy privacy-policy.html',
-            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  https://visualisation.osha.europa.eu/ageing-and-osh#!/legal-notice legal-notice.html'
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'site-map site-map.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'accessibility accessibility.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'privacy-policy privacy-policy.html',
+            'phantomjs --ignore-ssl-errors=yes ./build-res/seo_getSnapshot.js  ' + seo_url + 'legal-notice legal-notice.html'
         ], {
             templateData: {
                 f: function (s) {

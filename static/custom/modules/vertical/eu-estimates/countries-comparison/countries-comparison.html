@@ -1,0 +1,180 @@
+<!-- countries-comparison.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
+    <section class="container-full back-color ">
+        <div class="main-text-eu-estimates container">
+            <p data-ng-bind-html="to_trusted(i18n.L60)"></p>
+            <p class="see-more"><a ui-sref="about-estimates" data-ng-bind-html="to_trusted(i18n.L61)"></a></p>
+        </div>
+    </section>
+
+
+    <section class="container-full osha-eu-estimates-wrapper ">
+        <div class="osha-eu-estimates container">
+            <div id="carouselCountries" class="carousel-countries carousel slide" data-interval="false" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators container eu-estimates-indicators">
+                    <li data-target="#carouselCountries" data-slide-to="0" class="active">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L62)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="1">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L63)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="2">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L64)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="3">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L65)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="4">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L66)"></span>
+                    </li>
+                    <li data-target="#carouselCountries" data-slide-to="5">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i><span data-ng-bind-html="to_trusted(i18n.L67)"></span>
+                    </li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <ul class="carousel-inner">
+                    <li class="item active" data-name="years-life-lost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="3000" step="{{step.chart1}}"
+                                params="[['pIndicator','16'],['pOrder','ASC']]"
+                                color-role="series" colors="[stories[0].color]"
+                                ortho-axis-title="{{i18n.L119}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L70}}" id="16"
+                                long-title="{{i18n.L71}}"
+                                max-functional-legend="{{i18n.L72}}"
+                                plots="stories[0].plots"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L72)"></p>
+                        </div>
+                    </li>
+                    <li class="item"  data-name="years-lived-disability">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="4500" step="{{step.chart2}}"
+                                params="[['pIndicator','17']]"
+                                color-role="series" colors="[stories[0].color1]"
+                                ortho-axis-title="{{i18n.L120}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L73}}" id="17"
+                                long-title="{{i18n.L74}}"
+                                max-functional-legend="{{i18n.L75}}"
+                                plots="stories[0].plots1"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L75)"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="total-year-lost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="5500" step="{{step.chart3}}"
+                                params="[['pIndicator','18']]"
+                                color-role="series" colors="[stories[0].color2]"
+                                ortho-axis-title="{{i18n.L121}}"
+                                ortho-axis-title-visible="true"
+                                title="{{i18n.L76}}" id="18"
+                                long-title="{{i18n.L77}}"
+                                max-functional-legend="{{i18n.L78}}"
+                                plots="stories[0].plots2"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L78)"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="total-workforce-lost">
+                        <zylk-bar-chart
+                                data-ng-cloak
+                                query="{{query}}" cda="{{::cda }}"
+                                angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                                orientation="{{orientation}}"
+                                axis-fixed-max="6" step="{{step.chart4}}"
+                                params="[['pIndicator','19']]"
+                                color-role="series" colors="[stories[0].color3]"
+                                ortho-axis-title="{{i18n.L122}}"
+                                ortho-axis-title-visible="true"
+                                axis-percent="1"
+                                title="{{i18n.L79}}" id="19"
+                                long-title="{{i18n.L80}}"
+                                max-functional-legend="{{i18n.L81}}"
+                                plots="stories[0].plots3"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L81)"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="work-related-illnesses">
+                        <zylk-bar-chart
+                            data-ng-cloak
+                            query="{{query}}" cda="{{::cda }}"
+                            angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                            orientation="{{orientation}}"
+                            axis-fixed-max="0.6" step="{{step.chart5}}"
+                            params="[['pIndicator','20']]"
+                            color-role="series" colors="[stories[0].color4]"
+                            ortho-axis-title="{{i18n.L123}}"
+                            ortho-axis-title-visible="true"
+                            axis-percent="1"
+                            title="{{i18n.L82}}" id="20"
+                            long-title="{{i18n.L83}}"
+                            max-functional-legend="{{i18n.L84}}"
+                            plots="stories[0].plots4"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L84)"></p>
+                        </div>
+                    </li>
+                    <li class="item" data-name="occupational-injuries">
+                        <zylk-bar-chart
+                            data-ng-cloak
+                            query="{{query}}" cda="{{::cda }}"
+                            angle="1" width="{{graphWidth}}" height="{{graphHeight}}"
+                            orientation="{{orientation}}"
+                            axis-fixed-max="6" step="{{step.chart6}}"
+                            params="[['pIndicator','21']]"
+                            color-role="series" colors="[stories[0].color5]"
+                            ortho-axis-title="{{i18n.L124}}"
+                            ortho-axis-title-visible="true"
+                            axis-percent="1"
+                            title="{{i18n.L85}}" id="21"
+                            long-title="{{i18n.L86}}"
+                            max-functional-legend="{{i18n.L87}}"
+                            plots="stories[0].plots5"
+                        ></zylk-bar-chart>
+                        <div class="chart-legend">
+                            <p data-ng-bind-html="to_trusted(i18n.L87)"></p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carouselCountries" data-slide="prev" data-ng-non-bindable>
+                    <i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselCountries" data-slide="next" data-ng-non-bindable>
+                    <i class="fa fa-chevron-right next" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="compare-buttons">
+        <ul class="compare-buttons-list  list-inline container">
+            <li><a data-ui-sref="eu-analysis-illness" data-ng-bind-html="to_trusted(i18n.L68)"></a></li>
+        </ul>
+    </section>
+
+</zylk-dashboard>

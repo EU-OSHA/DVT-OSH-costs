@@ -1,32 +1,3 @@
-.navbar-collapse.indvt {
-    overflow-y: auto;
-    width: 100%;
-    background:$colorWhite;
-    height: auto!important;
-    margin-top: 2em;
-    padding: 0;
-}
-.collapse.indvt {
-    display: block !important;
-}
-.container-header{
-  overflow:hidden;
-  position:relative;
-}
-#home-cover {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home-header-bg.png') #529FA2 no-repeat center top;
-  height: 192px;
-  clear:both;
-
-  h1 {
-    color: $colorA;
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 36px;
-    width: 275px;
-    margin-top: 40px;
-  }
-}
 
 .homepage.page-content{
   width:auto;
@@ -36,256 +7,435 @@
   padding-right: 15px;
   clear:both;
 }
-.spotlight-carousel{
-  background:#dbeced;
-  padding:0.5em 0;
-  .pyramid-container {
-    position: relative;
-  }
-}
-.carousel-caption{
-    font-family: Oswald,sans-serif;
-    color: #c83188;
-    text-shadow: 0 0 0 transparent;
-    font-size: 2.7rem;
-    text-align: left;
-    top: 90px;
-    right: 15%;
-    left:15%;
-
-  p span.carrousel-number{
-    font-size:  7.2rem;
-    display: inline-block;
-    float: left;
-    margin-right: 0.2em;
-    margin-bottom:2em;
-    padding: 0;
-    margin-top: -6px;
-    span{
-      font-size:4.8rem;
+.section-carrousel{
+  background:#DBECED;
+  padding: 0px 0 15px;
+  .ilo-container-carrousel{
+    h2.title-section{
+      text-align: center;
+      color: $subheader;
+      font-size:4rem;
+    }
+    .subject-section{
+      text-align: center;
     }
   }
-}
 
-.home-spotlight {
-  padding:0;
-  margin: 22px 0;
-  article{
-    text-align: left;
-    background: #F9F9F9;
-    width: 32%;
-    min-height: 425px;
-    margin-right: 2%;
-    .article-background{
-      min-height: 300px;
-      position: relative;
-      .article-more-info{
-        position: absolute;
-        top: 375px;
-        right:0;
+  .overflowHidden{
+    overflow: hidden !important;
+  }
+  .overflowVisible{
+    overflow: visible !important;
+  }
+
+  #carouselHome{
+    min-height: 620px;
+    margin: 0px 0 0;
+    .carousel-indicators{
+      bottom: 0;
+      li {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin: 0 12px;
+        background-color:$header;
+        border: 0px solid #fff;
+        border-radius: 20px;
+        &.active{
+          background-color:$subheader;
+        }
       }
     }
-    h1{
-      font-size: 2.4rem;
-      font-weight: 300;
-      margin-bottom: 0;
-
+    .carousel-control-container {
+      background-color: #FFF;
+      margin-top: 3rem;
+      padding-bottom: 1rem;
+      border-radius: 20px;
     }
-    h2{
-      margin-top: 0;
-      margin-bottom: 15px !important;
-      color:#f6a400 !important;
-      font-size:2.8rem !important;
+    .carousel-inner{
+      padding: 0 !important;
+      overflow: auto;
+      display: table;
+      &.overflowHidden{
+        overflow: hidden !important;
+      }
+      &.overflowVisible{
+        overflow: visible !important;
+      }
+      li.item{
+        text-align: center;
+        cursor: default;
+        h2{
+          color:$subheader;
+          margin-top: 3rem;
+          font-size: 3.2rem;
+        }
+
+        .carousel-chart {
+          position: relative;
+          width: 92%;
+          overflow: auto;
+          margin: 3rem auto 2rem;
+          background: #FFF;
+          padding: 1.5rem 3rem;
+          border-radius: 8px;
+
+          select {
+            border: none;
+            padding: 5px;
+            font-weight: bold;
+            background: transparent;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/arrow-select.png) no-repeat right 50%;
+            padding-right: 18px;
+            &:focus {
+              outline: none;
+              color: $subheader;
+            }
+          }
+          picture {
+            width: 60%;
+            float: left;
+            img {
+              width: 100%;
+              &:hover {
+                cursor: zoom-in;
+              }
+            }
+          }
+        }
+
+        p.carousel-note{
+          text-align: left;
+          font-size: 1.6rem;
+          padding: 5px 2% 5px 5px;
+          width: 34%;
+          float: right;
+          clear: none;
+          margin: 0 auto;
+          font-family: OpenSans-bold;
+          vertical-align: middle;
+          margin-top: 11rem;
+        }
+      }
     }
-  }
-  article:nth-child(1){
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckAbout.png") no-repeat bottom left;
-  }
-  article:nth-child(2){
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckPolicy.png")  no-repeat bottom left;
-  }
-  article:nth-child(3) {
-    background:#f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/home/homeBckCountry.png")  no-repeat bottom left;
-    margin:0;
-  }
-}
-
-.seeMoreProject{
-  padding: 20px 0 0;
-  .know-more{
-    padding-right: 25px !important;
-    display:inline-block !important;
-  }
-}
-
-// TODO FIX temporal buscar workaround div[id^=zylk_pyramid_]
-.homepage {
-    #zylk_pyramid_1, #zylk_pyramid_2, #zylk_pyramid_3, #zylk_pyramid_4  {
-      min-height: 365px;
-      margin-left:0%;
+    .carousel-control {
+      font-size: 35px;
+      background-image: none !important;
+      width: 40px;
+      .icon-prev, .icon-next, .prev, .next {
+        top: 50%;
+        right: 14px;
+        position: absolute;
+        color: $subheader;
+      }
     }
-}
-
-.homepage a {
-  margin: 0;
-  padding: 0;
-  color: inherit;
-}
-
-#osha-carousel .item:nth-child(1) .carousel-caption p{
-  color:$plt-eu03;
-}
-#osha-carousel .item:nth-child(2) .carousel-caption p{
-  color:$plt-eu01;
-}
-#osha-carousel .item:nth-child(3) .carousel-caption p{
-  color:$colorA;
-}
-#osha-carousel .item:nth-child(4) .carousel-caption p{
-  color:$color03;
-}
-#osha-carousel .item:nth-child(5) .carousel-caption p{
-  color:$plt-eu01;
-
-
-}
-#osha-carousel .item .carousel-caption p.carousel.link {
-  text-align: center;
-}
-#osha-carousel {
-  cursor: auto !important;
-  margin-top: 10%;
-}
-.carousel{
-  z-index:0;
-  cursor: auto !important;
-}
-.carousel.link{
-  font-size: 1.5em;
-  position: absolute !important;
-  top: 4em;
-  width: 100%;
-
-  a,span {
-    color: #3ea1a0 !important;
-    text-decoration: underline;
-    font-size:1.4rem !important;
-    padding: 0 1.2em 0 0;
-    font-weight: 300;
-  }
-  span {
-    text-decoration: none;
-  }
-}
-
-
-.carousel-control {
-  display:none !important;
-}
-.pyramidSlider {
-  min-height: 500px;
-}
-
-//#zylk_pyramid_1 {
-//  min-height: 365px;
-//}
-
-.slider {
-  margin-left: 16px !important;
-  height: 3em;
-  .ng-scope {
-    margin-right: 2.7px !important;
-    i {
-      margin: -19px; color:$color03;
+    .carousel-control.left {
+      left: -40px;
     }
-  }
-  .ng-binding {
-    margin-left: -3px;
-    margin-right: -3px;
-    position: relative;
-    top:16px;
-    color: $color03;
+    .carousel-control.right {
+      right: -60px;
+    }
+    .carousel-indicators {
+      position: static;
+      bottom: 0px;
+      margin: 15px auto;
+      z-index: 15;
+      width: 60%;
+      padding-left: 0;
+      list-style: none;
+      text-align: center;
+    }
+
   }
 }
-.range-container {
 
-}
+.section-first-home{
+  background: #FAFAFA;
+  padding: 40px 0;
 
-
-
-
-
-
-.itemsSlider {
-  width: 100%;
-  margin: .6em 0 1em 0em;
-
-  td {
+  h4{
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    margin-top: 4rem;
     text-align: center;
-    font-family: "Oswald";
-    font-size: .9em;
-    color:$colorB;
-    cursor: pointer;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
   }
-  td:hover {
-    //background-color: $colorA;
-    background-color: lighten( $color03, 15% );
+  h3{
+    color: $subheader;
+    text-align: center;
+    font-size: 2.8rem;
   }
-}
-.carousel-inner{
-  min-height: 370px;
-}
-.carousel-inner>.item>img{
-  min-height:auto;
-}
-.carousel-indicators {
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    left: 0;
-    right: 0;
-}
-.carousel-indicators li {
-  background: white !important;
-  margin:0 8px;
-}
-.carousel-indicators .active {
-  background-color: $color03 !important;
-  margin:0 5px;
-}
-.homepage {
-  .range-container {
-    margin-left:0em!important;
-    margin-top:12px;
-    padding: 0 0 0 0;
-
-    #range-title {
-      color: $colorB;
-      padding: 0em 0em  0.5em  1.5em;
+  p.oshLink {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 15px 40px;
+    border-radius: 4px;
+    margin: auto;
+    width: 70%;
+    font-family: Oswald-Light, sans-serif;
+    border: 2px solid $subheader;
+    span:nth-child(2) {
+      float: right;
     }
   }
-  .pyramid{
-    min-height: 15em; /* require dto avoid slider glitch*/
-    background: transparent !important;
+  .chart1-section-first{
+    /*text-align: center;
+    padding: 2rem 0 2rem 0;
+    background: #FFF;
+    width: 100%;
+    margin: auto;
+    border-radius: 8px 8px 0 0;*/
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+    background: #FFF;
+    width: 50%;
+    margin: auto;
+    border-radius: 8px 8px 0 0;
+    display: inline-block;
+    float: left;
+    p{
+      margin: 0;
+    }
   }
-  article a:hover {
-    text-decoration: none;
+  .legend-home-chart{
+    text-align: center;
+    background: $colorWhite;
+    padding: 1rem;
+  }
+  .chart2-section-first{
+   /* text-align: center;
+    background: #FFF;
+    padding: 7rem 0 2rem;
+    width: 100%;
+    margin: auto;
+    border-radius:0 0  8px 8px ;*/
+    text-align: center;
+    background: #FFF;
+    padding: 2rem 0 2rem;
+    width: 50%;
+    margin: auto;
+    border-radius: 0 0 8px 8px;
+    display: inline-block;
+    /* float: left; */
+    p{
+      margin: 0;
+    }
+    h4{
+      margin-bottom: 3rem;
+      font-size: 2.2rem;
+    }
+  }
+  img:hover{
+    cursor: zoom-in;
+  }
+  .content-section-first{
+    margin: 5rem auto 0;
+    p.text-section-first{
+      text-align: center;
+      color:$subheader;
+    }
+  }
+}
+.section-second-home{
+  background: #F9F9F9;
+  padding: 40px 0;
+  h3{
+    color: $subheader;
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .chart-section-second{
+    text-align: center;
+    margin-top: 4rem;
+  }
+  img:hover{
+    cursor: zoom-in;
+  }
+  .content-section-second{
+    p{
+      text-align: center;
+    }
+  }
+}
+.compare-buttons{
+  background: #FFF;
+  padding: 40px 0;
+  .compare-buttons-list{
+    text-align: center;
+    li{
+      margin-right: 30px;
+      width: 48%;
+      a{
+        font-family: Oswald-Light,sans-serif!important;
+        font-size: 1.8rem;
+        display: inline-block;
+        background:#449FA2;
+        color: #FFF;
+        padding: 10px 40px;
+        border-radius: 4px;
+        margin: auto;
+        cursor: pointer;
+        &:hover{
+          background: $plt-eu02;
+          text-decoration: none;
+        }
+      }
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+.see-more{
+  text-align: center;
+  margin: 25px 0 5px;
+  font-family: Oswald-Light,sans-serif!important;
+  font-size: 1.8rem;
+  text-decoration: none;
+  a{
+    display: inline-block;
+    background:$subheader;
+    color: #FFF;
+    padding: 10px 40px;
+    border-radius: 4px;
+    margin: auto;
+    cursor: pointer;
+    &:hover{
+      background:$plt-eu02;
+      text-decoration: none;
+    }
   }
 }
 
-.homepage .containerPyramid div.title {
-  color:$color03;
-  font-size:2.1rem;
-  font-family: Oswald,sans-serif;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-weight: 500;
-  line-height: 1.1;
+.cdfNotification{
+  background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/error_processing.png) no-repeat scroll 5% 12px;
+  min-height: 11em !important;
+  .cdfNotificationBody{
+    .cdfNotificationTitle{
+      color: #FF8000;
+      font-family: Open Sans !important;
+      font-size: 1.6rem !important;
+      /*
+      &:before{
+        content: "\f071";
+        display: inline-block;
+        font: normal normal normal 24px/1 FontAwesome !important;
+        margin-right: 10px;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscal
+      }
+      */
+    }
+  }
+
+}
+
+.modal-dialog {
+  width: 60%;
+  background: #FFF;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 95%;
+  .modal-content{
+    margin:1rem;
+    background: $backGraps;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 98%;
+    &::-webkit-scrollbar {
+      width:6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+      border-radius: 6px;
+    }
+    .modal-header{
+      padding: 10px 20px;
+      border-bottom: none;
+      .modal-title{
+        font-family: "Oswald", sans-serif;
+        font-size: 2.7rem;
+        font-weight: normal;
+        color: #000 !important;
+      }
+    }
+    .modal-body{
+      padding: 1px 10px;
+      background: #FFF;
+      text-align: center;
+      width: 96%;
+      margin: auto;
+      img{
+        width:75%;
+        background: #FFF;
+        padding: 2%;
+        margin: auto;
+      }
+      .logoGraphics-wrapper{
+        float: none;
+        text-align: right;
+        img{
+          width: 100px;
+          height: auto;
+          display: block;
+          padding: 0;
+          float: none;
+          display: inline-block;
+        }
+      }
+    }
+    .modal-footer {
+      padding: 20px 20px;
+      text-align: right;
+      border-top: none;
+      p{
+        color: #000;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.modal.in .modal-dialog {
+ /* overflow-y: auto;
+  overflow-x: hidden;
+  height: 95%;*/
+}
+.modal.in .modal-dialog::-webkit-scrollbar {
+  width:6px;
+  background-color: #F5F5F5;
+}
+
+.modal.in .modal-dialog::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #666;
+}
+
+select::-ms-expand{
+  display: none;
+}
+.tooltip{
+  position: absolute !important;
+  /*
+  position: fixed;
+  position: -ms-page;
+  */
+  .fa-close{
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    color: #fff;
+    cursor: pointer;
+  }
 }

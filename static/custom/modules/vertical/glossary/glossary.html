@@ -1,0 +1,22 @@
+<!-- global-estimates.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="glossary">
+    <section class="container-full back-color ">
+        <div class="main-text-glossary container">
+            <p data-ng-bind-html="i18n.L112"></p>
+            <!--<p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>-->
+        </div>
+    </section>
+
+    <dvt-search data-detail-state="glossary-detail"
+	            data-search-state="glossary"
+	            data-search-query="getGlossaryTerms"
+	            data-title-query="getGlossaryTermsTitle"
+	            data-item-template="glossary, glossary-item"
+	            data-items-page="10"
+                class="glossary-terms">
+
+	            <!-- POC of filter component -->
+	            <!--data-filter-literals="countries"-->
+	            <!--data-filter-queries="getAllCountries">-->
+	</dvt-search>
+</zylk-dashboard>

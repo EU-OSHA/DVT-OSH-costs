@@ -19,7 +19,7 @@
  * @param {Numeric} [height=250] Chart height.
  * @param {String} [orientation=vertical] Chart orientation.
  * @param {String} [query=null] Id identify sql sentence in CDA.
- * @param {String} [cda="dvt-framework/dashboards/allagesdash.cda"]   CDA file path.
+ * @param {String} [cda="osha-dvt-ilo/dashboards/ilo.cda"]   CDA file path.
  * @param {Array[Array]}  params Dashboard parameters that will be sent to CDA as key value arrays in array
  * @param {Array} listen-to  Component is rendered again when those parameters change
  * (bar and lines) or donuts charts.
@@ -167,6 +167,7 @@ define(function (require) {
     var BarChartComponent = require('cdf/components/CccBarChartComponent');
     var PieChartComponent = require('cdf/components/CccPieChartComponent');
     var configService = require('horizontal/config/configService');
+    var i18n = configService.getLiterals();
 
     var sequence = 1;
 
@@ -176,37 +177,40 @@ define(function (require) {
 
     function ZylkBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies) {
 
-            var _template= ''
+        var _template= ''
             + '<div class="col-md-12 dvt-chart zylk-bar-chart">'
             + '<div class="row">'
             + '<div class="header col-md-12 nopadding">'
-            + '<div class="col-xs-11 col-sm-10 col-md-9 nopadding text-left wrapper-title-graphic">'
-            + '<h3 ng-if="(!!title && !isMaximized) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h3>'
-            + '<h3 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h3>'
+            + '<div class="col-xs-11 col-sm-11 col-md-11 nopadding text-left wrapper-title-graphic">'
+            + '<h2 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h2>'
+            + '<h2 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h2>'
+            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title" data-ng-bind-html="title"></h3>'
             + '</div>'
-            + '<div class="col-md-2 col-lg-3 nopadding pull-right wrapper-contextual-menu">'
+            + '<div class="nopadding pull-right wrapper-contextual-menu">'
             + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
             + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
             + '</div>'
             + '<div data-ng-if="!isMaximized && !haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">'
        // if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic"  src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
-      //  }
-        _template+= '</div>'
-            + '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
-      //  if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>'
-     //   }
-        _template+='</div>'
-            + '<div data-ng-if="isMaximized && isEnlarged==undefined" class="pull-right contextual-menu">';
-        if(!navigator.userAgent.match('iPad')) {
             _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
                 + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                + '<i class="fa fa-download" title="Export"></i>'
+                + '<i class="three-points-vertical" title="Export"></i>'
                 + '</button>'
                 + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                 + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
                 + '</ul>'
+                + '</div>';
+      //  }
+        _template+= '</div>'
+            + '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
+      //  if(!configService.isMobile()) {
+            _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>'
+     //   }
+        _template+='</div>'
+            + '<div data-ng-if="isMaximized && isEnlarged==undefined && isZoom" class="pull-right contextual-menu">';
+        if(!navigator.userAgent.match('iPad')) {
+            _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
                 + '</div>';
         }
         _template +='</div>'
@@ -215,8 +219,9 @@ define(function (require) {
             + '<div class="backGraps">'
             + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
-            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
+            + '<div class="legend-info" ng-if="isMaximized && legendClickMode" data-ng-bind="i18n.L134"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
+            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="to_trusted(functionalLegend)"></div>'
             + '</div>';
 
 
@@ -269,9 +274,16 @@ define(function (require) {
                 if (!!scope.enlargeAction) {
                     scope.haveEnlarge = "true";
                 }
+                scope.i18n = i18n;
                 scope.isMaximized = !!attributes.isMaximized;
+                scope.isZoom = !!attributes.isZoom;
+                scope.titleH3 = !!attributes.titleH3;
+                //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
+                if(attributes.legendClickMode=="toggleVisible"){
+                    scope.legendClickMode=true;
+                }
 
                 var definition = {
                     type: "cccBarChart",
@@ -283,15 +295,14 @@ define(function (require) {
                     parameters: [],
                     chartDefinition: {
                         dataAccessId: attributes.query || null,
-                        path: attributes.cda || "dvt-framework/dashboards/datapilot.cda",
-                        title: attributes.title || "",
+                        path: attributes.cda || "osha-dvt-ilo/dashboards/datapilot.cda",
+                        //title: attributes.title || "",
                         width: attributes.width || 300,
                         height: attributes.height || 250,
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
                         axisLabel_font: attributes.axisLabelFont || 'normal 12px "Open Sans"',
-                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans" gray',
                         axisTitleLabel_textStyle: 'gray',
                         clickable: true,
                         clickAction: function (dataset) {
@@ -335,7 +346,7 @@ define(function (require) {
                         label_top: scope.labelTop,
                         legend: attributes.legend === 'true' || false,
                         legendClickMode: attributes.legendClickMode || 'toggleVisible',
-                        legendFont: attributes.legendFont || 'normal 12px "Open Sans"',
+                        legendFont: attributes.legendFont || 'normal 14px "Open Sans"',
                         legendPosition: attributes.legendPos || 'bottom',
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
@@ -344,6 +355,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
                         baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans"',
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
                         label_visible: scope.labelVisible,
@@ -408,6 +420,9 @@ define(function (require) {
                 }
                 if (!!attributes.angle) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
+                    if (definition.chartDefinition.orientation == 'horizontal') {
+                        definition.chartDefinition.baseAxisLabel_textAngle = 0;
+                    }
                     definition.chartDefinition.baseAxisLabel_textAlign = 'right';
                     definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     if(attributes.angle>1)
@@ -498,6 +513,38 @@ define(function (require) {
                 // values visible (acronyms)
                 if (!!scope.valuesVisible) {
                     definition.chartDefinition.valuesVisible = !!attributes.valuesVisible;
+                }
+                if ((scope.isMaximized && attributes.type == 'pie') || attributes.type=='pie') {
+                    definition.chartDefinition.valuesVisible = true;
+                    definition.chartDefinition.valuesAnchor = "center";
+                    definition.chartDefinition.valuesLabelStyle= 'inside';
+                    if (scope.isMaximized) {
+                        definition.chartDefinition.valuesFont= '20px sans-serif';
+                    }else {
+                        definition.chartDefinition.valuesFont= '14px sans-serif';
+                    }
+                    definition.chartDefinition.format = {
+                        percent: "#%"
+                    };
+                    definition.chartDefinition.dimensions= {
+                        value: {
+                            format: {
+                                number: "#.00",
+                                percent: "#%"
+                            }
+                        }
+                    };                 
+                    definition.chartDefinition.valuesOverflow= 'trim';
+                    definition.chartDefinition.label_textStyle = 'black';
+                    //Solve problem when maximizing chart and percentage changing
+                    if (!scope.isMaximized) {
+                        definition.chartDefinition.valuesMask= '{value.percent}';    
+                    }else {
+                        definition.chartDefinition.valuesMask = '{value}%';
+
+                    }
+                    
+                    definition.chartDefinition.label_textAngle= 0;
                 }
 
                 // custom legend dot background color
@@ -608,25 +655,25 @@ define(function (require) {
                     if (!attributes.isMaximized && true){
                         scope.contextuals.push(['Maximize', 'maximize']);
                     }
-                    if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
+                    // if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
                         var ua = window.navigator.userAgent;
                         var msie = ua.indexOf("MSIE ");
 
                         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
                             // You use IE. That´s no good.
-                            [['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else if (!configService.isMobile())  {
-                            [['Export as image', 'exportImage'], ['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else {
-                            [['Export as image', 'exportImage'], ['Export as CSV', 'exportData']].forEach(function (item) {
+                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
-                    }
+                    // }
                 }
                 scope.showContextuals = (scope.contextuals && scope.contextuals.length > 0) || false;
                 if (scope.showContextuals){
@@ -664,7 +711,6 @@ define(function (require) {
                     }else{
                         definition['legendClickMode'] = 'none';
                     }
-
                 };
 
                 // only set maxim properties on normal view
@@ -677,7 +723,6 @@ define(function (require) {
 
                 /* pass definition to modal */
                 var dvtModal = maximize.setModal(definition);
-
 
                 /* modal open action function */
                 scope.open = function (action) {
@@ -697,9 +742,12 @@ define(function (require) {
                             //dvtModal("HLYvsLE", 'HistoricalController', JSON.stringify(definition));
                             break;
                         case "maximize":
-                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController");
+                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController", false);
                             break;
                         case "exportImage":
+                            maximize.doMaximize(dvtModal,definition, "maximize", "MaximizeController", true);
+                            break;
+                        case "exportImageLink":
                             exportService.exportImageAction(scope);
                             break;
                         case "exportData":
@@ -719,14 +767,15 @@ define(function (require) {
                 if (!!attributes.id) {
                     definition.chartDefinition.title = null;
                     var indicators = JSON.parse("["+attributes.id+ "]");
-                    indicators.forEach(function (id,index,array) {
+                    plotsProvider.showContextualData('', definition, scope, attributes);
+                    /*indicators.forEach(function (id,index,array) {
                         $log.debug("METADATA INDICATORS FOREACH---------------------------------->");
                         $log.debug(id);
                         dataService.getIndicatorMetadata(id).then(function (dataset) {
                             $log.debug(dataset);
-                            plotsProvider.showContextualData(dataset, definition, scope, attributes);
+                            
                          });
-                    });
+                    });*/
                 }
             }
         }

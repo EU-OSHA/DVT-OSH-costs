@@ -26,6 +26,9 @@ define(function (require) {
             transclude: true,
             scope: {},
             controller: ['$scope', 'configService', '$http', function($scope, configService, $http) {
+                // Literals / i18n
+                $scope.i18n = configService.getLiterals();
+
                 $scope.path = configService.getHorizontalDirectiveDataPath("footer", "footer");
                 $http.get($scope.path).success(function(footer) {
                     $log.debug(footer)

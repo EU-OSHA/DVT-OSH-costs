@@ -27,20 +27,23 @@ $corporativo : #003399;
 
 /* Font color */
 $font-black: #000000;
-$font-grey: #57575a;
-
+$font-grey: #666;
+$header:#f6a400;
+$subheader:#449FA2;
+$link-menu:#b1b3b4;
 
 /* Palete */
-$plt-eu01: #363d90; /*dark blue*/
-$plt-eu02: #9ba9d3;
-$plt-eu03: #c83188; /**/
-$plt-eu04: #eabbd4;
+$plt-eu01: #449FA2; /*aquamarine*/ /*CANCER*/
+$plt-eu02: #F2C466; /*MSD*/
+$plt-eu03: #F6A400; /*CIRCULATORY*/
+$plt-eu04: #58585A; /*INJURIES*/
+$plt-eu05: #C9E3E3; /*OTHERS*/
 
 /* Color */
 $colorWhite: #FFFFFF;
 $colorTrans: transparent;
 $colorA: #f6a400; /*orange*/
-$colorB: #00A0A4;
+$colorB: #449FA2; /* aquamarine */
 
 
 $color01: #dd9444;
@@ -52,7 +55,10 @@ $color06: #babdc1;
 $color07: #359f4b;
 $color08: #e1d643;
 $color09: #fbdb99;
+$border: #EAEAEA;
 $lightgrey: #F0F0F0; /* light grey*/
+$lightgrey2: #F9F9F9; /* light grey*/
+$darkgrey : #222;
 
 /* color groups country clusters*/
 $colorGroup01:#FBDB99;
@@ -80,7 +86,14 @@ $backgroundCookies:#cbe4e5;
 $backgroundGlossary1:#cfd8dc;
 $backgroundGlossary2:#eceff1;
 
-
+html{
+  font-size: 10px;
+}
+.outleft{
+  position: absolute;
+  top: -9999px;
+  left:-9999px;
+}
 .nopadding {
   padding:0!important;
   margin:0!important;
@@ -100,34 +113,66 @@ $backgroundGlossary2:#eceff1;
 }
 body {
   font-family: $font-body;
+  font-size: 1.6rem;
+  color: #898989;
+  padding-top: 100px;
+  overflow-x: hidden;
 }
-
+body.hasCookies{
+  padding-top: 12rem;
+  .ilo-header #containerMenu{
+    position: relative;
+  }
+  #google_translate_element_wrapper{
+    top: 4rem;
+    position: relative;
+    width: auto;
+    float: right;
+    right: 0;
+  }
+  span.google_translate_span {
+    width: 135px;
+    left: 0px !important;
+  }
+  span.gtranslator-info {
+    right:0em !important;
+  }
+  .gtranslator-msg {
+    top: 199px;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
 }
 
+header {
+  a:focus{
+    outline: 1px dotted #CCC !important;
+  }
+  .submenu-icon{
+    a:focus{
+      outline: 0px;
+    }
+  }
+}
+
 .page-content {
-  float: left;
+ /* float: left; */
   margin: 0;
   width: 100%;
 }
 .mainBody {
-    overflow: auto;
+    //overflow: auto;
     width: 100%;
-}
-#not-home-cover {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/not-home-banner.png') $colorB no-repeat center top;
-  height: 61px;
-  clear:both;
-  h1 {
-    color: $colorA;
-    font-size: 2em;
-    font-weight: 500;
-    line-height: 36px;
-    margin-top: 10px;
+    //display: flow-root;
+  &:before{
+    content: "";
+    clear: both;
+    display: table;
   }
-
 }
+
+
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -135,38 +180,142 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-
 .ovh {
   overflow:hidden;
 }
 
+.contextual-menu{
+  &.cursor-pointer:hover{
+    opacity:1 !important;
+  }
+  > img{
+
+  }
+}
 div.contextual-menu > div.dropdown {
-  background:$color05;
-  padding: 4px 5px;
+  background:transparent !important;
+  padding: 4px 0 0;
   border-radius: 4px;
   width: 30px;
   float: right;
   margin-right: 15px;
-
+  z-index: 999999 !important;
+  .open > .dropdown-menu{
+    display: block;
+    z-index: 10 !important;
+    position: relative !important;
+  }
+  .dropdown-menu-right {
+    right:auto;
+    left:0;
+    position: absolute;
+    z-index: 10 !important;
+    overflow: hidden;
+  }
   button {
-    background: transparent;
-    border: none;
-    padding: 1px;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0px;
+    margin: 0px;
     color: $colorA;
     font-weight: 100;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125) !important;
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125) !important;
+    &:active, &.focus, &.active.focus{
+      -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125) !important;
+      box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125) !important;
+      outline: 0px auto -webkit-focus-ring-color;
+      outline-offset: 0px;
+    }
+    &:hover{
+      i{
+        opacity:0.4;
+      }
+    }
+    .three-points-vertical{
+      background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/three-point-vertical.svg) no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      opacity: 1;
+      position: relative;
+      top:0px;
+    }
+  }
+}
+li.active{
+  h2{
+    padding-top: 0 !important;
+  }
+  .dropdown-menu-right {
+    right:0 !important;
+    left:auto !important;
+    position: absolute;
+    z-index: 10 !important;
+    overflow: hidden;
   }
 }
 
-.modal-backdrop {
-  z-index:9998 !important;
+.back-color{
+  background: #FFF;
+  margin-bottom: 2rem;
+}
+
+.dvt-modal.in{
+  .dvt-chart{
+    .header{
+      h2 {
+        margin-bottom: 1rem !important;
+      }
+      .contextual-menu{
+        > div.dropdown{
+          background: #449fa2 !important;
+          border-radius: 0 !important;
+          width: auto !important;
+          float: right !important;
+          margin-right: 0 !important;
+          margin-bottom: 0.5rem;
+          top: 0px;
+          z-index: 9999 !important;
+          text-align: center;
+          font-size: 1.4rem;
+          -webkit-box-shadow: -2px -2px 2px 0px #AAA;
+          -moz-box-shadow: -2px -2px 2px 0px #AAA;
+          box-shadow: 0px 0px 2px 0px #AAA;
+          &:hover{
+            -webkit-box-shadow: 2px -2px 2px 0px #AAA;
+            -moz-box-shadow: 2px -2px 2px 0px #AAA;
+            box-shadow: 2px -2px 2px 0px #AAA;
+          }
+          a{
+            color: #FFF !important;
+            display: block;
+            padding: 0.5rem 1rem !important;
+            &:hover{
+              color:#FFF !important;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .backGraps {
+     margin: 0em auto 0 !important;
+    }
+  }
 }
 
 
 /****** GRÃƒÂFICAS GENERALES *****/
 
 /* tooltip size */
+
+.tipsy{
+  z-index: 99999999999999999!important;
+}
 .tipsy-inner{
-  font-size:12px;
+  font-size:1.2rem;
 }
 
 /* tooltip percentage hidden for stacked bars */
@@ -177,7 +326,7 @@ div.contextual-menu > div.dropdown {
 .zylk-bar-chart,
 .dvt-chart{
   padding:.5em .7em !important;
-  background: $backGraps !important;
+  background:$backGraps !important;
   height:auto;
 
   h3 {
@@ -185,7 +334,7 @@ div.contextual-menu > div.dropdown {
     font-family: "Open Sans",sans-serif;
     font-weight:bold;
     color:$font-black !important;
-    font-size: 16px !important;;
+    font-size: 1.6rem !important;;
     line-height: 1.2em !important;
     padding: 0.2em 0 !important;
   }
@@ -218,7 +367,7 @@ div.contextual-menu > div.dropdown {
   clear:both;
 }
 .dvt-modal .backGraps {
-  overflow: auto;
+  overflow: hidden;
   margin: 1em auto 0;
   min-height:1em;
 }
@@ -298,6 +447,17 @@ div.contextual-menu > div.dropdown {
     font-size: 10px !important;
     padding:0 !important;
   }
+  .backGraps {
+    svg path{
+      stroke:#FFF;
+    }
+  }
+}
+.modal-backdrop{
+  z-index: 999999 !important;
+}
+.modal {
+  z-index: 1000000 !important;
 }
 .dvt-modal .pyramid{
   clear: both;
@@ -326,8 +486,29 @@ div.contextual-menu > div.dropdown {
 }
 
 .dvt-modal {
+  .modal-wrapper {
+    height: auto;
+    height: 95%;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #666;
+    }
+    .modal-body {
+      height: 100%;
+      height:auto;
+    }
+  }
   .dvt-chart {
-    height: auto!important;
+    height: 100% !important;
     width: 100%;
     overflow: hidden;
     border-radius: .5em;
@@ -340,7 +521,15 @@ div.contextual-menu > div.dropdown {
       font-size:20px !important ;
       min-height: auto !important;
     }
+    .legend-info{
+      float: left;
+      background: #FFF;
+      width: 100%;
+      padding: 0 30px;
+      color: #000;
+    }
   }
+
 
 
   .pyramid{
@@ -382,11 +571,13 @@ div.contextual-menu > div.dropdown {
 
 .dvt-modal .functionalLegend{
     height: auto !important;
-    margin: 2em 0;
+    padding:1.2rem;
     overflow: auto!important;
     float: none;
     clear: both;
     font-size: 16px;
+    color: #000;
+    text-align: left;
 }
 
 .dvt-modal {
@@ -398,8 +589,8 @@ div.contextual-menu > div.dropdown {
     height: auto;
     border-radius: .5em;
     margin-bottom: 2em;
-    z-index: 9999 !important;
-    overflow: auto;
+    z-index: 9999999 !important;
+    overflow: visible;
 }
 
 @media screen and (max-width: 1280px) {
@@ -407,21 +598,21 @@ div.contextual-menu > div.dropdown {
     width:26.5%;
   }
   .dvt-modal{
-    width: 90% !important;
-    left: 5%;
+    width: 80% !important;
+    left: 10%;
   }
 
 }
 @media screen and (min-width : 1281px) and (max-width : 1650px) {
   .dvt-modal{
     width: 75% !important;
-    left:12.5%;
+    left: 12.5%;
   }
 }
 @media screen and (min-width : 1650px) {
   .dvt-modal{
     width: 60% !important;
-    left:20%;
+    left: 20%;
   }
 }
 
@@ -479,19 +670,24 @@ div.blockUIDefaultImg:before {
 #cookiesConsent {
   background: $backgroundCookies;
   width: 100%;
-  padding: 1em 2.5em 0;
+  padding:1.5em;
   overflow: auto;
-  z-index:9999;
+  z-index:10000000;
+  top: 0;
+  position: fixed;
+  color: #666;
+  min-height: 8rem;
   .text {
     float:left;
-    width:70%
+    width:60%;
   }
   .buttons {
-
+    float:right;
+    width:40%;
   }
   button {
     color:$colorWhite;
-    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/buttomArrow.png') no-repeat 95% 53% $colorB;
+    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png') no-repeat 95% 53% $colorB;
     font-family: "Oswald", sans-serif;
     padding:.7em 1.5em;
     border:0;
@@ -503,11 +699,14 @@ div.blockUIDefaultImg:before {
   display:none;
 }
 .modal-body {
+  h2{
+    color: #000 !important;
+  }
   .logoGraphics-wrapper{
     float: left;
     width: 100%;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
     background: #FFF;
       .logoGraphics{
         float: right;
@@ -523,26 +722,31 @@ div.blockUIDefaultImg:before {
 
 /*Width disclaimer*/
 #widthDisclaimer {
-  background: $backgroundCookies;
+  background: #cbe4e5;
   width: 100%;
-  padding: 1em 2.5em 0;
+  padding: 20px 20px;
+  font-size: 14px;
   overflow: auto;
-  z-index:9999;
+  z-index: 100001;
+  position: fixed;
+  top: 0;
+  color: #000;
   .text {
-    float:left;
-    width:80%
+    width:100%;
+    text-align: center;
   }
   .buttons {
 
   }
   button {
-    color:$colorWhite;
-    background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/buttomArrow.png') no-repeat 95% 53% $colorB;
+    color: #FFFFFF;
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/buttomArrow.png) no-repeat 90% 56% $subheader;
     font-family: "Oswald", sans-serif;
-    padding:.7em 1.5em;
-    border:0;
-    float:right;
-    margin:0 .5em;
+    padding: 7px 25px 7px 15px;
+    border: 0;
+    float: none;
+    margin: 20px 35%;
+    width: 30%;
   }
 }
 .logoGraphics {
@@ -552,8 +756,8 @@ div.blockUIDefaultImg:before {
   .logoGraphics-wrapper{
     float: left;
     width: 100%;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
     background: #FFF;
       .logoGraphics{
         float: right;
@@ -567,36 +771,35 @@ div.blockUIDefaultImg:before {
   }
 }
 
-
-#containerMenu.affix {
-  top:0;
-  border-bottom:1px solid $menu-item;
-}
 p {
   clear: both;
 }
-
 .zylk-bar-chart > div.row > .header,
 .zylk-bar-chart > div.row > .header > div.col-md-9,
 .zylk-bar-chart > div.row > .header > div.col-md-3 {
-  background-color: $backGraps;
+  background-color: transparent;
 }
 
 .cursor-pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
-
+/** tooltip charts **/
+.tipsy-inner {
+  max-width: 250px !important;
+}
 /** hover links **/
 .bulletsItems a:hover,
 .bulletsItems a:hover.selected {
-    background: #cecece;
+    background: $backGraps;
 }
 .cursor-pointer:hover {
-    opacity: 0.6;
+  opacity: 0.6;
+  position: relative;
+  z-index:10 !important;
 }
 
 .methodology-link {
-  background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/external_link.png) center center no-repeat !important;
+  background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) center center no-repeat !important;
   cursor: pointer;
 }
 
@@ -615,7 +818,6 @@ p {
   padding: 0 50px;
 }
 
-
 .introNoScript {
   border: 1px solid #000;
   color: $font-grey;
@@ -623,4 +825,88 @@ p {
   font-weight: 700;
   margin: 2em 0 1.5em;
   padding: 1em;
+}
+.tooltip.fade{
+  min-width: 280px !important;
+  width: 280px !important;
+  position: absolute !important;
+  z-index: 999999999999999999999 !important;
+  .tooltip-inner{
+    text-align: left !important;
+    min-width: 280px !important;
+    max-width: 100% !important;
+    padding: 1rem;
+  }
+}
+.modal-content{
+  .tooltip.fade {
+    position: fixed !important;
+    position: -ms-page !important;
+  }
+}
+#carouselCountries, .chart-analysis-illnesses-box, .dvt-modal{
+  .tooltip.fade{
+    z-index: 999999999999999999999 !important;
+    min-width: 280px !important;
+    width: 280px !important;
+    display: block;
+    .tooltip-inner{
+        min-width: 280px !important;
+        max-width: 100% !important;
+    }
+  }
+}
+.section-carrousel{
+  .tooltip.fade {
+    position: fixed !important;
+    position: -ms-page !important;
+  }
+}
+.dvt-modal{
+  .tooltip.fade {
+    position: fixed !important;
+    position: -ms-page !important;
+  }
+}
+
+.dvt-modal::-webkit-scrollbar-track,
+.dvt-modal::-moz-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0);
+  border-radius: 6px;
+  background-color: transparent !important;
+}
+
+.dvt-modal::-webkit-scrollbar,
+.dvt-modal::-moz-scrollbar
+{
+  width: 6px;
+  background-color: transparent !important;
+}
+
+.dvt-modal::-webkit-scrollbar-thumb,
+.dvt-modal::-moz-scrollbar-thumb
+{
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: transparent !important;
+}
+
+a[data-toggle="tooltip"]{
+  color: #449FA2 !important;
+  border-bottom: 1px dotted #449FA2;
+  text-decoration: none;
+  cursor: help;
+  &:hover{
+    color: #449FA2 !important;
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+.export-chart{
+  background:$colorWhite;
+  img.logoGraphics{
+    display: none;
+  }
 }

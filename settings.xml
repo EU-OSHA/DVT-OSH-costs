@@ -10,13 +10,13 @@
 		<minification>MINIFY</minification>
 	</packager>
 	<cde-styles>
-		<path>system/dvt-framework/resources/styles</path>
+		<path>system/osha-dvt-ilo/resources/styles</path>
 	</cde-styles>
   	<cde-datasources/>
 	<cde-components>
 	  <!-- paths from solution with cde component definitions to be loaded-->
-	  <path>system/dvt-framework/resources/components</path>
-	  <path>dvt-framework/components</path>
+	  <path>system/osha-dvt-ilo/resources/components</path>
+	  <path>osha-dvt-ilo/components</path>
 	</cde-components>
 	<allow-cross-domain-resources>true</allow-cross-domain-resources>
 </settings>

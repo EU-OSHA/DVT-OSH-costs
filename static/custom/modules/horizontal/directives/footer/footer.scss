@@ -1,128 +1,160 @@
-#footer-first-line {
-  margin-top:1em;
-  padding-left:2.5em;
-  font-size:.8em;
-}
-
-.panel-footer {
-  background:#575958;
-  color:#fff;
-  margin:0 auto;
-  width:100%;
-  overflow:auto;
-  padding:0 0 4px;
-  font-weight:700;
-  margin-top:1em;
-}
-
-.panel-footer div.block {
-  display:inline-block;
-  vertical-align:middle;
-  margin-bottom:0;
-}
-
-.panel-footer div#block-menu-block-5 {
-  float:right;
-}
-
-.panel-footer div#block-menu-block-4 ul {
-  padding:.5em 0 0 2em;
-  margin:0;
-}
-
-.panel-footer * li.menu__item {
-  display:inline;
-  list-style-type:none;
-  font-size:.813em;
-  //margin:5px 1.5em 0 0;
-}
-
-.footer * li.menu__item a {
-  color:#fff!important;
-  text-decoration:none;
-}
-
-.panel-footer a {
-  color:#fff;
-  text-decoration:none;
-}
-
-#panel-footer ul {
-  margin-bottom: 0;
-}
-
-
-#panel-footer .menu {
-  li + li {
-    border-left: 1px solid white;
-    padding-left: 10px;
+.ilo-container-footer{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  overflow: auto;
+  .logos{
+    //background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-logos.png') #F0F0F0 no-repeat center top;
+    text-align: center;
+    background:#F0F0F0;
+    img{
+      width:auto;
+      @media only screen  and (min-width : 1280px){
+        width:auto;
+      }
+    }
   }
+  .footer-logotypes{
+    //display: none;
+    margin: auto;
+    padding:0;
+    li{
+      width: 16%;
+      padding: 0;
+      margin: 15px 0;
+    }
+  }
+  .footer-elements {
+     color: #fff;
+     margin: 0 auto;
+     width: 100%;
+     padding:10px 0;
+     background: #b1b3b4;
+     float: left;
+     .copyright {
+       display: inline-block;
+       float: left;
+       padding-left: 20px;
+       margin: 0;
+       line-height: 40px;
+       font-family: "OpenSans-bold",sans-serif;
+       font-size:1.4rem;
+       color:#57575a;
+       a{
+         color: #57575a !important;
+       }
+     }
+     .footer-nav-accessibility {
+       margin:8px 0 0;
+       li {
+         display: inline-block;
+         list-style-type: none;
+         padding: 0;
+         a{
+           font-size: 1.4rem;
+           color: #fff!important;
+           font-weight: normal;
+           display: inline-block;
+           &:hover{
+             text-decoration:none;
+             color: #000!important;
+           }
+         }
+         &:after{
+           content: '   |   ';
+           display: inline;
+           font-weight: normal;
+         }
+         &:last-child{
+           &:after {
+             content: '';
+           }
+         }
+       }
+     }
+     .footer-social-network{
+       margin:0;
+       float: right;
+       margin-right: 20px;
+       margin-top: 5px;
+       li{
+         a{
+           color: #FFF;
+           font-size: 2.4rem;
+           background: #FFF;
+           border-radius: 30px;
+           width: 34px;
+           height: 34px;
+           display: inline-block;
+           text-align: center;
+           i:before{
+             color: #b1b3b4;
+           }
+           &:hover i:before{
+             //color:$color03;
+           }
+           &:hover{
+             //color:$color03;
+           }
 
-  &.icons {
-    li + li {
-      border-left: 0px;
-      padding-left: 0px;
+         .flickr-icon{
+           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-flickr.png) no-repeat;
+           background-size: 24px 24px;
+           width: 24px;
+           height: 24px;
+           display: inline-block;
+           opacity:1;
+           position: relative;
+           top: 4px;
+         }
+           &:hover .flickr-icon{
+             background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/footer-flickr.png') no-repeat;
+             background-size: 24px 24px;
+             opacity:1;
+           }
+           .blogger-icon{
+             background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/blog-white.svg) no-repeat;
+             background-size: 24px 24px;
+             width: 24px;
+             height: 24px;
+             display: inline-block;
+             opacity:1;
+             position: relative;
+             top: 4px;
+           }
+           &:hover .blogger-icon{
+             background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/blog-hover.svg') no-repeat;
+             background-size: 24px 24px;
+             opacity:1;
+           }
+         }
+       }
+     }
+   }
+}
+
+
+
+.go-to{
+  padding: 0px;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9000;
+  width: 40px !important;
+  height:40px;
+  border-radius: 30px;
+  background:#666;
+  a{
+    color: #900;
+    &:hover{
+      color:#ccc;
+    }
+    i:before{
+      content: "\f106";
+      font-size: 2.6rem;
     }
   }
 }
-
-
-.panel-footer {
-  background: $footer-bg;
-  margin-top: 0em;
-}
-
-.panel-footer div#block-menu-block-4 ul {
-  padding: 0;
-  margin: 0;
-}
-
-#footer-first-line {
-  /* border:3px solid orange; */
-  display: inline-block;
-  padding-left: 20px;
-  margin-top: 0em;
-  line-height: 40px;
-
-  font-family: $font-text;
-  font-size: 13px;
-  color: #57575a;
-
-  margin-right: 40px;
-
-  a {
-    color: #57575a;
-  }
-
-
-}
-
-#footer-second-line {
-  /* border:3px solid purple; */
-  display: inline-block;
-  line-height: 40px;
-
-  a {
-    font-size: 13px;
-    font-weight: 300;
-  }
-}
-
-
-#block-menu-block-5 {
-  /* border:3px solid lime; */
-  display: inline-block;
-  line-height: 40px;
-  margin-right:1em;
-
-  li {
-    border: 0;
-  }
-}
-
-
-body #panel-footer  .menu li + li {
-  border: 0;
-}
-
 

@@ -2,7 +2,19 @@
     "debugMode": false,
     "paths": {
         "enviroment": {
-            "_description": "Entorno local, Testing osha-bi, Drupal",
+            "_description": "Envrionment: Local, Testing, Staging, Production",
+            "local": {
+                "domain": "//localhost",
+                "port": ""
+            },
+             "development": {
+                "domain": "//ilo-dev",
+                "port": ""
+            },
+            "testing": {
+                "domain": "//ilo-test",
+                "port": ""
+            },
             "euosha-staging": {
                 "domain": "//test-visualisation.osha.europa.eu",
                 "port": ""
@@ -10,54 +22,11 @@
             "euosha-production": {
                 "domain": "//visualisation.osha.europa.eu",
                 "port": ""
-            },
-             "development": {
-                "domain": "//osha-bi.zylk.net",
-                "port": ""
-            },
-            "testing": {
-                "domain": "//tosha-bi.zylk.net",
-                "port": ""
-            },
-            "proxy": {
-                "domain": "//proxy-osha.zylk.net",
-                "port": "8080"
-            },
-            "drupal": {
-                "domain": "//194.30.41.49/",
-                "port": "8887"
-            },
-            "local": {
-                "domain": "//localhost",
-                "port": ""
-            },
-            "persefone": {
-                "domain": "//persefone.zylk.net",
-                "port": "8080"
-            },
-            "dionisio": {
-                "domain": "//dionisio.zylk.net",
-                "port": "8080"
-            },
-            "chronos": {
-                "domain": "//chronos.zylk.net",
-                "port": "8080"
-            },
-            "ceres": {
-                "domain": "//ceres.zylk.net",
-                "port": "8080"
             }
         },
         "piwik": {
-            "_description": "Piwik navigation tracking local, Testing, osha-bi, Drupal",
+            "_description": "Piwik navigation tracking: Local, Testing, Staging, Production",
             "local": {
-                "protocol": "https",
-                "domain": "//piwik.osha.europa.eu",
-                "port": "443",
-                "path": "/piwik/",
-                "SiteId": "11"
-            },
-            "localsecure": {
                 "protocol": "https",
                 "domain": "//piwik.osha.europa.eu",
                 "port": "443",
@@ -90,29 +59,19 @@
                 "domain": "//piwik.osha.europa.eu",
                 "port": "443",
                 "path": "/piwik/",
-                "SiteId": "14"
+                "SiteId": "27"
             }
         },
         "pentaho-instance": "/pentaho",
-        "partials": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom",
-        "directive-route": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom",
-        "system-components": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/system/components",
-        "images": "/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/",
+        "partials": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom",
+        "directive-route": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom",
+        "system-components": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/system/components",
+        "images": "/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/",
         "data": {
-            "pentaho-path": "/plugin/cda/api/doQuery?&path=dvt-framework/dashboards/",
+            "pentaho-path": "/plugin/cda/api/doQuery?&path=osha-dvt-ilo/dashboards/",
+            "cda-path": "osha-dvt-ilo/dashboards/",
             "cda": {
-                "datapilot": "datapilot.cda",
-                "approach": "approachdata.cda",
-                "policies": "policiesdata.cda",
-                "countries": "countriesdata.cda",
-                "csp": "cspdata.cda",
-                "countryCard": "countrycardata.cda",
-                "countryComparison": "countrycomparisondata.cda",
-                "glossary": "glossarydata.cda",
-                "methodology": "methodologydata.cda",
-                "issue": "issuedata.cda",
-                "issueHistorical": "issue_historical_data.cda",
-                "spikedata": "spikedata.cda"
+                "ilo": "ilodash.cda"                
             }
         }
     }

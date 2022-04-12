@@ -4,7 +4,7 @@
     "group3": "#529fa2",
     "group4": "#f6a400",
     "europeMapBase": "#BFBFBF",
-    "europe": "#002f9d",
+    "europe": "#003399",
     "europe2":"#7F97CE",
     "country1": "#eda308",
     "country12": "#F3C564",
@@ -13,8 +13,8 @@
     "comparison-first-pyramid-overlapping":"red",
     "comparison-second-pyramid-overlapping":"#333",
     "baseOld": "#7c8384",
-    "base": "#444",
-    "baseOver": "#B7BCC0",
+    "base": "#C9E3E3",
+    "baseOver": "#449FA2",
     "EUTooltip": "#fff",
     "EUTooltipFontColor": "cadetblue",
     "EUTooltipStroketColor": "gray",
@@ -23,6 +23,17 @@
         "indicator0":"rgb(135,206,250, .5)",
         "indicator1":"rgb(255,20,147, .5)",
         "valuesColor": "gray"
+    },
+
+    "chartSecondaryColor":"#A6D0D0",
+    "chartYellow":"#F8D126",
+    "chartLightYellow":"#FBE375",
+
+    "illnessColors": {
+      "Cancer": "#449FA2",
+      "MSD": "#F2C466",
+      "Circulatory": "#F6A400",
+      "Injuries": "#58585A",
+      "Others": "#C9E3E3"
     }
 }
-

@@ -31,7 +31,7 @@ define(function (require) {
             + '<div data-ng-if="!isMaximized">'
             + '<div  class="contextual-menu cursor-pointer maximizeImage" data-ng-class="showContextuals?\'\':\'hidden\'">';
        // if(!configService.isMobile()) {
-            _template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/more.png"/>';
+            _template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/more.png"/>';
        // }
 
         _template+= '</div>'
@@ -43,7 +43,7 @@ define(function (require) {
             +'Solid Colour <span class="mr">2014 </span>'
             +'Bordered <span>2060 </span>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
             + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>'
             + '</div>'
@@ -59,7 +59,7 @@ define(function (require) {
         if(!navigator.userAgent.match('iPad')) {
             _template+='<div class="dropdown">'
             +'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-            + '<i class="fa fa-download" title="Export"></i>'
+            + '<i class="three-points-vertical" title="Export"></i>'
             + '</button>'
             + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
             + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
@@ -76,7 +76,7 @@ define(function (require) {
             +'Bordered <span>2060 </span>'
             + '</div>'
             + '</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt-framework/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
             + '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
             + '</div>'
 
@@ -417,12 +417,12 @@ define(function (require) {
                 //  title, functional legend
                 // TODO separar título de leyenda ya que la primera puede venir de la directiva y no de db (multi-indicador)
                 // =========================
-                if (!!attributes.id) {definition.chartDefinition.title = null;
+                /*if (!!attributes.id) {definition.chartDefinition.title = null;
                     dataService.getIndicatorMetadata(attributes.id).then(function (dataset) {
                         $log.debug(dataset);
                         plotsProvider.showContextualData(dataset, definition, scope, attributes);
                     });
-                };
+                };*/
 
                 // New parameters to maximize mode
                 definition ['maxType'] = attributes.type;

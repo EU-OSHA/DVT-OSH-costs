@@ -1,0 +1,377 @@
+<!-- eu-analysis-illness.html -->
+<zylk-dashboard promises="promises" parameters="dashboard.parameters" class="osha-analysis-illnesses who-regions">
+    <div class="container-full eu-analysis-illness-wrapper">
+
+        <section class="chart-analysis-illnesses affix-top" bs-affix  data-offset-top="150">
+            <div class="export-chart chart-analysis-illnesses-box container" >
+                <h2 data-ng-bind-html="to_trusted(i18n.L139)"></h2>
+                <div class="chart-wrapper">
+                    <div class="zylk-chart col-sm-5 col-md-3">
+                        <zylk-bar-chart data-ng-cloak class="text-center"
+                                        query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                        width="250"
+                                        orientation="horizontal"
+                                        params="[['pIndicator','26'], ['pRegion', 'GLOBAL']]"
+                                        p-x-labels="1"
+                                        p-y-labels="0"
+                                        colors="[illnessColors.Cancer, illnessColors.MSD,illnessColors.Circulatory,  illnessColors.Injuries, illnessColors.Others]"
+                                        id="3"
+                                        color2-axis-colors="['#eda308','lightgray']"
+                                        plots="stories[0].plots"
+                                        type="pie"
+                                        values-visible="false"
+                                        title="{{i18n_global.GLOBAL}}"
+                                        long-title="{{i18n.L139}} - {{i18n_global.GLOBAL}}"
+                                        title-h3="true"
+                                        max-functional-legend="{{i18n.L140}}"
+                        ></zylk-bar-chart>
+                    </div>
+                    <ul class="legend-list col-sm-7 col-md-4">
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Cancer']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Cancer]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['MSD']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.MSD]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Circulatory']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Circulatory]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Injuries']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Injuries]"></span></li>
+                        <li class="legend-item"><span class="legend-data" data-ng-bind="countries['GLOBAL']['Others']"></span><span class="legend-name" data-ng-bind-html="i18n[i18n_global.Others]"></span></li>
+                    </ul>
+                    <div class="chart-description col-sm-12  col-md-5">
+                        <p data-ng-bind-html="to_trusted(i18n.L140)"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countries-analysis-by-illnesses container">
+            <div class="global-estimates-countries-regions">
+                <p data-ng-bind-html="to_trusted(i18n.L44)" class="countries-regions-text"></p>
+                <div class="countries-regions-select">
+                    <select  data-ng-model="country" data-ng-init="countries[0].name" data-ng-options="country as country.name for country in countriesSelect" data-ng-change="selectChange()">
+                        <option value="" disabled selected hidden>{{i18n_global.Select}}</option>
+                    </select>
+                    <span>:</span>
+                    <input type="text" data-ng-model="country.region" disabled placeholder="{{i18n_global.Region}}" />
+                    <p class="countries-regions-info"><a href="" title="{{i18n_global.modalTitle}}"  data-toggle="modal" data-target="#modalChart" data-ng-click="modal('slide',$index)">
+                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/regions-icon.svg" width="26" height="26" alt="region icon"><span class="sr-only">{{i18n_global.Info}}</span></a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="EU28" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'EU28']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.EU}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.EU}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EU28']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="HIGH" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'HIGH']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.HIGH}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.HIGH}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['HIGH']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="AFRO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'AFRO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.AFRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.AFRO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AFRO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="AMRO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'AMRO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.AMRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.AMRO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['AMRO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EMRO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'EMRO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.EMRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.EMRO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EMRO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EURO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'EURO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.EURO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.EURO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['EURO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="SEARO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'SEARO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.SEARO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.SEARO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['SEARO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="WPRO" class="export-chart country-analysis-by-illnesses col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="country-wrapper">
+                    <div class="country-chart col-xs-8 col-sm-9 col-md-9">
+                        <div class="zylk-chart">
+                            <zylk-bar-chart data-ng-cloak class="text-center"
+                                            query="getSplitAllCountryDataByIndicator" cda="{{::cda }}"
+                                            orientation="horizontal"
+                                            params="[['pIndicator','26'], ['pRegion', 'WPRO']]"
+                                            p-x-labels="1"
+                                            p-y-labels="0"
+                                            colors="[illnessColors.Cancer, illnessColors.MSD, illnessColors.Circulatory, illnessColors.Injuries, illnessColors.Others]"
+                                            id="4"
+                                            color2-axis-colors="['#eda308','lightgray']"
+                                            plots="stories[0].plots"
+                                            type="pie"
+                                            values-visible="false"
+                                            title="{{i18n_global.WPRO}}"
+                                            long-title="{{i18n.L139}} - {{i18n_global.WPRO}}"
+                                            title-h3="true"
+                            ></zylk-bar-chart>
+                        </div>
+                    </div>
+                    <div class="country-chart-legend col-xs-4 col-sm-3  col-md-3">
+                        <p data-ng-bind-html="to_trusted(i18n.L93)"></p>
+                        <ul class="legend-list">
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Cancer']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['MSD']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Circulatory']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Injuries']"></span></li>
+                            <li class="legend-item"><span class="legend-data" data-ng-bind="countries['WPRO']['Others']"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--<section class="container-full back-color ">
+        <div class="main-text-global-estimates container">
+            <p class="see-more"><a data-ui-sref='about-estimates' data-ng-bind-html="i18n.L39"></a></p>
+        </div>
+    </section>-->
+
+    <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="modal-title" data-ng-bind-html="modalData.title"></p>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/who-regions.jpg" alt="">
+                    <p>
+                        <span data-ng-bind-html="i18n_global.RegionCode"></span>
+                        <span data-ng-bind-html="i18n_global.RegionTableTitle"></span>
+                    </p>
+                    <p>
+                        <span data-ng-bind-html="i18n_global.RegionText"></span>
+                        <a class="external" target="_blank" href="http://www.who.int/healthinfo/global_burden_disease/definition_regions/en/" data-ng-bind="i18n_global.RegionLink"></a>
+                    </p>
+                    <div class="logoGraphics-wrapper">
+                        <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p data-ng-bind-html="modalData.text"></p>
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</zylk-dashboard>

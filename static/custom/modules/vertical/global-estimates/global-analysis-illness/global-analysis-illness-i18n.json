@@ -1,0 +1,27 @@
+{
+
+  "GLOBAL": "GLOBAL",
+  "EU":"EU28",
+  "HIGH":"HIGH",
+  "AFRO":"AFRO",
+  "AMRO":"AMRO",
+  "EMRO":"EMRO",
+  "EURO":"EURO",
+  "SEARO":"SEARO",
+  "WPRO":"WPRO",
+
+  "Cancer": "L129",
+  "MSD": "L130",
+  "Injuries": "L132",
+  "Circulatory": "L131",
+  "Others": "L133",
+
+  "Select": "Select the country",
+  "Region": "Region",
+  "Info":"Info",
+
+  "RegionCode": "Region code",
+  "RegionTableTitle":"WHO regions and World Bank income categories",
+  "RegionText":"More information about ",
+  "RegionLink":"WHO Regions"
+}

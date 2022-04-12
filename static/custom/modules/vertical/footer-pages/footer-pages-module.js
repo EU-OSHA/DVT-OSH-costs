@@ -10,9 +10,13 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('footerPages', ['ui.router', configModule.name]);
+    var module = angular.module('footerPages', ['ui.router', 'ui.router.metatags', configModule.name]);
 
     module.config(function ($stateProvider, configService, $controllerProvider, $urlRouterProvider) {
+        
+        // Literals / i18n
+        var i18n = configService.getLiterals();
+
         $urlRouterProvider.otherwise("/404");
         $stateProvider.state('legal-notice', {
             url: "/legal-notice",
@@ -22,6 +26,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider,'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L9 +  " - " + i18n.L135,
+                description: i18n.L9,
             }
         });
 
@@ -33,6 +41,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L10 +  " - " + i18n.L135,
+                description: i18n.L10,
             }
         });
 
@@ -44,6 +56,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L8 +  " - " + i18n.L135,
+                description: i18n.L8,
             }
         });
 
@@ -55,6 +71,10 @@ define(function (require) {
                     controller: 'FooterPagesController',
                     resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/footer-pages/FooterPagesController', 'footer-pages', 'FooterPagesController')
                 }
+            },
+            metaTags: {
+                title: i18n.L7 +  " - " + i18n.L135,
+                description: i18n.L7,
             }
         });
 
@@ -64,6 +84,10 @@ define(function (require) {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "404")
                 }
+            },
+            metaTags: {
+                title: i18n.L136 +  " - " + i18n.L135,
+                description: i18n.L135,
             }
         });
 

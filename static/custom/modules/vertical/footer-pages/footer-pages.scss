@@ -1,15 +1,19 @@
-.legalNotice {
-  margin-bottom:2em;
+.legalNotice, .site-map {
+  margin: 2em auto;
 }
 .tableAccesibility {
   table,td,th{
-    border:1px solid #000;
+    border:1px solid #CCC;
     border-collapse: collapse;
     padding:1em;
+    margin: 3rem auto;
+  }
+  th{
+    background:#f9f9f9;
   }
 }
 .external {
-  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/all-ages/static/custom/img/external_link.png')transparent right 20% no-repeat;
+  background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png')transparent right 20% no-repeat;
   margin-right: 0.5em;
   padding-right: 1.3em;
   word-wrap: break-word;
@@ -18,4 +22,55 @@
   padding:1em;
   border:1px solid black;
   margin:.5em 0 1em 0;
+}
+
+.site-map{
+  h2{
+    margin: 3rem 0 2rem;
+    color: #333;
+  }
+  h3{
+    margin: 2rem 0 1rem;
+    color: #333;
+  }
+  ul{
+    li{
+      list-style-type: none;
+      border-bottom: 1px dotted #CCC;
+      .sr-only{
+        position: static;
+      }
+      a, > span{
+        padding: 10px 6px !important;
+        display: block;
+      }
+      a:hover{
+        background:#f9f9f9;
+        text-decoration: none;
+      }
+      ul{
+        li:last-child{
+          border-bottom:none;
+        }
+      }
+    }
+  }
+}
+
+.legalNotice{
+  h2{
+    margin: 3rem 0 2rem;
+    color: #333;
+  }
+  h3{
+    margin: 2rem 0 1rem;
+    color: #333;
+  }
+  .box {
+    padding: 1em;
+    border: 1px solid #CCC;
+    margin: 2em 0 2em 0;
+    background: #f9f9f9;
+    border-radius: 6px;
+  }
 }

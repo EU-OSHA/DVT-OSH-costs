@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="ilo_conn" type="sql.jndi">
+         <Jndi>jdbcEuOshaILO</Jndi>
+      </Connection>
+   </DataSources>
+
+   <!-- GET INDICATOR DATA -->
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorData" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+       </Parameters>
+       <Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+           FROM fact_figures ff
+           INNER JOIN indicators i
+           ON i.INDICATOR_ID = ff.INDICATOR_ID
+           WHERE ff.INDICATOR_ID = ${pIndicator}
+           ORDER BY Country ASC
+       </Query>
+   </DataAccess>
+
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataDesc" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+       </Parameters>
+       <Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+           FROM fact_figures ff
+           INNER JOIN indicators i
+           ON i.INDICATOR_ID = ff.INDICATOR_ID
+           WHERE ff.INDICATOR_ID = ${pIndicator}
+           ORDER BY Country DESC
+       </Query>
+   </DataAccess>
+
+   <!-- GET INDICATOR DATA BY SPLIT -->
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataBySplit" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+           <Parameter default="All" name="pSplit" type="String" />
+       </Parameters>
+       <Query>
+        SELECT t.text AS Indicator, IFNULL(t2.text, t4.text) AS Country, v.value AS value
+        FROM value v
+        INNER JOIN indicator i ON 
+        i.id=v.indicator_id
+        INNER JOIN literal l
+        ON i.literal_id=l.id
+        INNER JOIN translation t
+        ON t.literal_id=l.id
+        INNER JOIN profile p
+        ON p.id=v.profile_id
+        INNER JOIN split_illness si
+        ON si.id = p.illness_id
+        INNER JOIN literal l3
+        ON si.literal_id=l3.id
+        INNER JOIN translation t3
+        ON l3.id=t3.literal_id
+        LEFT OUTER JOIN nuts n
+        ON p.nuts_id=n.id
+        LEFT OUTER JOIN literal l2 
+        ON l2.id=n.literal_id
+        LEFT OUTER JOIN translation t2
+        ON l2.id=t2.literal_id
+        LEFT OUTER JOIN country_group cg
+        ON p.country_group_id=cg.id
+        LEFT OUTER JOIN literal l4
+        ON cg.literal_id=l4.id
+        LEFT OUTER JOIN translation t4
+        ON t4.literal_id=l4.id
+        WHERE i.id=${pIndicator}
+        AND t3.text=${pSplit}
+        AND (t2.language="EN" OR t4.language="EN")
+        ORDER BY Country ASC
+       </Query>
+       <!--<Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+           FROM fact_figures ff
+           INNER JOIN indicators i
+           ON i.INDICATOR_ID = ff.INDICATOR_ID
+           WHERE ff.INDICATOR_ID = ${pIndicator}
+           AND ff.SPLIT_1 = ${pSplit}
+           ORDER BY Country ASC
+       </Query>-->
+   </DataAccess>
+
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataBySplitDesc" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+           <Parameter default="All" name="pSplit" type="String" />
+       </Parameters>
+       <Query>
+        SELECT t.text AS Indicator, IFNULL(t2.text, t4.text) AS Country, v.value AS value
+        FROM value v
+        INNER JOIN indicator i ON 
+        i.id=v.indicator_id
+        INNER JOIN literal l
+        ON i.literal_id=l.id
+        INNER JOIN translation t
+        ON t.literal_id=l.id
+        INNER JOIN profile p
+        ON p.id=v.profile_id
+        INNER JOIN split_illness si
+        ON si.id = p.illness_id
+        INNER JOIN literal l3
+        ON si.literal_id=l3.id
+        INNER JOIN translation t3
+        ON l3.id=t3.literal_id
+        LEFT OUTER JOIN nuts n
+        ON p.nuts_id=n.id
+        LEFT OUTER JOIN literal l2 
+        ON l2.id=n.literal_id
+        LEFT OUTER JOIN translation t2
+        ON l2.id=t2.literal_id
+        LEFT OUTER JOIN country_group cg
+        ON p.country_group_id=cg.id
+        LEFT OUTER JOIN literal l4
+        ON cg.literal_id=l4.id
+        LEFT OUTER JOIN translation t4
+        ON t4.literal_id=l4.id
+        WHERE i.id=${pIndicator}
+        AND t3.text=${pSplit}
+        AND (t2.language="EN" OR t4.language="EN")
+        ORDER BY Country DESC
+       </Query>
+       <!--<Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+           FROM fact_figures ff
+           INNER JOIN indicators i
+           ON i.INDICATOR_ID = ff.INDICATOR_ID
+           WHERE ff.INDICATOR_ID = ${pIndicator}
+           AND ff.SPLIT_1 = ${pSplit}
+           ORDER BY Country DESC
+       </Query>-->
+   </DataAccess>
+
+   <!-- GET INDICATOR DATA FOR REGIONS -->
+   <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegion" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+       </Parameters>
+       <Query>
+         SELECT t.text AS Indicator, cg.short_name AS Region, v.value AS value
+          FROM value v
+          INNER JOIN indicator i ON 
+          i.id=v.indicator_id
+          INNER JOIN literal l
+          ON i.literal_id=l.id
+          INNER JOIN translation t
+          ON t.literal_id=l.id
+          INNER JOIN profile p
+          ON p.id=v.profile_id
+          LEFT OUTER JOIN country_group cg
+          ON p.country_group_id=cg.id
+          WHERE i.id=${pIndicator}
+          ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
+       </Query>
+       <!--<Query>
+            SELECT i.INDICATOR_NAME as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
+            FROM fact_figures ff
+            INNER JOIN indicators i
+            ON i.INDICATOR_ID = ff.INDICATOR_ID
+            WHERE ff.INDICATOR_ID = 11
+            ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH')
+       </Query>-->
+   </DataAccess>
+
+    <!-- GET INDICATOR DATA FOR REGIONS (INDICATOR SPLIT) -->
+    <DataAccess access="public" connection="ilo_conn" id="getIndicatorDataRegionSplit" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+        <Parameter default="1" name="pIndicator" type="Numeric" />
+        <Parameter default="" name="pSplit1" type="String" />
+        <Parameter default="" name="pSplit2" type="String" />
+      </Parameters>
+      <Query>
+        (
+          SELECT t.text AS Indicator, cg.short_name AS Region, v.value AS Value
+          FROM value v
+          INNER JOIN profile p
+          ON p.id=v.profile_id
+          INNER JOIN country_group cg
+          ON p.country_group_id=cg.id
+          INNER JOIN split_subindicator ss
+          ON p.subindicator_id=ss.id
+          INNER JOIN literal l
+          ON l.id=ss.literal_id
+          INNER JOIN translation t
+          ON t.literal_id=l.id
+          WHERE v.indicator_id=${pIndicator}
+          AND t.text=${pSplit1}
+        )UNION(
+          SELECT t.text AS Indicator, cg.short_name AS Region, v.value AS Value
+          FROM value v
+          INNER JOIN profile p
+          ON p.id=v.profile_id
+          INNER JOIN country_group cg
+          ON p.country_group_id=cg.id
+          INNER JOIN split_subindicator ss
+          ON p.subindicator_id=ss.id
+          INNER JOIN literal l
+          ON l.id=ss.literal_id
+          INNER JOIN translation t
+          ON t.literal_id=l.id
+          WHERE v.indicator_id=${pIndicator}
+          AND t.text=${pSplit2}
+        )
+        ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH'),
+        FIELD(Indicator, ${pSplit1}, ${pSplit2})
+      </Query>
+      <!--<Query>
+        (
+          SELECT "Fatal work-related illnesses" as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
+          FROM fact_figures ff
+          WHERE ff.INDICATOR_ID = 11
+          AND ff.SPLIT_1="Fatal work-related illnesses"
+        )UNION(
+          SELECT "Fatal work-related injuries" as Indicator, ff.REGION AS Region, ff.MEASURE AS Value
+          FROM fact_figures ff
+          WHERE ff.INDICATOR_ID = 11
+          AND ff.SPLIT_1="Fatal work-related injuries"
+        )
+        ORDER BY FIELD(Region, 'EU28','WPRO','SEARO','EURO','EMRO','AMRO','AFRO','HIGH'),
+        FIELD(Indicator, "Fatal work-related illnesses", "Fatal work-related injuries")
+      </Query>-->
+   </DataAccess>
+
+    <!-- GET COUNTRIES NAMES AND REGIONS -->
+    <DataAccess access="public" connection="ilo_conn" id="getCountriesRegion" type="sql">
+        <Cache duration="3600" enabled="true"/>
+        <Columns/>
+        <Parameters/>
+        <Query>
+          SELECT t.text AS Country, cg.short_name AS Region
+          FROM nuts_by_country_group ncg
+          INNER JOIN nuts n
+          ON ncg.nuts_id=n.id
+          INNER JOIN literal l
+          ON l.id=n.literal_id
+          INNER JOIN translation t
+          ON l.id=t.literal_id
+          INNER JOIN country_group cg 
+          ON ncg.country_group_id=cg.id
+          WHERE t.language="EN"
+          ORDER BY Country ASC;
+        </Query>
+        <!--<Query>SELECT COUNTRY, REGION
+          FROM regions_countries
+          ORDER BY COUNTRY ASC
+        </Query>-->
+    </DataAccess>
+
+    <!-- GET SPLIT_1 DATA BY REGION -->
+  <DataAccess access="public" connection="ilo_conn" id="getSplitAllCountryDataByIndicator" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default="25" name="pIndicator" type="Numeric" />
+          <Parameter default="EU28" name="pRegion" type="String" />
+      </Parameters>
+      <Query>
+        SELECT ROUND(v1.value) AS Value, t.text AS Illness, v2.value AS Percentage
+        FROM value v1, value v2, profile p, profile p2, country_group cg, split_illness si, literal l, translation t
+        WHERE v1.indicator_id=${pIndicator}
+        and v1.indicator_id = v2.indicator_id
+        AND cg.short_name=${pRegion} 
+        and v1.profile_id=p.id
+        and v2.profile_id=p2.id
+        and p.country_group_id=p2.country_group_id
+        and p.subindicator_id IS NULL
+        and p2.subindicator_id=11
+        and p.illness_id=p2.illness_id
+        and p.country_group_id=cg.id
+        and p.illness_id=si.id
+        and si.literal_id=l.id
+        and l.id=t.literal_id
+        ORDER BY FIELD(Illness, 'Cancer','MSD','Circulatory','Injuries','Others')
+      </Query>
+      <!--<Query>SELECT Round(ff.MEASURE) AS Value, ff.SPLIT_1 as Illness, ff2.MEASURE AS Percentage
+          FROM fact_figures ff, fact_figures ff2
+          WHERE ff.INDICATOR_ID = ${pIndicator}
+          AND ff.REGION = ${pRegion}
+          AND ff.REGION = ff2.REGION
+          AND ff.INDICATOR_ID = ff2.INDICATOR_ID
+          AND ff.SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+          AND ff2.SPLIT_1 LIKE '%|%%' ESCAPE '|'
+          AND CONCAT(ff.SPLIT_1, ' (%)')=ff2.SPLIT_1
+          ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
+      </Query>-->
+   </DataAccess>
+
+    <!-- GET SPLIT_1 DATA BY COUNTRY -->
+   <DataAccess access="public" connection="ilo_conn" id="getSplitDataByCountry" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default="1" name="pCountry" type="String" />
+      </Parameters>
+      <Query>
+        SELECT ROUND(v1.value) AS Value, t.text AS Illness, v2.value AS Percentage
+        FROM value v1, value v2, profile p, profile p2, nuts n, split_illness si, literal l, translation t
+        WHERE v1.indicator_id=23
+        and v1.indicator_id = v2.indicator_id
+        AND n.name=${pCountry}
+        and v1.profile_id=p.id
+        and v2.profile_id=p2.id
+        and p.nuts_id=p2.nuts_id
+        and p.subindicator_id IS NULL
+        and p2.subindicator_id=11
+        and p.illness_id=p2.illness_id
+        and p.nuts_id=n.id
+        and p.illness_id=si.id
+        and si.literal_id=l.id
+        and l.id=t.literal_id
+        ORDER BY FIELD(Illness, 'Cancer','MSD','Circulatory','Injuries','Others')
+      </Query>
+      <!--<Query>SELECT Round(ff.MEASURE) AS Value, ff.SPLIT_1 as Illness, ff2.MEASURE AS Percentage
+                       FROM fact_figures ff, fact_figures ff2
+                       WHERE ff.INDICATOR_ID = 25
+                       and ff.INDICATOR_ID = ff2.INDICATOR_ID
+                       AND ff.COUNTRY = "Belgium"
+                       AND ff.COUNTRY = ff2.COUNTRY
+                       AND ff.SPLIT_1 NOT LIKE '%|%%' ESCAPE '|'
+                       AND ff2.SPLIT_1 LIKE '%|%%' ESCAPE '|'
+                       AND CONCAT(ff.SPLIT_1, ' (%)')=ff2.SPLIT_1
+                       ORDER BY FIELD('Illness','Cancer','MSD','Circulatory','Injuries','Others')
+      </Query>-->
+   </DataAccess>
+
+    <!-- GET LEGEND VALUES -->
+      <DataAccess access="public" connection="ilo_conn" id="getLegendByCounty" type="sql">
+         <Cache duration="3600" enabled="true"/>
+         <Columns/>
+         <Parameters>
+            <Parameter default="23" name="pIndicator" type="Numeric" />
+         </Parameters>
+         <Query>
+          SELECT IFNULL(t.text, cg.short_name) AS country, CONCAT_WS(" ", t2.text, CONCAT("(", t3.text, ")")) AS SPLIT, ROUND(v.value) AS Value
+          FROM value v
+          INNER JOIN profile p
+          ON v.profile_id=p.id
+          LEFT OUTER JOIN nuts n
+          ON p.nuts_id=n.id
+          LEFT OUTER JOIN literal l
+          ON n.literal_id=l.id
+          LEFT OUTER JOIN translation t
+          ON l.id=t.literal_id AND t.language="EN"
+          LEFT OUTER JOIN country_group cg
+          ON p.country_group_id=cg.id
+          INNER JOIN split_illness si
+          ON p.illness_id=si.id
+          INNER JOIN literal l2
+          ON si.literal_id=l2.id
+          INNER JOIN translation t2
+          ON l2.id=t2.literal_id
+          LEFT OUTER JOIN split_subindicator ss
+          ON p.subindicator_id=ss.id
+          LEFT OUTER JOIN literal l3
+          ON ss.literal_id=l3.id
+          LEFT OUTER JOIN translation t3
+          ON l3.id=t3.literal_id
+          WHERE v.indicator_id=${pIndicator}
+          ORDER BY country ASC,
+          FIELD(SPLIT,'Cancer','MSD','Circulatory','Injuries','Others', 'Cancer (%)','MSD (%)','Circulatory (%)','Injuries (%)','Others (%)')
+         </Query>
+         <!--<Query>SELECT IFNULL(ff.COUNTRY,ff.REGION) as country,  ff.SPLIT_1 as SPLIT,  Round(ff.MEASURE) AS Value
+                          FROM fact_figures ff
+                          WHERE ff.INDICATOR_ID = ${pIndicator}
+                          ORDER BY country ASC
+         </Query>-->
+      </DataAccess>
+
+
+    <!-- GET GLOSSARY TERMS -->
+    <DataAccess access="public" connection="ilo_conn" id="getGlossaryTerms" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default=".*" name="pTerm" type="String" />
+      </Parameters>
+      <Query>
+        SELECT t.text AS Term, t2.text AS Description
+        FROM glossary g
+        INNER JOIN literal l
+        ON g.term_literal_id=l.id
+        INNER JOIN translation t
+        ON t.literal_id = l.id
+        INNER JOIN literal l2
+        ON g.description_literal_id=l2.id
+        INNER JOIN translation t2
+        ON l2.id=t2.literal_id
+        WHERE t.text REGEXP ${pTerm} OR t2.text REGEXP ${pTerm}
+        ORDER BY Term ASC, Description ASC;
+      </Query>
+      <!--<Query>
+        SELECT
+          term_id as termID,
+          term_name as Term,
+          description as Description
+        FROM glossary
+        WHERE term_name REGEXP ${pTerm} OR description REGEXP ${pTerm}
+        ORDER BY term_name ASC, description ASC
+      </Query>-->
+    </DataAccess>
+
+    <!-- GET GLOSSARY TERMS BY TITLE -->
+    <DataAccess access="public" connection="ilo_conn" id="getGlossaryTermsTitle" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default=".*" name="pTerm" type="String" />
+      </Parameters>
+      <Query>
+        SELECT t.text AS Term, t2.text AS Description
+        FROM glossary g
+        INNER JOIN literal l
+        ON g.term_literal_id=l.id
+        INNER JOIN translation t
+        ON t.literal_id = l.id
+        INNER JOIN literal l2
+        ON g.description_literal_id=l2.id
+        INNER JOIN translation t2
+        ON l2.id=t2.literal_id
+        WHERE t.text REGEXP ${pTerm}
+        ORDER BY Term ASC, Description ASC
+      </Query>
+      <!--<Query>
+        SELECT
+          term_id as termID,
+          term_name as Term,
+          description as Description
+        FROM glossary
+        WHERE term_name REGEXP ${pTerm}
+        ORDER BY term_name ASC, description ASC
+      </Query>-->
+    </DataAccess>
+
+</CDADescriptor>

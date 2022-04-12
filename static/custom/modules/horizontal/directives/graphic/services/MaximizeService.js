@@ -6,7 +6,7 @@
  */
 define(function () {
 
-    var MaximizeService = function (dvtUtils, $document, $modal, $log, configService, exportService) {
+    var MaximizeService = function (dvtUtils, $document, $modal, $log, configService, exportService, $rootScope) {
 
         var colors = require('json!horizontal/model/colors');
 
@@ -17,6 +17,7 @@ define(function () {
                 var bodyRef = angular.element('body');
 
                 var dvtModal = function (action, controller, parameters) {
+
                     bodyRef.addClass('ovh');
                     $log.debug("action: " + action);
                     $log.debug("parameters");
@@ -43,16 +44,27 @@ define(function () {
                     //    // Remove "no scroll on background" on dismissal
                         bodyRef.removeClass('ovh');
                     });
+
+                    $rootScope.$on('$stateChangeStart', function() {
+                        modalInstance.close();
+                    });
                 };
                 return dvtModal;
             },
-            doMaximize: function(dvtModal, definition, action, controller) {
-                    dvtModal(action, controller, JSON.stringify(definition));
+            doMaximize: function(dvtModal, definition, action, controller, pIsZoom) {
+
+                if (pIsZoom) {
+                    definition.chartDefinition.isZoom = pIsZoom;    
+                } else {
+                    definition.chartDefinition.isZoom = '';
+                }          
+
+                dvtModal(action, controller, JSON.stringify(definition));
             }
         }
     };
 
-    MaximizeService.$inject = ['dvtUtils', '$document','$modal','$log', 'configService','exportService'];
+    MaximizeService.$inject = ['dvtUtils', '$document','$modal','$log', 'configService','exportService', '$rootScope'];
 
     return MaximizeService;
 })

@@ -38,8 +38,8 @@ define(function (require) {
              * @requires $log
              * @description
              */
-            controller: [ 'dataService', 'mapProvider', 'configService', '$scope', '$state', '$stateParams', '$attrs', '$document', '$log',
-                function (dataService, mapProvider, configService, $scope, $state, $stateParams, $attrs, $document, $log) {
+            controller: [ 'dataService', 'mapProvider', 'configService', '$scope', '$window', '$state', '$stateParams', '$attrs', '$document', '$timeout', '$log',
+                function (dataService, mapProvider, configService, $scope, $window, $state, $stateParams, $attrs, $document, $timeout, $log) {
 
                     // BINDDING VARIABLES START ------------------------------------------------------------------------
                     $scope.isCollapsed = false;
@@ -52,6 +52,18 @@ define(function (require) {
                     $scope.data = [];
                     $scope.elementsStart=1;
                     $scope.elementsEnd=$scope.pageSize;
+                    
+                    $scope.query = '';
+                    var href = $window.location.href;
+                    if (href.indexOf('?term=') > -1) {
+                        $scope.query = href.substring(href.indexOf('?term=')+6);
+                        $scope.query = decodeURI($scope.query);
+                        $scope.searchTitle = true;
+                        $timeout (function() {
+                            $scope.searchTitle = true;
+                            angular.element('button#policy-search').triggerHandler('click');
+                        }, 0);
+                    }
                     
 
                     /**
@@ -188,15 +200,24 @@ define(function (require) {
                      * My Description rules
                      */
                     function search($event) {
+
                         var searchInput = $('#search-input').val();
                         $log.debug('searchInput free text: ' + searchInput);
 
                         var queryFunction = dataService[$attrs.searchQuery];
+                        if ($scope.searchTitle) {
+                            $scope.searchTitle = false;
+                            queryFunction = dataService[$attrs.titleQuery];
+                        }
+                        if (searchInput.indexOf('(') > -1) {
+                            searchInput = searchInput.replace('(', '\\(');
+                        }
+                        if (searchInput.indexOf(')') > -1) {
+                            searchInput = searchInput.replace(')', '\\)');
+                        }
                         queryFunction.apply($attrs.searchQuery, [searchInput]).then(function (results) {
 
                             $scope.results = dataService.dataMapper(results);
-                            $log.info("Results in pretty-print mode");
-                            $log.info(JSON.stringify($scope.results, undefined, 2));
 
                             $scope.firstPage();
 
@@ -262,6 +283,15 @@ define(function (require) {
                         */
                         $scope.search();
                         $scope.currentPage = 0;
+
+                        /*var href = $window.location.href;
+                        if (href.indexOf('?title=') > -1) {
+                            href = href.substring(0, href.indexOf('?title='));
+                            window.location.href = href;
+                        } else if (href.indexOf('?search=') > -1) {
+                            href = href.substring(0, href.indexOf('?search='));
+                            window.location.href = href;
+                        }*/
 
                       //  $state.transitionTo($attrs.searchState, { }, {notify: false});
 

@@ -4,12 +4,16 @@ define(function (require) {
     var angular = require('common-ui/angular'),
         configModule = require('horizontal/config/config-module'),
         homeModule = require('vertical/home/home-module'),
-        newpageModule = require('vertical/newpage/newpage-module'),
+        euEstimatesModule = require('vertical/eu-estimates/eu-estimates-module'),
+        globalEstimatesModule = require('vertical/global-estimates/global-estimates-module'),
+        aboutEstimatesModule = require('vertical/about-estimates/about-estimates-module'),
+        glossaryModule = require('vertical/glossary/glossary-module'),
         directivesModule = require('horizontal/directives/directives-module'),
         chartingModule =  require('horizontal/directives/charting-module'),
         footerPagesModule = require('vertical/footer-pages/footer-pages-module');
 
     require('common-ui/angular-ui-router');
+    require('common-ui/ui-router-metatags');
     require('common-ui/angular-sanitize');
     require('common-ui/bootstrap');
     require('common-ui/angular-jquery');
@@ -18,7 +22,7 @@ define(function (require) {
 
     /**
      * @ngdoc overview
-     * @name dvt-framework
+     * @name osha-dvt-ilo
      * @requires ui.bootstrap
      * @requires ui.router
      * @requires ngSanitize
@@ -32,13 +36,36 @@ define(function (require) {
                                      'ui.router',
                                      'ngSanitize',
                                      homeModule.name,
-                                     newpageModule.name,
+                                     euEstimatesModule.name,
+                                     globalEstimatesModule.name,
+                                     aboutEstimatesModule.name, 
+                                     glossaryModule.name,
                                      configModule.name,
                                      directivesModule.name,
                                      chartingModule.name,
                                      footerPagesModule.name,
                                      '720kb.socialshare'
                                     ]);
+
+    /*gtranslator info*/
+    var gtranslatorinfo = angular.element(".gtranslator-info");
+    var gtranslatorinfo = gtranslatorinfo.offset();
+
+    angular.element(document).click(function(e) {
+        if(!$(e.target).closest('#gTranslate-modal').length && !$(e.target).is(angular.element('#gTranslate-modal-link'))) {
+            if (!$(e.target).is($('span.gtranslator-info'))) {
+                $("#gTranslate-modal").fadeOut('fast');
+            }
+        }
+    });
+    
+    angular.element(".gtranslator-info").mouseover(function(){
+        angular.element("#gTranslate-modal").fadeIn('fast');
+    });
+    angular.element("#gTranslate-modal").mouseleave(function(){
+        angular.element("#gTranslate-modal").fadeOut('fast');
+    });
+    /*end gtranslator*/
 
 
     /**

@@ -88,17 +88,17 @@ define(function (require) {
                         $log.debug("Chart type: " + $scope.parameters.chartType);
 
                         /* ESTABLISH DONUTS CHART LABELS POSITIONS AND SIZE*/
-                        if ($scope.parameters.chartType === 'pie') {
+                       /* if ($scope.parameters.chartType === 'pie') {
                             $scope.parameters.chartDefinition.plots[0].label_left = function () {
                                 return this.delegate() * 0.98;
                             };
-                            $scope.parameters.chartDefinition.plots[0].valuesFont = '20px "sans-serif"';
+                            $scope.parameters.chartDefinition.plots[0].valuesFont = '20px "sans-serif"';*/
 
-                            $scope.parameters.chartDefinition.plots[1].label_left = function () {
+                            /*$scope.parameters.chartDefinition.plots[1].label_left = function () {
                                 return this.delegate() * 0.90;
                             };
-                            $scope.parameters.chartDefinition.plots[1].valuesFont = '20px "sans-serif"';
-                        }
+                            $scope.parameters.chartDefinition.plots[1].valuesFont = '20px "sans-serif"';*/
+                       // }
 
                         $log.debug("Is staked:.................................." + $scope.parameters.chartDefinition.stacked);
                         $scope.stacked = 0 + $scope.parameters.chartDefinition.stacked;
@@ -115,12 +115,6 @@ define(function (require) {
                             }
                             if (!!$scope.parameters.chartDefinition.plots[0].max_label_left) {
                                 $scope.parameters.chartDefinition.plots[0].label_left = $scope.parameters.chartDefinition.plots[0].max_label_left
-                            }
-                            if (!!$scope.parameters.chartDefinition.plots[1].max_label_top) {
-                                $scope.parameters.chartDefinition.plots[1].label_top = $scope.parameters.chartDefinition.plots[1].max_label_top
-                            }
-                            if (!!$scope.parameters.chartDefinition.plots[1].max_label_left) {
-                                $scope.parameters.chartDefinition.plots[1].label_left = $scope.parameters.chartDefinition.plots[1].max_label_left
                             }
                         }
 

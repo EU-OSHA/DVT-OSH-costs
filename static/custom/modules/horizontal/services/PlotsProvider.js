@@ -1,6 +1,6 @@
 define(function () {
 
-    var PlotsProvider = function (dvtUtils, $document, $modal, $log) {
+    var PlotsProvider = function (dvtUtils, $document, $modal, $log, $sce) {
 
         var colors = require('json!horizontal/model/colors');
 
@@ -200,13 +200,14 @@ define(function () {
             showContextualData: function (metadata, definition, scope, attributes) {
 
                 // TODO encapsulate in modeldata
-                var shortD = metadata.data.resultset[0][0];
-                var longD = !!scope.isMaximized && scope.longTitle? scope.longTitle: metadata.data.resultset[0][1];
-                var officialName = metadata.data.resultset[0][2];
+                //var shortD = metadata.data.resultset[0][0];
+                var shortD = '';
+                var longD = !!scope.isMaximized && scope.longTitle? scope.longTitle:''/*: metadata.data.resultset[0][1]*/;
+                /*var officialName = metadata.data.resultset[0][2];
                 var source = metadata.data.resultset[0][3];
                 var year = metadata.data.resultset[0][4];
                 var notes = metadata.data.resultset[0][5];
-                var eucomments = metadata.data.resultset[0][6];
+                var eucomments = metadata.data.resultset[0][6];*/
 
 
                 var showTitle = attributes.showTitle != -1 || false;
@@ -220,8 +221,33 @@ define(function () {
 
                 if(!!showLegend) {
                         scope.functionalLegend = !attributes.maxFunctionalLegend
-                            ?setContainerLegendComposition(officialName, source, year, notes, eucomments, scope.functionalLegend)
+                            ?''/*setContainerLegendComposition(officialName, source, year, notes, eucomments, scope.functionalLegend)*/
                             :attributes.maxFunctionalLegend;
+
+                    scope.to_trusted = function(html_code) {
+                        angular.element('[data-toggle="popover"]').popover();
+                        /*
+                        angular.element("a[data-toggle=popover]").click(function() {
+                            //angular.element('.modal-wrapper').css('overflow','visible');
+                            //angular.element('.dvt-modal .dvt-chart').css('overflow','visible');
+
+                            var elementHeight = document.getElementsByClassName("modal-wrapper")[0].clientHeight;
+                            var modalHeight = document.getElementsByClassName("dvt-modal")[0].clientHeight;
+                            if( window.innerWidth > 768 && elementHeight < modalHeight ){
+                                angular.element('.dvt-modal').css('overflow','visible');
+                            }
+
+                        });
+                        angular.element('a[data-toggle=popover]').mouseout(function() {
+                            //angular.element('.modal-wrapper').css('overflow','auto');
+                            //angular.element('.dvt-modal .dvt-chart').css('overflow','hidden');
+                            //angular.element('.dvt-modal').css('overflow','auto');
+                        });
+                        */
+
+
+                        return $sce.trustAsHtml(html_code);
+                    }
                     definition ['functLegen'] = scope.functionalLegend;
                 }
 
@@ -233,6 +259,31 @@ define(function () {
                 this.pvMark.scene[0].textAlign = 'center';
                 this.pvMark.scene[0].left = -5;
                 return this.delegate().concat("%");
+            },
+            paintPieLabel: function() {
+                return [{
+                    valuesLabelStyle: 'inside',
+                    valuesFont: '10px "sans-serif"',
+                    label_visible: function() { return !this.index; },
+                    label_left:function () {
+                        return this.delegate()*0.9;
+                    },
+                    label_top:function () {
+                        return this.delegate()*0.94;
+                    },
+                    max_label_left:function () {
+                        return this.delegate()*0.91;
+                    },
+                    max_label_top:function () {
+                        return this.delegate();
+                    },
+                    label_textAngle: 0,
+                    label_textStyle: 'white',
+                    valuesMask: '{value}%',
+                    slice_fillStyle: function() {
+                        return this.index === 0 ? this.delegate() : "lightgray";
+                    }
+                }]               
             },
             getDonoughtPlots: function(figure) {
                 switch (figure){
@@ -346,7 +397,7 @@ define(function () {
         }
     };
 
-    PlotsProvider.$inject = ['dvtUtils', '$document','$modal','$log'];
+    PlotsProvider.$inject = ['dvtUtils', '$document','$modal','$log','$sce'];
 
     return PlotsProvider;
 });

@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name dvt-framework.home.controller:homeController
+ * @name osha-dvt-ilo.home.controller:homeController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -10,45 +10,234 @@
  */
 define(function (require) {
     'use strict';
-    
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log) {
 
-        $scope.dashboard = {
-            parameters: {
-                pYears: "2015"
-            }
-        };
-    
-        var i18n = require('json!vertical/home/i18n');
+    function controller(configService, dvtUtils, $scope, $rootScope, $stateParams, $state, $document, $log, $sce, $interval) {
+
+        // Literals / i18n
+        var i18n = configService.getLiterals();
         $scope.i18n = i18n;
-        
+        var i18n_home = require('json!vertical/home/i18n');
+        $scope.i18n_home = i18n_home;
+
+        $scope.carouselInterval = 7000;
+
+        $scope.to_trusted = function(html_code, pPlacement) {
+            if ($scope.bootstrapLoaded)
+            {
+                $scope.pauseCarousel();
+            }
+
+            return $sce.trustAsHtml(html_code);
+        }
+
+        angular.element('#carouselHome').on('slid.bs.carousel', function () {
+            angular.element('.carousel-inner').removeClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').removeClass('overflowHidden');
+        });
+
+        angular.element('#carouselHome .carousel-control').click(function() {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
+        });
+
+        $scope.overflowHidden = function (estado) {
+            angular.element('#carouselHome .carousel-inner').addClass('overflowHidden');
+            angular.element('#carouselHome .carousel-control-container').addClass('overflowHidden');
+         };
+
+
+        angular.element(document).on('click', function(e) {
+            configService.termClick(e, $rootScope.hasAgreedCookies);
+        });
+
         $scope.goto = function (estado) {
             $state.go(estado, {});
         };
-    
-        $scope.slides = [
-            {text: i18n.slider1.text, linkText: 'Source: '+i18n.slider1.linkText, link: i18n.slider1.link, alt: i18n.slider1.alt, image: configService.getImagesPath()+ '/slider/slider1.png'},
-            {text: i18n.slider2.text, linkText: 'Source: '+i18n.slider2.linkText , link: i18n.slider2.link, alt: i18n.slider2.alt, image: configService.getImagesPath()+ '/slider/slider2.png'},
-            {text: i18n.slider3.text, linkText: 'Source: '+i18n.slider3.linkText, link: i18n.slider3.link, alt: i18n.slider3.alt, image: configService.getImagesPath()+ '/slider/slider3.png'},
-            {text: i18n.slider4.text, linkText: 'Source: '+i18n.slider4.linkText, link: i18n.slider4.link, alt: i18n.slider4.alt, image: configService.getImagesPath()+ '/slider/slider8.png'},
-            {text: i18n.slider5.text, linkText: 'Source: '+i18n.slider5.linkText, link: i18n.slider5.link, alt: i18n.slider5.alt, image: configService.getImagesPath()+ '/slider/slider9.png'}
+
+        // Select Options
+        $scope.select = [
+            {
+                // Euro
+                id: '1',
+                label: i18n.L114,
+                text: i18n[i18n_home.slider1.relatedEuro],
+                image: configService.getImagesPath() + i18n_home.slider1.imageEuro,
+                image2: configService.getImagesPath() + i18n_home.slider1.imageEuro2,
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageEuroModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider1.imageEuro2Modal
+            },{
+                // Dollar
+                id: '2',
+                label: i18n.L113,
+                text: i18n[i18n_home.slider1.related],
+                image: configService.getImagesPath()+ i18n_home.slider1.image,
+                image2: configService.getImagesPath()+ i18n_home.slider1.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider1.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider1.image2Modal
+            }
         ];
-    
-        $scope.pyramid = {
-            colors : [ dvtUtils.getColorCountry(22), dvtUtils.getColorCountry(12)],
-            calculations: undefined,
-            plots: undefined,
-            dimensions: {
-                series:{
-                    format:{
-                        mask: '#.0'
+
+        $scope.currency = $scope.select[0];
+
+        // Carrousel slides
+        $scope.slides = [
+            {
+                title: i18n[i18n_home.slider1.title],
+                text: $scope.currency.text,
+                image: $scope.currency.image,
+                image2: $scope.currency.image2,
+                imageModal: $scope.currency.imageModal,
+                image2Modal: $scope.currency.image2Modal
+            },{
+                title: i18n[i18n_home.slider2.title],
+                text: i18n[i18n_home.slider2.related],
+                image: configService.getImagesPath()+ i18n_home.slider2.image,
+                image2: configService.getImagesPath()+ i18n_home.slider2.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider2.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider2.image2Modal
+            },{
+                title: i18n[i18n_home.slider3.title],
+                text: i18n[i18n_home.slider3.related],
+                image: configService.getImagesPath()+ i18n_home.slider3.image,
+                image2: configService.getImagesPath()+ i18n_home.slider3.image2,
+                imageModal: configService.getImagesPath() + i18n_home.slider3.imageModal,
+                image2Modal: configService.getImagesPath() + i18n_home.slider3.image2Modal
+            }
+        ];
+
+        // Charts
+        $scope.chartDeathGlobal = {
+            title: i18n[i18n_home.chartDeathGlobal.title],
+            text: i18n[i18n_home.chartDeathGlobal.message],
+            image: configService.getImagesPath()+ i18n_home.chartDeathGlobal.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDeathGlobal.imageModal
+        };
+        $scope.chartDalyGlobal = {
+            title: i18n[i18n_home.chartDalyGlobal.title],
+            text: i18n[i18n_home.chartDalyGlobal.message],
+            image: configService.getImagesPath()+ i18n_home.chartDalyGlobal.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDalyGlobal.imageModal
+        };
+        $scope.chartDeath = {
+            title: i18n[i18n_home.chartDeath.title],
+            text: i18n[i18n_home.chartDeath.message],
+            image: configService.getImagesPath()+ i18n_home.chartDeath.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDeath.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDeath.imageModal
+        };
+        $scope.chartDaly = {
+            title: i18n[i18n_home.chartDaly.title],
+            text: i18n[i18n_home.chartDaly.message],
+            image: configService.getImagesPath()+ i18n_home.chartDaly.image,
+            imageModal: configService.getImagesPath() + i18n_home.chartDaly.imageModal,
+            image2Modal: configService.getImagesPath() + i18n_home.chartDaly.imageModal
+        };
+
+        $scope.update = function() {
+            $scope.currency = $scope.currency == $scope.select[0] ? $scope.select[1] : $scope.select[0];
+            $scope.slides[0].text = $scope.currency.text;
+            $scope.slides[0].image = $scope.currency.image;
+            $scope.slides[0].image2 = $scope.currency.image2;
+            $scope.slides[0].imageModal = $scope.currency.imageModal;
+            $scope.slides[0].image2Modal = $scope.currency.image2Modal;
+        }
+
+        $scope.modal = function(type, index) {
+            angular.element('body').addClass('ovh');
+            switch (type){
+                case 'chart':
+                    if (index == 1){
+                        $scope.modalData = $scope.chartDeathGlobal;
+                    }else if (index == 2) {
+                        $scope.modalData = $scope.chartDalyGlobal;
+                    }else if (index == 3) {
+                        $scope.modalData = $scope.chartDeath;
+                    }else if (index == 4) {
+                        $scope.modalData = $scope.chartDaly;
+                    }
+                    $scope.modalData.image2 = $scope.modalData.imageModal;
+                    break;
+                case 'slide':
+                    $scope.modalData = $scope.slides[index];
+                    break;
+            }
+        }
+
+        angular.element('div#modalChart').click(function() {
+            angular.element('div#modalChart').modal('hide');
+            angular.element('body').removeClass('ovh');
+        }).children().click(function(e){
+            if(!$(e.target).is('a')) {
+                if (!$(e.target).is('button') && !$(e.target).is('font')) {
+                    if (angular.element("div.fade.top.in").length) {
+                        angular.element("a.popover-hidden").popover('hide');
+                        return false;
+                    } else if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                        return false;
+                    }
+                }else {
+                    if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
+                        return false;
                     }
                 }
+            } else {
+                if ($(e.target).attr('data-toggle') == 'popover') {
+                    if (angular.element("div.fade.top.in")) {
+                        angular.element("a.popover-hidden").not(e.target).popover('hide');
+                    }
+                    return false;
+                }               
             }
-        };
+        });
+
+        $scope.pauseCarousel = function()
+        {
+            angular.element('#carouselHome').carousel('pause');
+
+            angular.element('ul.carousel-inner a[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+
+            angular.element('[data-toggle="popover"]').popover({
+                html: true,
+                template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="clear"><a href:"javascript:" class="popover-close"><i class="fa fa-close pull-right" aria-hidden="true"></i></a></div><div class="popover-content tooltip-inner"></div></div>',
+                content : function() {
+                    return $(this).attr('data-original-title');
+                },
+                placement: 'top'
+            });
+        }
+
+        $scope.bootstrapLoaded = false;
+        $scope.interval = $interval(function()
+            {
+                if (angular.element('#carouselHome').carousel != undefined)
+                {
+                    $scope.bootstrapLoaded = true;
+                    $scope.pauseCarousel();
+                    $scope.stopInterval();
+                }                
+            }, 1000);
+
+        $scope.stopInterval = function()
+        {
+            if (angular.isDefined($scope.interval))
+            {
+                $interval.cancel($scope.interval);
+                $scope.interval = undefined;
+            }
+        }        
+
         $scope.status = 'ready';
     }
-    
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log'];
+
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$rootScope', '$stateParams', '$state','$document', '$log', '$sce', '$interval'];
     return controller;
 });

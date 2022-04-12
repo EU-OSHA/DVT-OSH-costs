@@ -13,11 +13,54 @@ define(function () {
                 return $http.get(url);
             }
 
-            /*Get all Countries in all dashboard*/
-            var url = configService.getPilotDataPath() + "&dataAccessId=getCountries";
+            // Query inserted so the connection with the DB is stablished and no errors are shown
+            var url = configService.getIloDataPath() + "&dataAccessId=getCountriesRegion";
             var dataset = promise(url);
 
-        return {
+        return {            
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAllCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * My Description rules
+             */
+            getCountriesRegion: function () {
+                var url = configService.getPilotDataPath() + "&dataAccessId=getCountriesRegion";
+                $log.debug('getCountriesRegion url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGlossaryTerms
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Country Approaches Tab1 Group Description Policies
+             */
+            getGlossaryTerms: function(term) {
+                var term = !term ? ".*" : ".*" + term;
+
+                var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTerms" + "&parampTerm=" + term;
+                $log.debug('getGlossaryTerms url: ' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGlossaryTermsTitle
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Country Approaches Tab1 Group Description Policies
+             */
+            getGlossaryTermsTitle: function(term) {
+                var term = !term ? ".*" : ".*" + term;
+
+                var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTermsTitle" + "&parampTerm=" + term;
+                $log.debug('getGlossaryTermsTitle url: ' + url);
+                return promise(url);
+            },   
 
             /**
              * @ngdoc method
@@ -31,14 +74,6 @@ define(function () {
                 $log.debug('getAllCountries url:' + url);
                 return promise(url);
             },
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            structureCountries: dataset,
 
             /**
              * @ngdoc method
@@ -493,21 +528,6 @@ define(function () {
             getDissatisfactionWorkingConditions77: function() {
                 var url = configService.getIssueDataPath() + "&dataAccessId=getIssueStory5Main77";
                 $log.debug('getDissatisfactionWorkingConditions url: ' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getGlossaryTerms
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Country Approaches Tab1 Group Description Policies
-             */
-            getGlossaryTerms: function(term) {
-                var term = !term ? ".*" : ".*" + term;
-
-                var url = configService.getGlossaryDataPath() + "&dataAccessId=getGlossaryTerms" + "&paramterm=" + term;
-                $log.debug('getGlossaryTerms url: ' + url);
                 return promise(url);
             },
 

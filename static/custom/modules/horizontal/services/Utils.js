@@ -56,6 +56,42 @@ define(function (require) {
              * @description
              * My Description rules
              */
+             getChartSecondaryColor: function() {
+                return colors.chartSecondaryColor;
+             },
+             
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
+             getChartYellowColor: function() {
+                return colors.chartYellow;
+             },
+
+             /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
+             getChartLightYellowColor: function() {
+                return colors.chartLightYellow;
+             },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
             getGroupColor: function (group) {
                 switch (group) {
                     case '1':
@@ -172,16 +208,46 @@ define(function (require) {
              * @description
              * My Description rules
              */
+            getIllnessColors: function(color){
+                switch(color) {
+                    case 1:
+                        return colors.illnessColors.Cancer;
+                        break;
+                    case 2:
+                        return colors.illnessColors.MSD;
+                        break;
+                    case 3:
+                        return colors.illnessColors.Circulatory;
+                        break;
+                    case 4:
+                        return colors.illnessColors.Injuries;
+                        break;
+                    case 5:
+                        return colors.illnessColors.Others;
+                        break;
+                    default:
+                        return colors.illnessColors;
+                }                
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.configService#executeFunctionByName
+             * @param {string} carl is awesome
+             * @methodOf dvt.configModule.configService
+             * @description
+             * My Description rules
+             */
             setCDAIn: function (vertical) {
                 switch (vertical) {
                     case 'CA':
-                        return "dvt-framework/dashboards/approachdata.cda";
+                        return "osha-dvt-ilo/dashboards/approachdata.cda";
                         break;
                     case 'IS':
-                        return "dvt-framework/dashboards/issuedata.cda";
+                        return "osha-dvt-ilo/dashboards/issuedata.cda";
                         break;
                     default:
-                        return "dvt-framework/dashboards/datapilot.cda";
+                        return "osha-dvt-ilo/dashboards/datapilot.cda";
                 }
             },
 

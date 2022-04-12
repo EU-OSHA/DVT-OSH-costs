@@ -21,6 +21,7 @@ define(function (require) {
     var horizontalPath = pentahoInstance + configuration.paths['directive-route'] + "/modules/horizontal/";
     var horizontalPathDiretive = horizontalPath + "directives/";
 
+    var i18n = require('json!horizontal/model/literals');
 
     /**
      HTMLElement.prototype.click Click event firefox override to map correct click event.
@@ -31,21 +32,24 @@ define(function (require) {
         this.dispatchEvent(evt);
     };
 
-    var _getPiwikInstance=function() {
-            if (environment.do_track === false) {
+     var _getPiwikInstance=function() {
+        if (environment.do_track === false) {
             return [];
 
         } else {
             var url = configuration.paths.piwik[environment.piwik].protocol + ":" + configuration.paths.piwik[environment.piwik].domain + ":" + configuration.paths.piwik[environment.piwik].port + configuration.paths.piwik[environment.piwik].path;
-            if(typeof(_paq) != "undefined") {
-                window._paq = _paq;
-            } else {
+            var basePath = configuration.paths.enviroment[environment.pentaho].domain + ":" + configuration.paths.enviroment[environment.pentaho].port + "/#!"
+            if(typeof(_paq) == "undefined") {
                 window._paq = [];
             }
             //window._paq.push(['trackPageView']);
             window._paq.push(['enableLinkTracking']);
             window._paq.push(['setTrackerUrl', url+'piwik.php']);
+            window.piwikBasePath = basePath;
             window._paq.push(['setSiteId', configuration.paths.piwik[environment.piwik].SiteId]);
+
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('head')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=url +'piwik.js'; s.appendChild(g);
             return window._paq;
         }
     }
@@ -258,6 +262,28 @@ define(function (require) {
 
         /**
          * @ngdoc method
+         * @name dvt.configModule.configService#getIloDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getIloDataPath:function() {
+            return dataPath + configuration.paths.data.cda.ilo;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getIloDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getIloCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.ilo;
+        },
+
+        /**
+         * @ngdoc method
          * @name dvt.configModule.configService#getDataPilotPath
          * @param {string} carl is awesome
          * @methodOf dvt.configModule.configService
@@ -277,7 +303,7 @@ define(function (require) {
          * My Description rules
          */
         getPilotDataPath:function() {
-            return dataPath + configuration.paths.data.cda.datapilot;
+            return dataPath + configuration.paths.data.cda.ilo;
         },
 
         /**
@@ -366,6 +392,21 @@ define(function (require) {
             return dataPath + configuration.paths.data.cda.glossary;
         },
 
+        // ----------------------------------
+        //  literals - i18n
+        // ----------------------------------
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getLiterals
+         * @param {string} carl is awesome
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getLiterals: function () {
+            return i18n;
+        },
 
         // ----------------------------------
         //  piwik
@@ -451,6 +492,29 @@ define(function (require) {
             } else {
                 return false
             }
+        },
+
+        termClick: function(e, pCookiesEnabled)
+        {
+            var clickTrack = pCookiesEnabled;
+            angular.element('[data-toggle=popover]').each(function () {
+                if ((!angular.element(e.target).is('[data-toggle=popover]')
+                    && angular.element(e.target).parents('div.popover').length == 0)
+                    || angular.element(e.target).is('a.popover-close i')) {
+                    angular.element(this).popover('hide');
+                } else if (angular.element(e.target).is('[data-toggle=popover]') && !angular.element(this).is(e.target)) {
+                    angular.element(this).addClass('popover-hidden');
+                    angular.element(this).popover('hide');
+                } else if (angular.element(e.target).is('[data-toggle=popover]') && angular.element(this).is(e.target)) {
+                    if (angular.element(this).hasClass('popover-hidden')) {
+                        if (clickTrack)
+                        {
+                            _paq.push(['trackEvent', 'termClick', 'termClick', angular.element(this).text(), 1]);    
+                        }                     
+                        angular.element(this).removeClass('popover-hidden');
+                    }
+                }
+            });
         }
         
     };
